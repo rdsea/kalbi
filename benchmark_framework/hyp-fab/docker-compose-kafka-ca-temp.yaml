@@ -1,0 +1,145 @@
+version: '2'
+
+networks:
+  byfn:
+    external: true
+
+services:
+  ca.example.com:
+    image: hyperledger/fabric-ca
+    container_name: ca.example.com
+    environment:
+      - FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
+      - FABRIC_CA_SERVER_CA_NAME=ca.org1.example.com
+      - FABRIC_CA_SERVER_CA_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.org1.example.com-cert.pem
+      - FABRIC_CA_SERVER_CA_KEYFILE=/etc/hyperledger/fabric-ca-server-config/SECRET_KEY
+      - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=byfn
+    volumes:
+      - ./crypto-config/peerOrganizations/org1.example.com/ca/:/etc/hyperledger/fabric-ca-server-config
+    ports:
+    - 7054:7054
+    command: sh -c 'fabric-ca-server start -b admin:adminpw -d'
+    networks:
+      byfn:
+        aliases:
+        - ca.example.com
+
+  zookeeper0.example.com:
+    image: hyperledger/fabric-zookeeper
+    container_name: zookeeper0.example.com
+    environment:
+    - ZOO_SERVERS=server.1=zookeeper0.example.com:2888:3888 server.2=zookeeper1.example.com:2888:3888 server.3=zookeeper2.example.com:2888:3888
+    - ZOO_MY_ID=1
+    restart: always
+    ports:
+    - 2181:2181
+    - 2888:2888
+    - 3888:3888
+    networks:
+      byfn:
+        aliases:
+        - zookeeper0.example.com
+
+  zookeeper1.example.com:
+    image: hyperledger/fabric-zookeeper
+    container_name: zookeeper1.example.com
+    environment:
+    - ZOO_SERVERS=server.1=zookeeper0.example.com:2888:3888 server.2=zookeeper1.example.com:2888:3888 server.3=zookeeper2.example.com:2888:3888
+    - ZOO_MY_ID=2
+    restart: always
+    ports:
+    - 12181:2181
+    - 12888:2888
+    - 13888:3888
+    networks:
+      byfn:
+        aliases:
+        - zookeeper1.example.com
+
+  zookeeper2.example.com:
+    image: hyperledger/fabric-zookeeper
+    container_name: zookeeper2.example.com
+    environment:
+    - ZOO_SERVERS=server.1=zookeeper0.example.com:2888:3888 server.2=zookeeper1.example.com:2888:3888 server.3=zookeeper2.example.com:2888:3888
+    - ZOO_MY_ID=3
+    restart: always
+    ports:
+    - 22181:2181
+    - 22888:2888
+    - 23888:3888
+    networks:
+      byfn:
+        aliases:
+        - zookeeper2.example.com
+
+  kafka0.example.com:
+    image: hyperledger/fabric-kafka
+    restart: always
+    container_name: kafka0.example.com
+    environment:
+    - KAFKA_BROKER_ID=0
+    - KAFKA_MESSAGE_MAX_BYTES=103809024 # 99 * 1024 * 1024 B
+    - KAFKA_REPLICA_FETCH_MAX_BYTES=103809024 # 99 * 1024 * 1024 B
+    - KAFKA_UNCLEAN_LEADER_ELECTION_ENABLE=false
+    - KAFKA_MIN_INSYNC_REPLICAS=2
+    - KAFKA_DEFAULT_REPLICATION_FACTOR=3
+    - KAFKA_ZOOKEEPER_CONNECT=zookeeper0.example.com:2181,zookeeper1.example.com:2181,zookeeper2.example.com:2181
+    ports:
+    - 9092:9092
+    - 9093:9093
+    networks:
+      byfn:
+        aliases:
+        - kafka0.example.com
+    depends_on:
+    - zookeeper0.example.com
+    - zookeeper1.example.com
+    - zookeeper2.example.com
+
+  kafka1.example.com:
+    image: hyperledger/fabric-kafka
+    restart: always
+    container_name: kafka1.example.com
+    environment:
+    - KAFKA_BROKER_ID=1
+    - KAFKA_MESSAGE_MAX_BYTES=103809024 # 99 * 1024 * 1024 B
+    - KAFKA_REPLICA_FETCH_MAX_BYTES=103809024 # 99 * 1024 * 1024 B
+    - KAFKA_UNCLEAN_LEADER_ELECTION_ENABLE=false
+    - KAFKA_MIN_INSYNC_REPLICAS=2
+    - KAFKA_DEFAULT_REPLICATION_FACTOR=3
+    - KAFKA_ZOOKEEPER_CONNECT=zookeeper0.example.com:2181,zookeeper1.example.com:2181,zookeeper2.example.com:2181
+    ports:
+    - 10092:9092
+    - 10093:9093
+    networks:
+      byfn:
+        aliases:
+        - kafka1.example.com
+    depends_on:
+    - zookeeper0.example.com
+    - zookeeper1.example.com
+    - zookeeper2.example.com
+
+  kafka2.example.com:
+    image: hyperledger/fabric-kafka
+    restart: always
+    container_name: kafka2.example.com
+    environment:
+    - KAFKA_BROKER_ID=2
+    - KAFKA_MESSAGE_MAX_BYTES=103809024 # 99 * 1024 * 1024 B
+    - KAFKA_REPLICA_FETCH_MAX_BYTES=103809024 # 99 * 1024 * 1024 B
+    - KAFKA_UNCLEAN_LEADER_ELECTION_ENABLE=false
+    - KAFKA_MIN_INSYNC_REPLICAS=2
+    - KAFKA_DEFAULT_REPLICATION_FACTOR=3
+    - KAFKA_ZOOKEEPER_CONNECT=zookeeper0.example.com:2181,zookeeper1.example.com:2181,zookeeper2.example.com:2181
+    ports:
+    - 11092:9092
+    - 11093:9093
+    networks:
+      byfn:
+        aliases:
+        - kafka2.example.com
+    depends_on:
+    - zookeeper0.example.com
+    - zookeeper1.example.com
+    - zookeeper2.example.com

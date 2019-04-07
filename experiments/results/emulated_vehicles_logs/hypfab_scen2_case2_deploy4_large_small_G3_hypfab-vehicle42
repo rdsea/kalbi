@@ -1,0 +1,536 @@
+[2019-01-17T11:23:53.966] [INFO] default - ======================================================
+[2019-01-17T11:23:53.968] [INFO] default - =================== HYPERLEDGER-FABRIC ===============
+[2019-01-17T11:23:53.969] [INFO] default - ======================================================
+[2019-01-17T11:23:53.969] [INFO] default - HypFabVehicleDAO is initializing...
+[2019-01-17T11:23:57.916] [INFO] default - Successfully enrolled admin user "admin"
+[2019-01-17T11:24:01.482] [INFO] default - Successfully enrolled member user "user42" 
+[2019-01-17T11:24:01.484] [INFO] default - Initializing data producer of Vehicle42
+[2019-01-17T11:24:11.486] [INFO] default - Inserting new vehicle...
+[2019-01-17T11:24:14.299] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:24:14.300] [INFO] default - Transaction id = 977233c3fa3d6cab3c4b9f16670827254ad5e746afbffa9bb5569a80d82f0f13
+[2019-01-17T11:24:23.029] [INFO] default - Successfully committed the change to the ledger by the peer
+[2019-01-17T11:24:23.041] [INFO] default - >>> vehicle42 = {
+    "id": "42",
+    "velocity": "60",
+    "acceleration": "4"
+}
+[2019-01-17T11:24:23.041] [INFO] default - ====== Blocks filled with data ======
+[2019-01-17T11:24:23.042] [INFO] default - === Vehicle42 started producing data ===
+[2019-01-17T11:24:23.043] [INFO] default - Starting update velocity operation analysis...
+[2019-01-17T11:24:23.043] [INFO] default - Rounds number = 100
+[2019-01-17T11:24:23.043] [INFO] default - === Round: 0 ===
+[2019-01-17T11:24:23.056] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:24:23.056] [INFO] default - Transaction id = 8f8384e7021970571996a7c02964f607da1332732ba39c392b7d9022733a314c
+[2019-01-17T11:24:31.164] [INFO] default - Successfully committed the change to the ledger by the peer
+[2019-01-17T11:24:31.165] [INFO] default - >>> Time taken to create and sign transaction [ms] 13
+[2019-01-17T11:24:31.165] [INFO] default - >>> Time taken to accept and mine transaction [ms] 8108
+[2019-01-17T11:24:31.165] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 42,
+    "velocity": 1,
+    "acceleration": null
+} at time: 1547724271165
+[2019-01-17T11:24:31.165] [INFO] default - === Round: 1 ===
+[2019-01-17T11:24:31.179] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:24:31.180] [INFO] default - Transaction id = fc219025f5e8f9ba240448db022ac8230cbc2f7fd866134cd58690afccd6c372
+[2019-01-17T11:24:43.362] [INFO] default - Successfully committed the change to the ledger by the peer
+[2019-01-17T11:24:43.362] [INFO] default - >>> Time taken to create and sign transaction [ms] 15
+[2019-01-17T11:24:43.362] [INFO] default - >>> Time taken to accept and mine transaction [ms] 12182
+[2019-01-17T11:24:43.362] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 42,
+    "velocity": 2,
+    "acceleration": null
+} at time: 1547724283362
+[2019-01-17T11:24:43.362] [INFO] default - === Round: 2 ===
+[2019-01-17T11:24:43.380] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:24:43.380] [INFO] default - Transaction id = db678666ea559308e18a6344777b55adee0a64b8766a0caade720869c4126da0
+[2019-01-17T11:24:48.935] [INFO] default - Successfully committed the change to the ledger by the peer
+[2019-01-17T11:24:48.936] [INFO] default - >>> Time taken to create and sign transaction [ms] 17
+[2019-01-17T11:24:48.936] [INFO] default - >>> Time taken to accept and mine transaction [ms] 5556
+[2019-01-17T11:24:48.936] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 42,
+    "velocity": 3,
+    "acceleration": null
+} at time: 1547724288936
+[2019-01-17T11:24:48.936] [INFO] default - === Round: 3 ===
+[2019-01-17T11:24:48.952] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:24:48.952] [INFO] default - Transaction id = 1d1e8bc531675541e32255469805c2061b998714e26fbdecf64b086277d83e66
+[2019-01-17T11:24:57.058] [INFO] default - Successfully committed the change to the ledger by the peer
+[2019-01-17T11:24:57.058] [INFO] default - >>> Time taken to create and sign transaction [ms] 17
+[2019-01-17T11:24:57.058] [INFO] default - >>> Time taken to accept and mine transaction [ms] 8105
+[2019-01-17T11:24:57.058] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 42,
+    "velocity": 4,
+    "acceleration": null
+} at time: 1547724297058
+[2019-01-17T11:24:57.058] [INFO] default - === Round: 4 ===
+[2019-01-17T11:24:57.070] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:24:57.070] [INFO] default - Transaction id = 169c2e9720138f3046a75935fce357102edc163b6968308ad2e812e9a8f04c3c
+[2019-01-17T11:25:01.171] [INFO] default - Successfully committed the change to the ledger by the peer
+[2019-01-17T11:25:01.171] [INFO] default - >>> Time taken to create and sign transaction [ms] 13
+[2019-01-17T11:25:01.171] [INFO] default - >>> Time taken to accept and mine transaction [ms] 4100
+[2019-01-17T11:25:01.171] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 42,
+    "velocity": 5,
+    "acceleration": null
+} at time: 1547724301171
+[2019-01-17T11:25:01.172] [INFO] default - === Round: 5 ===
+[2019-01-17T11:25:01.186] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:25:01.186] [INFO] default - Transaction id = 860ea8e0ea1be79a944a6131ac2d711c5e2c9fbfec28867d847e95d43578ba36
+[2019-01-17T11:25:10.122] [INFO] default - Successfully committed the change to the ledger by the peer
+[2019-01-17T11:25:10.122] [INFO] default - >>> Time taken to create and sign transaction [ms] 14
+[2019-01-17T11:25:10.123] [INFO] default - >>> Time taken to accept and mine transaction [ms] 8936
+[2019-01-17T11:25:10.123] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 42,
+    "velocity": 6,
+    "acceleration": null
+} at time: 1547724310123
+[2019-01-17T11:25:10.123] [INFO] default - === Round: 6 ===
+[2019-01-17T11:25:10.141] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:25:10.141] [INFO] default - Transaction id = 8f6cb92f75ebeaa5cccb4be5928951c070d6d3d4465078b6c9cfc6764e2e9f77
+[2019-01-17T11:25:18.426] [INFO] default - Successfully committed the change to the ledger by the peer
+[2019-01-17T11:25:18.427] [INFO] default - >>> Time taken to create and sign transaction [ms] 19
+[2019-01-17T11:25:18.427] [INFO] default - >>> Time taken to accept and mine transaction [ms] 8285
+[2019-01-17T11:25:18.427] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 42,
+    "velocity": 7,
+    "acceleration": null
+} at time: 1547724318427
+[2019-01-17T11:25:18.427] [INFO] default - === Round: 7 ===
+[2019-01-17T11:25:18.438] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:25:18.439] [INFO] default - Transaction id = c57ca1216c04fb32b7644d64d1b50b5f2fd07e6594d143b54cb7304875a13148
+[2019-01-17T11:25:26.756] [INFO] default - Successfully committed the change to the ledger by the peer
+[2019-01-17T11:25:26.757] [INFO] default - >>> Time taken to create and sign transaction [ms] 12
+[2019-01-17T11:25:26.757] [INFO] default - >>> Time taken to accept and mine transaction [ms] 8318
+[2019-01-17T11:25:26.757] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 42,
+    "velocity": 8,
+    "acceleration": null
+} at time: 1547724326757
+[2019-01-17T11:25:26.757] [INFO] default - === Round: 8 ===
+[2019-01-17T11:25:26.774] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:25:26.774] [INFO] default - Transaction id = 6ee3972ea80e3381ebc7bf63a867363769c2bcbca174fc33c0714785bb630ee4
+[2019-01-17T11:25:30.697] [INFO] default - Successfully committed the change to the ledger by the peer
+[2019-01-17T11:25:30.697] [INFO] default - >>> Time taken to create and sign transaction [ms] 18
+[2019-01-17T11:25:30.697] [INFO] default - >>> Time taken to accept and mine transaction [ms] 3922
+[2019-01-17T11:25:30.697] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 42,
+    "velocity": 9,
+    "acceleration": null
+} at time: 1547724330697
+[2019-01-17T11:25:30.697] [INFO] default - === Round: 9 ===
+[2019-01-17T11:25:30.710] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:25:30.711] [INFO] default - Transaction id = 4bb03c994f3ae9836e3f57ec68c857bcae6e4d1fd6e99e3d0bc7d498c50d767b
+[2019-01-17T11:25:50.227] [INFO] default - Successfully committed the change to the ledger by the peer
+[2019-01-17T11:25:50.227] [INFO] default - >>> Time taken to create and sign transaction [ms] 14
+[2019-01-17T11:25:50.228] [INFO] default - >>> Time taken to accept and mine transaction [ms] 19516
+[2019-01-17T11:25:50.228] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 42,
+    "velocity": 10,
+    "acceleration": null
+} at time: 1547724350228
+[2019-01-17T11:25:50.228] [INFO] default - === Round: 10 ===
+[2019-01-17T11:25:50.249] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:25:50.249] [INFO] default - Transaction id = a146984d379891fab76941a2637fed0939864a4df4d43fe141cd32be83f54127
+[2019-01-17T11:25:54.469] [INFO] default - Successfully committed the change to the ledger by the peer
+[2019-01-17T11:25:54.469] [INFO] default - >>> Time taken to create and sign transaction [ms] 21
+[2019-01-17T11:25:54.469] [INFO] default - >>> Time taken to accept and mine transaction [ms] 4220
+[2019-01-17T11:25:54.469] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 42,
+    "velocity": 11,
+    "acceleration": null
+} at time: 1547724354469
+[2019-01-17T11:25:54.470] [INFO] default - === Round: 11 ===
+[2019-01-17T11:25:54.485] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:25:54.485] [INFO] default - Transaction id = 2ee36864cfaacf584ccbaf9f09beb635b63c6774082a9a8b1b19ebe8c2503d93
+[2019-01-17T11:26:00.311] [INFO] default - Successfully committed the change to the ledger by the peer
+[2019-01-17T11:26:00.312] [INFO] default - >>> Time taken to create and sign transaction [ms] 15
+[2019-01-17T11:26:00.312] [INFO] default - >>> Time taken to accept and mine transaction [ms] 5827
+[2019-01-17T11:26:00.312] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 42,
+    "velocity": 12,
+    "acceleration": null
+} at time: 1547724360312
+[2019-01-17T11:26:00.312] [INFO] default - === Round: 12 ===
+[2019-01-17T11:26:00.326] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:26:00.326] [INFO] default - Transaction id = 9d0c722e89e5931fff44ea666e8b960bbce8c7cb3376772202c843ec95192fa2
+[2019-01-17T11:26:04.240] [INFO] default - Successfully committed the change to the ledger by the peer
+[2019-01-17T11:26:04.240] [INFO] default - >>> Time taken to create and sign transaction [ms] 14
+[2019-01-17T11:26:04.240] [INFO] default - >>> Time taken to accept and mine transaction [ms] 3914
+[2019-01-17T11:26:04.240] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 42,
+    "velocity": 13,
+    "acceleration": null
+} at time: 1547724364240
+[2019-01-17T11:26:04.240] [INFO] default - === Round: 13 ===
+[2019-01-17T11:26:04.260] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:26:04.260] [INFO] default - Transaction id = 905581bab950996a79d32cb27c4a0c2c204d089ae890c5193b4cbb74fbe471de
+[2019-01-17T11:26:10.029] [INFO] default - Successfully committed the change to the ledger by the peer
+[2019-01-17T11:26:10.030] [INFO] default - >>> Time taken to create and sign transaction [ms] 19
+[2019-01-17T11:26:10.030] [INFO] default - >>> Time taken to accept and mine transaction [ms] 5770
+[2019-01-17T11:26:10.030] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 42,
+    "velocity": 14,
+    "acceleration": null
+} at time: 1547724370030
+[2019-01-17T11:26:10.030] [INFO] default - === Round: 14 ===
+[2019-01-17T11:26:10.059] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:26:10.060] [INFO] default - Transaction id = 9ab292ca5b6238d0ebc30ad590405592b1ae5c31bdac29829b6c01cf6f435196
+[2019-01-17T11:26:17.238] [INFO] default - Successfully committed the change to the ledger by the peer
+[2019-01-17T11:26:17.238] [INFO] default - >>> Time taken to create and sign transaction [ms] 30
+[2019-01-17T11:26:17.238] [INFO] default - >>> Time taken to accept and mine transaction [ms] 7178
+[2019-01-17T11:26:17.238] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 42,
+    "velocity": 15,
+    "acceleration": null
+} at time: 1547724377238
+[2019-01-17T11:26:17.238] [INFO] default - === Round: 15 ===
+[2019-01-17T11:26:17.252] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:26:17.252] [INFO] default - Transaction id = d83f01cc8ee6b4bb9f81d7f18c51e80a8142f8ed36604e17c3697281a490cefe
+[2019-01-17T11:27:02.269] [INFO] default - >>> Error Failed to invoke successfully:: Error: REQUEST_TIMEOUT
+[2019-01-17T11:27:02.269] [INFO] default - === Round: 16 ===
+[2019-01-17T11:27:02.279] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:27:02.279] [INFO] default - Transaction id = 0cb2134d26d5a1751d5dacccf2b3e9f0257b42dbac0920a5a96cd9dc3a7da58e
+[2019-01-17T11:27:47.293] [INFO] default - >>> Error Failed to invoke successfully:: Error: REQUEST_TIMEOUT
+[2019-01-17T11:27:47.293] [INFO] default - === Round: 17 ===
+[2019-01-17T11:27:47.305] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:27:47.305] [INFO] default - Transaction id = e6b652e2d55c1084a0ee548904256a215ec6460efb6f31bf8efb040e3caf8650
+[2019-01-17T11:28:32.316] [INFO] default - >>> Error Failed to invoke successfully:: Error: REQUEST_TIMEOUT
+[2019-01-17T11:28:32.316] [INFO] default - === Round: 18 ===
+[2019-01-17T11:28:32.332] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:28:32.332] [INFO] default - Transaction id = 338aedb189604ede9bde21a7cf698d7b29eca43b8e63b5742e3954e60bcd7921
+[2019-01-17T11:29:17.344] [INFO] default - >>> Error Failed to invoke successfully:: Error: REQUEST_TIMEOUT
+[2019-01-17T11:29:17.344] [INFO] default - === Round: 19 ===
+[2019-01-17T11:29:17.354] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:29:17.355] [INFO] default - Transaction id = b921a2ba1084efb872e90c7941562c6bd2bd8a41270f2afb2c4242b625fb9345
+[2019-01-17T11:30:02.366] [INFO] default - >>> Error Failed to invoke successfully:: Error: REQUEST_TIMEOUT
+[2019-01-17T11:30:02.366] [INFO] default - === Round: 20 ===
+[2019-01-17T11:30:02.377] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:30:02.377] [INFO] default - Transaction id = e7b92d23524de7ae065bd8bb240f35ebb78ef47b6bfc2824bc479ab4fc23f1fc
+[2019-01-17T11:30:47.388] [INFO] default - >>> Error Failed to invoke successfully:: Error: REQUEST_TIMEOUT
+[2019-01-17T11:30:47.389] [INFO] default - === Round: 21 ===
+[2019-01-17T11:30:47.401] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:30:47.401] [INFO] default - Transaction id = a01e8334c0fa28bc388288e36b7ba46c409de122761df0cf10497ca1fb8b3722
+[2019-01-17T11:31:32.412] [INFO] default - >>> Error Failed to invoke successfully:: Error: REQUEST_TIMEOUT
+[2019-01-17T11:31:32.412] [INFO] default - === Round: 22 ===
+[2019-01-17T11:31:32.422] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:31:32.423] [INFO] default - Transaction id = 1656b1b9fd9d6e09723bc45d6bdc915c76fbf386b3f0623e3c1dc0d354a2109d
+[2019-01-17T11:32:17.435] [INFO] default - >>> Error Failed to invoke successfully:: Error: REQUEST_TIMEOUT
+[2019-01-17T11:32:17.436] [INFO] default - === Round: 23 ===
+[2019-01-17T11:32:17.446] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:32:17.446] [INFO] default - Transaction id = fcb88d77c8f4f26f1ce6e36cf2626cdab93370f79504abb0d814cd46e394b638
+[2019-01-17T11:33:02.457] [INFO] default - >>> Error Failed to invoke successfully:: Error: REQUEST_TIMEOUT
+[2019-01-17T11:33:02.457] [INFO] default - === Round: 24 ===
+[2019-01-17T11:33:02.470] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:33:02.470] [INFO] default - Transaction id = e6c831b9d28679dc237eb9a82b6725119f68a93fe33a7473fc8252964064837c
+[2019-01-17T11:33:47.480] [INFO] default - >>> Error Failed to invoke successfully:: Error: REQUEST_TIMEOUT
+[2019-01-17T11:33:47.480] [INFO] default - === Round: 25 ===
+[2019-01-17T11:33:47.489] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:33:47.489] [INFO] default - Transaction id = 6e7d314a3ae8c84ad85ad23bdbdc2da6df9db05413285d16eee9cfb9703cdc9e
+[2019-01-17T11:34:32.499] [INFO] default - >>> Error Failed to invoke successfully:: Error: REQUEST_TIMEOUT
+[2019-01-17T11:34:32.499] [INFO] default - === Round: 26 ===
+[2019-01-17T11:34:32.508] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:34:32.508] [INFO] default - Transaction id = 5baf8bbec418e2ff1bd338bb143d0f4e64f343739885c4d8a885d35505307dec
+[2019-01-17T11:35:17.518] [INFO] default - >>> Error Failed to invoke successfully:: Error: REQUEST_TIMEOUT
+[2019-01-17T11:35:17.518] [INFO] default - === Round: 27 ===
+[2019-01-17T11:35:17.529] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:35:17.529] [INFO] default - Transaction id = 3ea3e2c428163dcec330516778bae1b8148dc04c61f21bd89464f22a2fe7d0bf
+[2019-01-17T11:36:02.540] [INFO] default - >>> Error Failed to invoke successfully:: Error: REQUEST_TIMEOUT
+[2019-01-17T11:36:02.541] [INFO] default - === Round: 28 ===
+[2019-01-17T11:36:02.553] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:36:02.554] [INFO] default - Transaction id = d95856507ca89eed2f488b0010c4dd994562126657f87b62369fa4393758425f
+[2019-01-17T11:36:47.566] [INFO] default - >>> Error Failed to invoke successfully:: Error: REQUEST_TIMEOUT
+[2019-01-17T11:36:47.567] [INFO] default - === Round: 29 ===
+[2019-01-17T11:36:47.577] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:36:47.577] [INFO] default - Transaction id = 62e4d7ebbac9d9d2690370ac8349d9867de510428ca17fac9d1e60e16e6d8050
+[2019-01-17T11:37:32.587] [INFO] default - >>> Error Failed to invoke successfully:: Error: REQUEST_TIMEOUT
+[2019-01-17T11:37:32.587] [INFO] default - === Round: 30 ===
+[2019-01-17T11:37:32.598] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:37:32.598] [INFO] default - Transaction id = 888214f46902769c1817d93d758370f0a3e4da178045df22304aa56f98121240
+[2019-01-17T11:38:17.610] [INFO] default - >>> Error Failed to invoke successfully:: Error: REQUEST_TIMEOUT
+[2019-01-17T11:38:17.610] [INFO] default - === Round: 31 ===
+[2019-01-17T11:38:17.619] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:38:17.619] [INFO] default - Transaction id = bbf45d74193b259d90578bad56aa298e879d68fcca848c25bad9654d8fcbbca3
+[2019-01-17T11:39:02.629] [INFO] default - >>> Error Failed to invoke successfully:: Error: REQUEST_TIMEOUT
+[2019-01-17T11:39:02.629] [INFO] default - === Round: 32 ===
+[2019-01-17T11:39:02.639] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:39:02.639] [INFO] default - Transaction id = 86b6db452ece94c1b3450525711427d93fb5a2efdcfec3142e4a30efccdf6d8f
+[2019-01-17T11:39:47.651] [INFO] default - >>> Error Failed to invoke successfully:: Error: REQUEST_TIMEOUT
+[2019-01-17T11:39:47.651] [INFO] default - === Round: 33 ===
+[2019-01-17T11:39:47.662] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:39:47.662] [INFO] default - Transaction id = 58811e31b91eba468635f941a3d76a2fbdce62d654f7fcc9b2be3e07e1f07032
+[2019-01-17T11:40:32.672] [INFO] default - >>> Error Failed to invoke successfully:: Error: REQUEST_TIMEOUT
+[2019-01-17T11:40:32.672] [INFO] default - === Round: 34 ===
+[2019-01-17T11:40:32.681] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:40:32.681] [INFO] default - Transaction id = fc0bcf36d6640466619b6029ca390b772626dc58ce77335d689a18c0f813b9ca
+[2019-01-17T11:41:17.693] [INFO] default - >>> Error Failed to invoke successfully:: Error: REQUEST_TIMEOUT
+[2019-01-17T11:41:17.693] [INFO] default - === Round: 35 ===
+[2019-01-17T11:41:17.703] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:41:17.703] [INFO] default - Transaction id = 81e76c37b1ef154a3c4d0017200b4eb0f2daeaed1c7420f8d6a8500ddac70e98
+[2019-01-17T11:42:02.716] [INFO] default - >>> Error Failed to invoke successfully:: Error: REQUEST_TIMEOUT
+[2019-01-17T11:42:02.717] [INFO] default - === Round: 36 ===
+[2019-01-17T11:42:02.727] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:42:02.727] [INFO] default - Transaction id = 39e8265a5cf2bba4f6de6ee8fe1bf7fe51bae33d970f17b9d3c8a73e7fb4e178
+[2019-01-17T11:42:30.241] [INFO] default - >>> Error Failed to invoke successfully:: Error: SERVICE_UNAVAILABLE
+[2019-01-17T11:42:30.241] [INFO] default - === Round: 37 ===
+[2019-01-17T11:42:30.252] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:42:30.252] [INFO] default - Transaction id = c910122abc014a39f3410e8bffe4788033077d2d05a3bb027a4c7ce5b8b8b894
+[2019-01-17T11:42:33.257] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to connect before the deadline URL:grpc://rsu2_orderer.example.com:7050
+[2019-01-17T11:42:33.257] [INFO] default - === Round: 38 ===
+[2019-01-17T11:42:33.267] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:42:33.267] [INFO] default - Transaction id = 8a7a3c667eb104f1fe8eb16f363accd83b6824b3f7c0a574dd1528fe0ee96797
+[2019-01-17T11:42:36.273] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to connect before the deadline URL:grpc://rsu2_orderer.example.com:7050
+[2019-01-17T11:42:36.273] [INFO] default - === Round: 39 ===
+[2019-01-17T11:42:36.286] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:42:36.286] [INFO] default - Transaction id = 093690cd42f6bb741a1c662562da82f67aad5667bd8272ec764763ca77860d67
+[2019-01-17T11:42:39.292] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to connect before the deadline URL:grpc://rsu2_orderer.example.com:7050
+[2019-01-17T11:42:39.292] [INFO] default - === Round: 40 ===
+[2019-01-17T11:42:39.301] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:42:39.301] [INFO] default - Transaction id = e44d8a4d59de1c37a1e03a57f370e530f8d00a120a68401817318d22584b3477
+[2019-01-17T11:42:42.306] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to connect before the deadline URL:grpc://rsu2_orderer.example.com:7050
+[2019-01-17T11:42:42.307] [INFO] default - === Round: 41 ===
+[2019-01-17T11:42:42.315] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:42:42.316] [INFO] default - Transaction id = 18895afd1308a8bf95cb2c2b8eb4d5184fdda919d17dd4e2b4b4b02c090e1dbb
+[2019-01-17T11:42:45.322] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to connect before the deadline URL:grpc://rsu2_orderer.example.com:7050
+[2019-01-17T11:42:45.322] [INFO] default - === Round: 42 ===
+[2019-01-17T11:42:45.333] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:42:45.333] [INFO] default - Transaction id = 1d8eeaddc97359c8d94d761afc73606edde17fd767fbb1df6ebea2871a20558f
+[2019-01-17T11:42:48.339] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to connect before the deadline URL:grpc://rsu2_orderer.example.com:7050
+[2019-01-17T11:42:48.339] [INFO] default - === Round: 43 ===
+[2019-01-17T11:42:48.346] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:42:48.347] [INFO] default - Transaction id = 57ea01ad7236563c1344d881d83add3a9c7b0e5ffe15e0087d3478c44005de0c
+[2019-01-17T11:42:51.352] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to connect before the deadline URL:grpc://rsu2_orderer.example.com:7050
+[2019-01-17T11:42:51.352] [INFO] default - === Round: 44 ===
+[2019-01-17T11:42:51.360] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:42:51.360] [INFO] default - Transaction id = 5683ac02af4eca428de70167ac661e0a3afef5db17da5676e62e4ae74534e0c5
+[2019-01-17T11:42:54.365] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to connect before the deadline URL:grpc://rsu2_orderer.example.com:7050
+[2019-01-17T11:42:54.366] [INFO] default - === Round: 45 ===
+[2019-01-17T11:42:54.374] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:42:54.374] [INFO] default - Transaction id = eb84fd93c9aeaa0e9cd16960427516346f2a5c964c9b23c9969ca7b4769004f2
+[2019-01-17T11:42:57.379] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to connect before the deadline URL:grpc://rsu2_orderer.example.com:7050
+[2019-01-17T11:42:57.380] [INFO] default - === Round: 46 ===
+[2019-01-17T11:42:57.388] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:42:57.389] [INFO] default - Transaction id = 7bc511857daf929afb9e1d12d9dc8a29b4610fc9113a6a08830769b9552cf8f3
+[2019-01-17T11:43:00.394] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to connect before the deadline URL:grpc://rsu2_orderer.example.com:7050
+[2019-01-17T11:43:00.395] [INFO] default - === Round: 47 ===
+[2019-01-17T11:43:00.403] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:43:00.403] [INFO] default - Transaction id = 6025cd1148fe668b5c27a00986d66291a1ecd8a40973e311f6733b01625a0dc1
+[2019-01-17T11:43:03.409] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to connect before the deadline URL:grpc://rsu2_orderer.example.com:7050
+[2019-01-17T11:43:03.410] [INFO] default - === Round: 48 ===
+[2019-01-17T11:43:03.426] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:43:03.426] [INFO] default - Transaction id = 8f96eb376ebfac5b602c7ae30d8aa770bbc62f5fdb47633c34422f1df2b06853
+[2019-01-17T11:43:06.433] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to connect before the deadline URL:grpc://rsu2_orderer.example.com:7050
+[2019-01-17T11:43:06.433] [INFO] default - === Round: 49 ===
+[2019-01-17T11:43:06.442] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:43:06.442] [INFO] default - Transaction id = 936a61a21b1d832a43ff1610a958023b0d13f871b5e1149231dc64d44866e6b9
+[2019-01-17T11:43:09.449] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to connect before the deadline URL:grpc://rsu2_orderer.example.com:7050
+[2019-01-17T11:43:09.449] [INFO] default - === Round: 50 ===
+[2019-01-17T11:43:09.457] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:43:09.458] [INFO] default - Transaction id = 99581d96a3db837bf240f52a785780a9aa242db7b51cdf7b7e361c8279a05663
+[2019-01-17T11:43:12.464] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to connect before the deadline URL:grpc://rsu2_orderer.example.com:7050
+[2019-01-17T11:43:12.464] [INFO] default - === Round: 51 ===
+[2019-01-17T11:43:12.472] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:43:12.473] [INFO] default - Transaction id = 708f3e1059ce1d3a57f111faaf8e876a4bed081b3351b0bff42bfcbdee6e7a7a
+[2019-01-17T11:43:15.480] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to connect before the deadline URL:grpc://rsu2_orderer.example.com:7050
+[2019-01-17T11:43:15.480] [INFO] default - === Round: 52 ===
+[2019-01-17T11:43:15.488] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:43:15.488] [INFO] default - Transaction id = 242269712adf02e3834e5fc933f8fd5bbf4ca0f1adaa0596af7cdf3b917b5a05
+[2019-01-17T11:43:18.494] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to connect before the deadline URL:grpc://rsu2_orderer.example.com:7050
+[2019-01-17T11:43:18.494] [INFO] default - === Round: 53 ===
+[2019-01-17T11:43:18.502] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:43:18.502] [INFO] default - Transaction id = fdfa8f63a94f0eb9babe344165b563006bfb41deda2be0ac20f0dc68c39ff68a
+[2019-01-17T11:43:21.508] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to connect before the deadline URL:grpc://rsu2_orderer.example.com:7050
+[2019-01-17T11:43:21.508] [INFO] default - === Round: 54 ===
+[2019-01-17T11:43:21.517] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:43:21.517] [INFO] default - Transaction id = bb22c8ac62990f20fac52f6bb30ca238a111f6a17fb6767b746f25a55bd9dde1
+[2019-01-17T11:43:24.523] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to connect before the deadline URL:grpc://rsu2_orderer.example.com:7050
+[2019-01-17T11:43:24.523] [INFO] default - === Round: 55 ===
+[2019-01-17T11:43:24.533] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:43:24.533] [INFO] default - Transaction id = b8d547f379097c8cc6de5d0f7ac829f7b20d40acba1942b2e90891cb7c4e1714
+[2019-01-17T11:43:27.540] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to connect before the deadline URL:grpc://rsu2_orderer.example.com:7050
+[2019-01-17T11:43:27.540] [INFO] default - === Round: 56 ===
+[2019-01-17T11:43:27.548] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:43:27.548] [INFO] default - Transaction id = 95b725beaa35c85f1aaabedf3dfefb8a3e1d5253b174809b31bfd1388bb0540c
+[2019-01-17T11:43:30.553] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to connect before the deadline URL:grpc://rsu2_orderer.example.com:7050
+[2019-01-17T11:43:30.553] [INFO] default - === Round: 57 ===
+[2019-01-17T11:43:30.561] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:43:30.562] [INFO] default - Transaction id = cc0084654a3fc121756fb461aacc5f4382016f924510a206b0558d61d9f26e30
+[2019-01-17T11:43:33.568] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to connect before the deadline URL:grpc://rsu2_orderer.example.com:7050
+[2019-01-17T11:43:33.569] [INFO] default - === Round: 58 ===
+[2019-01-17T11:43:33.578] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:43:33.578] [INFO] default - Transaction id = c41c4c95d526567f4590aa898c7c4ef8177be568f746563585e07fc46320ec9d
+[2019-01-17T11:43:36.584] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to connect before the deadline URL:grpc://rsu2_orderer.example.com:7050
+[2019-01-17T11:43:36.585] [INFO] default - === Round: 59 ===
+[2019-01-17T11:43:36.594] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:43:36.594] [INFO] default - Transaction id = 9a552df12e7b4e18a0f4f8c99560a6199d9495f99d90633ca523b3d92f541e5c
+[2019-01-17T11:43:39.601] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to connect before the deadline URL:grpc://rsu2_orderer.example.com:7050
+[2019-01-17T11:43:39.601] [INFO] default - === Round: 60 ===
+[2019-01-17T11:43:39.609] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:43:39.609] [INFO] default - Transaction id = 9634dfc6e2fcda55110c1ca4e8aa727183a19c302a5f6eb377d779f4fe0aba69
+[2019-01-17T11:43:42.615] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to connect before the deadline URL:grpc://rsu2_orderer.example.com:7050
+[2019-01-17T11:43:42.615] [INFO] default - === Round: 61 ===
+[2019-01-17T11:43:42.624] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:43:42.624] [INFO] default - Transaction id = daf2dc7bdc329834bddb3d2a7fca852ddb686a2dd02dbb7961160d7c4c97ace7
+[2019-01-17T11:43:45.628] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to connect before the deadline URL:grpc://rsu2_orderer.example.com:7050
+[2019-01-17T11:43:45.628] [INFO] default - === Round: 62 ===
+[2019-01-17T11:43:45.636] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:43:45.636] [INFO] default - Transaction id = 71b4c3ba070283277276c33e289024978bc2d4e023aa2afae8a133794d9e9695
+[2019-01-17T11:43:48.641] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to connect before the deadline URL:grpc://rsu2_orderer.example.com:7050
+[2019-01-17T11:43:48.641] [INFO] default - === Round: 63 ===
+[2019-01-17T11:43:48.649] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:43:48.649] [INFO] default - Transaction id = cd0f6d6fec1b89f5c820f2daf589c05a16ec24dad31962b4df4ca3daf728b085
+[2019-01-17T11:43:51.654] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to connect before the deadline URL:grpc://rsu2_orderer.example.com:7050
+[2019-01-17T11:43:51.654] [INFO] default - === Round: 64 ===
+[2019-01-17T11:43:51.662] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:43:51.662] [INFO] default - Transaction id = aa69d042bdba427ac85e6b475fcadd73bffdc633bdbfad9b893c7b9280f21aa1
+[2019-01-17T11:43:54.668] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to connect before the deadline URL:grpc://rsu2_orderer.example.com:7050
+[2019-01-17T11:43:54.668] [INFO] default - === Round: 65 ===
+[2019-01-17T11:43:54.678] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:43:54.678] [INFO] default - Transaction id = fdb58f04d8f73ad531f22975399d26d07e5872c429c1fec106f248bc6fdfca22
+[2019-01-17T11:43:57.684] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to connect before the deadline URL:grpc://rsu2_orderer.example.com:7050
+[2019-01-17T11:43:57.685] [INFO] default - === Round: 66 ===
+[2019-01-17T11:43:57.694] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:43:57.694] [INFO] default - Transaction id = bc5cee322a05e34d75850023c38f6ae76419ffb819176e89df8aa4adf55649f0
+[2019-01-17T11:44:00.698] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to connect before the deadline URL:grpc://rsu2_orderer.example.com:7050
+[2019-01-17T11:44:00.698] [INFO] default - === Round: 67 ===
+[2019-01-17T11:44:00.707] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:44:00.707] [INFO] default - Transaction id = 62f4165c850dc009146fee8f6a00eec37cd0b8f7a6f77552f6394c4b9f79b594
+[2019-01-17T11:44:03.712] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to connect before the deadline URL:grpc://rsu2_orderer.example.com:7050
+[2019-01-17T11:44:03.712] [INFO] default - === Round: 68 ===
+[2019-01-17T11:44:03.722] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:44:03.722] [INFO] default - Transaction id = 96fa7ceb961d10af8718eff5206f8ae0c4201a06f9c915f993997173218bc652
+[2019-01-17T11:44:06.729] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to connect before the deadline URL:grpc://rsu2_orderer.example.com:7050
+[2019-01-17T11:44:06.729] [INFO] default - === Round: 69 ===
+[2019-01-17T11:44:06.737] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:44:06.737] [INFO] default - Transaction id = 0357a0fc2e07f2815a28e7959b4b65258e5252c7dddd3301944219dd3c37ab74
+[2019-01-17T11:44:09.741] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to connect before the deadline URL:grpc://rsu2_orderer.example.com:7050
+[2019-01-17T11:44:09.742] [INFO] default - === Round: 70 ===
+[2019-01-17T11:44:09.749] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:44:09.750] [INFO] default - Transaction id = b33ff5ed6b666b34e897506b81cb83bd2e033a6f5f4c302a6dd561b82a843fb1
+[2019-01-17T11:44:12.754] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to connect before the deadline URL:grpc://rsu2_orderer.example.com:7050
+[2019-01-17T11:44:12.755] [INFO] default - === Round: 71 ===
+[2019-01-17T11:44:12.762] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:44:12.763] [INFO] default - Transaction id = e6d5345d18827521a8077dcf744d9fcd0752d92227984356b99c2c0c94d927dd
+[2019-01-17T11:44:15.768] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to connect before the deadline URL:grpc://rsu2_orderer.example.com:7050
+[2019-01-17T11:44:15.768] [INFO] default - === Round: 72 ===
+[2019-01-17T11:44:15.777] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:44:15.778] [INFO] default - Transaction id = 2b02947b4c75c0c665bb807f4d80b9de10f135da9c6b16b6c21d0d064c65c08a
+[2019-01-17T11:44:18.784] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to connect before the deadline URL:grpc://rsu2_orderer.example.com:7050
+[2019-01-17T11:44:18.784] [INFO] default - === Round: 73 ===
+[2019-01-17T11:44:18.791] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:44:18.792] [INFO] default - Transaction id = 94d923cda559933fe655ba527e1fc00f8d3945f2a9bd29d4305b10abec8cd5f8
+[2019-01-17T11:44:21.798] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to connect before the deadline URL:grpc://rsu2_orderer.example.com:7050
+[2019-01-17T11:44:21.798] [INFO] default - === Round: 74 ===
+[2019-01-17T11:44:21.806] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:44:21.806] [INFO] default - Transaction id = 94c563801b5427934dd9e54cff445d3f23d2a744487603d1c0b61cd870348a12
+[2019-01-17T11:44:24.813] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to connect before the deadline URL:grpc://rsu2_orderer.example.com:7050
+[2019-01-17T11:44:24.813] [INFO] default - === Round: 75 ===
+[2019-01-17T11:44:24.821] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:44:24.821] [INFO] default - Transaction id = b00a88388026f07d9cf5f29a72909618d4711f09b68117d9ef9e76348861d938
+[2019-01-17T11:44:27.827] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to connect before the deadline URL:grpc://rsu2_orderer.example.com:7050
+[2019-01-17T11:44:27.828] [INFO] default - === Round: 76 ===
+[2019-01-17T11:44:27.836] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:44:27.836] [INFO] default - Transaction id = 2623eda4229ff944d87ab1eba0e4768fd89bbd3d41a9b68b56b82d20408ad5da
+[2019-01-17T11:44:30.842] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to connect before the deadline URL:grpc://rsu2_orderer.example.com:7050
+[2019-01-17T11:44:30.843] [INFO] default - === Round: 77 ===
+[2019-01-17T11:44:30.850] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:44:30.850] [INFO] default - Transaction id = 25399d35ae50a21ec3461a1a97a78f5d7b0cfd79c3a2e17c860aa98153f43156
+[2019-01-17T11:44:33.855] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to connect before the deadline URL:grpc://rsu2_orderer.example.com:7050
+[2019-01-17T11:44:33.855] [INFO] default - === Round: 78 ===
+[2019-01-17T11:44:33.863] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:44:33.863] [INFO] default - Transaction id = b437849d8226744db5e5236e235027d8592a46730f85085ea4438527db021fd2
+[2019-01-17T11:44:36.869] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to connect before the deadline URL:grpc://rsu2_orderer.example.com:7050
+[2019-01-17T11:44:36.869] [INFO] default - === Round: 79 ===
+[2019-01-17T11:44:36.877] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:44:36.877] [INFO] default - Transaction id = 10fbcc7e76239efc9332e067fd8fee332c5fcb6d3042b267a8a216a746329560
+[2019-01-17T11:44:39.883] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to connect before the deadline URL:grpc://rsu2_orderer.example.com:7050
+[2019-01-17T11:44:39.883] [INFO] default - === Round: 80 ===
+[2019-01-17T11:44:39.891] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:44:39.891] [INFO] default - Transaction id = 90f44581c625f764f75de2bb7cb4f2b830340278742bce803aebc38a410e7777
+[2019-01-17T11:44:42.896] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to connect before the deadline URL:grpc://rsu2_orderer.example.com:7050
+[2019-01-17T11:44:42.896] [INFO] default - === Round: 81 ===
+[2019-01-17T11:44:42.904] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:44:42.904] [INFO] default - Transaction id = d2eb7cfc8c61e0c82e8f6d9ac3baff6fd51eca9abf483e164704616bce84995e
+[2019-01-17T11:44:45.909] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to connect before the deadline URL:grpc://rsu2_orderer.example.com:7050
+[2019-01-17T11:44:45.909] [INFO] default - === Round: 82 ===
+[2019-01-17T11:44:45.918] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:44:45.918] [INFO] default - Transaction id = 5ec7cf790a9d91c0cea07b4b488b48290856c5b4a8d5a0af6748d2110f4e194d
+[2019-01-17T11:44:48.924] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to connect before the deadline URL:grpc://rsu2_orderer.example.com:7050
+[2019-01-17T11:44:48.924] [INFO] default - === Round: 83 ===
+[2019-01-17T11:44:48.939] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:44:48.939] [INFO] default - Transaction id = ac79ffa7c84794f6582a349c7160d5643d95d233893c1a85387675ef9788878f
+[2019-01-17T11:44:51.946] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to connect before the deadline URL:grpc://rsu2_orderer.example.com:7050
+[2019-01-17T11:44:51.946] [INFO] default - === Round: 84 ===
+[2019-01-17T11:44:51.954] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:44:51.955] [INFO] default - Transaction id = ef23b5f670cb29aa9b32f2c87f04abafe54dee0af60247f64e269c39b83bd073
+[2019-01-17T11:44:54.961] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to connect before the deadline URL:grpc://rsu2_orderer.example.com:7050
+[2019-01-17T11:44:54.961] [INFO] default - === Round: 85 ===
+[2019-01-17T11:44:54.970] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:44:54.971] [INFO] default - Transaction id = 6a56132c3d31991c086ee1101c0cb5073b084abf089a2b5e2ea91f7df05933c0
+[2019-01-17T11:44:57.977] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to connect before the deadline URL:grpc://rsu2_orderer.example.com:7050
+[2019-01-17T11:44:57.977] [INFO] default - === Round: 86 ===
+[2019-01-17T11:44:57.986] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:44:57.986] [INFO] default - Transaction id = f8de26e96e6234611384fc9548a35908ef30912872b9dbf0cc9a4d7cf03e276e
+[2019-01-17T11:45:00.992] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to connect before the deadline URL:grpc://rsu2_orderer.example.com:7050
+[2019-01-17T11:45:00.992] [INFO] default - === Round: 87 ===
+[2019-01-17T11:45:01.003] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:45:01.003] [INFO] default - Transaction id = 2139e01221e713c9340b410430e3cbe81211fe802d257d985d50551178a39002
+[2019-01-17T11:45:04.011] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to connect before the deadline URL:grpc://rsu2_orderer.example.com:7050
+[2019-01-17T11:45:04.011] [INFO] default - === Round: 88 ===
+[2019-01-17T11:45:04.020] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:45:04.020] [INFO] default - Transaction id = 8f9cc248f4edf8bb9bc6abe57f1c6a3f05a03ca1a165aa747e526bb1d76fbf48
+[2019-01-17T11:45:07.026] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to connect before the deadline URL:grpc://rsu2_orderer.example.com:7050
+[2019-01-17T11:45:07.026] [INFO] default - === Round: 89 ===
+[2019-01-17T11:45:07.034] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:45:07.034] [INFO] default - Transaction id = 2c29b66d38ffed1363181bd0dd3f32626b4710ec89c78397faed0f4ca06acbc8
+[2019-01-17T11:45:10.038] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to connect before the deadline URL:grpc://rsu2_orderer.example.com:7050
+[2019-01-17T11:45:10.040] [INFO] default - === Round: 90 ===
+[2019-01-17T11:45:10.048] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:45:10.049] [INFO] default - Transaction id = 8da5a06a7f863ae96dcf752fe672fe6bd0518d95f842c7250dd36ef84565ba59
+[2019-01-17T11:45:13.055] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to connect before the deadline URL:grpc://rsu2_orderer.example.com:7050
+[2019-01-17T11:45:13.055] [INFO] default - === Round: 91 ===
+[2019-01-17T11:45:13.062] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:45:13.063] [INFO] default - Transaction id = 92d483c2c07adad98bda71dde4b08cab76e73db14727e711493cbd63efb561bc
+[2019-01-17T11:45:16.068] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to connect before the deadline URL:grpc://rsu2_orderer.example.com:7050
+[2019-01-17T11:45:16.068] [INFO] default - === Round: 92 ===
+[2019-01-17T11:45:16.076] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:45:16.076] [INFO] default - Transaction id = 643684f87a97ef0bd9be2605ea6a54eec9c76c164f6428f8c1a7da14792ce02e
+[2019-01-17T11:45:19.083] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to connect before the deadline URL:grpc://rsu2_orderer.example.com:7050
+[2019-01-17T11:45:19.083] [INFO] default - === Round: 93 ===
+[2019-01-17T11:45:19.092] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:45:19.093] [INFO] default - Transaction id = 9fe758b22a52da64d30f3668d7270a298d0dcf09c33e8a1e4a23fd775bde87b2
+[2019-01-17T11:45:22.097] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to connect before the deadline URL:grpc://rsu2_orderer.example.com:7050
+[2019-01-17T11:45:22.097] [INFO] default - === Round: 94 ===
+[2019-01-17T11:45:22.106] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:45:22.107] [INFO] default - Transaction id = 261cf7f27ed8a978a7f928ee4f929bd754f630f1eb171163e7100d52d5ad0674
+[2019-01-17T11:45:25.112] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to connect before the deadline URL:grpc://rsu2_orderer.example.com:7050
+[2019-01-17T11:45:25.113] [INFO] default - === Round: 95 ===
+[2019-01-17T11:45:25.121] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:45:25.121] [INFO] default - Transaction id = cc6bec9e689bf203020e3c1bccbd14c9e588f127f9a0d050d25b147fafb08121
+[2019-01-17T11:45:28.127] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to connect before the deadline URL:grpc://rsu2_orderer.example.com:7050
+[2019-01-17T11:45:28.127] [INFO] default - === Round: 96 ===
+[2019-01-17T11:45:28.136] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:45:28.136] [INFO] default - Transaction id = 1a053b2022056811c47273891439f36f24d83bc9ba3b4d3b6284c1384b9555de
+[2019-01-17T11:45:31.141] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to connect before the deadline URL:grpc://rsu2_orderer.example.com:7050
+[2019-01-17T11:45:31.141] [INFO] default - === Round: 97 ===
+[2019-01-17T11:45:31.148] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:45:31.148] [INFO] default - Transaction id = e8dc296d5404cde339fc2cb0c861a8bb31faeaa81fd4736300b86ae80e414c52
+[2019-01-17T11:45:34.153] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to connect before the deadline URL:grpc://rsu2_orderer.example.com:7050
+[2019-01-17T11:45:34.154] [INFO] default - === Round: 98 ===
+[2019-01-17T11:45:34.161] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:45:34.162] [INFO] default - Transaction id = 66440d8b1f7154b15850133e4bc427fe044332bd6bb559e52822f04faba46589
+[2019-01-17T11:45:37.166] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to connect before the deadline URL:grpc://rsu2_orderer.example.com:7050
+[2019-01-17T11:45:37.166] [INFO] default - === Round: 99 ===
+[2019-01-17T11:45:37.174] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-17T11:45:37.175] [INFO] default - Transaction id = 649a09607fc6b5c0a6943778b39048e0b3f4e790ac44b8b39aa77dcad08558ae
+[2019-01-17T11:45:40.179] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to connect before the deadline URL:grpc://rsu2_orderer.example.com:7050
+[2019-01-17T11:45:40.181] [INFO] default - =============== RESULTS ===============
+[2019-01-17T11:45:40.181] [INFO] default - There were 100 transaction to be committed to the ledger...
+[2019-01-17T11:45:40.181] [INFO] default - === Committed transactions count = 15
+[2019-01-17T11:45:40.181] [INFO] default - === Failed transactions count = 85
+[2019-01-17T11:45:40.181] [INFO] default - === Total transactions count = 100
+[2019-01-17T11:45:40.182] [INFO] default - Average time taken to create and sign a transaction [ms] = 16.733333333333334
+[2019-01-17T11:45:40.182] [INFO] default - Analysis of accept and mine transaction [ms]: 
+[2019-01-17T11:45:40.182] [INFO] default - === Average = 7595.8
+[2019-01-17T11:45:40.182] [INFO] default - === Minimum = 3914
+[2019-01-17T11:45:40.182] [INFO] default - === Maximum = 19516
+[2019-01-17T11:45:40.182] [INFO] default - === Median = 7178

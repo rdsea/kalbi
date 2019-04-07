@@ -1,0 +1,30 @@
+  ORDERER_ID:
+    image: hyperledger/fabric-orderer:latest
+    container_name: ORDERER_ID
+    ports:
+    - PORT:7050
+    environment:
+    - ORDERER_GENERAL_LOGLEVEL=INFO
+    - ORDERER_GENERAL_LISTENADDRESS=0.0.0.0
+    - ORDERER_GENERAL_GENESISMETHOD=file
+    - ORDERER_GENERAL_GENESISFILE=/var/hyperledger/orderer/genesis.block
+    - ORDERER_GENERAL_LOCALMSPID=OrdererMSP
+    - ORDERER_GENERAL_LOCALMSPDIR=/var/hyperledger/orderer/msp
+    - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=byfn
+    - ORDERER_GENERAL_TLS_ENABLED=false
+    - ORDERER_GENERAL_TLS_PRIVATEKEY=/var/hyperledger/orderer/tls/server.key
+    - ORDERER_GENERAL_TLS_CERTIFICATE=/var/hyperledger/orderer/tls/server.crt
+    - ORDERER_GENERAL_TLS_ROOTCAS=[/var/hyperledger/orderer/tls/ca.crt]
+    - ORDERER_KAFKA_RETRY_SHORTINTERVAL=1s
+    - ORDERER_KAFKA_RETRY_SHORTTOTAL=30s
+    - ORDERER_KAFKA_VERBOSE=true
+    volumes:
+    - ./channel-artifacts:/var/hyperledger/orderer
+    - ./crypto-config/ordererOrganizations/example.com/orderers/ORDERER_ID/msp:/var/hyperledger/orderer/msp
+    - ./crypto-config/ordererOrganizations/example.com/orderers/ORDERER_ID/tls/:/var/hyperledger/orderer/tls
+    working_dir: /opt/gopath/src/github.com/hyperledger/fabric
+    command: orderer
+    networks:
+      byfn:
+        aliases:
+        - ORDERER_ID

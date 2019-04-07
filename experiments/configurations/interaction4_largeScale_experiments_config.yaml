@@ -1,0 +1,70 @@
+name: interaction4
+description: Experiments for Interaction4
+workloadEmulator:
+  type: docker
+  imageTag: filiprydzi/v2x_communication
+roundsNr: 100
+bcImplementations:
+- eth
+bcDeployments:
+- id: 6
+  featuresMapping:
+  - nodeType: rsu
+    feature: miner
+  - nodeType: vehicle
+    feature: creator
+  - nodeType: edge
+    feature: all
+- id: 7
+  featuresMapping:
+  - nodeType: rsu
+    feature: all
+  - nodeType: vehicle
+    feature: creator
+  - nodeType: edge
+    feature: all
+- id: 8
+  featuresMapping:
+  - nodeType: rsu
+    feature: all
+  - nodeType: vehicle
+    feature: all
+  - nodeType: edge
+    feature: all
+- id: 11
+  featuresMapping:
+  - nodeType: rsu
+    feature: creator
+  - nodeType: vehicle
+    feature: all
+  - nodeType: edge
+    feature: creator
+vehicleContainerConfigurations:
+- name: small
+  vCPUcount: 1
+  memory: 2
+  storageSSD: 10
+  storageHDD: 0
+  os: ubuntu18.04
+- name: medium
+  vCPUcount: 2
+  memory: 4
+  storageSSD: 10
+  storageHDD: 0
+  os: ubuntu18.04
+- name: large
+  vCPUcount: 4
+  memory: 8
+  storageSSD: 10
+  storageHDD: 0
+  os: ubuntu18.04
+networkQualities:
+- name: 3G
+  latency: 200ms
+  bandwidth: 1000kbps
+- name: 4G
+  latency: 100ms
+  bandwidth: 10000kbps
+- name: 5G
+  latency: 5ms
+  bandwidth: 54mbps

@@ -1,0 +1,84 @@
+{
+  "name": "rsu2",
+  "blockchainArtefact": {
+    "bcImplementation": 1,
+    "bcOperation": 2
+  },
+  "nodeType": 2,
+  "connections": [
+    {
+      "connectionEndpoint": {
+        "name": "vehicle1",
+        "blockchainArtefact": {
+          "bcImplementation": 1,
+          "bcOperation": 1
+        },
+        "nodeType": 3,
+        "connections": [],
+        "hostMachine": {
+          "configuration": {
+            "memory": 2,
+            "name": "small-machine",
+            "os": "ubuntu18.04",
+            "storageHDD": 0,
+            "storageSSD": 20,
+            "vCPUcount": 1,
+            "provider": "Google Cloud Platform"
+          },
+          "ipAddress": null,
+          "name": "small-machine"
+        },
+        "enodeId": null
+      },
+      "netQuality": {
+        "name": "5G",
+        "latency": "5ms",
+        "bandwidth": "50Mbps"
+      }
+    },
+    {
+      "connectionEndpoint": {
+        "name": "vehicle2",
+        "blockchainArtefact": {
+          "bcImplementation": 1,
+          "bcOperation": 1
+        },
+        "nodeType": 3,
+        "connections": [],
+        "hostMachine": {
+          "configuration": {
+            "memory": 2,
+            "name": "small-machine",
+            "os": "ubuntu18.04",
+            "storageHDD": 0,
+            "storageSSD": 20,
+            "vCPUcount": 1,
+            "provider": "Google Cloud Platform"
+          },
+          "ipAddress": null,
+          "name": "small-machine"
+        },
+        "enodeId": null
+      },
+      "netQuality": {
+        "name": "5G",
+        "latency": "5ms",
+        "bandwidth": "50Mbps"
+      }
+    }
+  ],
+  "hostMachine": {
+    "configuration": {
+      "memory": 2,
+      "name": "tiny-machine",
+      "os": "ubuntu18.04",
+      "storageHDD": 0,
+      "storageSSD": 16,
+      "vCPUcount": 1,
+      "provider": "Google Cloud Platform"
+    },
+    "ipAddress": null,
+    "name": "tiny-machine"
+  },
+  "enodeId": null
+}

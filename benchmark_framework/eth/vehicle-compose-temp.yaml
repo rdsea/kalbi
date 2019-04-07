@@ -1,0 +1,12 @@
+  VEHICLE_NAME:
+    image: IMAGE_NAME
+    container_name: VEHICLE_NAME
+    volumes:
+    - ~/logs:/v2x_communication/log
+    - ~/ethereum/tmp-keystore/keystore:/data/keystore
+    - ~/sim-results:/v2x_communication/results
+    command: start ethereum BC_IP_ADDRESS run-producer VEHICLE_ID ROUNDS_NR CONTRACT_ADDRESS
+    networks:
+      eth:
+        aliases:
+        - VEHICLE_NAME

@@ -1,0 +1,22 @@
+docker run -d -it --network="byfn" \
+--name cli \
+--net-alias=cli \
+-e GOPATH=/opt/gopath \
+-e CORE_VM_ENDPOINT=unix:///host/var/run/docker.sock \
+-e CORE_LOGGING_LEVEL=INFO \
+-e CORE_PEER_ID=cli \
+-e CORE_PEER_ADDRESS=MAIN_PEER.org1.example.com:7051 \
+-e CORE_PEER_LOCALMSPID=Org1MSP \
+-e CORE_PEER_TLS_ENABLED=false \
+-e CORE_PEER_TLS_CERT_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org1.example.com/peers/MAIN_PEER.org1.example.com/tls/server.crt \
+-e CORE_PEER_TLS_KEY_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org1.example.com/peers/MAIN_PEER.org1.example.com/tls/server.key \
+-e CORE_PEER_TLS_ROOTCERT_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org1.example.com/peers/MAIN_PEER.org1.example.com/tls/ca.crt \
+-e CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp \
+-e CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=byfn \
+-w /opt/gopath/src/github.com/hyperledger/fabric/peer \
+-v /var/run/:/host/var/run/ \
+-v $(pwd)/chaincode/:/opt/gopath/src/github.com/chaincode \
+-v $(pwd)/crypto-config:/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ \
+-v $(pwd)/scripts:/opt/gopath/src/github.com/hyperledger/fabric/peer/scripts/ \
+-v $(pwd)/channel-artifacts:/opt/gopath/src/github.com/hyperledger/fabric/peer/channel-artifacts \
+hyperledger/fabric-tools:latest /bin/bash -c 'scripts/script.sh'

@@ -1,0 +1,899 @@
+[2019-01-21T04:39:30.194] [INFO] default - ======================================================
+[2019-01-21T04:39:30.213] [INFO] default - ======================== ETHEREUM ====================
+[2019-01-21T04:39:30.221] [INFO] default - ======================================================
+[2019-01-21T04:39:30.250] [INFO] default - Connected to Ethereum Blockchain at address: http://172.21.0.28:8545
+[2019-01-21T04:41:18.459] [ERROR] default - Error at unlocking account Error: Invalid JSON RPC response: undefined
+[2019-01-21T04:41:19.508] [INFO] default - >>> Retrieving private key from file of account address: 0x10b0e7a53a6347b307c25dd70a2e1fd5e18ee0c5
+[2019-01-21T04:41:19.565] [INFO] default - >>> Key object imported from file...
+[2019-01-21T04:41:41.727] [INFO] default - Initializing data producer of Vehicle27
+[2019-01-21T04:41:51.738] [INFO] default - Inserting new vehicle...
+[2019-01-21T04:41:53.913] [INFO] default - >>> Transaction has been sent, id = 0x209080b5a5c24e41eba44b36efb93bcb7a225e8ac5c2e3eb45f41d10435c7e57
+[2019-01-21T04:44:23.669] [INFO] default - >>> Failed to insert vehicle, retrying.... Error = Transaction wasn't included into the block after 120000 ms
+[2019-01-21T04:44:30.883] [INFO] default - >>> Error when sending transactions Error: known transaction: 209080b5a5c24e41eba44b36efb93bcb7a225e8ac5c2e3eb45f41d10435c7e57
+[2019-01-21T04:44:30.883] [INFO] default - >>> Failed to insert vehicle, retrying.... Error = Error: known transaction: 209080b5a5c24e41eba44b36efb93bcb7a225e8ac5c2e3eb45f41d10435c7e57
+[2019-01-21T04:44:33.756] [INFO] default - >>> Error when sending transactions Error: known transaction: 209080b5a5c24e41eba44b36efb93bcb7a225e8ac5c2e3eb45f41d10435c7e57
+[2019-01-21T04:44:33.757] [INFO] default - >>> Failed to insert vehicle, retrying.... Error = Error: known transaction: 209080b5a5c24e41eba44b36efb93bcb7a225e8ac5c2e3eb45f41d10435c7e57
+[2019-01-21T04:44:35.362] [INFO] default - >>> Error when sending transactions Error: known transaction: 209080b5a5c24e41eba44b36efb93bcb7a225e8ac5c2e3eb45f41d10435c7e57
+[2019-01-21T04:44:35.363] [INFO] default - >>> Failed to insert vehicle, retrying.... Error = Error: known transaction: 209080b5a5c24e41eba44b36efb93bcb7a225e8ac5c2e3eb45f41d10435c7e57
+[2019-01-21T04:44:36.676] [INFO] default - >>> Error when sending transactions Error: known transaction: 209080b5a5c24e41eba44b36efb93bcb7a225e8ac5c2e3eb45f41d10435c7e57
+[2019-01-21T04:44:36.676] [INFO] default - >>> Failed to insert vehicle, retrying.... Error = Error: known transaction: 209080b5a5c24e41eba44b36efb93bcb7a225e8ac5c2e3eb45f41d10435c7e57
+[2019-01-21T04:44:38.346] [INFO] default - >>> Error when sending transactions Error: known transaction: 209080b5a5c24e41eba44b36efb93bcb7a225e8ac5c2e3eb45f41d10435c7e57
+[2019-01-21T04:44:38.347] [INFO] default - Error when inserting vehicles Vehicle wasn't inserted after 0 retries ... Error: known transaction: 209080b5a5c24e41eba44b36efb93bcb7a225e8ac5c2e3eb45f41d10435c7e57
+[2019-01-21T04:44:39.151] [INFO] default - >>> vehicle27 = {
+    "id": 27,
+    "velocity": "0",
+    "acceleration": "0"
+}
+[2019-01-21T04:44:39.151] [INFO] default - ====== Blocks filled with data ======
+[2019-01-21T04:44:39.151] [INFO] default - === Vehicle27 started producing data ===
+[2019-01-21T04:44:39.153] [INFO] default - Starting update velocity operation analysis...
+[2019-01-21T04:44:39.153] [INFO] default - Rounds number = 100
+[2019-01-21T04:44:39.153] [INFO] default - === Round: 0 ===
+[2019-01-21T04:44:42.194] [INFO] default - >>> Transaction has been sent, id = 0x2d8f176aea1145ee2d8d01b1f8a36e5ffa5a4b415bec260ee0d3bbd03a0ab653
+[2019-01-21T04:44:59.471] [INFO] default - >>> Time taken to create and sign transaction [ms] 2958
+[2019-01-21T04:44:59.472] [INFO] default - >>> Time taken to accept and mine transaction [ms] 17360
+[2019-01-21T04:44:59.472] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 1,
+    "acceleration": null
+} at time: 1548045899472
+[2019-01-21T04:44:59.472] [INFO] default - === Round: 1 ===
+[2019-01-21T04:45:00.836] [INFO] default - >>> Transaction has been sent, id = 0x2b1e525b2c75cc53814a36cc38cd4483d5bf15832b289ecff5152a5cf731fc2b
+[2019-01-21T04:45:06.986] [INFO] default - >>> Time taken to create and sign transaction [ms] 1273
+[2019-01-21T04:45:06.986] [INFO] default - >>> Time taken to accept and mine transaction [ms] 6240
+[2019-01-21T04:45:06.986] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 2,
+    "acceleration": null
+} at time: 1548045906986
+[2019-01-21T04:45:06.986] [INFO] default - === Round: 2 ===
+[2019-01-21T04:45:09.375] [INFO] default - >>> Transaction has been sent, id = 0xfb6eb4ce2cdb48867fcd8922377bb6e9508b4a6fbd5d1ffe6d01b1fde7d7ef4d
+[2019-01-21T04:45:10.214] [INFO] default - >>> Time taken to create and sign transaction [ms] 1958
+[2019-01-21T04:45:10.214] [INFO] default - >>> Time taken to accept and mine transaction [ms] 1270
+[2019-01-21T04:45:10.214] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 3,
+    "acceleration": null
+} at time: 1548045910214
+[2019-01-21T04:45:10.214] [INFO] default - === Round: 3 ===
+[2019-01-21T04:45:13.536] [INFO] default - >>> Transaction has been sent, id = 0x5a8f8dd4b79ee5507f4d5877469c4ff2e10de9e9e4c1d111ad16f1dd08069a0c
+[2019-01-21T04:45:16.654] [INFO] default - >>> Time taken to create and sign transaction [ms] 2240
+[2019-01-21T04:45:16.654] [INFO] default - >>> Time taken to accept and mine transaction [ms] 4199
+[2019-01-21T04:45:16.654] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 4,
+    "acceleration": null
+} at time: 1548045916654
+[2019-01-21T04:45:16.654] [INFO] default - === Round: 4 ===
+[2019-01-21T04:45:18.791] [INFO] default - >>> Transaction has been sent, id = 0xe423e51fbe5495e72992bdaba91440c3f017388998fdbfe0574729d108e20ff0
+[2019-01-21T04:45:22.586] [INFO] default - >>> Time taken to create and sign transaction [ms] 1730
+[2019-01-21T04:45:22.586] [INFO] default - >>> Time taken to accept and mine transaction [ms] 4201
+[2019-01-21T04:45:22.586] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 5,
+    "acceleration": null
+} at time: 1548045922586
+[2019-01-21T04:45:22.587] [INFO] default - === Round: 5 ===
+[2019-01-21T04:45:24.659] [INFO] default - >>> Transaction has been sent, id = 0xf6f29edbcaeaa4c0c7af0eca62379113e160934855a76527df9172b10b2f6db6
+[2019-01-21T04:45:43.986] [INFO] default - >>> Time taken to create and sign transaction [ms] 1624
+[2019-01-21T04:45:43.986] [INFO] default - >>> Time taken to accept and mine transaction [ms] 19773
+[2019-01-21T04:45:43.986] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 6,
+    "acceleration": null
+} at time: 1548045943986
+[2019-01-21T04:45:43.986] [INFO] default - === Round: 6 ===
+[2019-01-21T04:45:49.877] [INFO] default - >>> Transaction has been sent, id = 0xdf5adf74dc2b96fe3e7448dfe09fbc09e8fcef51a1777f412a5a6b8d98411ef9
+[2019-01-21T04:46:04.903] [INFO] default - >>> Time taken to create and sign transaction [ms] 4636
+[2019-01-21T04:46:04.904] [INFO] default - >>> Time taken to accept and mine transaction [ms] 16281
+[2019-01-21T04:46:04.904] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 7,
+    "acceleration": null
+} at time: 1548045964904
+[2019-01-21T04:46:04.904] [INFO] default - === Round: 7 ===
+[2019-01-21T04:46:07.065] [INFO] default - >>> Transaction has been sent, id = 0x049ddb6e24dd505122e7c588c09d2f4fe9676a9f9ecb66c8a8ee087f7ef98db9
+[2019-01-21T04:46:55.234] [INFO] default - >>> Time taken to create and sign transaction [ms] 1726
+[2019-01-21T04:46:55.234] [INFO] default - >>> Time taken to accept and mine transaction [ms] 48603
+[2019-01-21T04:46:55.234] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 8,
+    "acceleration": null
+} at time: 1548046015234
+[2019-01-21T04:46:55.235] [INFO] default - === Round: 8 ===
+[2019-01-21T04:46:59.465] [INFO] default - >>> Transaction has been sent, id = 0x9dccbacddd1ca42ad474c3a2ccfc0467f950ca3ee4a55fbf9f47f7c2dc718f80
+[2019-01-21T04:47:30.242] [INFO] default - >>> Time taken to create and sign transaction [ms] 2383
+[2019-01-21T04:47:30.242] [INFO] default - >>> Time taken to accept and mine transaction [ms] 32623
+[2019-01-21T04:47:30.242] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 9,
+    "acceleration": null
+} at time: 1548046050242
+[2019-01-21T04:47:30.243] [INFO] default - === Round: 9 ===
+[2019-01-21T04:47:31.727] [INFO] default - >>> Transaction has been sent, id = 0x1b2abcdd4415873b24268f13e60190363bf53aa76bf3e764895f340539f59a8e
+[2019-01-21T04:47:35.282] [INFO] default - >>> Time taken to create and sign transaction [ms] 1475
+[2019-01-21T04:47:35.282] [INFO] default - >>> Time taken to accept and mine transaction [ms] 3564
+[2019-01-21T04:47:35.282] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 10,
+    "acceleration": null
+} at time: 1548046055282
+[2019-01-21T04:47:35.283] [INFO] default - === Round: 10 ===
+[2019-01-21T04:47:37.048] [INFO] default - >>> Transaction has been sent, id = 0x9d7aa4e1c0651e3bee15e04051824a329b460f8e9cd9a66e16f30d7ad92988e2
+[2019-01-21T04:48:00.762] [INFO] default - >>> Time taken to create and sign transaction [ms] 1650
+[2019-01-21T04:48:00.763] [INFO] default - >>> Time taken to accept and mine transaction [ms] 23829
+[2019-01-21T04:48:00.763] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 11,
+    "acceleration": null
+} at time: 1548046080763
+[2019-01-21T04:48:00.763] [INFO] default - === Round: 11 ===
+[2019-01-21T04:48:02.604] [INFO] default - >>> Transaction has been sent, id = 0xffcff9c2bdb79e7b12fd11545ec4500cda9672241929839e988f6b04020541ff
+[2019-01-21T04:48:16.343] [INFO] default - >>> Time taken to create and sign transaction [ms] 1191
+[2019-01-21T04:48:16.344] [INFO] default - >>> Time taken to accept and mine transaction [ms] 14389
+[2019-01-21T04:48:16.344] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 12,
+    "acceleration": null
+} at time: 1548046096344
+[2019-01-21T04:48:16.344] [INFO] default - === Round: 12 ===
+[2019-01-21T04:48:17.606] [INFO] default - >>> Transaction has been sent, id = 0x28b41e52cb88e61bd83a7c84f7b32305d95a2cf750ac72c143a87441c1205b8a
+[2019-01-21T04:48:20.899] [INFO] default - >>> Time taken to create and sign transaction [ms] 1209
+[2019-01-21T04:48:20.899] [INFO] default - >>> Time taken to accept and mine transaction [ms] 3341
+[2019-01-21T04:48:20.899] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 13,
+    "acceleration": null
+} at time: 1548046100899
+[2019-01-21T04:48:20.899] [INFO] default - === Round: 13 ===
+[2019-01-21T04:48:21.940] [INFO] default - >>> Transaction has been sent, id = 0x96c3555d0d9c433c926cde86c833893c89091d167a14c27cb54bbe6361dfb2b2
+[2019-01-21T04:48:28.446] [INFO] default - >>> Time taken to create and sign transaction [ms] 963
+[2019-01-21T04:48:28.446] [INFO] default - >>> Time taken to accept and mine transaction [ms] 6583
+[2019-01-21T04:48:28.446] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 14,
+    "acceleration": null
+} at time: 1548046108446
+[2019-01-21T04:48:28.446] [INFO] default - === Round: 14 ===
+[2019-01-21T04:48:29.625] [INFO] default - >>> Transaction has been sent, id = 0xe8f689eff5e5a96a2f3b2ab5c19b6ba70dca4a984885ce32258c4b9831aa6b57
+[2019-01-21T04:48:37.371] [INFO] default - >>> Time taken to create and sign transaction [ms] 1036
+[2019-01-21T04:48:37.381] [INFO] default - >>> Time taken to accept and mine transaction [ms] 7889
+[2019-01-21T04:48:37.381] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 15,
+    "acceleration": null
+} at time: 1548046117381
+[2019-01-21T04:48:37.381] [INFO] default - === Round: 15 ===
+[2019-01-21T04:48:38.433] [INFO] default - >>> Transaction has been sent, id = 0xa5ceb3a81e0d69b7ebc734d84dff48f12dfceb10c0e906aed14473367afea4bb
+[2019-01-21T04:48:43.215] [INFO] default - >>> Time taken to create and sign transaction [ms] 1033
+[2019-01-21T04:48:43.216] [INFO] default - >>> Time taken to accept and mine transaction [ms] 4801
+[2019-01-21T04:48:43.216] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 16,
+    "acceleration": null
+} at time: 1548046123216
+[2019-01-21T04:48:43.216] [INFO] default - === Round: 16 ===
+[2019-01-21T04:48:44.044] [INFO] default - >>> Transaction has been sent, id = 0x78899c71ce5aee3620a21ac2c255bfccda391104895e0cbf3367769ada6bc8e5
+[2019-01-21T04:48:45.315] [INFO] default - >>> Time taken to create and sign transaction [ms] 798
+[2019-01-21T04:48:45.315] [INFO] default - >>> Time taken to accept and mine transaction [ms] 1301
+[2019-01-21T04:48:45.315] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 17,
+    "acceleration": null
+} at time: 1548046125315
+[2019-01-21T04:48:45.315] [INFO] default - === Round: 17 ===
+[2019-01-21T04:48:46.641] [INFO] default - >>> Transaction has been sent, id = 0x445ec620ece0ecc5974400101e465923ba09b7ae3dc8d98aaf91c21fe21babfe
+[2019-01-21T04:48:50.175] [INFO] default - >>> Time taken to create and sign transaction [ms] 1189
+[2019-01-21T04:48:50.176] [INFO] default - >>> Time taken to accept and mine transaction [ms] 3670
+[2019-01-21T04:48:50.176] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 18,
+    "acceleration": null
+} at time: 1548046130176
+[2019-01-21T04:48:50.176] [INFO] default - === Round: 18 ===
+[2019-01-21T04:48:50.866] [INFO] default - >>> Transaction has been sent, id = 0x090fc5e50233337db153d6b36fcde6200753838df26c0013b68e0efb8b983a89
+[2019-01-21T04:48:56.678] [INFO] default - >>> Time taken to create and sign transaction [ms] 678
+[2019-01-21T04:48:56.678] [INFO] default - >>> Time taken to accept and mine transaction [ms] 5823
+[2019-01-21T04:48:56.678] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 19,
+    "acceleration": null
+} at time: 1548046136678
+[2019-01-21T04:48:56.678] [INFO] default - === Round: 19 ===
+[2019-01-21T04:48:57.819] [INFO] default - >>> Transaction has been sent, id = 0x5cc5bbab6087260c91258460299524293cabd88ee160c5011f4c91ff116ccdd3
+[2019-01-21T04:49:00.262] [INFO] default - >>> Time taken to create and sign transaction [ms] 1094
+[2019-01-21T04:49:00.262] [INFO] default - >>> Time taken to accept and mine transaction [ms] 2489
+[2019-01-21T04:49:00.262] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 20,
+    "acceleration": null
+} at time: 1548046140262
+[2019-01-21T04:49:00.263] [INFO] default - === Round: 20 ===
+[2019-01-21T04:49:01.630] [INFO] default - >>> Transaction has been sent, id = 0xd9ea83082cad8d6e860d5bae854010d9ad23e576a6c1865ad276c09b97f974f1
+[2019-01-21T04:49:08.853] [INFO] default - >>> Time taken to create and sign transaction [ms] 1268
+[2019-01-21T04:49:08.854] [INFO] default - >>> Time taken to accept and mine transaction [ms] 7322
+[2019-01-21T04:49:08.854] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 21,
+    "acceleration": null
+} at time: 1548046148854
+[2019-01-21T04:49:08.854] [INFO] default - === Round: 21 ===
+[2019-01-21T04:49:10.407] [INFO] default - >>> Transaction has been sent, id = 0x28e9eec161cad98368d082b3b52032d5f656faf583add5788091a0e561fe7042
+[2019-01-21T04:49:18.403] [INFO] default - >>> Time taken to create and sign transaction [ms] 1518
+[2019-01-21T04:49:18.404] [INFO] default - >>> Time taken to accept and mine transaction [ms] 8031
+[2019-01-21T04:49:18.404] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 22,
+    "acceleration": null
+} at time: 1548046158404
+[2019-01-21T04:49:18.405] [INFO] default - === Round: 22 ===
+[2019-01-21T04:49:20.294] [INFO] default - >>> Transaction has been sent, id = 0xb4212638f3b71a48dcf7420c2e4fdbc4fd1d5111723388cf706934cdf104fd41
+[2019-01-21T04:49:24.786] [INFO] default - >>> Time taken to create and sign transaction [ms] 976
+[2019-01-21T04:49:24.786] [INFO] default - >>> Time taken to accept and mine transaction [ms] 5405
+[2019-01-21T04:49:24.787] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 23,
+    "acceleration": null
+} at time: 1548046164787
+[2019-01-21T04:49:24.787] [INFO] default - === Round: 23 ===
+[2019-01-21T04:49:26.469] [INFO] default - >>> Transaction has been sent, id = 0xb71dcc8525ee8aeea9f82573f8343a884c0cf62f310edf1d231d1472b1d2a41d
+[2019-01-21T04:49:39.350] [INFO] default - >>> Time taken to create and sign transaction [ms] 1673
+[2019-01-21T04:49:39.351] [INFO] default - >>> Time taken to accept and mine transaction [ms] 12890
+[2019-01-21T04:49:39.351] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 24,
+    "acceleration": null
+} at time: 1548046179351
+[2019-01-21T04:49:39.351] [INFO] default - === Round: 24 ===
+[2019-01-21T04:49:40.666] [INFO] default - >>> Transaction has been sent, id = 0x5eb2aef2ae3282912a395858b833ec8a03964edc8d5784005663c19bb52613a9
+[2019-01-21T04:49:49.857] [INFO] default - >>> Time taken to create and sign transaction [ms] 1249
+[2019-01-21T04:49:49.858] [INFO] default - >>> Time taken to accept and mine transaction [ms] 9257
+[2019-01-21T04:49:49.858] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 25,
+    "acceleration": null
+} at time: 1548046189858
+[2019-01-21T04:49:49.858] [INFO] default - === Round: 25 ===
+[2019-01-21T04:49:51.287] [INFO] default - >>> Transaction has been sent, id = 0xad3a5a1db3dcee4ba75cb75b5134278d1ab4bbf0a9e5df22a62c586e52cc42e5
+[2019-01-21T04:50:01.940] [INFO] default - >>> Time taken to create and sign transaction [ms] 1056
+[2019-01-21T04:50:01.941] [INFO] default - >>> Time taken to accept and mine transaction [ms] 11026
+[2019-01-21T04:50:01.949] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 26,
+    "acceleration": null
+} at time: 1548046201949
+[2019-01-21T04:50:01.949] [INFO] default - === Round: 26 ===
+[2019-01-21T04:50:03.234] [INFO] default - >>> Transaction has been sent, id = 0x84179569d0ac1d2e3c49a8a6e6d9667498bc65752bd8a33e470409d115046b44
+[2019-01-21T04:50:16.704] [INFO] default - >>> Time taken to create and sign transaction [ms] 1113
+[2019-01-21T04:50:16.705] [INFO] default - >>> Time taken to accept and mine transaction [ms] 13642
+[2019-01-21T04:50:16.714] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 27,
+    "acceleration": null
+} at time: 1548046216714
+[2019-01-21T04:50:16.714] [INFO] default - === Round: 27 ===
+[2019-01-21T04:50:18.195] [INFO] default - >>> Transaction has been sent, id = 0xf3104b1fd9e44392437a2e70e3ef16d44fd20b996bf821e1ba4ade9367688c3a
+[2019-01-21T04:50:27.938] [INFO] default - >>> Time taken to create and sign transaction [ms] 1454
+[2019-01-21T04:50:27.938] [INFO] default - >>> Time taken to accept and mine transaction [ms] 9769
+[2019-01-21T04:50:27.938] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 28,
+    "acceleration": null
+} at time: 1548046227938
+[2019-01-21T04:50:27.938] [INFO] default - === Round: 28 ===
+[2019-01-21T04:50:29.226] [INFO] default - >>> Transaction has been sent, id = 0x09ec6d051d9d921f3e3ea8f5c51963fd9da1fd0a7868a199bfa49b74ee9f9979
+[2019-01-21T04:50:36.205] [INFO] default - >>> Time taken to create and sign transaction [ms] 1220
+[2019-01-21T04:50:36.206] [INFO] default - >>> Time taken to accept and mine transaction [ms] 7047
+[2019-01-21T04:50:36.206] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 29,
+    "acceleration": null
+} at time: 1548046236206
+[2019-01-21T04:50:36.206] [INFO] default - === Round: 29 ===
+[2019-01-21T04:50:37.698] [INFO] default - >>> Transaction has been sent, id = 0x28ce70031676930fb963577cd83ea88dfbad457ae126f9dd53ff411b882b2848
+[2019-01-21T04:50:46.613] [INFO] default - >>> Time taken to create and sign transaction [ms] 1303
+[2019-01-21T04:50:46.614] [INFO] default - >>> Time taken to accept and mine transaction [ms] 9104
+[2019-01-21T04:50:46.614] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 30,
+    "acceleration": null
+} at time: 1548046246614
+[2019-01-21T04:50:46.614] [INFO] default - === Round: 30 ===
+[2019-01-21T04:50:47.790] [INFO] default - >>> Error when sending transactions Error: nonce too low
+[2019-01-21T04:50:47.791] [INFO] default - >>> Error Error: nonce too low
+[2019-01-21T04:50:47.791] [INFO] default - === Round: 31 ===
+[2019-01-21T04:50:49.142] [INFO] default - >>> Transaction has been sent, id = 0xa4070e542c2d6b74333b6ce033887c9470ea67a226630af1e7b156ea379e3426
+[2019-01-21T04:50:55.377] [INFO] default - >>> Time taken to create and sign transaction [ms] 1319
+[2019-01-21T04:50:55.377] [INFO] default - >>> Time taken to accept and mine transaction [ms] 6267
+[2019-01-21T04:50:55.378] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 32,
+    "acceleration": null
+} at time: 1548046255378
+[2019-01-21T04:50:55.378] [INFO] default - === Round: 32 ===
+[2019-01-21T04:50:57.071] [INFO] default - >>> Transaction has been sent, id = 0xaeb57e74d3eee08ff6dff18ecc0aca1e719b4583ae5c3cfaa3b14ac664fe1128
+[2019-01-21T04:51:01.645] [INFO] default - >>> Time taken to create and sign transaction [ms] 1646
+[2019-01-21T04:51:01.646] [INFO] default - >>> Time taken to accept and mine transaction [ms] 4621
+[2019-01-21T04:51:01.646] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 33,
+    "acceleration": null
+} at time: 1548046261646
+[2019-01-21T04:51:01.646] [INFO] default - === Round: 33 ===
+[2019-01-21T04:51:02.920] [INFO] default - >>> Transaction has been sent, id = 0xdcea61c3c3be684bc030b29ac55322fdca22416d85eeabb96fdfc3b5fd0c6c9c
+[2019-01-21T04:51:16.141] [INFO] default - >>> Time taken to create and sign transaction [ms] 1191
+[2019-01-21T04:51:16.142] [INFO] default - >>> Time taken to accept and mine transaction [ms] 13304
+[2019-01-21T04:51:16.142] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 34,
+    "acceleration": null
+} at time: 1548046276142
+[2019-01-21T04:51:16.142] [INFO] default - === Round: 34 ===
+[2019-01-21T04:51:17.449] [INFO] default - >>> Transaction has been sent, id = 0x23be1940b905cca935d3769a1bd2164fea7f1bf9dd81f4aa474a1f9888394414
+[2019-01-21T04:51:18.517] [INFO] default - >>> Time taken to create and sign transaction [ms] 1284
+[2019-01-21T04:51:18.518] [INFO] default - >>> Time taken to accept and mine transaction [ms] 1091
+[2019-01-21T04:51:18.518] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 35,
+    "acceleration": null
+} at time: 1548046278518
+[2019-01-21T04:51:18.518] [INFO] default - === Round: 35 ===
+[2019-01-21T04:51:19.875] [INFO] default - >>> Transaction has been sent, id = 0x18667e62d0a84b966a156e9fcef9d75c3c5036546788a0a38263952612e81080
+[2019-01-21T04:51:22.755] [INFO] default - >>> Time taken to create and sign transaction [ms] 1327
+[2019-01-21T04:51:22.755] [INFO] default - >>> Time taken to accept and mine transaction [ms] 2909
+[2019-01-21T04:51:22.755] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 36,
+    "acceleration": null
+} at time: 1548046282755
+[2019-01-21T04:51:22.755] [INFO] default - === Round: 36 ===
+[2019-01-21T04:51:24.113] [INFO] default - >>> Transaction has been sent, id = 0xc202b73b626dd7de9bb169d5acdea10c28d16ab009ec3d4b58d6fbbeb60c8a8d
+[2019-01-21T04:51:33.761] [INFO] default - >>> Time taken to create and sign transaction [ms] 1315
+[2019-01-21T04:51:33.762] [INFO] default - >>> Time taken to accept and mine transaction [ms] 9691
+[2019-01-21T04:51:33.762] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 37,
+    "acceleration": null
+} at time: 1548046293762
+[2019-01-21T04:51:33.762] [INFO] default - === Round: 37 ===
+[2019-01-21T04:51:34.945] [INFO] default - >>> Transaction has been sent, id = 0xd54f030f14bfdb2e001a10b0145cfba4f2fbb3b963b6fff9ace8bf9f11d784e9
+[2019-01-21T04:51:49.485] [INFO] default - >>> Time taken to create and sign transaction [ms] 1148
+[2019-01-21T04:51:49.486] [INFO] default - >>> Time taken to accept and mine transaction [ms] 14568
+[2019-01-21T04:51:49.486] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 38,
+    "acceleration": null
+} at time: 1548046309486
+[2019-01-21T04:51:49.487] [INFO] default - === Round: 38 ===
+[2019-01-21T04:51:50.827] [INFO] default - >>> Transaction has been sent, id = 0x6a0bead1d2b2fe0319d219336a6ecca0e32ae4a9199c0127479f68b5e642bf06
+[2019-01-21T04:52:03.881] [INFO] default - >>> Time taken to create and sign transaction [ms] 1191
+[2019-01-21T04:52:03.882] [INFO] default - >>> Time taken to accept and mine transaction [ms] 13203
+[2019-01-21T04:52:03.882] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 39,
+    "acceleration": null
+} at time: 1548046323882
+[2019-01-21T04:52:03.882] [INFO] default - === Round: 39 ===
+[2019-01-21T04:52:05.529] [INFO] default - >>> Transaction has been sent, id = 0xb0be1b23c6d973018f7d42922fecb39b5735c2eeb1b36682b6977a670851e44a
+[2019-01-21T04:52:12.825] [INFO] default - >>> Time taken to create and sign transaction [ms] 1609
+[2019-01-21T04:52:12.834] [INFO] default - >>> Time taken to accept and mine transaction [ms] 7334
+[2019-01-21T04:52:12.834] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 40,
+    "acceleration": null
+} at time: 1548046332834
+[2019-01-21T04:52:12.834] [INFO] default - === Round: 40 ===
+[2019-01-21T04:52:14.236] [INFO] default - >>> Transaction has been sent, id = 0xeb7ccaf87d451e544f29d872a4fd6e20e49cac93cbae4ca61c80413444c90b44
+[2019-01-21T04:52:19.587] [INFO] default - >>> Time taken to create and sign transaction [ms] 1188
+[2019-01-21T04:52:19.590] [INFO] default - >>> Time taken to accept and mine transaction [ms] 5565
+[2019-01-21T04:52:19.590] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 41,
+    "acceleration": null
+} at time: 1548046339590
+[2019-01-21T04:52:19.590] [INFO] default - === Round: 41 ===
+[2019-01-21T04:52:21.299] [INFO] default - >>> Transaction has been sent, id = 0x973461a7300e58053548d2fe2a60f4ce6f89dccfd3646c89cb3f82382f144465
+[2019-01-21T04:52:33.819] [INFO] default - >>> Time taken to create and sign transaction [ms] 1647
+[2019-01-21T04:52:33.825] [INFO] default - >>> Time taken to accept and mine transaction [ms] 12582
+[2019-01-21T04:52:33.825] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 42,
+    "acceleration": null
+} at time: 1548046353825
+[2019-01-21T04:52:33.825] [INFO] default - === Round: 42 ===
+[2019-01-21T04:52:35.063] [INFO] default - >>> Transaction has been sent, id = 0x21b61da9a2db85669ed283aded4d74591df79073a67ae52bdf8de69e19c154e7
+[2019-01-21T04:52:43.605] [INFO] default - >>> Time taken to create and sign transaction [ms] 1180
+[2019-01-21T04:52:43.606] [INFO] default - >>> Time taken to accept and mine transaction [ms] 8599
+[2019-01-21T04:52:43.606] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 43,
+    "acceleration": null
+} at time: 1548046363606
+[2019-01-21T04:52:43.606] [INFO] default - === Round: 43 ===
+[2019-01-21T04:52:44.674] [INFO] default - >>> Transaction has been sent, id = 0xe1fccbc390ba253bd1e3c26a0fe03c0b37dc3a5f3478f220f71e80a86253b8e1
+[2019-01-21T04:52:46.031] [INFO] default - >>> Time taken to create and sign transaction [ms] 1039
+[2019-01-21T04:52:46.041] [INFO] default - >>> Time taken to accept and mine transaction [ms] 1386
+[2019-01-21T04:52:46.041] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 44,
+    "acceleration": null
+} at time: 1548046366041
+[2019-01-21T04:52:46.041] [INFO] default - === Round: 44 ===
+[2019-01-21T04:52:47.815] [INFO] default - >>> Transaction has been sent, id = 0xb7dc0fb765e455757deb02d1a2156d4f2071f4321400196792e1e631faf3ecfe
+[2019-01-21T04:52:52.088] [INFO] default - >>> Time taken to create and sign transaction [ms] 1517
+[2019-01-21T04:52:52.089] [INFO] default - >>> Time taken to accept and mine transaction [ms] 4530
+[2019-01-21T04:52:52.089] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 45,
+    "acceleration": null
+} at time: 1548046372089
+[2019-01-21T04:52:52.089] [INFO] default - === Round: 45 ===
+[2019-01-21T04:52:53.210] [INFO] default - >>> Transaction has been sent, id = 0x01b9561b26170d3a5eaaa3c37d836686b93e499d9001a83795f3a45af9a0ac39
+[2019-01-21T04:52:58.809] [INFO] default - >>> Time taken to create and sign transaction [ms] 1072
+[2019-01-21T04:52:58.810] [INFO] default - >>> Time taken to accept and mine transaction [ms] 5647
+[2019-01-21T04:52:58.810] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 46,
+    "acceleration": null
+} at time: 1548046378810
+[2019-01-21T04:52:58.810] [INFO] default - === Round: 46 ===
+[2019-01-21T04:53:00.079] [INFO] default - >>> Transaction has been sent, id = 0x522f254e8ae102a4d531f6fdc9c3b8d33db346c0d848ccdcfc5138a607efd227
+[2019-01-21T04:53:04.378] [INFO] default - >>> Time taken to create and sign transaction [ms] 1242
+[2019-01-21T04:53:04.378] [INFO] default - >>> Time taken to accept and mine transaction [ms] 4325
+[2019-01-21T04:53:04.378] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 47,
+    "acceleration": null
+} at time: 1548046384378
+[2019-01-21T04:53:04.379] [INFO] default - === Round: 47 ===
+[2019-01-21T04:53:05.573] [INFO] default - >>> Transaction has been sent, id = 0x2b1e67cf1d32e1a4e237b0ed117a2411469c6a4d36c90fe4ba103dac063b4e3a
+[2019-01-21T04:53:09.533] [INFO] default - >>> Time taken to create and sign transaction [ms] 1167
+[2019-01-21T04:53:09.534] [INFO] default - >>> Time taken to accept and mine transaction [ms] 3987
+[2019-01-21T04:53:09.541] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 48,
+    "acceleration": null
+} at time: 1548046389541
+[2019-01-21T04:53:09.541] [INFO] default - === Round: 48 ===
+[2019-01-21T04:53:10.480] [INFO] default - >>> Transaction has been sent, id = 0xb7895282bb2b9e40c9c986b1e966656f8de1b632fadefc63a8e9368b5ed14b5e
+[2019-01-21T04:53:13.052] [INFO] default - >>> Time taken to create and sign transaction [ms] 829
+[2019-01-21T04:53:13.052] [INFO] default - >>> Time taken to accept and mine transaction [ms] 2682
+[2019-01-21T04:53:13.061] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 49,
+    "acceleration": null
+} at time: 1548046393061
+[2019-01-21T04:53:13.061] [INFO] default - === Round: 49 ===
+[2019-01-21T04:53:14.926] [INFO] default - >>> Transaction has been sent, id = 0x74e240ef418cdb3aaaacd9ce214b1cd615457c4c849c447513407051b1e89803
+[2019-01-21T04:53:18.563] [INFO] default - >>> Time taken to create and sign transaction [ms] 1055
+[2019-01-21T04:53:18.577] [INFO] default - >>> Time taken to accept and mine transaction [ms] 4447
+[2019-01-21T04:53:18.577] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 50,
+    "acceleration": null
+} at time: 1548046398577
+[2019-01-21T04:53:18.577] [INFO] default - === Round: 50 ===
+[2019-01-21T04:53:19.858] [INFO] default - >>> Transaction has been sent, id = 0xc984788c7ba5e8e1fefd174243dfbab841e15d0582baa62a1b1ea482bb968e56
+[2019-01-21T04:53:29.162] [INFO] default - >>> Time taken to create and sign transaction [ms] 1264
+[2019-01-21T04:53:29.162] [INFO] default - >>> Time taken to accept and mine transaction [ms] 9319
+[2019-01-21T04:53:29.162] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 51,
+    "acceleration": null
+} at time: 1548046409162
+[2019-01-21T04:53:29.162] [INFO] default - === Round: 51 ===
+[2019-01-21T04:53:30.402] [INFO] default - >>> Transaction has been sent, id = 0x9bfc6b6f345b1b188a4ab2d92800ccabbb9331b924191343151844327f18fe26
+[2019-01-21T04:53:37.136] [INFO] default - >>> Time taken to create and sign transaction [ms] 1231
+[2019-01-21T04:53:37.137] [INFO] default - >>> Time taken to accept and mine transaction [ms] 6743
+[2019-01-21T04:53:37.149] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 52,
+    "acceleration": null
+} at time: 1548046417149
+[2019-01-21T04:53:37.149] [INFO] default - === Round: 52 ===
+[2019-01-21T04:53:38.678] [INFO] default - >>> Transaction has been sent, id = 0x74c8e755e4376bcca15a0e6e8d6b869d563ea5347bea5b0d3658fe3880af31db
+[2019-01-21T04:53:44.993] [INFO] default - >>> Time taken to create and sign transaction [ms] 939
+[2019-01-21T04:53:44.994] [INFO] default - >>> Time taken to accept and mine transaction [ms] 6905
+[2019-01-21T04:53:44.994] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 53,
+    "acceleration": null
+} at time: 1548046424994
+[2019-01-21T04:53:44.994] [INFO] default - === Round: 53 ===
+[2019-01-21T04:53:46.280] [INFO] default - >>> Transaction has been sent, id = 0x4ffb8ae9601511662bc106b011bc05542b191222e0865d4f2b8efeba70110cd4
+[2019-01-21T04:53:52.146] [INFO] default - >>> Time taken to create and sign transaction [ms] 1240
+[2019-01-21T04:53:52.146] [INFO] default - >>> Time taken to accept and mine transaction [ms] 5911
+[2019-01-21T04:53:52.146] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 54,
+    "acceleration": null
+} at time: 1548046432146
+[2019-01-21T04:53:52.146] [INFO] default - === Round: 54 ===
+[2019-01-21T04:53:53.265] [INFO] default - >>> Transaction has been sent, id = 0xdce6fce02e7e66f2ab56f8e0e93fd39b61e39c2a6b775fe8e4776d44cc9623fa
+[2019-01-21T04:53:55.284] [INFO] default - >>> Time taken to create and sign transaction [ms] 1091
+[2019-01-21T04:53:55.284] [INFO] default - >>> Time taken to accept and mine transaction [ms] 2046
+[2019-01-21T04:53:55.284] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 55,
+    "acceleration": null
+} at time: 1548046435284
+[2019-01-21T04:53:55.285] [INFO] default - === Round: 55 ===
+[2019-01-21T04:53:56.650] [INFO] default - >>> Error when sending transactions Error: replacement transaction underpriced
+[2019-01-21T04:53:56.651] [INFO] default - >>> Error Error: replacement transaction underpriced
+[2019-01-21T04:53:56.651] [INFO] default - === Round: 56 ===
+[2019-01-21T04:53:57.514] [INFO] default - >>> Error when sending transactions Error: replacement transaction underpriced
+[2019-01-21T04:53:57.515] [INFO] default - >>> Error Error: replacement transaction underpriced
+[2019-01-21T04:53:57.515] [INFO] default - === Round: 57 ===
+[2019-01-21T04:53:58.280] [INFO] default - >>> Error when sending transactions Error: replacement transaction underpriced
+[2019-01-21T04:53:58.285] [INFO] default - >>> Error Error: replacement transaction underpriced
+[2019-01-21T04:53:58.285] [INFO] default - === Round: 58 ===
+[2019-01-21T04:53:59.458] [INFO] default - >>> Transaction has been sent, id = 0xde35c980888e52020f41b101627299301d35f7b4b81b565e87e6ddc60422792c
+[2019-01-21T04:54:03.161] [INFO] default - >>> Time taken to create and sign transaction [ms] 1157
+[2019-01-21T04:54:03.162] [INFO] default - >>> Time taken to accept and mine transaction [ms] 3719
+[2019-01-21T04:54:03.162] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 59,
+    "acceleration": null
+} at time: 1548046443162
+[2019-01-21T04:54:03.162] [INFO] default - === Round: 59 ===
+[2019-01-21T04:54:04.664] [INFO] default - >>> Transaction has been sent, id = 0x542db7b9ef9eaeaeaea15a8fbe3c5eb491337741b41064cb50f874d893d6e246
+[2019-01-21T04:54:07.478] [INFO] default - >>> Time taken to create and sign transaction [ms] 1394
+[2019-01-21T04:54:07.478] [INFO] default - >>> Time taken to accept and mine transaction [ms] 2921
+[2019-01-21T04:54:07.478] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 60,
+    "acceleration": null
+} at time: 1548046447478
+[2019-01-21T04:54:07.478] [INFO] default - === Round: 60 ===
+[2019-01-21T04:54:08.627] [INFO] default - >>> Transaction has been sent, id = 0x9288554d45c9228211de603f5a8c4e17a24a29b3bf7a3526e1f0b08e20dd3239
+[2019-01-21T04:54:11.272] [INFO] default - >>> Time taken to create and sign transaction [ms] 1074
+[2019-01-21T04:54:11.273] [INFO] default - >>> Time taken to accept and mine transaction [ms] 2720
+[2019-01-21T04:54:11.273] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 61,
+    "acceleration": null
+} at time: 1548046451273
+[2019-01-21T04:54:11.285] [INFO] default - === Round: 61 ===
+[2019-01-21T04:54:12.433] [INFO] default - >>> Transaction has been sent, id = 0x170cfb25e0d82eefb37344307efc1fcf3aff3feeb1249eee58296e70cafcde7b
+[2019-01-21T04:54:15.733] [INFO] default - >>> Time taken to create and sign transaction [ms] 1070
+[2019-01-21T04:54:15.734] [INFO] default - >>> Time taken to accept and mine transaction [ms] 3378
+[2019-01-21T04:54:15.734] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 62,
+    "acceleration": null
+} at time: 1548046455734
+[2019-01-21T04:54:15.734] [INFO] default - === Round: 62 ===
+[2019-01-21T04:54:16.586] [INFO] default - >>> Transaction has been sent, id = 0x1f4fc1299f0ea5446757695c85e81370872f349390578f187a756d8d8976a8c5
+[2019-01-21T04:54:22.821] [INFO] default - >>> Time taken to create and sign transaction [ms] 828
+[2019-01-21T04:54:22.821] [INFO] default - >>> Time taken to accept and mine transaction [ms] 6258
+[2019-01-21T04:54:22.821] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 63,
+    "acceleration": null
+} at time: 1548046462821
+[2019-01-21T04:54:22.821] [INFO] default - === Round: 63 ===
+[2019-01-21T04:54:23.793] [INFO] default - >>> Transaction has been sent, id = 0x10878141fcc51436dce97a5949a3b3df339f743a841e4ef834089410d565df28
+[2019-01-21T04:54:29.075] [INFO] default - >>> Time taken to create and sign transaction [ms] 911
+[2019-01-21T04:54:29.075] [INFO] default - >>> Time taken to accept and mine transaction [ms] 5343
+[2019-01-21T04:54:29.075] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 64,
+    "acceleration": null
+} at time: 1548046469075
+[2019-01-21T04:54:29.075] [INFO] default - === Round: 64 ===
+[2019-01-21T04:54:30.178] [INFO] default - >>> Transaction has been sent, id = 0x01d447798b5d001f4fd30245628c21ec8ee8721fd39f0808f88a3947b6c1101f
+[2019-01-21T04:54:34.262] [INFO] default - >>> Time taken to create and sign transaction [ms] 1040
+[2019-01-21T04:54:34.262] [INFO] default - >>> Time taken to accept and mine transaction [ms] 4145
+[2019-01-21T04:54:34.262] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 65,
+    "acceleration": null
+} at time: 1548046474262
+[2019-01-21T04:54:34.262] [INFO] default - === Round: 65 ===
+[2019-01-21T04:54:35.662] [INFO] default - >>> Transaction has been sent, id = 0x8e505492217631fe8817ae122d86716c76eddb2f43746c40b64f79ab9333c42a
+[2019-01-21T04:54:40.194] [INFO] default - >>> Time taken to create and sign transaction [ms] 1374
+[2019-01-21T04:54:40.194] [INFO] default - >>> Time taken to accept and mine transaction [ms] 4558
+[2019-01-21T04:54:40.194] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 66,
+    "acceleration": null
+} at time: 1548046480194
+[2019-01-21T04:54:40.197] [INFO] default - === Round: 66 ===
+[2019-01-21T04:54:41.163] [INFO] default - >>> Transaction has been sent, id = 0xd9e9d9672e7874a152269bae14aa3c5d4a291e89be855ebe6eb7333fb4df806e
+[2019-01-21T04:54:44.385] [INFO] default - >>> Time taken to create and sign transaction [ms] 931
+[2019-01-21T04:54:44.386] [INFO] default - >>> Time taken to accept and mine transaction [ms] 3257
+[2019-01-21T04:54:44.386] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 67,
+    "acceleration": null
+} at time: 1548046484386
+[2019-01-21T04:54:44.386] [INFO] default - === Round: 67 ===
+[2019-01-21T04:54:45.286] [INFO] default - >>> Transaction has been sent, id = 0x315f50aced4bbd8420557233d44fbcdb3ddec0a1b27118ce556f6234156563e7
+[2019-01-21T04:54:48.726] [INFO] default - >>> Time taken to create and sign transaction [ms] 887
+[2019-01-21T04:54:48.729] [INFO] default - >>> Time taken to accept and mine transaction [ms] 3452
+[2019-01-21T04:54:48.729] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 68,
+    "acceleration": null
+} at time: 1548046488729
+[2019-01-21T04:54:48.730] [INFO] default - === Round: 68 ===
+[2019-01-21T04:54:50.189] [INFO] default - >>> Transaction has been sent, id = 0x439f1470331a27ef6815b843de4e4626093d6279b19128f945d7116636937207
+[2019-01-21T04:54:56.772] [INFO] default - >>> Time taken to create and sign transaction [ms] 1340
+[2019-01-21T04:54:56.773] [INFO] default - >>> Time taken to accept and mine transaction [ms] 6702
+[2019-01-21T04:54:56.781] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 69,
+    "acceleration": null
+} at time: 1548046496781
+[2019-01-21T04:54:56.781] [INFO] default - === Round: 69 ===
+[2019-01-21T04:54:58.298] [INFO] default - >>> Transaction has been sent, id = 0x5f05eedcb60c28539cec2a47b951fbf8d5d422696294f9ad4150f7b52d63bb80
+[2019-01-21T04:55:04.800] [INFO] default - >>> Time taken to create and sign transaction [ms] 895
+[2019-01-21T04:55:04.809] [INFO] default - >>> Time taken to accept and mine transaction [ms] 7124
+[2019-01-21T04:55:04.809] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 70,
+    "acceleration": null
+} at time: 1548046504809
+[2019-01-21T04:55:04.809] [INFO] default - === Round: 70 ===
+[2019-01-21T04:55:06.542] [INFO] default - >>> Transaction has been sent, id = 0x052fecc10e1c2bf39ff08fdb29bc9eda2ec6a0bb9f9ab9b7a2ade2e4c37f8a4e
+[2019-01-21T04:55:14.457] [INFO] default - >>> Time taken to create and sign transaction [ms] 1686
+[2019-01-21T04:55:14.458] [INFO] default - >>> Time taken to accept and mine transaction [ms] 7961
+[2019-01-21T04:55:14.458] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 71,
+    "acceleration": null
+} at time: 1548046514458
+[2019-01-21T04:55:14.458] [INFO] default - === Round: 71 ===
+[2019-01-21T04:55:15.694] [INFO] default - >>> Transaction has been sent, id = 0xe3829b2fb03c452581df8f40687bf84054efbf9238b003c1aff91cbf5646beac
+[2019-01-21T04:55:21.369] [INFO] default - >>> Time taken to create and sign transaction [ms] 1183
+[2019-01-21T04:55:21.370] [INFO] default - >>> Time taken to accept and mine transaction [ms] 5728
+[2019-01-21T04:55:21.370] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 72,
+    "acceleration": null
+} at time: 1548046521370
+[2019-01-21T04:55:21.370] [INFO] default - === Round: 72 ===
+[2019-01-21T04:55:22.274] [INFO] default - >>> Transaction has been sent, id = 0xa1985c8c25a795345229d5fe3cee5a1c76ef245c7f961c2eba16a0c9e952ae7d
+[2019-01-21T04:55:26.091] [INFO] default - >>> Time taken to create and sign transaction [ms] 873
+[2019-01-21T04:55:26.091] [INFO] default - >>> Time taken to accept and mine transaction [ms] 3836
+[2019-01-21T04:55:26.091] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 73,
+    "acceleration": null
+} at time: 1548046526091
+[2019-01-21T04:55:26.091] [INFO] default - === Round: 73 ===
+[2019-01-21T04:55:27.482] [INFO] default - >>> Transaction has been sent, id = 0xc0c0ef0960973825c2d1e64c8fec78279a40289f5e203d0ccedd2b5971b68e3d
+[2019-01-21T04:55:28.609] [INFO] default - >>> Time taken to create and sign transaction [ms] 1354
+[2019-01-21T04:55:28.610] [INFO] default - >>> Time taken to accept and mine transaction [ms] 1164
+[2019-01-21T04:55:28.610] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 74,
+    "acceleration": null
+} at time: 1548046528610
+[2019-01-21T04:55:28.610] [INFO] default - === Round: 74 ===
+[2019-01-21T04:55:29.725] [INFO] default - >>> Transaction has been sent, id = 0x5f84584082f5e7da5373333d0f4af2c8b20f52254d2f30c7db716d0fda4985c3
+[2019-01-21T04:55:36.649] [INFO] default - >>> Time taken to create and sign transaction [ms] 894
+[2019-01-21T04:55:36.650] [INFO] default - >>> Time taken to accept and mine transaction [ms] 7145
+[2019-01-21T04:55:36.650] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 75,
+    "acceleration": null
+} at time: 1548046536650
+[2019-01-21T04:55:36.650] [INFO] default - === Round: 75 ===
+[2019-01-21T04:55:37.859] [INFO] default - >>> Transaction has been sent, id = 0xb11728a5a1272fa4c9e7ecaab659c08f76973099e728c5b6c64cc3406cf0fb6c
+[2019-01-21T04:55:42.001] [INFO] default - >>> Time taken to create and sign transaction [ms] 1014
+[2019-01-21T04:55:42.002] [INFO] default - >>> Time taken to accept and mine transaction [ms] 4337
+[2019-01-21T04:55:42.002] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 76,
+    "acceleration": null
+} at time: 1548046542002
+[2019-01-21T04:55:42.002] [INFO] default - === Round: 76 ===
+[2019-01-21T04:55:43.626] [INFO] default - >>> Error when sending transactions Error: nonce too low
+[2019-01-21T04:55:43.627] [INFO] default - >>> Error Error: nonce too low
+[2019-01-21T04:55:43.627] [INFO] default - === Round: 77 ===
+[2019-01-21T04:55:45.717] [INFO] default - >>> Transaction has been sent, id = 0x7a6e62af9cdfc2760f5ccddcb5b5de8aa128cfdd8f8ebad68f1131795caf3636
+[2019-01-21T04:55:47.786] [INFO] default - >>> Time taken to create and sign transaction [ms] 1261
+[2019-01-21T04:55:47.787] [INFO] default - >>> Time taken to accept and mine transaction [ms] 2898
+[2019-01-21T04:55:47.787] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 78,
+    "acceleration": null
+} at time: 1548046547787
+[2019-01-21T04:55:47.787] [INFO] default - === Round: 78 ===
+[2019-01-21T04:55:48.850] [INFO] default - >>> Transaction has been sent, id = 0x2c29653719d1a274bb79a3db1604dcf2d12ba40326f9091bc7c4d7a2fe9fdb24
+[2019-01-21T04:55:54.469] [INFO] default - >>> Time taken to create and sign transaction [ms] 1014
+[2019-01-21T04:55:54.470] [INFO] default - >>> Time taken to accept and mine transaction [ms] 5667
+[2019-01-21T04:55:54.473] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 79,
+    "acceleration": null
+} at time: 1548046554473
+[2019-01-21T04:55:54.473] [INFO] default - === Round: 79 ===
+[2019-01-21T04:55:55.558] [INFO] default - >>> Transaction has been sent, id = 0x7fc3870ad843afe6c6e973d2ff5c1e07f9ea6c0c2d64efca953314528cf06765
+[2019-01-21T04:56:00.976] [INFO] default - >>> Time taken to create and sign transaction [ms] 1081
+[2019-01-21T04:56:00.976] [INFO] default - >>> Time taken to accept and mine transaction [ms] 5422
+[2019-01-21T04:56:00.976] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 80,
+    "acceleration": null
+} at time: 1548046560976
+[2019-01-21T04:56:00.976] [INFO] default - === Round: 80 ===
+[2019-01-21T04:56:02.002] [INFO] default - >>> Transaction has been sent, id = 0xf632492f0b6b34db40adc29d57a2cccab550e116d5250cfbad2a43a3194c3a38
+[2019-01-21T04:56:08.242] [INFO] default - >>> Time taken to create and sign transaction [ms] 1001
+[2019-01-21T04:56:08.242] [INFO] default - >>> Time taken to accept and mine transaction [ms] 6263
+[2019-01-21T04:56:08.242] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 81,
+    "acceleration": null
+} at time: 1548046568242
+[2019-01-21T04:56:08.245] [INFO] default - === Round: 81 ===
+[2019-01-21T04:56:09.760] [INFO] default - >>> Transaction has been sent, id = 0xfa5d776bb2c9dcc6430f8df671e4e7b84f52a986828d3a53bc2d1ab45c555253
+[2019-01-21T04:56:13.346] [INFO] default - >>> Time taken to create and sign transaction [ms] 1484
+[2019-01-21T04:56:13.346] [INFO] default - >>> Time taken to accept and mine transaction [ms] 3599
+[2019-01-21T04:56:13.346] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 82,
+    "acceleration": null
+} at time: 1548046573346
+[2019-01-21T04:56:13.347] [INFO] default - === Round: 82 ===
+[2019-01-21T04:56:15.016] [INFO] default - >>> Transaction has been sent, id = 0x12b898e4b10fe0ecedc8802e5071a27bca65b4009ae59e8b3b41b99a7bcc810d
+[2019-01-21T04:56:23.041] [INFO] default - >>> Time taken to create and sign transaction [ms] 1247
+[2019-01-21T04:56:23.042] [INFO] default - >>> Time taken to accept and mine transaction [ms] 8447
+[2019-01-21T04:56:23.042] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 83,
+    "acceleration": null
+} at time: 1548046583042
+[2019-01-21T04:56:23.042] [INFO] default - === Round: 83 ===
+[2019-01-21T04:56:24.906] [INFO] default - >>> Transaction has been sent, id = 0x6b67a7fbdf35f0ae24122a204287c6bf3495a4879ba6ad2b007a219bfeda6c17
+[2019-01-21T04:56:28.801] [INFO] default - >>> Time taken to create and sign transaction [ms] 994
+[2019-01-21T04:56:28.802] [INFO] default - >>> Time taken to accept and mine transaction [ms] 4765
+[2019-01-21T04:56:28.802] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 84,
+    "acceleration": null
+} at time: 1548046588802
+[2019-01-21T04:56:28.802] [INFO] default - === Round: 84 ===
+[2019-01-21T04:56:29.614] [INFO] default - >>> Transaction has been sent, id = 0xae6b3bb94e3dec2223e68cfcc3494db94b0f20f4690b9a3ac95cc630b7005987
+[2019-01-21T04:56:35.833] [INFO] default - >>> Time taken to create and sign transaction [ms] 792
+[2019-01-21T04:56:35.833] [INFO] default - >>> Time taken to accept and mine transaction [ms] 6239
+[2019-01-21T04:56:35.833] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 85,
+    "acceleration": null
+} at time: 1548046595833
+[2019-01-21T04:56:35.834] [INFO] default - === Round: 85 ===
+[2019-01-21T04:56:36.842] [INFO] default - >>> Transaction has been sent, id = 0xc976d589da32d00f33106cb763fb49019c114c94f95ac6232d28d524bfdb7a48
+[2019-01-21T04:56:44.447] [INFO] default - >>> Time taken to create and sign transaction [ms] 955
+[2019-01-21T04:56:44.448] [INFO] default - >>> Time taken to accept and mine transaction [ms] 7658
+[2019-01-21T04:56:44.448] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 86,
+    "acceleration": null
+} at time: 1548046604448
+[2019-01-21T04:56:44.448] [INFO] default - === Round: 86 ===
+[2019-01-21T04:56:45.309] [INFO] default - >>> Transaction has been sent, id = 0x9871288fe38b7b83ddc9d7cebeae13f9ebc947dccc49ee6888a6b3db9c6d04a1
+[2019-01-21T04:56:51.579] [INFO] default - >>> Time taken to create and sign transaction [ms] 841
+[2019-01-21T04:56:51.581] [INFO] default - >>> Time taken to accept and mine transaction [ms] 6290
+[2019-01-21T04:56:51.581] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 87,
+    "acceleration": null
+} at time: 1548046611581
+[2019-01-21T04:56:51.581] [INFO] default - === Round: 87 ===
+[2019-01-21T04:56:52.626] [INFO] default - >>> Transaction has been sent, id = 0x5fba7964cd7a55ab19f5a383789f9a84649a554ead86dd0803c87c84d2a1bebb
+[2019-01-21T04:56:57.065] [INFO] default - >>> Time taken to create and sign transaction [ms] 1016
+[2019-01-21T04:56:57.066] [INFO] default - >>> Time taken to accept and mine transaction [ms] 4468
+[2019-01-21T04:56:57.066] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 88,
+    "acceleration": null
+} at time: 1548046617066
+[2019-01-21T04:56:57.066] [INFO] default - === Round: 88 ===
+[2019-01-21T04:56:58.225] [INFO] default - >>> Transaction has been sent, id = 0x0ccd49b935c0c5385eafbacf2cea7f9b4251c7c8d0e28bba74ffcbf3610b064e
+[2019-01-21T04:57:02.119] [INFO] default - >>> Time taken to create and sign transaction [ms] 954
+[2019-01-21T04:57:02.120] [INFO] default - >>> Time taken to accept and mine transaction [ms] 4099
+[2019-01-21T04:57:02.120] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 89,
+    "acceleration": null
+} at time: 1548046622120
+[2019-01-21T04:57:02.120] [INFO] default - === Round: 89 ===
+[2019-01-21T04:57:03.261] [INFO] default - >>> Transaction has been sent, id = 0xca1fa69d9a30cda36f242720fd75b08c4578d04dfcb79083f9967c113579ad80
+[2019-01-21T04:57:09.880] [INFO] default - >>> Time taken to create and sign transaction [ms] 949
+[2019-01-21T04:57:09.880] [INFO] default - >>> Time taken to accept and mine transaction [ms] 6798
+[2019-01-21T04:57:09.881] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 90,
+    "acceleration": null
+} at time: 1548046629881
+[2019-01-21T04:57:09.890] [INFO] default - === Round: 90 ===
+[2019-01-21T04:57:11.430] [INFO] default - >>> Transaction has been sent, id = 0x0beccadcacbedb36f13fe0f6bab417dc7f02c11a35ca42ef5120b54ef8a2b4a5
+[2019-01-21T04:57:13.801] [INFO] default - >>> Time taken to create and sign transaction [ms] 1501
+[2019-01-21T04:57:13.809] [INFO] default - >>> Time taken to accept and mine transaction [ms] 2401
+[2019-01-21T04:57:13.809] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 91,
+    "acceleration": null
+} at time: 1548046633809
+[2019-01-21T04:57:13.809] [INFO] default - === Round: 91 ===
+[2019-01-21T04:57:14.938] [INFO] default - >>> Transaction has been sent, id = 0x7b6d1bc1e4bd29fc153e2cdfd9fa47ac9ea40d1c55f3a8907dd281ced1d5dc6c
+[2019-01-21T04:57:19.129] [INFO] default - >>> Time taken to create and sign transaction [ms] 1090
+[2019-01-21T04:57:19.130] [INFO] default - >>> Time taken to accept and mine transaction [ms] 4229
+[2019-01-21T04:57:19.130] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 92,
+    "acceleration": null
+} at time: 1548046639130
+[2019-01-21T04:57:19.130] [INFO] default - === Round: 92 ===
+[2019-01-21T04:57:20.214] [INFO] default - >>> Transaction has been sent, id = 0x8db9d0fdb64a1dbd706809c759495ed662e583d43d7dd1690f3b0edd4813f203
+[2019-01-21T04:57:23.974] [INFO] default - >>> Time taken to create and sign transaction [ms] 1071
+[2019-01-21T04:57:23.974] [INFO] default - >>> Time taken to accept and mine transaction [ms] 3771
+[2019-01-21T04:57:23.975] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 93,
+    "acceleration": null
+} at time: 1548046643975
+[2019-01-21T04:57:23.975] [INFO] default - === Round: 93 ===
+[2019-01-21T04:57:25.184] [INFO] default - >>> Transaction has been sent, id = 0xe9ee617d194e0b6c2ee9aa8a5ca81f8b9a80d664d10b1964d93e681681be099d
+[2019-01-21T04:57:30.380] [INFO] default - >>> Time taken to create and sign transaction [ms] 888
+[2019-01-21T04:57:30.380] [INFO] default - >>> Time taken to accept and mine transaction [ms] 5516
+[2019-01-21T04:57:30.381] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 94,
+    "acceleration": null
+} at time: 1548046650381
+[2019-01-21T04:57:30.381] [INFO] default - === Round: 94 ===
+[2019-01-21T04:57:31.533] [INFO] default - >>> Transaction has been sent, id = 0x5e4df3d6547e11af8a659d96b0f5bdd970979c8849b83c8067fee138c393d38f
+[2019-01-21T04:57:39.378] [INFO] default - >>> Time taken to create and sign transaction [ms] 1105
+[2019-01-21T04:57:39.378] [INFO] default - >>> Time taken to accept and mine transaction [ms] 7891
+[2019-01-21T04:57:39.378] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 95,
+    "acceleration": null
+} at time: 1548046659378
+[2019-01-21T04:57:39.378] [INFO] default - === Round: 95 ===
+[2019-01-21T04:57:41.046] [INFO] default - >>> Transaction has been sent, id = 0x12717a1a791e743cec3b3da0345673b816c98c5600061f17a5062e82da1a7eb5
+[2019-01-21T04:57:47.405] [INFO] default - >>> Time taken to create and sign transaction [ms] 1295
+[2019-01-21T04:57:47.406] [INFO] default - >>> Time taken to accept and mine transaction [ms] 6732
+[2019-01-21T04:57:47.406] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 96,
+    "acceleration": null
+} at time: 1548046667406
+[2019-01-21T04:57:47.406] [INFO] default - === Round: 96 ===
+[2019-01-21T04:57:48.542] [INFO] default - >>> Transaction has been sent, id = 0x3358b0f43d79ab0f351ee11f83c694044ae43c03c9fca1c4801253662b18d9c7
+[2019-01-21T04:57:52.000] [INFO] default - >>> Time taken to create and sign transaction [ms] 1116
+[2019-01-21T04:57:52.001] [INFO] default - >>> Time taken to accept and mine transaction [ms] 3478
+[2019-01-21T04:57:52.001] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 97,
+    "acceleration": null
+} at time: 1548046672001
+[2019-01-21T04:57:52.001] [INFO] default - === Round: 97 ===
+[2019-01-21T04:57:53.010] [INFO] default - >>> Transaction has been sent, id = 0x69f68644c752c0845748e6e350bd25f43a47fde5d5d5d4874661daa044b0e06e
+[2019-01-21T04:57:54.717] [INFO] default - >>> Time taken to create and sign transaction [ms] 933
+[2019-01-21T04:57:54.718] [INFO] default - >>> Time taken to accept and mine transaction [ms] 1783
+[2019-01-21T04:57:54.719] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 27,
+    "velocity": 98,
+    "acceleration": null
+} at time: 1548046674719
+[2019-01-21T04:57:54.719] [INFO] default - === Round: 98 ===
+[2019-01-21T04:57:55.665] [INFO] default - >>> Error when sending transactions Error: replacement transaction underpriced
+[2019-01-21T04:57:55.666] [INFO] default - >>> Error Error: replacement transaction underpriced
+[2019-01-21T04:57:55.666] [INFO] default - === Round: 99 ===
+[2019-01-21T04:57:56.602] [INFO] default - >>> Error when sending transactions Error: replacement transaction underpriced
+[2019-01-21T04:57:56.603] [INFO] default - >>> Error Error: replacement transaction underpriced
+[2019-01-21T04:57:56.604] [INFO] default - =============== RESULTS ===============
+[2019-01-21T04:57:56.604] [INFO] default - There were 100 transaction to be committed to the ledger...
+[2019-01-21T04:57:56.604] [INFO] default - === Committed transactions count = 93
+[2019-01-21T04:57:56.605] [INFO] default - === Failed transactions count = 7
+[2019-01-21T04:57:56.605] [INFO] default - === Total transactions count = 100
+[2019-01-21T04:57:56.606] [INFO] default - Average time taken to create and sign a transaction [ms] = 1267.720430107527
+[2019-01-21T04:57:56.606] [INFO] default - Analysis of accept and mine transaction [ms]: 
+[2019-01-21T04:57:56.606] [INFO] default - === Average = 7220.924731182796
+[2019-01-21T04:57:56.606] [INFO] default - === Minimum = 1091
+[2019-01-21T04:57:56.607] [INFO] default - === Maximum = 48603
+[2019-01-21T04:57:56.607] [INFO] default - === Median = 5667

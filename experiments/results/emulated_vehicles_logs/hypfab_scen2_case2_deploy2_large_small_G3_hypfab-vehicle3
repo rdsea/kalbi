@@ -1,0 +1,663 @@
+[2019-01-18T03:49:14.545] [INFO] default - ======================================================
+[2019-01-18T03:49:14.548] [INFO] default - =================== HYPERLEDGER-FABRIC ===============
+[2019-01-18T03:49:14.548] [INFO] default - ======================================================
+[2019-01-18T03:49:14.548] [INFO] default - HypFabVehicleDAO is initializing...
+[2019-01-18T03:49:15.864] [INFO] default - Successfully enrolled admin user "admin"
+[2019-01-18T03:49:15.875] [INFO] default - Successfully set admin user
+[2019-01-18T03:49:17.852] [INFO] default - Successfully enrolled member user "user3" 
+[2019-01-18T03:49:17.853] [INFO] default - Initializing data producer of Vehicle3
+[2019-01-18T03:49:27.856] [INFO] default - Inserting new vehicle...
+[2019-01-18T03:49:30.189] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T03:49:30.189] [INFO] default - Transaction id = 40bb57c93fc4d66a797edddccc652254eae4fc23f3cda5f6610b0a97c88c1b33
+[2019-01-18T03:49:31.767] [INFO] default - Successfully committed the change to the ledger by the peer
+[2019-01-18T03:49:31.785] [INFO] default - >>> vehicle3 = {
+    "id": "3",
+    "velocity": "60",
+    "acceleration": "4"
+}
+[2019-01-18T03:49:31.786] [INFO] default - ====== Blocks filled with data ======
+[2019-01-18T03:49:31.786] [INFO] default - === Vehicle3 started producing data ===
+[2019-01-18T03:49:31.787] [INFO] default - Starting update velocity operation analysis...
+[2019-01-18T03:49:31.787] [INFO] default - Rounds number = 100
+[2019-01-18T03:49:31.787] [INFO] default - === Round: 0 ===
+[2019-01-18T03:49:31.801] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T03:49:31.801] [INFO] default - Transaction id = e6989c6a3af34961b39523abf419d2b204b139a93ecf38ed3782235d6235d543
+[2019-01-18T03:49:34.980] [INFO] default - Successfully committed the change to the ledger by the peer
+[2019-01-18T03:49:34.980] [INFO] default - >>> Time taken to create and sign transaction [ms] 14
+[2019-01-18T03:49:34.980] [INFO] default - >>> Time taken to accept and mine transaction [ms] 3179
+[2019-01-18T03:49:34.980] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 3,
+    "velocity": 1,
+    "acceleration": null
+} at time: 1547783374980
+[2019-01-18T03:49:34.981] [INFO] default - === Round: 1 ===
+[2019-01-18T03:49:34.995] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T03:49:34.995] [INFO] default - Transaction id = 2a7760dbe2620fd7bc3d04ff6c23988da62260cdb33048ced97fadf7e4be6bfb
+[2019-01-18T03:49:39.113] [INFO] default - Successfully committed the change to the ledger by the peer
+[2019-01-18T03:49:39.113] [INFO] default - >>> Time taken to create and sign transaction [ms] 14
+[2019-01-18T03:49:39.113] [INFO] default - >>> Time taken to accept and mine transaction [ms] 4118
+[2019-01-18T03:49:39.113] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 3,
+    "velocity": 2,
+    "acceleration": null
+} at time: 1547783379113
+[2019-01-18T03:49:39.113] [INFO] default - === Round: 2 ===
+[2019-01-18T03:49:39.124] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T03:49:39.124] [INFO] default - Transaction id = 683dd15eeeb173c04971ae9bbec340973902771a4968fab0b859b8664a3b10f1
+[2019-01-18T03:49:41.940] [INFO] default - Successfully committed the change to the ledger by the peer
+[2019-01-18T03:49:41.941] [INFO] default - >>> Time taken to create and sign transaction [ms] 11
+[2019-01-18T03:49:41.941] [INFO] default - >>> Time taken to accept and mine transaction [ms] 2817
+[2019-01-18T03:49:41.941] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 3,
+    "velocity": 3,
+    "acceleration": null
+} at time: 1547783381941
+[2019-01-18T03:49:41.941] [INFO] default - === Round: 3 ===
+[2019-01-18T03:49:41.951] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T03:49:41.952] [INFO] default - Transaction id = 7da4687111efcb39514f4b8bd93feaeb7f0690a2831b4483ce241146955ae2ad
+[2019-01-18T03:49:45.135] [INFO] default - Successfully committed the change to the ledger by the peer
+[2019-01-18T03:49:45.135] [INFO] default - >>> Time taken to create and sign transaction [ms] 11
+[2019-01-18T03:49:45.135] [INFO] default - >>> Time taken to accept and mine transaction [ms] 3183
+[2019-01-18T03:49:45.135] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 3,
+    "velocity": 4,
+    "acceleration": null
+} at time: 1547783385135
+[2019-01-18T03:49:45.136] [INFO] default - === Round: 4 ===
+[2019-01-18T03:49:45.145] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T03:49:45.146] [INFO] default - Transaction id = 717da0f978b10259639855da1a9861499149a12aea26e5e2814b902559e82847
+[2019-01-18T03:49:50.230] [INFO] default - Successfully committed the change to the ledger by the peer
+[2019-01-18T03:49:50.230] [INFO] default - >>> Time taken to create and sign transaction [ms] 10
+[2019-01-18T03:49:50.230] [INFO] default - >>> Time taken to accept and mine transaction [ms] 5084
+[2019-01-18T03:49:50.230] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 3,
+    "velocity": 5,
+    "acceleration": null
+} at time: 1547783390230
+[2019-01-18T03:49:50.230] [INFO] default - === Round: 5 ===
+[2019-01-18T03:49:50.238] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T03:49:50.238] [INFO] default - Transaction id = cdaf1e11cdf7d793faf308e705be123fb1e98ca2522cb65fbb4eeb1124c262b6
+[2019-01-18T03:49:59.266] [INFO] default - Successfully committed the change to the ledger by the peer
+[2019-01-18T03:49:59.266] [INFO] default - >>> Time taken to create and sign transaction [ms] 8
+[2019-01-18T03:49:59.266] [INFO] default - >>> Time taken to accept and mine transaction [ms] 9028
+[2019-01-18T03:49:59.266] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 3,
+    "velocity": 6,
+    "acceleration": null
+} at time: 1547783399266
+[2019-01-18T03:49:59.266] [INFO] default - === Round: 6 ===
+[2019-01-18T03:49:59.277] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T03:49:59.278] [INFO] default - Transaction id = 501a4d29ef1ce31ce5bbc94583cce2e23a3fc4031137bb3be6e38f1c67824348
+[2019-01-18T03:50:01.312] [INFO] default - Successfully committed the change to the ledger by the peer
+[2019-01-18T03:50:01.312] [INFO] default - >>> Time taken to create and sign transaction [ms] 12
+[2019-01-18T03:50:01.312] [INFO] default - >>> Time taken to accept and mine transaction [ms] 2034
+[2019-01-18T03:50:01.313] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 3,
+    "velocity": 7,
+    "acceleration": null
+} at time: 1547783401313
+[2019-01-18T03:50:01.313] [INFO] default - === Round: 7 ===
+[2019-01-18T03:50:01.324] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T03:50:01.325] [INFO] default - Transaction id = 048c46f1a734d0dd6f1dc3248f0d79d41ea6550b8c6fad076f973d4ff8245aaa
+[2019-01-18T03:50:06.255] [INFO] default - Successfully committed the change to the ledger by the peer
+[2019-01-18T03:50:06.256] [INFO] default - >>> Time taken to create and sign transaction [ms] 12
+[2019-01-18T03:50:06.256] [INFO] default - >>> Time taken to accept and mine transaction [ms] 4931
+[2019-01-18T03:50:06.256] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 3,
+    "velocity": 8,
+    "acceleration": null
+} at time: 1547783406256
+[2019-01-18T03:50:06.256] [INFO] default - === Round: 8 ===
+[2019-01-18T03:50:06.272] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T03:50:06.273] [INFO] default - Transaction id = bbd0a90bfc12df12b45ab8055a614dea7ddc86b5d28bb412a410fc695306fe8a
+[2019-01-18T03:50:09.983] [INFO] default - Successfully committed the change to the ledger by the peer
+[2019-01-18T03:50:09.984] [INFO] default - >>> Time taken to create and sign transaction [ms] 17
+[2019-01-18T03:50:09.984] [INFO] default - >>> Time taken to accept and mine transaction [ms] 3711
+[2019-01-18T03:50:09.984] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 3,
+    "velocity": 9,
+    "acceleration": null
+} at time: 1547783409984
+[2019-01-18T03:50:09.984] [INFO] default - === Round: 9 ===
+[2019-01-18T03:50:09.993] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T03:50:09.993] [INFO] default - Transaction id = 1f27f91d08f51da5f6943fed6d4cbd4c0470a9a6fe2c8889c24e25d95c688713
+[2019-01-18T03:50:14.692] [INFO] default - Successfully committed the change to the ledger by the peer
+[2019-01-18T03:50:14.693] [INFO] default - >>> Time taken to create and sign transaction [ms] 9
+[2019-01-18T03:50:14.693] [INFO] default - >>> Time taken to accept and mine transaction [ms] 4700
+[2019-01-18T03:50:14.693] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 3,
+    "velocity": 10,
+    "acceleration": null
+} at time: 1547783414693
+[2019-01-18T03:50:14.693] [INFO] default - === Round: 10 ===
+[2019-01-18T03:50:14.704] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T03:50:14.704] [INFO] default - Transaction id = bfc5d984994aefb7478ca8c19fa26b8f1cae2631743ea55342aa73a80f1812c3
+[2019-01-18T03:50:19.290] [INFO] default - Successfully committed the change to the ledger by the peer
+[2019-01-18T03:50:19.291] [INFO] default - >>> Time taken to create and sign transaction [ms] 11
+[2019-01-18T03:50:19.291] [INFO] default - >>> Time taken to accept and mine transaction [ms] 4587
+[2019-01-18T03:50:19.291] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 3,
+    "velocity": 11,
+    "acceleration": null
+} at time: 1547783419291
+[2019-01-18T03:50:19.291] [INFO] default - === Round: 11 ===
+[2019-01-18T03:50:19.302] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T03:50:19.302] [INFO] default - Transaction id = 5c0e81bfa565425a0d2c1c08aa543052758b8ff7f4e9e3664e85f3e27771fffa
+[2019-01-18T03:50:26.897] [INFO] default - Successfully committed the change to the ledger by the peer
+[2019-01-18T03:50:26.898] [INFO] default - >>> Time taken to create and sign transaction [ms] 11
+[2019-01-18T03:50:26.898] [INFO] default - >>> Time taken to accept and mine transaction [ms] 7596
+[2019-01-18T03:50:26.898] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 3,
+    "velocity": 12,
+    "acceleration": null
+} at time: 1547783426898
+[2019-01-18T03:50:26.898] [INFO] default - === Round: 12 ===
+[2019-01-18T03:50:26.907] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T03:50:26.907] [INFO] default - Transaction id = 48740cea941fa3fd1df5d845878e7c74ac2fa2defd11f6d468323e136cdb591f
+[2019-01-18T03:50:34.659] [INFO] default - Successfully committed the change to the ledger by the peer
+[2019-01-18T03:50:34.659] [INFO] default - >>> Time taken to create and sign transaction [ms] 9
+[2019-01-18T03:50:34.659] [INFO] default - >>> Time taken to accept and mine transaction [ms] 7752
+[2019-01-18T03:50:34.659] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 3,
+    "velocity": 13,
+    "acceleration": null
+} at time: 1547783434659
+[2019-01-18T03:50:34.659] [INFO] default - === Round: 13 ===
+[2019-01-18T03:50:34.669] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T03:50:34.669] [INFO] default - Transaction id = a81f2acafbfd68db5db371c03238a8af6651b77da4b2c84157000d007af6daef
+[2019-01-18T03:50:37.781] [INFO] default - Successfully committed the change to the ledger by the peer
+[2019-01-18T03:50:37.781] [INFO] default - >>> Time taken to create and sign transaction [ms] 9
+[2019-01-18T03:50:37.781] [INFO] default - >>> Time taken to accept and mine transaction [ms] 3112
+[2019-01-18T03:50:37.781] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 3,
+    "velocity": 14,
+    "acceleration": null
+} at time: 1547783437781
+[2019-01-18T03:50:37.781] [INFO] default - === Round: 14 ===
+[2019-01-18T03:50:37.791] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T03:50:37.791] [INFO] default - Transaction id = b77de7165e86b0ff06d069238588ff288c96e7c310d6617c8e4a6ce922af0a78
+[2019-01-18T03:50:44.078] [INFO] default - Successfully committed the change to the ledger by the peer
+[2019-01-18T03:50:44.079] [INFO] default - >>> Time taken to create and sign transaction [ms] 11
+[2019-01-18T03:50:44.079] [INFO] default - >>> Time taken to accept and mine transaction [ms] 6287
+[2019-01-18T03:50:44.079] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 3,
+    "velocity": 15,
+    "acceleration": null
+} at time: 1547783444079
+[2019-01-18T03:50:44.081] [INFO] default - === Round: 15 ===
+[2019-01-18T03:50:44.103] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T03:50:44.104] [INFO] default - Transaction id = 95ff13951adc62ccb8acc89aaff5ee9d9c384dc08dbdfa978dd3b2c7cefd531e
+[2019-01-18T03:50:51.996] [INFO] default - Successfully committed the change to the ledger by the peer
+[2019-01-18T03:50:51.996] [INFO] default - >>> Time taken to create and sign transaction [ms] 23
+[2019-01-18T03:50:51.996] [INFO] default - >>> Time taken to accept and mine transaction [ms] 7892
+[2019-01-18T03:50:51.996] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 3,
+    "velocity": 16,
+    "acceleration": null
+} at time: 1547783451996
+[2019-01-18T03:50:51.996] [INFO] default - === Round: 16 ===
+[2019-01-18T03:50:52.006] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T03:50:52.006] [INFO] default - Transaction id = a02e4f3e38cdc81ad7a64fd1e996e4ee9f9ad0aef22877155e8923b84b2aca76
+[2019-01-18T03:51:03.140] [INFO] default - Successfully committed the change to the ledger by the peer
+[2019-01-18T03:51:03.140] [INFO] default - >>> Time taken to create and sign transaction [ms] 9
+[2019-01-18T03:51:03.140] [INFO] default - >>> Time taken to accept and mine transaction [ms] 11134
+[2019-01-18T03:51:03.140] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 3,
+    "velocity": 17,
+    "acceleration": null
+} at time: 1547783463140
+[2019-01-18T03:51:03.140] [INFO] default - === Round: 17 ===
+[2019-01-18T03:51:03.150] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T03:51:03.150] [INFO] default - Transaction id = fad4f9f43d246eef89279b060c66af065b6baf20c40f05a1ec287d49c05767d6
+[2019-01-18T03:51:06.512] [INFO] default - Successfully committed the change to the ledger by the peer
+[2019-01-18T03:51:06.512] [INFO] default - >>> Time taken to create and sign transaction [ms] 10
+[2019-01-18T03:51:06.512] [INFO] default - >>> Time taken to accept and mine transaction [ms] 3362
+[2019-01-18T03:51:06.512] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 3,
+    "velocity": 18,
+    "acceleration": null
+} at time: 1547783466512
+[2019-01-18T03:51:06.512] [INFO] default - === Round: 18 ===
+[2019-01-18T03:51:06.522] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T03:51:06.522] [INFO] default - Transaction id = 640bff7ffb9ff95948b5367a005cad86e800c6500c80266de8b2df4e351a7a8b
+[2019-01-18T03:51:17.252] [INFO] default - Successfully committed the change to the ledger by the peer
+[2019-01-18T03:51:17.253] [INFO] default - >>> Time taken to create and sign transaction [ms] 9
+[2019-01-18T03:51:17.253] [INFO] default - >>> Time taken to accept and mine transaction [ms] 10731
+[2019-01-18T03:51:17.253] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 3,
+    "velocity": 19,
+    "acceleration": null
+} at time: 1547783477253
+[2019-01-18T03:51:17.253] [INFO] default - === Round: 19 ===
+[2019-01-18T03:51:17.266] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T03:51:17.267] [INFO] default - Transaction id = 1405304cb371908223bdb3a3a92a8bbeebcfb5dfe09ee0a0738e98735a3200d1
+[2019-01-18T03:51:21.534] [INFO] default - Successfully committed the change to the ledger by the peer
+[2019-01-18T03:51:21.534] [INFO] default - >>> Time taken to create and sign transaction [ms] 14
+[2019-01-18T03:51:21.534] [INFO] default - >>> Time taken to accept and mine transaction [ms] 4267
+[2019-01-18T03:51:21.534] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 3,
+    "velocity": 20,
+    "acceleration": null
+} at time: 1547783481534
+[2019-01-18T03:51:21.534] [INFO] default - === Round: 20 ===
+[2019-01-18T03:51:21.545] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T03:51:21.545] [INFO] default - Transaction id = 8f070e3ded08ccdbcd6b88f6f4e06d6b62bee24cc68205d84ce5db9521873415
+[2019-01-18T03:51:30.923] [INFO] default - Successfully committed the change to the ledger by the peer
+[2019-01-18T03:51:30.923] [INFO] default - >>> Time taken to create and sign transaction [ms] 11
+[2019-01-18T03:51:30.923] [INFO] default - >>> Time taken to accept and mine transaction [ms] 9378
+[2019-01-18T03:51:30.924] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 3,
+    "velocity": 21,
+    "acceleration": null
+} at time: 1547783490924
+[2019-01-18T03:51:30.924] [INFO] default - === Round: 21 ===
+[2019-01-18T03:51:30.933] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T03:51:30.933] [INFO] default - Transaction id = 9b5e74a29c190ebd9cb2472e579319467865cda174f9c0e8e79803a85c94bc4c
+[2019-01-18T03:51:39.602] [INFO] default - Successfully committed the change to the ledger by the peer
+[2019-01-18T03:51:39.602] [INFO] default - >>> Time taken to create and sign transaction [ms] 10
+[2019-01-18T03:51:39.602] [INFO] default - >>> Time taken to accept and mine transaction [ms] 8668
+[2019-01-18T03:51:39.603] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 3,
+    "velocity": 22,
+    "acceleration": null
+} at time: 1547783499603
+[2019-01-18T03:51:39.603] [INFO] default - === Round: 22 ===
+[2019-01-18T03:51:39.613] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T03:51:39.613] [INFO] default - Transaction id = 6db91e9a0273f580794e4ad86aed227dfaab677cc51e968cc3cc99a7a4988f7a
+[2019-01-18T03:51:57.924] [INFO] default - Successfully committed the change to the ledger by the peer
+[2019-01-18T03:51:57.924] [INFO] default - >>> Time taken to create and sign transaction [ms] 10
+[2019-01-18T03:51:57.924] [INFO] default - >>> Time taken to accept and mine transaction [ms] 18311
+[2019-01-18T03:51:57.924] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 3,
+    "velocity": 23,
+    "acceleration": null
+} at time: 1547783517924
+[2019-01-18T03:51:57.924] [INFO] default - === Round: 23 ===
+[2019-01-18T03:51:57.938] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T03:51:57.938] [INFO] default - Transaction id = fd440ba85b15c6128e7f5b2e57ddb2316994838cea093bf168d77b70262c7319
+[2019-01-18T03:52:10.225] [INFO] default - Successfully committed the change to the ledger by the peer
+[2019-01-18T03:52:10.225] [INFO] default - >>> Time taken to create and sign transaction [ms] 14
+[2019-01-18T03:52:10.225] [INFO] default - >>> Time taken to accept and mine transaction [ms] 12287
+[2019-01-18T03:52:10.225] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 3,
+    "velocity": 24,
+    "acceleration": null
+} at time: 1547783530225
+[2019-01-18T03:52:10.225] [INFO] default - === Round: 24 ===
+[2019-01-18T03:52:10.235] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T03:52:10.235] [INFO] default - Transaction id = 8b735cf021f07d00b96044795b8c9bdd9ec7531a762939dc7019ad4f3bb7ebc9
+[2019-01-18T03:52:23.741] [INFO] default - Successfully committed the change to the ledger by the peer
+[2019-01-18T03:52:23.742] [INFO] default - >>> Time taken to create and sign transaction [ms] 10
+[2019-01-18T03:52:23.742] [INFO] default - >>> Time taken to accept and mine transaction [ms] 13507
+[2019-01-18T03:52:23.742] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 3,
+    "velocity": 25,
+    "acceleration": null
+} at time: 1547783543742
+[2019-01-18T03:52:23.742] [INFO] default - === Round: 25 ===
+[2019-01-18T03:52:23.751] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T03:52:23.751] [INFO] default - Transaction id = 79991f624a2be14fcb95bce2850b8518061fa5b069d4060fe78079485b9716af
+[2019-01-18T03:52:37.720] [INFO] default - Successfully committed the change to the ledger by the peer
+[2019-01-18T03:52:37.720] [INFO] default - >>> Time taken to create and sign transaction [ms] 9
+[2019-01-18T03:52:37.720] [INFO] default - >>> Time taken to accept and mine transaction [ms] 13969
+[2019-01-18T03:52:37.720] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 3,
+    "velocity": 26,
+    "acceleration": null
+} at time: 1547783557720
+[2019-01-18T03:52:37.720] [INFO] default - === Round: 26 ===
+[2019-01-18T03:52:37.743] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T03:52:37.744] [INFO] default - Transaction id = ef4393ea15d2d72f75fda2f50b835ef74471fb33245dbc02a0b55aeca3c46f40
+[2019-01-18T03:52:47.173] [INFO] default - Successfully committed the change to the ledger by the peer
+[2019-01-18T03:52:47.173] [INFO] default - >>> Time taken to create and sign transaction [ms] 23
+[2019-01-18T03:52:47.173] [INFO] default - >>> Time taken to accept and mine transaction [ms] 9429
+[2019-01-18T03:52:47.173] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 3,
+    "velocity": 27,
+    "acceleration": null
+} at time: 1547783567173
+[2019-01-18T03:52:47.173] [INFO] default - === Round: 27 ===
+[2019-01-18T03:52:47.183] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T03:52:47.184] [INFO] default - Transaction id = 1b6d4438bfb816f997cec0fdc7e42d8ddc56130eafeb1b474120af6bd5453eb6
+[2019-01-18T03:52:57.528] [INFO] default - Successfully committed the change to the ledger by the peer
+[2019-01-18T03:52:57.528] [INFO] default - >>> Time taken to create and sign transaction [ms] 11
+[2019-01-18T03:52:57.529] [INFO] default - >>> Time taken to accept and mine transaction [ms] 10344
+[2019-01-18T03:52:57.529] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 3,
+    "velocity": 28,
+    "acceleration": null
+} at time: 1547783577529
+[2019-01-18T03:52:57.529] [INFO] default - === Round: 28 ===
+[2019-01-18T03:52:57.540] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T03:52:57.541] [INFO] default - Transaction id = a80182a546f50c87b7fa7f19bc3b0df557d2ff2c8fd7e4cc5f8d6ae334399b2c
+[2019-01-18T03:53:07.329] [INFO] default - Successfully committed the change to the ledger by the peer
+[2019-01-18T03:53:07.330] [INFO] default - >>> Time taken to create and sign transaction [ms] 12
+[2019-01-18T03:53:07.330] [INFO] default - >>> Time taken to accept and mine transaction [ms] 9789
+[2019-01-18T03:53:07.330] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 3,
+    "velocity": 29,
+    "acceleration": null
+} at time: 1547783587330
+[2019-01-18T03:53:07.331] [INFO] default - === Round: 29 ===
+[2019-01-18T03:53:07.340] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T03:53:07.341] [INFO] default - Transaction id = f515aea370400d00bdb2f349727ea0cd1a6759088659c925d79ae74e816de6d2
+[2019-01-18T03:53:20.377] [INFO] default - Successfully committed the change to the ledger by the peer
+[2019-01-18T03:53:20.378] [INFO] default - >>> Time taken to create and sign transaction [ms] 10
+[2019-01-18T03:53:20.378] [INFO] default - >>> Time taken to accept and mine transaction [ms] 13037
+[2019-01-18T03:53:20.378] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 3,
+    "velocity": 30,
+    "acceleration": null
+} at time: 1547783600378
+[2019-01-18T03:53:20.378] [INFO] default - === Round: 30 ===
+[2019-01-18T03:53:20.388] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T03:53:20.389] [INFO] default - Transaction id = 1628a86d85cb6b970daaa03dbeea22a1eb9c16fcd0b5d164a074ca3e6ca45869
+[2019-01-18T03:53:33.060] [INFO] default - Successfully committed the change to the ledger by the peer
+[2019-01-18T03:53:33.060] [INFO] default - >>> Time taken to create and sign transaction [ms] 11
+[2019-01-18T03:53:33.060] [INFO] default - >>> Time taken to accept and mine transaction [ms] 12671
+[2019-01-18T03:53:33.061] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 3,
+    "velocity": 31,
+    "acceleration": null
+} at time: 1547783613061
+[2019-01-18T03:53:33.061] [INFO] default - === Round: 31 ===
+[2019-01-18T03:53:33.069] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T03:53:33.070] [INFO] default - Transaction id = 9749da57c7aa2ac40c4d2ce6be36916017c55ecd567f2392a9a0263f5493d383
+[2019-01-18T03:53:50.582] [INFO] default - Successfully committed the change to the ledger by the peer
+[2019-01-18T03:53:50.582] [INFO] default - >>> Time taken to create and sign transaction [ms] 9
+[2019-01-18T03:53:50.582] [INFO] default - >>> Time taken to accept and mine transaction [ms] 17512
+[2019-01-18T03:53:50.582] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 3,
+    "velocity": 32,
+    "acceleration": null
+} at time: 1547783630582
+[2019-01-18T03:53:50.583] [INFO] default - === Round: 32 ===
+[2019-01-18T03:53:50.592] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T03:53:50.592] [INFO] default - Transaction id = 939161de5c910563385cae8c4ad090addaa236710e2e5433fa7488b1d12981bd
+[2019-01-18T03:54:07.352] [INFO] default - Successfully committed the change to the ledger by the peer
+[2019-01-18T03:54:07.352] [INFO] default - >>> Time taken to create and sign transaction [ms] 9
+[2019-01-18T03:54:07.352] [INFO] default - >>> Time taken to accept and mine transaction [ms] 16760
+[2019-01-18T03:54:07.352] [INFO] default - >>>>>> Vehicle updated to {
+    "id": 3,
+    "velocity": 33,
+    "acceleration": null
+} at time: 1547783647352
+[2019-01-18T03:54:07.352] [INFO] default - === Round: 33 ===
+[2019-01-18T03:54:07.360] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T03:54:07.361] [INFO] default - Transaction id = 889b69bab148160fd583cd5e06c6d351a8639639a5ea94474fa78c5d63349089
+[2019-01-18T03:54:52.372] [INFO] default - >>> Error Failed to invoke successfully:: Error: REQUEST_TIMEOUT
+[2019-01-18T03:54:52.372] [INFO] default - === Round: 34 ===
+[2019-01-18T03:54:52.382] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T03:54:52.382] [INFO] default - Transaction id = d16d73cf2e2ea87c99ad168b9d46ebef76bdc7192545cc51c7808d500db22a6c
+[2019-01-18T03:55:37.391] [INFO] default - >>> Error Failed to invoke successfully:: Error: REQUEST_TIMEOUT
+[2019-01-18T03:55:37.391] [INFO] default - === Round: 35 ===
+[2019-01-18T03:55:37.399] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T03:55:37.399] [INFO] default - Transaction id = 2241526feeeaadaba2d3ebb43a343f2c6b2a4c857cde4ba01e9421ffa9edfc5b
+[2019-01-18T03:56:37.404] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to order the transaction. Error code: SERVICE_UNAVAILABLE
+[2019-01-18T03:56:37.404] [INFO] default - === Round: 36 ===
+[2019-01-18T03:56:37.413] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T03:56:37.413] [INFO] default - Transaction id = 3790b31ad9e8e8dae69a752ff4fc06cd6aafdca6bfb601a9f3cfa4755192208d
+[2019-01-18T03:57:37.418] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to order the transaction. Error code: SERVICE_UNAVAILABLE
+[2019-01-18T03:57:37.418] [INFO] default - === Round: 37 ===
+[2019-01-18T03:57:37.428] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T03:57:37.428] [INFO] default - Transaction id = 762aa0bf48d9c152e660a558c6a541000727c893babe306b8d6bebba1ac1a61e
+[2019-01-18T03:58:37.432] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to order the transaction. Error code: SERVICE_UNAVAILABLE
+[2019-01-18T03:58:37.433] [INFO] default - === Round: 38 ===
+[2019-01-18T03:58:37.442] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T03:58:37.443] [INFO] default - Transaction id = 4c13f42a2a65bdda77abe30ea3c683aba4919cccf769aab1f614cf1f05f59527
+[2019-01-18T03:59:37.447] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to order the transaction. Error code: SERVICE_UNAVAILABLE
+[2019-01-18T03:59:37.448] [INFO] default - === Round: 39 ===
+[2019-01-18T03:59:37.460] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T03:59:37.460] [INFO] default - Transaction id = 867cb46c538f812ae23a42a028ab579fdbf4f81cb973d2ed882a96513e7709f4
+[2019-01-18T04:00:37.464] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to order the transaction. Error code: SERVICE_UNAVAILABLE
+[2019-01-18T04:00:37.465] [INFO] default - === Round: 40 ===
+[2019-01-18T04:00:37.473] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T04:00:37.474] [INFO] default - Transaction id = 65a681dfa4217daf01815b66fa2e3002155a526ce8fadc5bc6a04f8a103f6a9d
+[2019-01-18T04:01:37.479] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to order the transaction. Error code: SERVICE_UNAVAILABLE
+[2019-01-18T04:01:37.480] [INFO] default - === Round: 41 ===
+[2019-01-18T04:01:37.490] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T04:01:37.490] [INFO] default - Transaction id = 3a41e385b4dbd4ff23a27abede302f5f5b36938f9aabb8da2f44e2f2bf1c0c5c
+[2019-01-18T04:02:37.495] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to order the transaction. Error code: SERVICE_UNAVAILABLE
+[2019-01-18T04:02:37.495] [INFO] default - === Round: 42 ===
+[2019-01-18T04:02:37.505] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T04:02:37.505] [INFO] default - Transaction id = b2f4c8d0a548f063a8161153d9925ebe30168e4e95293ae5589ff4bf8e74ff0e
+[2019-01-18T04:03:37.510] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to order the transaction. Error code: SERVICE_UNAVAILABLE
+[2019-01-18T04:03:37.510] [INFO] default - === Round: 43 ===
+[2019-01-18T04:03:37.520] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T04:03:37.520] [INFO] default - Transaction id = f7eb9f16ee78f57476f4c171261395b5b4a5a604dcff31018e34b7e180a8a976
+[2019-01-18T04:04:37.526] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to order the transaction. Error code: SERVICE_UNAVAILABLE
+[2019-01-18T04:04:37.527] [INFO] default - === Round: 44 ===
+[2019-01-18T04:04:37.536] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T04:04:37.536] [INFO] default - Transaction id = 9b82cca3e72605998f2c840521ef2e8262093309f891974aa5d0ca51cf3ab288
+[2019-01-18T04:05:37.541] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to order the transaction. Error code: SERVICE_UNAVAILABLE
+[2019-01-18T04:05:37.541] [INFO] default - === Round: 45 ===
+[2019-01-18T04:05:37.557] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T04:05:37.557] [INFO] default - Transaction id = f361ec7e56bd6bafe385f5c5ee27c5bba1fde476cd0b43e98644066157883e0f
+[2019-01-18T04:06:37.563] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to order the transaction. Error code: SERVICE_UNAVAILABLE
+[2019-01-18T04:06:37.563] [INFO] default - === Round: 46 ===
+[2019-01-18T04:06:37.573] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T04:06:37.573] [INFO] default - Transaction id = ffdb836fdc1c53d757d158328e9e22dfd8dc956b35972ff67e68a97d126d9a6b
+[2019-01-18T04:07:37.579] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to order the transaction. Error code: SERVICE_UNAVAILABLE
+[2019-01-18T04:07:37.579] [INFO] default - === Round: 47 ===
+[2019-01-18T04:07:37.590] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T04:07:37.590] [INFO] default - Transaction id = d540dda648aa35ad48b1a5b2cbcfcf08041882c460e66a17383bb84623be546f
+[2019-01-18T04:08:37.595] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to order the transaction. Error code: SERVICE_UNAVAILABLE
+[2019-01-18T04:08:37.595] [INFO] default - === Round: 48 ===
+[2019-01-18T04:08:37.606] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T04:08:37.607] [INFO] default - Transaction id = d8d8d7cf0041de615040c1706d48af2626db5ce4edbbd838dcc2764662bd3e71
+[2019-01-18T04:09:37.613] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to order the transaction. Error code: SERVICE_UNAVAILABLE
+[2019-01-18T04:09:37.613] [INFO] default - === Round: 49 ===
+[2019-01-18T04:09:37.624] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T04:09:37.624] [INFO] default - Transaction id = 0096f1a0a823ef3cf49415911654ace8c1f43a1b78ae64fcd6621d432b4ec4cc
+[2019-01-18T04:10:37.630] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to order the transaction. Error code: SERVICE_UNAVAILABLE
+[2019-01-18T04:10:37.630] [INFO] default - === Round: 50 ===
+[2019-01-18T04:10:37.641] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T04:10:37.642] [INFO] default - Transaction id = 65e27e3774c12a7a8e9f792858756a76f6deb6e0bf54445f49a94a386b7c46ec
+[2019-01-18T04:11:37.648] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to order the transaction. Error code: SERVICE_UNAVAILABLE
+[2019-01-18T04:11:37.648] [INFO] default - === Round: 51 ===
+[2019-01-18T04:11:37.659] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T04:11:37.659] [INFO] default - Transaction id = 0e2c9b0ee18e59cd7944b5c6cb087c7769c418764f5238d600668017dfda6099
+[2019-01-18T04:12:37.663] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to order the transaction. Error code: SERVICE_UNAVAILABLE
+[2019-01-18T04:12:37.663] [INFO] default - === Round: 52 ===
+[2019-01-18T04:12:37.672] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T04:12:37.672] [INFO] default - Transaction id = 94bc603f71e5fc708929ae46ce455dada9f401fe4ec1bdbb09dc053fb66327fb
+[2019-01-18T04:13:37.677] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to order the transaction. Error code: SERVICE_UNAVAILABLE
+[2019-01-18T04:13:37.677] [INFO] default - === Round: 53 ===
+[2019-01-18T04:13:37.688] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T04:13:37.688] [INFO] default - Transaction id = 8dabd3bf15d335370a4d10b1070f88f611cdaeeb758fdc1cca0d4c25be6f64f5
+[2019-01-18T04:14:37.692] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to order the transaction. Error code: SERVICE_UNAVAILABLE
+[2019-01-18T04:14:37.692] [INFO] default - === Round: 54 ===
+[2019-01-18T04:14:37.701] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T04:14:37.701] [INFO] default - Transaction id = 338d20309f9565ad720ad62e1c8736496685387eaf53d4bc8223421048b0794a
+[2019-01-18T04:15:37.708] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to order the transaction. Error code: SERVICE_UNAVAILABLE
+[2019-01-18T04:15:37.709] [INFO] default - === Round: 55 ===
+[2019-01-18T04:15:37.719] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T04:15:37.719] [INFO] default - Transaction id = adabe345d128c14adb0136010dd0b2d44bf61e9a95a68e4039a97675f4846774
+[2019-01-18T04:16:37.725] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to order the transaction. Error code: SERVICE_UNAVAILABLE
+[2019-01-18T04:16:37.725] [INFO] default - === Round: 56 ===
+[2019-01-18T04:16:37.734] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T04:16:37.734] [INFO] default - Transaction id = e0ddfe6b64c69c0a43ffddc2f0b96efa9d554c5e31f26dee4f193460e17cc1ae
+[2019-01-18T04:17:37.738] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to order the transaction. Error code: SERVICE_UNAVAILABLE
+[2019-01-18T04:17:37.738] [INFO] default - === Round: 57 ===
+[2019-01-18T04:17:37.749] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T04:17:37.749] [INFO] default - Transaction id = 6c7c1f884199de044354fff2f8e519947b8c6f830d4327f37ec74e7ea627d6b2
+[2019-01-18T04:18:37.755] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to order the transaction. Error code: SERVICE_UNAVAILABLE
+[2019-01-18T04:18:37.756] [INFO] default - === Round: 58 ===
+[2019-01-18T04:18:37.765] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T04:18:37.765] [INFO] default - Transaction id = afe4490de3444b79333054c1503b67e375dd7d2c1243eac6d662061027f8225d
+[2019-01-18T04:19:37.770] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to order the transaction. Error code: SERVICE_UNAVAILABLE
+[2019-01-18T04:19:37.770] [INFO] default - === Round: 59 ===
+[2019-01-18T04:19:37.780] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T04:19:37.781] [INFO] default - Transaction id = 21d3e93193b27bc9452b43ca922151bcb1b5f101ed41d82851d3863a51382ee0
+[2019-01-18T04:20:37.786] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to order the transaction. Error code: SERVICE_UNAVAILABLE
+[2019-01-18T04:20:37.786] [INFO] default - === Round: 60 ===
+[2019-01-18T04:20:37.794] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T04:20:37.794] [INFO] default - Transaction id = 7e69a7b6f4d71de020c031b1fe7365923b0f81f0a108637e7bfebcb2bc2b94b0
+[2019-01-18T04:21:37.799] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to order the transaction. Error code: SERVICE_UNAVAILABLE
+[2019-01-18T04:21:37.799] [INFO] default - === Round: 61 ===
+[2019-01-18T04:21:37.811] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T04:21:37.811] [INFO] default - Transaction id = 1904ca426d8d7519557b5df34e4e471413a9e31b99571c3307f12f1e546af7e9
+[2019-01-18T04:22:37.816] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to order the transaction. Error code: SERVICE_UNAVAILABLE
+[2019-01-18T04:22:37.816] [INFO] default - === Round: 62 ===
+[2019-01-18T04:22:37.826] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T04:22:37.826] [INFO] default - Transaction id = e82face68c176d5f6d3738b6b31f26d7c46b471928dee522bd7679504b2c386f
+[2019-01-18T04:23:37.833] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to order the transaction. Error code: SERVICE_UNAVAILABLE
+[2019-01-18T04:23:37.833] [INFO] default - === Round: 63 ===
+[2019-01-18T04:23:37.844] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T04:23:37.844] [INFO] default - Transaction id = 9b43b6c8c8ab658ba0514ac1d9a52955b31f7b5e6acc5d882f3ed4d84de75269
+[2019-01-18T04:24:37.851] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to order the transaction. Error code: SERVICE_UNAVAILABLE
+[2019-01-18T04:24:37.851] [INFO] default - === Round: 64 ===
+[2019-01-18T04:24:37.861] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T04:24:37.862] [INFO] default - Transaction id = b8327c7d663db7706beee181210859cc0653ebfa549c734016c196c74209a215
+[2019-01-18T04:25:37.867] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to order the transaction. Error code: SERVICE_UNAVAILABLE
+[2019-01-18T04:25:37.867] [INFO] default - === Round: 65 ===
+[2019-01-18T04:25:37.880] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T04:25:37.881] [INFO] default - Transaction id = 91cc78bad3f5a9e1c23f51abc835376509987c005baf33939e32fad8ef374374
+[2019-01-18T04:26:37.885] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to order the transaction. Error code: SERVICE_UNAVAILABLE
+[2019-01-18T04:26:37.885] [INFO] default - === Round: 66 ===
+[2019-01-18T04:26:37.894] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T04:26:37.894] [INFO] default - Transaction id = de60861c40b48cf8bb6241602dcaab71bbe7260a307be2923295ebe3c955f4d6
+[2019-01-18T04:27:37.898] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to order the transaction. Error code: SERVICE_UNAVAILABLE
+[2019-01-18T04:27:37.898] [INFO] default - === Round: 67 ===
+[2019-01-18T04:27:37.909] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T04:27:37.909] [INFO] default - Transaction id = f1fc6295c73cbe1a99a5ced4e5b4944fc7ed4fff1d34cb193b7451cd266ee5c2
+[2019-01-18T04:28:37.913] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to order the transaction. Error code: SERVICE_UNAVAILABLE
+[2019-01-18T04:28:37.913] [INFO] default - === Round: 68 ===
+[2019-01-18T04:28:37.922] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T04:28:37.922] [INFO] default - Transaction id = 81b570040f2238adaf82444ae4434f28b85b480515f7500ab1baf3390244c226
+[2019-01-18T04:29:37.931] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to order the transaction. Error code: SERVICE_UNAVAILABLE
+[2019-01-18T04:29:37.932] [INFO] default - === Round: 69 ===
+[2019-01-18T04:29:37.942] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T04:29:37.943] [INFO] default - Transaction id = a33c5864d402e9b713c66a62123413e0d1276c6ad1433f043db80ecc9a9871fe
+[2019-01-18T04:30:37.951] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to order the transaction. Error code: SERVICE_UNAVAILABLE
+[2019-01-18T04:30:37.952] [INFO] default - === Round: 70 ===
+[2019-01-18T04:30:37.961] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T04:30:37.961] [INFO] default - Transaction id = ba6c6cd45dbb5018841e18a63a37db8c191ab494721f4e0146e70629656b3264
+[2019-01-18T04:31:37.968] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to order the transaction. Error code: SERVICE_UNAVAILABLE
+[2019-01-18T04:31:37.968] [INFO] default - === Round: 71 ===
+[2019-01-18T04:31:37.978] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T04:31:37.978] [INFO] default - Transaction id = 2957a4ad74a969a5b5ca3d1c03f42a0959bbc62dc9bed4d3947bbdf3a38c2fbc
+[2019-01-18T04:32:37.984] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to order the transaction. Error code: SERVICE_UNAVAILABLE
+[2019-01-18T04:32:37.985] [INFO] default - === Round: 72 ===
+[2019-01-18T04:32:37.993] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T04:32:37.993] [INFO] default - Transaction id = e813174968a7f4e2714524950c8de91be8dea7118b51d03014fa0a1f34996048
+[2019-01-18T04:33:38.003] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to order the transaction. Error code: SERVICE_UNAVAILABLE
+[2019-01-18T04:33:38.004] [INFO] default - === Round: 73 ===
+[2019-01-18T04:33:38.014] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T04:33:38.014] [INFO] default - Transaction id = 798a1bd00d9196e39bc0c60851f8981eb8453d9de93b04c7537ebc04cc12ae05
+[2019-01-18T04:34:38.024] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to order the transaction. Error code: SERVICE_UNAVAILABLE
+[2019-01-18T04:34:38.024] [INFO] default - === Round: 74 ===
+[2019-01-18T04:34:38.033] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T04:34:38.033] [INFO] default - Transaction id = 4952648b065ddf6dbfa5bbe43ef3f3c8b61684449fe2b2ec5df51c9b15d178c3
+[2019-01-18T04:35:38.040] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to order the transaction. Error code: SERVICE_UNAVAILABLE
+[2019-01-18T04:35:38.041] [INFO] default - === Round: 75 ===
+[2019-01-18T04:35:38.051] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T04:35:38.051] [INFO] default - Transaction id = c96e006392d85e83df5c53bfdc0113ea61702d1644673c952fcc4acbb51ff975
+[2019-01-18T04:36:38.060] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to order the transaction. Error code: SERVICE_UNAVAILABLE
+[2019-01-18T04:36:38.061] [INFO] default - === Round: 76 ===
+[2019-01-18T04:36:38.072] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T04:36:38.072] [INFO] default - Transaction id = b14718058098ed761b5afb16fc1f38a22222bc132b408e4301d8799ec1320043
+[2019-01-18T04:37:38.080] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to order the transaction. Error code: SERVICE_UNAVAILABLE
+[2019-01-18T04:37:38.080] [INFO] default - === Round: 77 ===
+[2019-01-18T04:37:38.091] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T04:37:38.091] [INFO] default - Transaction id = a2b18975cb1879ac3af25f0df381cce629d8ca78a42aa360c562a12fb2b2f92b
+[2019-01-18T04:38:38.099] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to order the transaction. Error code: SERVICE_UNAVAILABLE
+[2019-01-18T04:38:38.100] [INFO] default - === Round: 78 ===
+[2019-01-18T04:38:38.109] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T04:38:38.109] [INFO] default - Transaction id = cc3e5938e620f8c9f2786d5a18e067f3a0bba0ed66683edb6e9fc6e14fe7ad72
+[2019-01-18T04:39:38.113] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to order the transaction. Error code: SERVICE_UNAVAILABLE
+[2019-01-18T04:39:38.113] [INFO] default - === Round: 79 ===
+[2019-01-18T04:39:38.124] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T04:39:38.124] [INFO] default - Transaction id = e7c531ce02acae670e21783363a5363a97305b3c77b9d0066656148bf6107fe5
+[2019-01-18T04:40:38.133] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to order the transaction. Error code: SERVICE_UNAVAILABLE
+[2019-01-18T04:40:38.134] [INFO] default - === Round: 80 ===
+[2019-01-18T04:40:38.142] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T04:40:38.143] [INFO] default - Transaction id = 3004cd28b5f416fbdaa85b79cad285617e2136cc082a9dcf0121152075e5c101
+[2019-01-18T04:41:38.152] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to order the transaction. Error code: SERVICE_UNAVAILABLE
+[2019-01-18T04:41:38.152] [INFO] default - === Round: 81 ===
+[2019-01-18T04:41:38.162] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T04:41:38.163] [INFO] default - Transaction id = c115ace2f0060c32d9a3bb8ec24591ed9ec39fde4d7bacc6b20a75bc54ba8611
+[2019-01-18T04:42:38.172] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to order the transaction. Error code: SERVICE_UNAVAILABLE
+[2019-01-18T04:42:38.172] [INFO] default - === Round: 82 ===
+[2019-01-18T04:42:38.181] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T04:42:38.182] [INFO] default - Transaction id = fbc055f72c275390c6de1391b1fc45a32f8bf7fea3747e03ec7d18c5750221a7
+[2019-01-18T04:43:38.189] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to order the transaction. Error code: SERVICE_UNAVAILABLE
+[2019-01-18T04:43:38.190] [INFO] default - === Round: 83 ===
+[2019-01-18T04:43:38.200] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T04:43:38.200] [INFO] default - Transaction id = 599d679d47b16d151f79f1862826ace05603228f1b2ce1df0f7e83e892c2a064
+[2019-01-18T04:44:38.208] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to order the transaction. Error code: SERVICE_UNAVAILABLE
+[2019-01-18T04:44:38.208] [INFO] default - === Round: 84 ===
+[2019-01-18T04:44:38.217] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T04:44:38.217] [INFO] default - Transaction id = 6887222e36629c10399c0778adb3fa43066e83bbe4478a4409f6d76013185bfc
+[2019-01-18T04:45:38.226] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to order the transaction. Error code: SERVICE_UNAVAILABLE
+[2019-01-18T04:45:38.227] [INFO] default - === Round: 85 ===
+[2019-01-18T04:45:38.236] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T04:45:38.237] [INFO] default - Transaction id = f10f34aa3943f29e266f3db02fb95d782b61e8dc6138ad7d6373f76b11f0842d
+[2019-01-18T04:46:38.244] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to order the transaction. Error code: SERVICE_UNAVAILABLE
+[2019-01-18T04:46:38.244] [INFO] default - === Round: 86 ===
+[2019-01-18T04:46:38.252] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T04:46:38.253] [INFO] default - Transaction id = d8f46dd424cd4428433bf5ee7ad00d0188aadeb5bfecaba8341c2db816aca72a
+[2019-01-18T04:47:38.260] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to order the transaction. Error code: SERVICE_UNAVAILABLE
+[2019-01-18T04:47:38.261] [INFO] default - === Round: 87 ===
+[2019-01-18T04:47:38.271] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T04:47:38.271] [INFO] default - Transaction id = b3c61c5a3aa970beb9c2d63f808ec15fc954a511120c018140fb4a4f451f144b
+[2019-01-18T04:48:38.281] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to order the transaction. Error code: SERVICE_UNAVAILABLE
+[2019-01-18T04:48:38.281] [INFO] default - === Round: 88 ===
+[2019-01-18T04:48:38.291] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T04:48:38.291] [INFO] default - Transaction id = 9300a8028bf0ba7a0d42e2f434e26db8fda4ba7f81a176c50709ddbcf91d7b3c
+[2019-01-18T04:49:38.300] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to order the transaction. Error code: SERVICE_UNAVAILABLE
+[2019-01-18T04:49:38.301] [INFO] default - === Round: 89 ===
+[2019-01-18T04:49:38.311] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T04:49:38.311] [INFO] default - Transaction id = b655d4cb73cfb1c359193780b22e3e51bc4b94398ae1833372b42f8f4582c52c
+[2019-01-18T04:50:38.319] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to order the transaction. Error code: SERVICE_UNAVAILABLE
+[2019-01-18T04:50:38.320] [INFO] default - === Round: 90 ===
+[2019-01-18T04:50:38.328] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T04:50:38.328] [INFO] default - Transaction id = da43067e518653f64e8f0fc44a31b8a1e9fcb41cd9417cda39802174bdaabd50
+[2019-01-18T04:51:38.337] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to order the transaction. Error code: SERVICE_UNAVAILABLE
+[2019-01-18T04:51:38.338] [INFO] default - === Round: 91 ===
+[2019-01-18T04:51:38.354] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T04:51:38.354] [INFO] default - Transaction id = 4bde85fc139742eed45174a2d678f515cbe670ed6c93963dd08d8cac13350c2b
+[2019-01-18T04:52:38.360] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to order the transaction. Error code: SERVICE_UNAVAILABLE
+[2019-01-18T04:52:38.361] [INFO] default - === Round: 92 ===
+[2019-01-18T04:52:38.370] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T04:52:38.370] [INFO] default - Transaction id = 631c15d73e19c7d0aa15e5b4a80f8ce287c6e1b85956933c4c7549f4c163120f
+[2019-01-18T04:53:38.379] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to order the transaction. Error code: SERVICE_UNAVAILABLE
+[2019-01-18T04:53:38.379] [INFO] default - === Round: 93 ===
+[2019-01-18T04:53:38.390] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T04:53:38.391] [INFO] default - Transaction id = cc3aa7ad016ce724af645987687da22ea9c07e75b9af6e56318bafa523e153dd
+[2019-01-18T04:54:38.398] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to order the transaction. Error code: SERVICE_UNAVAILABLE
+[2019-01-18T04:54:38.398] [INFO] default - === Round: 94 ===
+[2019-01-18T04:54:38.408] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T04:54:38.408] [INFO] default - Transaction id = 340f1defd6ff75a77a34ded5813d20bd57610d05a7b5face8bf4865fdb4388fc
+[2019-01-18T04:55:38.415] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to order the transaction. Error code: SERVICE_UNAVAILABLE
+[2019-01-18T04:55:38.416] [INFO] default - === Round: 95 ===
+[2019-01-18T04:55:38.426] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T04:55:38.427] [INFO] default - Transaction id = 203cb0e52da1aa5614babbab4c20aa19e77bbae8c4af52a064e857d23873fa16
+[2019-01-18T04:56:38.435] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to order the transaction. Error code: SERVICE_UNAVAILABLE
+[2019-01-18T04:56:38.436] [INFO] default - === Round: 96 ===
+[2019-01-18T04:56:38.445] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T04:56:38.446] [INFO] default - Transaction id = c522167e23f6e3921c7aa74fa6d3f1cce66c9647f0bd04236d25dc177d0e6652
+[2019-01-18T04:57:38.451] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to order the transaction. Error code: SERVICE_UNAVAILABLE
+[2019-01-18T04:57:38.452] [INFO] default - === Round: 97 ===
+[2019-01-18T04:57:38.462] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T04:57:38.462] [INFO] default - Transaction id = 100a14c7a8edec8209d0e8e5ec83120b47a05569e3f758b3f600ecbfd30f5b34
+[2019-01-18T04:58:38.467] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to order the transaction. Error code: SERVICE_UNAVAILABLE
+[2019-01-18T04:58:38.467] [INFO] default - === Round: 98 ===
+[2019-01-18T04:58:38.476] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T04:58:38.476] [INFO] default - Transaction id = d6e0577767e22c998c1870038956f2d76dfcd0bafad60f3c22d2f1cb1047ff03
+[2019-01-18T04:59:38.484] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to order the transaction. Error code: SERVICE_UNAVAILABLE
+[2019-01-18T04:59:38.484] [INFO] default - === Round: 99 ===
+[2019-01-18T04:59:38.494] [INFO] default - Successfully sent Proposal and received ProposalResponse: Status - 200, message - 
+[2019-01-18T04:59:38.495] [INFO] default - Transaction id = 48eb5a1d0880976bce948a08ef6d26babc7f99dbb22a0cfa09b6625c425218cd
+[2019-01-18T05:00:38.500] [INFO] default - >>> Error Failed to invoke successfully:: Error: Failed to order the transaction. Error code: SERVICE_UNAVAILABLE
+[2019-01-18T05:00:38.502] [INFO] default - =============== RESULTS ===============
+[2019-01-18T05:00:38.502] [INFO] default - There were 100 transaction to be committed to the ledger...
+[2019-01-18T05:00:38.502] [INFO] default - === Committed transactions count = 33
+[2019-01-18T05:00:38.502] [INFO] default - === Failed transactions count = 67
+[2019-01-18T05:00:38.502] [INFO] default - === Total transactions count = 100
+[2019-01-18T05:00:38.503] [INFO] default - Average time taken to create and sign a transaction [ms] = 11.606060606060606
+[2019-01-18T05:00:38.503] [INFO] default - Analysis of accept and mine transaction [ms]: 
+[2019-01-18T05:00:38.503] [INFO] default - === Average = 8338.39393939394
+[2019-01-18T05:00:38.503] [INFO] default - === Minimum = 2034
+[2019-01-18T05:00:38.503] [INFO] default - === Maximum = 18311
+[2019-01-18T05:00:38.503] [INFO] default - === Median = 7892

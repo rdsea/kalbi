@@ -1,0 +1,12 @@
+  VEHICLE_NAME:
+    image: IMAGE_NAME
+    container_name: VEHICLE_NAME
+    volumes:
+    - ~/logs:/v2x_communication/log
+    - ~/hfc-key-storeVEHICLE_ID:/v2x_communication/hfc-key-storeVEHICLE_ID
+    - ~/sim-results:/v2x_communication/results
+    command: start hypfab run-producer VEHICLE_ID ROUNDS_NR MAIN_ORDERER_NAME
+    networks:
+      byfn:
+        aliases:
+        - VEHICLE_NAME.example.com
