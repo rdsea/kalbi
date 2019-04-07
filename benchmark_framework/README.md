@@ -66,7 +66,7 @@ Examples of topologies are given in: ../experiments/topologies
 
 ### In Docker container
 ```
-docker run -d -v ~/masterthesis/prototype/benchmark_framework/config:/benchmark_framework/config -v ~/sshDocker:/root/.ssh -v ~/results:/root/results -v ~/input:/input  --name bc_benchmark_framework bc_benchmark_framework start /input/interaction2small-initialized.json /input/experiments_config-simple.yaml
+docker run -d -v ~/benchmark_framework/config:/benchmark_framework/config -v ~/sshDocker:/root/.ssh -v ~/results:/root/results -v ~/input:/input  --name bc_benchmark_framework bc_benchmark_framework start /input/interaction2small-initialized.json /input/experiments_config-simple.yaml
 ```
 Works analogously with the npm local execution, additionally you have to map required volumes, mainly those mentioned in config.yaml.
 ## Built With
