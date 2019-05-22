@@ -8,8 +8,7 @@ import {DeploymentPatternValidation} from "../validation/DeploymentPatternValida
 
 export class DeploymentPatternService implements IDeploymentPatternService {
 
-    private visited = {};
-    private idCounterPerNodeType = {};
+    // private visited = {};
 
 
     constructor(private repository: IDeploymentPatternGraphRepository,
@@ -38,8 +37,7 @@ export class DeploymentPatternService implements IDeploymentPatternService {
         try {
             let topology: Topology = experiment.topology;
 
-            this.visited = {};
-            this.idCounterPerNodeType = {};
+            // this.visited = {};
 
             let rootNode: PureNode = this.createPureNodeFromNode(topology.structure);
 
@@ -109,11 +107,10 @@ export class DeploymentPatternService implements IDeploymentPatternService {
 
     private createPureNodeFromNode(node: Node): PureNode {
 
-        if (this.visited[node.name]) {
-            return;
-        }
-
-        this.visited[node.name] = true;
+        // if (this.visited[node.name]) {
+        //     return;
+        // }
+        // this.visited[node.name] = true;
 
         let purePeers: PureNode[] = [];
 
@@ -128,11 +125,7 @@ export class DeploymentPatternService implements IDeploymentPatternService {
             }
         }
 
-        if (!this.idCounterPerNodeType[node.nodeType]) {
-            this.idCounterPerNodeType[node.nodeType] = 1;
-        }
-
-        let id: string = NodeType[node.nodeType] + this.idCounterPerNodeType[node.nodeType]++;
+        let id: string = NodeType[node.nodeType] + this.makeid(5);
 
         let pureNode: PureNode = {
             name: id,
@@ -142,6 +135,17 @@ export class DeploymentPatternService implements IDeploymentPatternService {
 
         return pureNode;
     }
+
+    private makeid(length) {
+        let result = '';
+        let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        let charactersLength = characters.length;
+        for (let i = 0; i < length; i++) {
+            result += characters.charAt(Math.floor(Math.random() * charactersLength));
+        }
+        return result;
+    }
+
 
 
     async readAll(): Promise<DeploymentPattern[]> {

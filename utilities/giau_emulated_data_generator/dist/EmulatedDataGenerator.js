@@ -1,12 +1,13 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const log4js = require("log4js");
-const random = require("random");
 const types_1 = require("./types");
 const fs = require("fs");
-class Main {
-    run() {
-        this.createLogger();
+const random = require("random");
+class EmulatedDataGenerator {
+    constructor(logger) {
+        this.logger = logger;
+    }
+    generateData() {
         let BENCHMARKS_COUNT = 250;
         for (let i = 0; i < BENCHMARKS_COUNT; i++) {
             if (i == 0) {
@@ -239,16 +240,6 @@ class Main {
         }
         return result;
     }
-    createLogger() {
-        if (this.logger) {
-            return this.logger;
-        }
-        log4js.configure('config/log4js.json');
-        this.logger = log4js.getLogger('default');
-        return this.logger;
-    }
 }
-exports.Main = Main;
-let main = new Main();
-main.run();
-//# sourceMappingURL=Main.js.map
+exports.EmulatedDataGenerator = EmulatedDataGenerator;
+//# sourceMappingURL=EmulatedDataGenerator.js.map

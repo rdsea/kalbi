@@ -1,32 +1,28 @@
-import * as log4js from "log4js";
 import {Logger} from "log4js";
-import * as random from 'random';
 import {
-    Benchmark,
-    BlockchainArtefact,
-    ContainerConfiguration, DataExchangeAnalysis, Experiment, HardwareUtilization,
-    Node,
-    NodeNetworkQualityAssociationClass, NodeRef,
-    NodeType, SynchronisationState,
-    Topology, TransactionResult
+    Benchmark, BlockchainArtefact, ContainerConfiguration,
+    DataExchangeAnalysis, Experiment,
+    HardwareUtilization,
+    Node, NodeNetworkQualityAssociationClass,
+    NodeRef, NodeType, SynchronisationState,
+    Topology,
+    TransactionResult
 } from "./types";
 import * as fs from "fs";
+import * as random from 'random';
 
 
-export class Main {
 
-
-    private logger: Logger;
+export class EmulatedDataGenerator {
 
     private impl: string;
 
+    constructor(private logger: Logger) {
 
-    public run() {
+    }
 
-        this.createLogger();
-
+    public generateData() {
         let BENCHMARKS_COUNT: number = 250;
-
 
         for (let i = 0; i < BENCHMARKS_COUNT; i++) {
             if (i == 0) {
@@ -40,7 +36,6 @@ export class Main {
                 this.impl = 'eosio';
             }
         }
-
     }
 
 
@@ -304,19 +299,4 @@ export class Main {
         return result;
     }
 
-    private createLogger() {
-
-        if (this.logger) {
-            return this.logger;
-        }
-        log4js.configure('config/log4js.json');
-        this.logger = log4js.getLogger('default');
-        return this.logger;
-
-    }
-
-
 }
-
-let main: Main = new Main();
-main.run();
