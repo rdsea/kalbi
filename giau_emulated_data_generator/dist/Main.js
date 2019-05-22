@@ -49,7 +49,7 @@ class Main {
             let txResults = [];
             let transactionsCount = this.normalRandomInteger(100, 30);
             let acceptedCount = 0;
-            while (transactionsCount-- > 0) {
+            for (let i = 0; i < transactionsCount; i++) {
                 let isAccepted = this.normalRandomInteger(2, 1) == 3 ? false : true;
                 let txResult = null;
                 if (isAccepted) {

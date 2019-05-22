@@ -1,5 +1,5 @@
 
-for file in ~/masterthesis/prototype/analysis_results/results_parsed/*
+for file in ../../experiments/results/benchmarks_results/*
 do 
 	echo 'Pushing '+$file
 	npm run start $file abc.json

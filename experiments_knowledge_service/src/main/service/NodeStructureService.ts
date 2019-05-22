@@ -62,11 +62,7 @@ export class NodeStructureService implements INodeStructureService {
         // this.visitedNode[root._id] = true;
 
         let nodeModel: NodeDataModel = await this.repository.readOneById(root._id);
-        if (nodeModel) {
-            this.logger.info('Trying to read = ' + root._id + ' and returned ' + nodeModel._id);
-        } else {
-            this.logger.info('Trying to read = ' + root._id + ' and returned undefined');
-        }
+        
         let connections: NodeNetworkQualityAssociationClassDataModel[] = [];
 
 

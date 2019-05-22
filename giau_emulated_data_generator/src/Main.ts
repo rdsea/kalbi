@@ -80,7 +80,7 @@ export class Main {
 
             let transactionsCount: number = this.normalRandomInteger(100, 30);
             let acceptedCount: number = 0;
-            while (transactionsCount-- > 0) {
+            for (let i = 0; i < transactionsCount; i++) {
                 let isAccepted: boolean = this.normalRandomInteger(2, 1) == 3 ? false : true;
                 let txResult: TransactionResult = null;
                 if (isAccepted) {
