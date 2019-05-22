@@ -39,6 +39,7 @@ import {DeploymentPatternGraphRepository} from "./repository/DeploymentPatternGr
 import {RecommendationService} from "./service/RecommendationService";
 import {RecommendationEndpoint} from "./endpoints/RecommendationEndpoint";
 import {MongoDb} from "./repository/MongoDb";
+import {DeploymentPatternMatcher} from "./service/DeploymentPatternMatcher";
 
 
 export class DependencyInjection {
@@ -53,6 +54,7 @@ export class DependencyInjection {
     private depPatternEndpoint: DeploymentPatternEndpoint;
     private recommendationEndpoint: RecommendationEndpoint;
 
+    private deploymentPatternMatcher: DeploymentPatternMatcher;
     private vmService: IContainerConfigurationService;
     private softwareArtefactsService: ISoftwareArtefactsService;
     private nodeStructureService: INodeStructureService;
@@ -151,7 +153,7 @@ export class DependencyInjection {
         if (this.recommendationService) {
             return this.recommendationService;
         }
-        this.recommendationService = new RecommendationService(this.createDeploymentPatternService(), this.createExperimentService(), this.createLogger());
+        this.recommendationService = new RecommendationService(this.createDeploymentPatternMatcher(), this.createExperimentService(), this.createLogger());
         return this.recommendationService;
     }
 
@@ -249,6 +251,14 @@ export class DependencyInjection {
         }
         this.vmRepository = new ContainerConfigurationRepository(this.mongoDb, this.createLogger());
         return this.vmRepository;
+    }
+
+    public createDeploymentPatternMatcher(): DeploymentPatternMatcher {
+        if (this.deploymentPatternMatcher) {
+            return this.deploymentPatternMatcher;
+        }
+        this.deploymentPatternMatcher = new DeploymentPatternMatcher(this.createDeploymentPatternService(), this.createLogger());
+        return this.deploymentPatternMatcher;
     }
 
 

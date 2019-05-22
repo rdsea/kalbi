@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "version": "0.8.3",
+    "version": "0.8.4",
     "title": "Experiments Knowledge Service API",
     "description": "A service to store experiments for the Experiments Knowledge Service API"
   },
@@ -15,10 +15,6 @@
     {
       "name": "Software Artefact Service",
       "description": "API to interact with Software Artefacts Service"
-    },
-    {
-      "name": "Experiment",
-      "description": "API for Experiments in the service"
     },
     {
       "name": "Blockchain Benchmark DaaS",
@@ -212,7 +208,7 @@
     "/experiment": {
       "post": {
         "tags": [
-          "Experiment"
+          "Blockchain Benchmark DaaS"
         ],
         "summary": "Create a new Experiment in the service",
         "parameters": [
@@ -243,7 +239,7 @@
       },
       "get": {
         "tags": [
-          "Experiment"
+          "Blockchain Benchmark DaaS"
         ],
         "summary": "Get all Experiment in the service",
         "responses": {
@@ -268,7 +264,7 @@
       ],
       "get": {
         "tags": [
-          "Experiment"
+          "Blockchain Benchmark DaaS"
         ],
         "summary": "Get Experiment with given ID",
         "responses": {
@@ -283,99 +279,13 @@
       "delete": {
         "summary": "Delete Experiment with given ID",
         "tags": [
-          "Experiment"
+          "Blockchain Benchmark DaaS"
         ],
         "responses": {
           "200": {
             "description": "Experiment is deleted",
             "schema": {
               "$ref": "#/definitions/Experiment"
-            }
-          }
-        }
-      }
-    },
-    "/benchmark": {
-      "post": {
-        "tags": [
-          "Blockchain Benchmark DaaS"
-        ],
-        "summary": "Create a new Benchmark in the service",
-        "parameters": [
-          {
-            "name": "Benchmark",
-            "in": "body",
-            "required": true,
-            "description": "Benchmark that we want to create",
-            "schema": {
-              "$ref": "#/definitions/Benchmark"
-            }
-          }
-        ],
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "responses": {
-          "200": {
-            "description": "New Benchmark is created",
-            "schema": {
-              "$ref": "#/definitions/Benchmark"
-            }
-          }
-        }
-      },
-      "get": {
-        "tags": [
-          "Blockchain Benchmark DaaS"
-        ],
-        "summary": "Get all Benchmark in the service",
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/Benchmark"
-            }
-          }
-        }
-      }
-    },
-    "/benchmark/{id}": {
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "required": true,
-          "description": "ID of Benchmark that we want to find",
-          "type": "string"
-        }
-      ],
-      "get": {
-        "tags": [
-          "Blockchain Benchmark DaaS"
-        ],
-        "summary": "Get Benchmark with given ID",
-        "responses": {
-          "200": {
-            "description": "Benchmark is found",
-            "schema": {
-              "$ref": "#/definitions/Benchmark"
-            }
-          }
-        }
-      },
-      "delete": {
-        "summary": "Delete Benchmark with given ID",
-        "tags": [
-          "Blockchain Benchmark DaaS"
-        ],
-        "responses": {
-          "200": {
-            "description": "Benchmark is deleted",
-            "schema": {
-              "$ref": "#/definitions/Benchmark"
             }
           }
         }

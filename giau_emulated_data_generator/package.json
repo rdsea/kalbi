@@ -1,0 +1,21 @@
+{
+  "name": "giau_emulator_data_generator",
+  "version": "0.0.1",
+  "description": "",
+  "main": "Main.js",
+  "scripts": {
+    "build": "./node_modules/typescript/bin/tsc --build tsconfig.json",
+    "start": "NODE_ENV=dev node $NODE_DEBUG_OPTION dist/Main.js $*",
+    "clean": "rm -rf dist",
+    "build-start": "npm run build && npm run start"
+  },
+  "author": "Filip Rydzi",
+  "devDependencies": {
+    "typescript": "^3.1.1"
+  },
+  "dependencies": {
+    "@types/node": "^10.11.4",
+    "log4js": "^3.0.6",
+    "random": "^2.1.1"
+  }
+}

@@ -19,7 +19,7 @@ import {NodeStructureValidation} from "../validation/NodeStructureValidation";
 
 export class NodeStructureService implements INodeStructureService {
 
-    private visitedNode = {};
+    // private visitedNode = {};
     private nodeIdToNodeMap = {};
 
     public constructor(private repository: INodeStructureRepository,
@@ -36,17 +36,17 @@ export class NodeStructureService implements INodeStructureService {
 
             this.logger.info(`Creating Structure with root Node, name = ${rootNodeOfStructure.name}`);
 
-            this.visitedNode = {};
+            // this.visitedNode = {};
             rootNodeOfStructure = await this.createStructure(rootNodeOfStructure);
 
-            this.visitedNode = {};
+            // this.visitedNode = {};
             await this.saveStructureRelationships(rootNodeOfStructure);
 
             this.logger.info(`Created Structure with root Node, id = ${rootNodeOfStructure._id}.`);
             return rootNodeOfStructure;
         } catch (e) {
             if (e instanceof PersistenceException) {
-                throw new ServiceException('Node hasnt been created.');
+                throw new ServiceException(`Node hasn't been created.`);
             } else {
                 throw e;
             }
@@ -56,12 +56,17 @@ export class NodeStructureService implements INodeStructureService {
 
     private async saveStructureRelationships(root: Node) {
 
-        if (this.visitedNode[root.name]) {
-            return;
-        }
-        this.visitedNode[root.name] = true;
+        // if (this.visitedNode[root._id]) {
+        //     return;
+        // }
+        // this.visitedNode[root._id] = true;
 
         let nodeModel: NodeDataModel = await this.repository.readOneById(root._id);
+        if (nodeModel) {
+            this.logger.info('Trying to read = ' + root._id + ' and returned ' + nodeModel._id);
+        } else {
+            this.logger.info('Trying to read = ' + root._id + ' and returned undefined');
+        }
         let connections: NodeNetworkQualityAssociationClassDataModel[] = [];
 
 
@@ -85,10 +90,11 @@ export class NodeStructureService implements INodeStructureService {
 
 
     private async createStructure(root: Node): Promise<Node> {
-        if (this.visitedNode[root.name]) {
-            return root;
-        }
-        this.visitedNode[root.name] = true;
+        // if (this.visitedNode[root._id]) {
+        //     this.logger.info('node already visited');
+        //     return root;
+        // }
+        // this.visitedNode[root._id] = true;
 
         this.logger.debug(`Creating structure of Node with id = ${root.name}`);
 
@@ -140,6 +146,9 @@ export class NodeStructureService implements INodeStructureService {
         nodeDataModel = await this.repository.create(nodeDataModel);
 
         node._id = nodeDataModel._id.toHexString();
+
+        this.logger.info(`Saved node with id = ${node._id}`);
+
         return node;
     }
 

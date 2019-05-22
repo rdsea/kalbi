@@ -28,7 +28,8 @@ export class ExperimentEndpoint {
                             this.logger.info(e);
                             res.status(400).send(e);
                         } else {
-                            throw e;
+                            this.logger.error(e);
+                            res.status(400).send(e);
                         }
                     }
 

@@ -69,8 +69,8 @@ export class App {
         this.experimentEndpoint = this.dependencyInjection.createExperimentEndpoint();
         this.experimentEndpoint.routes(this.router);
 
-        this.expResultEndpoint = this.dependencyInjection.createBenchmarkEndpoint();
-        this.expResultEndpoint.routes(this.router);
+        // this.expResultEndpoint = this.dependencyInjection.createBenchmarkEndpoint();
+        // this.expResultEndpoint.routes(this.router);
 
         this.depPatternEndpoint = this.dependencyInjection.createDeploymentPatternEndpoint();
         this.depPatternEndpoint.routes(this.router);
