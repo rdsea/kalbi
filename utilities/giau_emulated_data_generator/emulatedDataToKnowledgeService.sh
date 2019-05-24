@@ -1,7 +1,8 @@
 
-for file in emulated_data/*
+for file in ../../experiments/giau_emulated_data/*
+# for file in emulated_data/*
 do 
-	echo 'Pushing '+$file
+	echo 'Pushing file to giau' + '\n'
 
 	curl --header "Content-Type: application/json" \
   		--request POST \
