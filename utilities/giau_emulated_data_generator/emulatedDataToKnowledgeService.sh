@@ -1,7 +1,9 @@
+#!/usr/bin/env bash
 
-for file in ../../experiments/giau_emulated_data/*
-# for file in emulated_data/*
-do 
+# for file in ../../experiments/giau_emulated_data/*
+for file in emulated_data/*
+
+do
 	echo 'Pushing file to giau' + '\n'
 
 	curl --header "Content-Type: application/json" \

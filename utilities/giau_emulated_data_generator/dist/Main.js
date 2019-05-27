@@ -9,15 +9,15 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const log4js = require("log4js");
-const EmulatedDataGenerator_1 = require("./EmulatedDataGenerator");
+const PrecisionRecallEvaluator_1 = require("./PrecisionRecallEvaluator");
 class Main {
     run() {
         return __awaiter(this, void 0, void 0, function* () {
             this.createLogger();
-            // let precisionRecall: PrecisionRecallEvaluator = new PrecisionRecallEvaluator(this.logger);
-            // await precisionRecall.runTesting();
-            let emulatedDataGenerator = new EmulatedDataGenerator_1.EmulatedDataGenerator(this.logger);
-            yield emulatedDataGenerator.generateData();
+            let precisionRecall = new PrecisionRecallEvaluator_1.PrecisionRecallEvaluator(this.logger);
+            yield precisionRecall.buildConfusionMatrix();
+            // let emulatedDataGenerator: EmulatedDataGenerator = new EmulatedDataGenerator(this.logger);
+            // await emulatedDataGenerator.generateData();
         });
     }
     createLogger() {

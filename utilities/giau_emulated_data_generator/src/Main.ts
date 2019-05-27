@@ -15,11 +15,11 @@ export class Main {
 
         this.createLogger();
 
-        // let precisionRecall: PrecisionRecallEvaluator = new PrecisionRecallEvaluator(this.logger);
-        // await precisionRecall.runTesting();
+        let precisionRecall: PrecisionRecallEvaluator = new PrecisionRecallEvaluator(this.logger);
+        await precisionRecall.buildConfusionMatrix();
 
-        let emulatedDataGenerator: EmulatedDataGenerator = new EmulatedDataGenerator(this.logger);
-        await emulatedDataGenerator.generateData();
+        // let emulatedDataGenerator: EmulatedDataGenerator = new EmulatedDataGenerator(this.logger);
+        // await emulatedDataGenerator.generateData();
 
 
     }
