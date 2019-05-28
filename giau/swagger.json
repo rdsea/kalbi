@@ -1,0 +1,743 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "0.8.4",
+    "title": "GIAU (knowledGe for blockchaIn Applications and Utilties) API",
+    "description": "A service to store experiments for the GIAU API"
+  },
+  "host": "localhost:9000",
+  "basePath": "/api/v1",
+  "tags": [
+    {
+      "name": "Infrastructure Service",
+      "description": "API to interact with Infrastructure Service"
+    },
+    {
+      "name": "Software Artefact Service",
+      "description": "API to interact with Software Artefacts Service"
+    },
+    {
+      "name": "Blockchain Benchmark DaaS",
+      "description": "API to interact with Blockchain Benchmark DaaS"
+    },
+    {
+      "name": "Deployment Pattern Service",
+      "description": "API to interact with Deployment Pattern Service"
+    },
+    {
+      "name": "Recommendation Service",
+      "description": "API to interact with Recommendation Service"
+    }
+  ],
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/container_config": {
+      "post": {
+        "tags": [
+          "Infrastructure Service"
+        ],
+        "summary": "Create a new ContainerConfiguration in the service",
+        "parameters": [
+          {
+            "name": "ContainerConfiguration",
+            "in": "body",
+            "required": true,
+            "description": "ContainerConfiguration that we want to create",
+            "schema": {
+              "$ref": "#/definitions/ContainerConfiguration"
+            }
+          }
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "New ContainerConfiguration is created",
+            "schema": {
+              "$ref": "#/definitions/ContainerConfiguration"
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Infrastructure Service"
+        ],
+        "summary": "Get all ContainerConfiguration in the service",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ContainerConfiguration"
+            }
+          }
+        }
+      }
+    },
+    "/container_config/{id}": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "description": "ID of virtual machine configuration that we want to find",
+          "type": "string"
+        }
+      ],
+      "get": {
+        "tags": [
+          "Infrastructure Service"
+        ],
+        "summary": "Get ContainerConfiguration with given ID",
+        "responses": {
+          "200": {
+            "description": "ContainerConfiguration is found",
+            "schema": {
+              "$ref": "#/definitions/ContainerConfiguration"
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete ContainerConfiguration with given ID",
+        "tags": [
+          "Infrastructure Service"
+        ],
+        "responses": {
+          "200": {
+            "description": "ContainerConfiguration is deleted",
+            "schema": {
+              "$ref": "#/definitions/ContainerConfiguration"
+            }
+          }
+        }
+      }
+    },
+    "/software_artefact": {
+      "post": {
+        "tags": [
+          "Software Artefact Service"
+        ],
+        "summary": "Create a new SoftwareArtefact in the service",
+        "parameters": [
+          {
+            "name": "SoftwareArtefact",
+            "in": "body",
+            "required": true,
+            "description": "SoftwareArtefact that we want to create",
+            "schema": {
+              "$ref": "#/definitions/SoftwareArtefact"
+            }
+          }
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "New SoftwareArtefact is created",
+            "schema": {
+              "$ref": "#/definitions/SoftwareArtefact"
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Software Artefact Service"
+        ],
+        "summary": "Get all SoftwareArtefact in the service",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/SoftwareArtefact"
+            }
+          }
+        }
+      }
+    },
+    "/software_artefact/{id}": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "description": "ID of software artefact that we want to find",
+          "type": "string"
+        }
+      ],
+      "get": {
+        "tags": [
+          "Software Artefact Service"
+        ],
+        "summary": "Get SoftwareArtefact with given ID",
+        "responses": {
+          "200": {
+            "description": "SoftwareArtefact is found",
+            "schema": {
+              "$ref": "#/definitions/SoftwareArtefact"
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete SoftwareArtefact with given ID",
+        "tags": [
+          "Software Artefact Service"
+        ],
+        "responses": {
+          "200": {
+            "description": "SoftwareArtefact is deleted",
+            "schema": {
+              "$ref": "#/definitions/SoftwareArtefact"
+            }
+          }
+        }
+      }
+    },
+    "/experiment": {
+      "post": {
+        "tags": [
+          "Blockchain Benchmark DaaS"
+        ],
+        "summary": "Create a new Experiment in the service",
+        "parameters": [
+          {
+            "name": "Experiment",
+            "in": "body",
+            "required": true,
+            "description": "Experiment that we want to create",
+            "schema": {
+              "$ref": "#/definitions/Experiment"
+            }
+          }
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "New Experiment is created",
+            "schema": {
+              "$ref": "#/definitions/Experiment"
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Blockchain Benchmark DaaS"
+        ],
+        "summary": "Get all Experiment in the service",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Experiment"
+            }
+          }
+        }
+      }
+    },
+    "/experiment/{id}": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "description": "ID of Experiment that we want to find",
+          "type": "string"
+        }
+      ],
+      "get": {
+        "tags": [
+          "Blockchain Benchmark DaaS"
+        ],
+        "summary": "Get Experiment with given ID",
+        "responses": {
+          "200": {
+            "description": "Experiment is found",
+            "schema": {
+              "$ref": "#/definitions/Experiment"
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete Experiment with given ID",
+        "tags": [
+          "Blockchain Benchmark DaaS"
+        ],
+        "responses": {
+          "200": {
+            "description": "Experiment is deleted",
+            "schema": {
+              "$ref": "#/definitions/Experiment"
+            }
+          }
+        }
+      }
+    },
+    "/dep_pattern": {
+      "post": {
+        "tags": [
+          "Deployment Pattern Service"
+        ],
+        "summary": "Create a new DeploymentPattern in the service",
+        "parameters": [
+          {
+            "name": "DeploymentPattern",
+            "in": "body",
+            "required": true,
+            "description": "DeploymentPattern that we want to create",
+            "schema": {
+              "$ref": "#/definitions/DeploymentPattern"
+            }
+          }
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "New DeploymentPattern is created",
+            "schema": {
+              "$ref": "#/definitions/DeploymentPattern"
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Deployment Pattern Service"
+        ],
+        "summary": "Get all DeploymentPattern in the service",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/DeploymentPattern"
+            }
+          }
+        }
+      }
+    },
+    "/dep_pattern/{id}": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "description": "ID of DeploymentPattern that we want to find",
+          "type": "string"
+        }
+      ],
+      "get": {
+        "tags": [
+          "Deployment Pattern Service"
+        ],
+        "summary": "Get DeploymentPattern with given ID",
+        "responses": {
+          "200": {
+            "description": "DeploymentPattern is found",
+            "schema": {
+              "$ref": "#/definitions/DeploymentPattern"
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete DeploymentPattern with given ID",
+        "tags": [
+          "Deployment Pattern Service"
+        ],
+        "responses": {
+          "200": {
+            "description": "DeploymentPattern is deleted",
+            "schema": {
+              "$ref": "#/definitions/DeploymentPattern"
+            }
+          }
+        }
+      }
+    },
+    "/recommendTopology": {
+      "post": {
+        "tags": [
+          "Recommendation Service"
+        ],
+        "summary": "Recommend Topology, which achieved the best Benchmarks, according to priorities of quality attributes.",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "syncPrior",
+            "schema": {
+              "type": "integer"
+            },
+            "description": "The priority of synchronization state quality attribute"
+          },
+          {
+            "in": "query",
+            "name": "txAcceptRate",
+            "schema": {
+              "type": "integer"
+            },
+            "description": "The priority of transaction acceptance rate quality attribute"
+          },
+          {
+            "in": "query",
+            "name": "txAcceptTime",
+            "schema": {
+              "type": "integer"
+            },
+            "description": "The priority of median transaction acceptance time quality attribute"
+          },
+          {
+            "in": "query",
+            "name": "infRes",
+            "schema": {
+              "type": "integer"
+            },
+            "description": "The priority of infrastructure resource utilization quality attribute"
+          },
+          {
+            "name": "Structure",
+            "in": "body",
+            "required": true,
+            "description": "Structure for which we want to obtain recommendation",
+            "schema": {
+              "$ref": "#/definitions/PureNode"
+            }
+          }
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Topology, which achieved the best Benchmark regarding prioritized quality attributes.",
+            "schema": {
+              "$ref": "#/definitions/Topology"
+            }
+          }
+        }
+      }
+    },
+    "/recommendTopologyTOSCA": {
+      "post": {
+        "tags": [
+          "Recommendation Service"
+        ],
+        "summary": "Recommend Topology (defined in TOSCA language), which achieved the best Benchmarks, according to priorities of quality attributes.",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "syncPrior",
+            "schema": {
+              "type": "integer"
+            },
+            "description": "The priority of synchronization state quality attribute"
+          },
+          {
+            "in": "query",
+            "name": "txAcceptRate",
+            "schema": {
+              "type": "integer"
+            },
+            "description": "The priority of transaction acceptance rate quality attribute"
+          },
+          {
+            "in": "query",
+            "name": "txAcceptTime",
+            "schema": {
+              "type": "integer"
+            },
+            "description": "The priority of median transaction acceptance time quality attribute"
+          },
+          {
+            "in": "query",
+            "name": "infRes",
+            "schema": {
+              "type": "integer"
+            },
+            "description": "The priority of infrastructure resource utilization quality attribute"
+          },
+          {
+            "name": "Structure",
+            "in": "body",
+            "required": true,
+            "description": "Topology definition in TOSCA for which we want to obtain recommendation"
+          }
+        ],
+        "consumes": [
+          "text/plain"
+        ],
+        "produces": [
+          "text/plain"
+        ],
+        "responses": {
+          "200": {
+            "description": "Recommended Topology in TOSCA, which achieved the best Benchmark regarding prioritized quality attributes."
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "ContainerConfiguration": {
+      "required": [
+        "name",
+        "provider",
+        "os",
+        "vCPUcount",
+        "storageSSD",
+        "storageHDD",
+        "memory"
+      ],
+      "properties": {
+        "_id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "provider": {
+          "type": "string"
+        },
+        "os": {
+          "type": "string"
+        },
+        "vCPUcount": {
+          "type": "number"
+        },
+        "storageSSD": {
+          "type": "number"
+        },
+        "storageHDD": {
+          "type": "number"
+        },
+        "memory": {
+          "type": "number"
+        }
+      }
+    },
+    "SoftwareArtefact": {
+      "required": [
+        "name",
+        "executionEnvironment",
+        "repositoryTag"
+      ],
+      "properties": {
+        "_id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "executionEnvironment": {
+          "type": "string"
+        },
+        "repositoryTag": {
+          "type": "string"
+        },
+        "implementation": {
+          "type": "string"
+        },
+        "featureName": {
+          "type": "string"
+        }
+      }
+    },
+    "Topology": {
+      "required": [
+        "caption",
+        "specificationLang",
+        "specification",
+        "structure"
+      ],
+      "properties": {
+        "_id": {
+          "type": "string"
+        },
+        "caption": {
+          "type": "string"
+        },
+        "specificationLang": {
+          "type": "string"
+        },
+        "specification": {
+          "type": "string"
+        },
+        "structure": {
+          "$ref": "#/definitions/Node"
+        }
+      }
+    },
+    "Node": {
+      "required": [
+        "name",
+        "container",
+        "nodeType",
+        "connections"
+      ],
+      "properties": {
+        "_id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "connections": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/NodeNetworkQualityAssociationClass"
+          }
+        },
+        "container": {
+          "$ref": "#/definitions/ContainerConfiguration"
+        },
+        "application": {
+          "$ref": "#/definitions/SoftwareArtefact"
+        },
+        "blockchainArterfacts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SoftwareArtefact"
+          }
+        },
+        "nodeType": {
+          "type": "string",
+          "description": "NodeType of the Node",
+          "enum": [
+            "cloud",
+            "edge",
+            "rsu",
+            "vehicle"
+          ]
+        }
+      }
+    },
+    "NodeNetworkQualityAssociationClass": {
+      "required": [
+        "connectionEndpoint",
+        "networkQuality"
+      ],
+      "properties": {
+        "connectionEndpoint": {
+          "$ref": "#/definitions/Node"
+        },
+        "networkQuality": {
+          "$ref": "#/definitions/NetworkQuality"
+        }
+      }
+    },
+    "NetworkQuality": {
+      "required": [
+        "name",
+        "bandwidth",
+        "latency"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "latency": {
+          "type": "string"
+        },
+        "bandwidth": {
+          "type": "string"
+        }
+      }
+    },
+    "Experiment": {
+      "required": [
+        "topology"
+      ],
+      "properties": {
+        "_id": {
+          "type": "string"
+        },
+        "topology": {
+          "$ref": "#/definitions/Topology"
+        },
+        "benchmark": {
+          "$ref": "#/definitions/Benchmark"
+        }
+      }
+    },
+    "Benchmark": {
+      "required": [
+        "evalMetrics"
+      ],
+      "properties": {
+        "_id": {
+          "type": "string"
+        },
+        "evalMetrics": {}
+      }
+    },
+    "DeploymentPattern": {
+      "required": [
+        "structure"
+      ],
+      "properties": {
+        "_id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "structure": {
+          "$ref": "#/definitions/PureNode"
+        }
+      }
+    },
+    "PureNode": {
+      "required": [
+        "name",
+        "nodeType",
+        "peers"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "peers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PureNode"
+          }
+        },
+        "nodeType": {
+          "type": "string",
+          "description": "NodeType of the PureNode",
+          "enum": [
+            "cloud",
+            "edge",
+            "rsu",
+            "vehicle"
+          ]
+        }
+      }
+    }
+  }
+}

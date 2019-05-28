@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # for file in ../../experiments/giau_emulated_data/*
-for file in ../../experiments_knowledge_service/tests/data/emulated_data/recommendationds-eval/*
+for file in ../../giau/tests/data/emulated_data/recommendationds-eval/*
 
 do
 	echo 'Pushing file to giau' + '\n'

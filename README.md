@@ -39,7 +39,7 @@ View the README.md in the project for more information about startup and configu
 #### GIAU Emulated Data Generator
 
 This module can be in found in the directory `utilities/giau_emulated_data_generator`.
-This module if a NodeJS application, which generates emulated data for GIAU.
+This module is a NodeJS application, which generates emulated data for GIAU.
 View the README.md in the project for more information about startup and configuration.
 
 ### Experiments
