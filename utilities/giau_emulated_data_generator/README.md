@@ -32,5 +32,5 @@ npm run start
 
 ## License
 
-Copyright 2019-, by Service Engineering Analytics team (rdsea.github.io).
+Copyright 2019-, by Service Engineering Analytics team (http://rdsea.github.io/).
 Licensed under the Apache License, Version 2.0 (http://www.apache.org/licenses/LICENSE-2.0).
