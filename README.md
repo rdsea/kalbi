@@ -14,9 +14,9 @@ This module can be found in the directory `benchmark_framework`.
 The module is a NodeJS application. It's responsible for running the benchmarks. The app can be executed locally or in a docker container.
 View the README.md in the project for more information about startup and configuration
 
-### Experiments Knowledge Service
+### GIAU (knowledGe for blockchaIn Applications and Utilties)
 
-This module can be found in the directory `experiments_knowledge_service`.
+This module can be found in the directory `giau`.
 The module is a NodeJS application, which utilizes MongoDB and Neo4J for the persistence layer. It exposes a set of RESTful APIs, which are documented in SwaggerUI. ExpressJS has been used to build those APIs. This application can be executed in a Docker container as well.
 View the README.md in the project for more information about startup and configuration
 
