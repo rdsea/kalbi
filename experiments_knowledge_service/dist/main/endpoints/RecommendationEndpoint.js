@@ -54,3 +54,4 @@ class RecommendationEndpoint {
     }
 }
 exports.RecommendationEndpoint = RecommendationEndpoint;
+//# sourceMappingURL=RecommendationEndpoint.js.map

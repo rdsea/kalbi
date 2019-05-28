@@ -7,3 +7,4 @@ var NodeType;
     NodeType[NodeType["rsu"] = 2] = "rsu";
     NodeType[NodeType["vehicle"] = 3] = "vehicle";
 })(NodeType = exports.NodeType || (exports.NodeType = {}));
+//# sourceMappingURL=dtos.js.map

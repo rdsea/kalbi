@@ -51,3 +51,4 @@ class BenchmarkEndpoint {
     }
 }
 exports.BenchmarkEndpoint = BenchmarkEndpoint;
+//# sourceMappingURL=BenchmarkEndpoint.js.map

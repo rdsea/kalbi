@@ -29,3 +29,4 @@ class BenchmarkRepository extends AbsCRUDMongoDBRepository_1.AbsCRUDMongoDBRepos
     }
 }
 exports.BenchmarkRepository = BenchmarkRepository;
+//# sourceMappingURL=BenchmarkRepository.js.map

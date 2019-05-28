@@ -72,3 +72,4 @@ class SoftwareArtefactEndpoint {
     }
 }
 exports.SoftwareArtefactEndpoint = SoftwareArtefactEndpoint;
+//# sourceMappingURL=SoftwareArtefactEndpoint.js.map

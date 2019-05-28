@@ -125,3 +125,4 @@ describe('SoftwareArtefact tests', () => {
         assert(artefacts.length + 1 == oldCount);
     }));
 });
+//# sourceMappingURL=SoftwareArtefactTest.js.map

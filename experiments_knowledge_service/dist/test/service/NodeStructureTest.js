@@ -387,3 +387,4 @@ function createStructureForInteraction4Large() {
     return mainNode;
 }
 exports.createStructureForInteraction4Large = createStructureForInteraction4Large;
+//# sourceMappingURL=NodeStructureTest.js.map

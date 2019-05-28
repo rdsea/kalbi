@@ -7,3 +7,4 @@ class ServiceException extends Error {
     }
 }
 exports.ServiceException = ServiceException;
+//# sourceMappingURL=ServiceException.js.map

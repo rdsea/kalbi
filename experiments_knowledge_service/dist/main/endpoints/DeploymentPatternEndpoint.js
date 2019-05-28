@@ -50,3 +50,4 @@ class DeploymentPatternEndpoint {
     }
 }
 exports.DeploymentPatternEndpoint = DeploymentPatternEndpoint;
+//# sourceMappingURL=DeploymentPatternEndpoint.js.map

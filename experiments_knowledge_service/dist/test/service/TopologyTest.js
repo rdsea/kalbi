@@ -63,3 +63,4 @@ describe('Topology tests', () => {
         assert(structure == null);
     }));
 });
+//# sourceMappingURL=TopologyTest.js.map

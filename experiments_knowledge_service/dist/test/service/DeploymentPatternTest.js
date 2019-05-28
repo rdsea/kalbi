@@ -108,3 +108,4 @@ describe('DeploymentPatternService tests', () => {
         assert(dp.length === oldCount);
     }));
 });
+//# sourceMappingURL=DeploymentPatternTest.js.map

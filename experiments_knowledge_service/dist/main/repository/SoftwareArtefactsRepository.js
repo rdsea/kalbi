@@ -97,3 +97,4 @@ class SoftwareArtefactsRepository extends AbsCRUDMongoDBRepository_1.AbsCRUDMong
     }
 }
 exports.SoftwareArtefactsRepository = SoftwareArtefactsRepository;
+//# sourceMappingURL=SoftwareArtefactsRepository.js.map

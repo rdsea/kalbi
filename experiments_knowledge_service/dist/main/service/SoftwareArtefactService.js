@@ -104,3 +104,4 @@ class SoftwareArtefactService {
     }
 }
 exports.SoftwareArtefactService = SoftwareArtefactService;
+//# sourceMappingURL=SoftwareArtefactService.js.map

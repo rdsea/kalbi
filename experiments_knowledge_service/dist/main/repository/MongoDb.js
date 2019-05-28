@@ -46,3 +46,4 @@ class MongoDb {
     }
 }
 exports.MongoDb = MongoDb;
+//# sourceMappingURL=MongoDb.js.map

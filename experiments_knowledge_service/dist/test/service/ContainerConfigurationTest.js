@@ -147,3 +147,4 @@ describe('ContainerConfigurationService tests', () => {
         // expect(containerConfigurationService.delete('a')).to.throw('No ContainerConfiguration has been removed');
     }));
 });
+//# sourceMappingURL=ContainerConfigurationTest.js.map

@@ -24,3 +24,4 @@ class SoftwareArtefactValidation {
     }
 }
 exports.SoftwareArtefactValidation = SoftwareArtefactValidation;
+//# sourceMappingURL=SoftwareArtefactValidation.js.map

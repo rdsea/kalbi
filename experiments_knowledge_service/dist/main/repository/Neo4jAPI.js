@@ -61,3 +61,4 @@ class Neo4jAPI {
     }
 }
 exports.Neo4jAPI = Neo4jAPI;
+//# sourceMappingURL=Neo4jAPI.js.map

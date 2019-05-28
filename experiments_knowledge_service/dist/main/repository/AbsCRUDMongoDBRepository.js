@@ -78,3 +78,4 @@ class AbsCRUDMongoDBRepository {
     }
 }
 exports.AbsCRUDMongoDBRepository = AbsCRUDMongoDBRepository;
+//# sourceMappingURL=AbsCRUDMongoDBRepository.js.map

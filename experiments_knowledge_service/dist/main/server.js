@@ -10,3 +10,4 @@ main.express.listen(exports.PORT, () => {
     console.log('listening on port ' + exports.PORT);
     main.run();
 });
+//# sourceMappingURL=server.js.map

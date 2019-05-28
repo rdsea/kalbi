@@ -7,3 +7,4 @@ class PersistenceException extends Error {
     }
 }
 exports.PersistenceException = PersistenceException;
+//# sourceMappingURL=PersistenceException.js.map

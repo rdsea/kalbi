@@ -36,6 +36,12 @@ This module can be found in the directory `utilities/results_parser`.
 This module is a simple NodeJS application, used to do some transformations of the experiments data.
 View the README.md in the project for more information about startup and configuration.
 
+#### GIAU Emulated Data Generator
+
+This module can be in found in the directory `utilities/giau_emulated_data_generator`.
+This module if a NodeJS application, which generates emulated data for GIAU.
+View the README.md in the project for more information about startup and configuration.
+
 ### Experiments
 
 This module includes various experiments, which were benchmarked by the Blockchain Benchmark Framework. The directories `experiments/configuration`, `experiments/topologies` contain the configuration of the experiments, along with the related topologies. The directory `experiments/results` contains two further subdirectories:
