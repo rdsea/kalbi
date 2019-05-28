@@ -2,7 +2,7 @@ tosca_definitions_version: cloudify_dsl_1_3
 imports:
 - 'http://www.getcloudify.org/spec/cloudify/4.5.5/types.yaml'
 node_types:
-  filip.nodes.generalnode:
+  giau.nodes.generalnode:
     derived_from: cloudify.nodes.Container
     properties:
       os:
@@ -42,7 +42,7 @@ node_types:
         required: true
         type: string
     interfaces: {}
-  filip.nodes.SoftwareArtefact:
+  giau.nodes.SoftwareArtefact:
     derived_from: cloudify.nodes.ApplicationModule
     properties:
       repositoryTag:
@@ -61,12 +61,12 @@ node_types:
         required: true
         type: string
     interfaces: {}
-  filip.nodes.EdgeProcessingApplication:
-    derived_from: filip.nodes.SoftwareArtefact
+  giau.nodes.EdgeProcessingApplication:
+    derived_from: giau.nodes.SoftwareArtefact
     properties: {}
     interfaces: {}
-  filip.nodes.BlockchainArtefact:
-    derived_from: filip.nodes.SoftwareArtefact
+  giau.nodes.BlockchainArtefact:
+    derived_from: giau.nodes.SoftwareArtefact
     properties:
       implementation:
         default: ethereum
@@ -79,24 +79,24 @@ node_types:
         required: true
         type: string
     interfaces: {}
-  filip.nodes.rsu:
-    derived_from: filip.nodes.generalnode
+  giau.nodes.rsu:
+    derived_from: giau.nodes.generalnode
     properties: {}
     interfaces: {}
-  filip.nodes.edge:
-    derived_from: filip.nodes.generalnode
+  giau.nodes.edge:
+    derived_from: giau.nodes.generalnode
     properties: {}
     interfaces: {}
-  filip.nodes.cloud:
-    derived_from: filip.nodes.generalnode
+  giau.nodes.cloud:
+    derived_from: giau.nodes.generalnode
     properties: {}
     interfaces: {}
-  filip.nodes.vehicle:
-    derived_from: filip.nodes.generalnode
+  giau.nodes.vehicle:
+    derived_from: giau.nodes.generalnode
     properties: {}
     interfaces: {}
 relationships:
-  filip.relationships.nodes_network:
+  giau.relationships.nodes_network:
     derived_from: cloudify.relationships.connected_to
     properties:
       bandwidth:
