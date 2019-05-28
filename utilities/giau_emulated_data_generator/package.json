@@ -7,17 +7,23 @@
     "build": "./node_modules/typescript/bin/tsc --build tsconfig.json",
     "start": "NODE_ENV=dev node $NODE_DEBUG_OPTION dist/Main.js $*",
     "clean": "rm -rf dist",
-    "build-start": "npm run build && npm run start"
+    "build-start": "npm run build && npm run start",
+    "test": "NODE_ENV=test ./node_modules/mocha/bin/mocha \"dist/test/**/*.js\"",
+    "build-test": "npm run build && npm run test"
   },
   "author": "Filip Rydzi",
   "devDependencies": {
     "typescript": "^3.1.1",
-    "@types/request": "^2.48.1"
+    "@types/request": "^2.48.1",
+    "@types/chai": "^4.1.7",
+    "@types/mocha": "^5.2.6"
   },
   "dependencies": {
     "@types/node": "^10.11.4",
     "log4js": "^3.0.6",
     "random": "^2.1.1",
-    "request": "^2.88.0"
+    "request": "^2.88.0",
+    "mocha": "^6.0.2",
+    "chai": "^4.2.0"
   }
 }
