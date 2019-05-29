@@ -64,7 +64,7 @@ class RecommendationService {
             let structure = this.toscaTopologyAdapter.translateTOSCAToPureNodeStructure(toscaTopologyDefinitionInJSON);
             let bestTopology = yield this.recommendTopology(structure, syncStatePriority, acceptedTxRatePriority, medianAcceptanceTxTimePriority, infrastructureRes);
             if (bestTopology) {
-                toscaTopologyDefinitionInJSON = this.toscaTopologyAdapter.applyTopologyPropertiesToTOSCA(bestTopology, toscaTopologyDefinitionInJSON);
+                toscaTopologyDefinitionInJSON = this.toscaTopologyAdapter.translateTopologyToTOSCA(bestTopology);
                 return yaml.safeDump(toscaTopologyDefinitionInJSON);
             }
             else {

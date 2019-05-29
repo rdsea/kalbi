@@ -1,16 +1,21 @@
 import {Logger} from "log4js";
 import {
-    Benchmark, BlockchainArtefact, ContainerConfiguration,
-    DataExchangeAnalysis, Experiment,
+    Benchmark,
+    BlockchainArtefact,
+    ContainerConfiguration,
+    DataExchangeAnalysis,
+    Experiment,
     HardwareUtilization,
-    Node, NodeNetworkQualityAssociationClass,
-    NodeRef, NodeType, SynchronisationState,
+    Node,
+    NodeNetworkQualityAssociationClass,
+    NodeRef,
+    NodeType,
+    SynchronisationState,
     Topology,
     TransactionResult
 } from "./types";
 import * as fs from "fs";
 import * as random from 'random';
-
 
 
 export class EmulatedDataGenerator {
@@ -249,13 +254,15 @@ export class EmulatedDataGenerator {
     }
 
     public generateRandomNodeType(): NodeType {
-        let random: number = this.normalRandomInteger(2, 1);
 
-        if (random == 2) {
-            return NodeType.vehicle;
-        } else if (random == 3) {
+        let randomFcn = random.normal(2, 1);
+        let randNr: number = randomFcn();
+
+        if (randNr < 1) {
             return NodeType.edge;
-        } else if (random == 1 || random == 4) {
+        } else if (randNr >= 1 && randNr < 2.5) {
+            return NodeType.vehicle;
+        } else if (randNr >= 2.5 && randNr < 3.5) {
             return NodeType.rsu;
         } else {
             return NodeType.cloud;

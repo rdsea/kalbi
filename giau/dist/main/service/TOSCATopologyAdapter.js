@@ -8,6 +8,7 @@ class TOSCATopologyAdapter {
         this.nodeTypeDeploymentMap = {};
         this.artefactCounter = {};
         this.connectionTargetNodeName = {};
+        this.toscaJSONOutput = {};
     }
     /**
      * TOSCA topology is a tree, with a single root.
@@ -19,22 +20,22 @@ class TOSCATopologyAdapter {
         for (let key in toscaTopologyInJSON.node_templates) {
             let object = toscaTopologyInJSON.node_templates[key];
             let validNode = false;
-            if (object.type && object.type === 'filip.nodes.rsu') {
+            if (object.type && object.type === 'giau.nodes.rsu') {
                 validNode = true;
             }
-            else if (object.type && object.type == 'filip.nodes.edge') {
+            else if (object.type && object.type == 'giau.nodes.edge') {
                 validNode = true;
             }
-            else if (object.type && object.type == 'filip.nodes.vehicle') {
+            else if (object.type && object.type == 'giau.nodes.vehicle') {
                 validNode = true;
             }
-            else if (object.type && object.type == 'filip.nodes.cloud') {
+            else if (object.type && object.type == 'giau.nodes.cloud') {
                 validNode = true;
             }
             if (validNode) {
                 if (object.relationships) {
                     for (let relationship of object.relationships) {
-                        if (relationship.type == 'filip.relationships.nodes_network') {
+                        if (relationship.type == 'giau.relationships.nodes_network') {
                             let target = relationship.target;
                             this.connectionTargetNodeName[target] = true;
                         }
@@ -46,16 +47,16 @@ class TOSCATopologyAdapter {
         for (let key in toscaTopologyInJSON.node_templates) {
             let object = toscaTopologyInJSON.node_templates[key];
             let validNode = false;
-            if (object.type && object.type === 'filip.nodes.rsu') {
+            if (object.type && object.type === 'giau.nodes.rsu') {
                 validNode = true;
             }
-            else if (object.type && object.type == 'filip.nodes.edge') {
+            else if (object.type && object.type == 'giau.nodes.edge') {
                 validNode = true;
             }
-            else if (object.type && object.type == 'filip.nodes.vehicle') {
+            else if (object.type && object.type == 'giau.nodes.vehicle') {
                 validNode = true;
             }
-            else if (object.type && object.type == 'filip.nodes.cloud') {
+            else if (object.type && object.type == 'giau.nodes.cloud') {
                 validNode = true;
             }
             if (validNode) {
@@ -74,16 +75,16 @@ class TOSCATopologyAdapter {
             let object = toscaTopologyInJSON.node_templates[key];
             if (key == rootNodeName) {
                 let nodeType = null;
-                if (object.type && object.type === 'filip.nodes.rsu') {
+                if (object.type && object.type === 'giau.nodes.rsu') {
                     nodeType = dtos_1.NodeType.rsu;
                 }
-                else if (object.type && object.type == 'filip.nodes.edge') {
+                else if (object.type && object.type == 'giau.nodes.edge') {
                     nodeType = dtos_1.NodeType.edge;
                 }
-                else if (object.type && object.type == 'filip.nodes.vehicle') {
+                else if (object.type && object.type == 'giau.nodes.vehicle') {
                     nodeType = dtos_1.NodeType.vehicle;
                 }
-                else if (object.type && object.type == 'filip.nodes.cloud') {
+                else if (object.type && object.type == 'giau.nodes.cloud') {
                     nodeType = dtos_1.NodeType.cloud;
                 }
                 if (!nodeType) {
@@ -96,7 +97,7 @@ class TOSCATopologyAdapter {
                 };
                 if (object.relationships) {
                     for (let relationship of object.relationships) {
-                        if (relationship.type == 'filip.relationships.nodes_network') {
+                        if (relationship.type == 'giau.relationships.nodes_network') {
                             let peerNode = this.buildStructureFromToscaTopology(relationship.target, toscaTopologyInJSON);
                             pureNode.peers.push(peerNode);
                         }
@@ -106,6 +107,75 @@ class TOSCATopologyAdapter {
             }
         }
     }
+    translateTopologyToTOSCA(topology) {
+        this.artefactCounter = {};
+        this.toscaJSONOutput = {};
+        this.translateNodeToTOSCA(topology.structure);
+        return this.toscaJSONOutput;
+    }
+    translateNodeToTOSCA(node) {
+        let typeStr = '';
+        if (node.nodeType == dtos_1.NodeType.cloud) {
+            typeStr = 'giau.nodes.cloud';
+        }
+        else if (node.nodeType == dtos_1.NodeType.rsu) {
+            typeStr = 'giau.nodes.rsu';
+        }
+        else if (node.nodeType == dtos_1.NodeType.edge) {
+            typeStr = 'giau.nodes.edge';
+        }
+        else if (node.nodeType == dtos_1.NodeType.vehicle) {
+            typeStr = 'giau.nodes.vehicle';
+        }
+        let toscaNodeData = {
+            type: typeStr,
+            relationships: [],
+            properties: {
+                memory: node.container.memory,
+                os: node.container.os,
+                storageSSD: node.container.storageSSD,
+                storageHDD: node.container.storageHDD,
+                vCPUcount: node.container.vCPUcount,
+            }
+        };
+        for (let peer of node.connections) {
+            let child = peer.connectionEndpoint;
+            let relationship = {
+                target: child.name,
+                type: 'giau.relationships.nodes_network',
+                properties: {
+                    name: peer.networkQuality.name,
+                    bandwidth: peer.networkQuality.bandwidth,
+                    latency: peer.networkQuality.latency
+                }
+            };
+            toscaNodeData.relationships.push(relationship);
+            this.translateNodeToTOSCA(child);
+        }
+        this.toscaJSONOutput[node.name] = toscaNodeData;
+        for (let artefact of node.blockchainArterfacts) {
+            let artefactName = artefact.bcMetadata.implementation + '-' + artefact.bcMetadata.featureName;
+            if (!this.artefactCounter[artefactName]) {
+                this.artefactCounter[artefactName] = 1;
+            }
+            artefactName = artefactName + '-' + this.artefactCounter[artefactName]++;
+            let artefactJSONData = {
+                type: 'giau.nodes.BlockchainArtefact',
+                relationships: {
+                    type: 'cloudify.relationships.contained_in',
+                    target: node.name
+                },
+                properties: {
+                    featureName: artefact.bcMetadata.featureName,
+                    implementation: artefact.bcMetadata.implementation,
+                    name: artefactName,
+                    executionEnvironment: artefact.executionEnvironment,
+                    repositoryTag: artefact.repositoryTag
+                }
+            };
+            this.toscaJSONOutput[artefactName] = artefactJSONData;
+        }
+    }
     applyTopologyPropertiesToTOSCA(topology, toscaTopologyInJSON) {
         this.visited = {};
         this.nodeTypeDeploymentMap = {};
@@ -113,16 +183,16 @@ class TOSCATopologyAdapter {
         for (let key in toscaTopologyInJSON.node_templates) {
             let object = toscaTopologyInJSON.node_templates[key];
             let originalNode = null;
-            if (object.type && object.type === 'filip.nodes.rsu') {
+            if (object.type && object.type === 'giau.nodes.rsu') {
                 originalNode = this.nodeTypeDeploymentMap[dtos_1.NodeType.rsu];
             }
-            else if (object.type && object.type == 'filip.nodes.edge') {
+            else if (object.type && object.type == 'giau.nodes.edge') {
                 originalNode = this.nodeTypeDeploymentMap[dtos_1.NodeType.edge];
             }
-            else if (object.type && object.type == 'filip.nodes.vehicle') {
+            else if (object.type && object.type == 'giau.nodes.vehicle') {
                 originalNode = this.nodeTypeDeploymentMap[dtos_1.NodeType.vehicle];
             }
-            else if (object.type && object.type == 'filip.nodes.cloud') {
+            else if (object.type && object.type == 'giau.nodes.cloud') {
                 originalNode = this.nodeTypeDeploymentMap[dtos_1.NodeType.cloud];
             }
             if (originalNode) {
@@ -135,7 +205,7 @@ class TOSCATopologyAdapter {
                 if (nodeConnection && object.relationships) {
                     for (let i = 0; i < object.relationships.length; i++) {
                         let relationship = object.relationships[i];
-                        if (relationship.type == 'filip.relationships.nodes_network') {
+                        if (relationship.type == 'giau.relationships.nodes_network') {
                             if (!relationship.properties) {
                                 relationship['properties'] = {};
                             }
@@ -173,7 +243,7 @@ class TOSCATopologyAdapter {
     }
     deployedBcArtefactToTOSCAType(artefactName, bcArtefact, containerName) {
         return {
-            type: 'filip.nodes.BlockchainArtefact',
+            type: 'giau.nodes.BlockchainArtefact',
             relationships: [
                 {
                     type: 'cloudify.relationships.contained_in',

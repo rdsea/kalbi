@@ -1,0 +1,298 @@
+tosca_definitions_version: cloudify_dsl_1_3
+imports:
+- 'http://www.getcloudify.org/spec/cloudify/4.5.5/types.yaml'
+node_types:
+  giau.nodes.generalnode:
+    derived_from: cloudify.nodes.Container
+    properties:
+      os:
+        default: linux
+        description: ''
+        required: true
+        type: string
+      storageHDD:
+        default: 10
+        description: Standard HDD storage available for the container in GB.
+        required: true
+        type: string
+      storageSSD:
+        default: 10
+        description: SSD storage available for the container in GB.
+        required: true
+        type: string
+      memory:
+        default: 4
+        description: RAM in GB
+        required: true
+        type: string
+      infrastructure:
+        default: ''
+        description: >-
+          Metadata about the infrastructure, e.g. cloud provider, execution
+          environment
+        required: true
+      name:
+        default: container
+        description: container name
+        required: true
+        type: string
+      vCPUcount:
+        default: 1
+        description: 'vCPU count, one core is Intel Xeon E5 Sandy Bridge'
+        required: true
+        type: string
+    interfaces: {}
+  giau.nodes.SoftwareArtefact:
+    derived_from: cloudify.nodes.ApplicationModule
+    properties:
+      repositoryTag:
+        default: ''
+        description: Identification of the artefact in an external provider (dockerhub...)
+        required: true
+        type: string
+      executionEnvironment:
+        default: ''
+        description: Execution environment for the artefact
+        required: true
+        type: string
+      name:
+        default: ''
+        description: ''
+        required: true
+        type: string
+    interfaces: {}
+  giau.nodes.EdgeProcessingApplication:
+    derived_from: giau.nodes.SoftwareArtefact
+    properties: {}
+    interfaces: {}
+  giau.nodes.BlockchainArtefact:
+    derived_from: giau.nodes.SoftwareArtefact
+    properties:
+      implementation:
+        default: ethereum
+        description: Name of the used blockchain implementation
+        required: true
+        type: string
+      featureName:
+        default: miner
+        description: Name of the blockchain feature executed in the artefact.
+        required: true
+        type: string
+    interfaces: {}
+  giau.nodes.rsu:
+    derived_from: giau.nodes.generalnode
+    properties: {}
+    interfaces: {}
+  giau.nodes.edge:
+    derived_from: giau.nodes.generalnode
+    properties: {}
+    interfaces: {}
+  giau.nodes.cloud:
+    derived_from: giau.nodes.generalnode
+    properties: {}
+    interfaces: {}
+  giau.nodes.vehicle:
+    derived_from: giau.nodes.generalnode
+    properties: {}
+    interfaces: {}
+relationships:
+  giau.relationships.nodes_network:
+    derived_from: cloudify.relationships.connected_to
+    properties:
+      bandwidth:
+        default: 1Mbps
+        description: Network bandwidth
+        required: true
+        type: string
+      latency:
+        default: 100
+        description: Network Latency in ms.
+        required: true
+        type: integer
+      name:
+        default: 4G
+        description: Name of the underlying network connection
+        required: true
+        type: string
+    source_interfaces: {}
+    target_interfaces: {}
+node_templates:
+  vehicle1:
+    type: giau.nodes.vehicle
+    relationships: []
+    properties:
+      memory: 8
+      os: ubuntu18.04
+      storageSSD: 20
+      storageHDD: 0
+      vCPUcount: 4
+  hyperledger-fabric-creator-1:
+    type: giau.nodes.BlockchainArtefact
+    relationships:
+      type: cloudify.relationships.contained_in
+      target: vehicle1
+    properties:
+      featureName: creator
+      implementation: hyperledger-fabric
+      name: hyperledger-fabric-creator-1
+      executionEnvironment: docker
+      repositoryTag: hyperledger/fabric-peer
+  rsu1:
+    type: giau.nodes.rsu
+    relationships:
+      - target: vehicle1
+        type: giau.relationships.nodes_network
+        properties:
+          name: 5G
+          bandwidth: 54mbps
+          latency: 5ms
+    properties:
+      memory: 2
+      os: ubuntu18.04
+      storageSSD: 16
+      storageHDD: 0
+      vCPUcount: 1
+  hyperledger-fabric-miner-1:
+    type: giau.nodes.BlockchainArtefact
+    relationships:
+      type: cloudify.relationships.contained_in
+      target: rsu1
+    properties:
+      featureName: miner
+      implementation: hyperledger-fabric
+      name: hyperledger-fabric-miner-1
+      executionEnvironment: docker
+      repositoryTag: hyperledger/fabric-orderer
+  vehicle2:
+    type: giau.nodes.vehicle
+    relationships: []
+    properties:
+      memory: 8
+      os: ubuntu18.04
+      storageSSD: 20
+      storageHDD: 0
+      vCPUcount: 4
+  hyperledger-fabric-creator-2:
+    type: giau.nodes.BlockchainArtefact
+    relationships:
+      type: cloudify.relationships.contained_in
+      target: vehicle2
+    properties:
+      featureName: creator
+      implementation: hyperledger-fabric
+      name: hyperledger-fabric-creator-2
+      executionEnvironment: docker
+      repositoryTag: hyperledger/fabric-peer
+  rsu2:
+    type: giau.nodes.rsu
+    relationships:
+      - target: vehicle2
+        type: giau.relationships.nodes_network
+        properties:
+          name: 5G
+          bandwidth: 54mbps
+          latency: 5ms
+    properties:
+      memory: 2
+      os: ubuntu18.04
+      storageSSD: 16
+      storageHDD: 0
+      vCPUcount: 1
+  hyperledger-fabric-miner-2:
+    type: giau.nodes.BlockchainArtefact
+    relationships:
+      type: cloudify.relationships.contained_in
+      target: rsu2
+    properties:
+      featureName: miner
+      implementation: hyperledger-fabric
+      name: hyperledger-fabric-miner-2
+      executionEnvironment: docker
+      repositoryTag: hyperledger/fabric-orderer
+  edge1:
+    type: giau.nodes.edge
+    relationships:
+      - target: rsu1
+        type: giau.relationships.nodes_network
+        properties:
+          name: 5G
+          bandwidth: 54mbps
+          latency: 5ms
+      - target: rsu2
+        type: giau.relationships.nodes_network
+        properties:
+          name: 5G
+          bandwidth: 54mbps
+          latency: 5ms
+    properties:
+      memory: 16
+      os: ubuntu18.04
+      storageSSD: 60
+      storageHDD: 0
+      vCPUcount: 4
+  hyperledger-kafka-1:
+    type: giau.nodes.BlockchainArtefact
+    relationships:
+      type: cloudify.relationships.contained_in
+      target: edge1
+    properties:
+      featureName: kafka
+      implementation: hyperledger
+      name: hyperledger-kafka-1
+      executionEnvironment: docker
+      repositoryTag: hyperledger/fabric-kafka
+  hyperledger-zookeeper-1:
+    type: giau.nodes.BlockchainArtefact
+    relationships:
+      type: cloudify.relationships.contained_in
+      target: edge1
+    properties:
+      featureName: zookeeper
+      implementation: hyperledger
+      name: hyperledger-zookeeper-1
+      executionEnvironment: docker
+      repositoryTag: hyperledger/fabric-zookeeper
+  hyperledger-certificate authority-1:
+    type: giau.nodes.BlockchainArtefact
+    relationships:
+      type: cloudify.relationships.contained_in
+      target: edge1
+    properties:
+      featureName: certificate authority
+      implementation: hyperledger
+      name: hyperledger-certificate authority-1
+      executionEnvironment: docker
+      repositoryTag: hyperledger/fabric-ca
+  hyperledger-tools-1:
+    type: giau.nodes.BlockchainArtefact
+    relationships:
+      type: cloudify.relationships.contained_in
+      target: edge1
+    properties:
+      featureName: tools
+      implementation: hyperledger
+      name: hyperledger-tools-1
+      executionEnvironment: docker
+      repositoryTag: hyperledger/fabric-tools
+  hyperledger-fabric-creator-3:
+    type: giau.nodes.BlockchainArtefact
+    relationships:
+      type: cloudify.relationships.contained_in
+      target: edge1
+    properties:
+      featureName: creator
+      implementation: hyperledger-fabric
+      name: hyperledger-fabric-creator-3
+      executionEnvironment: docker
+      repositoryTag: hyperledger/fabric-peer
+  hyperledger-fabric-miner-3:
+    type: giau.nodes.BlockchainArtefact
+    relationships:
+      type: cloudify.relationships.contained_in
+      target: edge1
+    properties:
+      featureName: miner
+      implementation: hyperledger-fabric
+      name: hyperledger-fabric-miner-3
+      executionEnvironment: docker
+      repositoryTag: hyperledger/fabric-orderer

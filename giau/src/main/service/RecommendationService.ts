@@ -69,7 +69,7 @@ export class RecommendationService implements IRecommendationService {
         let bestTopology: Topology = await this.recommendTopology(structure, syncStatePriority, acceptedTxRatePriority, medianAcceptanceTxTimePriority, infrastructureRes);
 
         if (bestTopology) {
-            toscaTopologyDefinitionInJSON = this.toscaTopologyAdapter.applyTopologyPropertiesToTOSCA(bestTopology, toscaTopologyDefinitionInJSON);
+            toscaTopologyDefinitionInJSON = this.toscaTopologyAdapter.translateTopologyToTOSCA(bestTopology);
             return yaml.safeDump(toscaTopologyDefinitionInJSON);
         } else {
             return yaml.safeDump(toscaTopologyDefinitionInJSON);

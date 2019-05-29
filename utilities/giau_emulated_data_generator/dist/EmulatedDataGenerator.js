@@ -193,14 +193,15 @@ class EmulatedDataGenerator {
         return machineConfig;
     }
     generateRandomNodeType() {
-        let random = this.normalRandomInteger(2, 1);
-        if (random == 2) {
-            return types_1.NodeType.vehicle;
-        }
-        else if (random == 3) {
+        let randomFcn = random.normal(2, 1);
+        let randNr = randomFcn();
+        if (randNr < 1) {
             return types_1.NodeType.edge;
         }
-        else if (random == 1 || random == 4) {
+        else if (randNr >= 1 && randNr < 2.5) {
+            return types_1.NodeType.vehicle;
+        }
+        else if (randNr >= 2.5 && randNr < 3.5) {
             return types_1.NodeType.rsu;
         }
         else {
