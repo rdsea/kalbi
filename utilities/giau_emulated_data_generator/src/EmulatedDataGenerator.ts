@@ -26,38 +26,56 @@ export class EmulatedDataGenerator {
 
     }
 
-    public generateData() {
-        let BENCHMARKS_COUNT: number = 250;
+    public generateData(topologyCount: number, benchmarksResultCount: number) {
 
-        for (let i = 0; i < BENCHMARKS_COUNT; i++) {
+        let expId: number = 0;
+
+        for (let i = 0; i < topologyCount; i++) {
+            let emulatedTopology: Topology = this.generateTopology();
+
             if (i == 0) {
                 this.impl = 'ethereum';
             }
-            this.generateBenchmarkedExperiment(i);
-            if (i == Math.floor(BENCHMARKS_COUNT / 3)) {
+            if (i == Math.floor(topologyCount / 3)) {
                 this.impl = 'hyperledger-fabric';
             }
-            if (i == Math.floor(BENCHMARKS_COUNT / 3 * 2)) {
+            if (i == Math.floor(topologyCount / 3 * 2)) {
                 this.impl = 'eosio';
+            }
+
+
+            for (let j = 0; j < benchmarksResultCount; j++) {
+
+                let emulatedBenchmark: Benchmark = this.generateBenchmarkResults(emulatedTopology);
+
+                let experiment: Experiment = {
+                    _id: null,
+                    topology: emulatedTopology,
+                    benchmark: emulatedBenchmark,
+                    depPattern: null
+                };
+
+                // writing experiment to file
+                this.logger.info("Writing benchmarks-"+expId)
+                fs.writeFileSync('../../giau/tests/data/emulated_data/performance-eval/benchmarks-' + expId, JSON.stringify(experiment, null, 4));
+                expId++;
             }
         }
     }
 
 
-    public generateBenchmarkedExperiment(expId: number) {
+    private generateTopology(): Topology {
 
-        this.logger.info("Generating emulated benchmark " + expId);
+        this.logger.info("Generating emulated topology");
 
         let topologySize: number = this.normalRandomInteger(100, 30);
 
         let randomNodesPool: Node[] = [];
-        let randomNodesPoolCopy: Node[] = [];
         while (topologySize-- > 0) {
             randomNodesPool.push(this.generateRandomNode());
-            randomNodesPoolCopy.push(randomNodesPool[randomNodesPool.length - 1]);
         }
 
-        let topologyStructure: Node = this.generateRandomTree(randomNodesPoolCopy);
+        let topologyStructure: Node = this.generateRandomTree(randomNodesPool);
 
         let topology: Topology = {
             structure: topologyStructure,
@@ -67,12 +85,35 @@ export class EmulatedDataGenerator {
             caption: 'topology with root -' + topologyStructure.name
         };
 
+        return topology;
+    }
+
+    private allNodes: Node[];
+
+    private obtainNodesFromTopology(node: Node) {
+
+        this.allNodes.push(node);
+
+        if (node.connections) {
+            for (let peer of node.connections) {
+                this.obtainNodesFromTopology(peer.connectionEndpoint);
+            }
+        }
+    }
+
+    private generateBenchmarkResults(topology: Topology): Benchmark {
+
+        this.allNodes = [];
+        this.obtainNodesFromTopology(topology.structure);
+
+        this.logger.info("Generating emulated benchmark result");
+
         let benchmark: Benchmark = {
             qualityAttributes: [],
             _id: null
         };
 
-        for (let node of randomNodesPool) {
+        for (let node of this.allNodes) {
             /**
              * Transaction analysis wrapper
              */
@@ -137,14 +178,14 @@ export class EmulatedDataGenerator {
         /**
          * Synchronization State
          */
-        let nonSyncStateNodesCount: number = Math.floor(randomNodesPool.length * 0.2);
+        let nonSyncStateNodesCount: number = Math.floor(this.allNodes.length * 0.2);
         nonSyncStateNodesCount = this.generateRandomNr(0, nonSyncStateNodesCount);
 
         let outOfSyncNodes: NodeRef[] = [];
 
         for (let i: number = 0; i < nonSyncStateNodesCount; i++) {
             outOfSyncNodes.push({
-                name: randomNodesPool[i].name
+                name: this.allNodes[i].name
             });
         }
 
@@ -156,20 +197,10 @@ export class EmulatedDataGenerator {
         };
 
         benchmark.qualityAttributes.push(syncState);
-
-        let experiment: Experiment = {
-            _id: null,
-            topology: topology,
-            benchmark: benchmark,
-            depPattern: null
-        };
-
-        // writing experiment to file
-        fs.writeFileSync('emulated_data/benchmarks-' + expId, JSON.stringify(experiment, null, 4));
-
+        return benchmark;
     }
 
-    public generateRandomTree(nodes: Node[]): Node {
+    private generateRandomTree(nodes: Node[]): Node {
 
         let rootNode: Node = nodes[0];
         nodes.splice(0, 1);
@@ -198,7 +229,7 @@ export class EmulatedDataGenerator {
         return rootNode;
     }
 
-    public generateRandomNode(): Node {
+    private generateRandomNode(): Node {
 
         let node: Node = {
             connections: null, // will be added by generateRandomTree
@@ -213,7 +244,7 @@ export class EmulatedDataGenerator {
         return node;
     }
 
-    public generateBlockchainArtefact(implementation: string): BlockchainArtefact {
+    private generateBlockchainArtefact(implementation: string): BlockchainArtefact {
         let featureName: string[] = ['creator', 'miner'];
         let index: number = this.generateRandomNr(0, 1);
 
@@ -231,7 +262,7 @@ export class EmulatedDataGenerator {
         return blockchainArtefact;
     }
 
-    public generateNormalRandomMachineConfiguration(): ContainerConfiguration {
+    private generateNormalRandomMachineConfiguration(): ContainerConfiguration {
 
         let storageHDD: number = this.normalRandomInteger(25, 5);
         let storageSSD: number = this.normalRandomInteger(25, 5);
@@ -253,7 +284,7 @@ export class EmulatedDataGenerator {
         return machineConfig;
     }
 
-    public generateRandomNodeType(): NodeType {
+    private generateRandomNodeType(): NodeType {
 
         let randomFcn = random.normal(2, 1);
         let randNr: number = randomFcn();
@@ -269,7 +300,7 @@ export class EmulatedDataGenerator {
         }
     }
 
-    public normalRandomInteger(mu: number, sigma: number) {
+    private normalRandomInteger(mu: number, sigma: number) {
         let randomFcn = random.normal(mu, sigma);
         let randNr: number = randomFcn();
         if (randNr < 1) {
@@ -278,7 +309,7 @@ export class EmulatedDataGenerator {
         return Math.floor(randNr);
     }
 
-    public generateRandomNr(min: number, max: number): number {
+    private generateRandomNr(min: number, max: number): number {
         if (min == max) {
             return min;
         }

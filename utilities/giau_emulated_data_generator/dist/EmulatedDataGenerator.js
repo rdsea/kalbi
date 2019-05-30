@@ -7,31 +7,42 @@ class EmulatedDataGenerator {
     constructor(logger) {
         this.logger = logger;
     }
-    generateData() {
-        let BENCHMARKS_COUNT = 250;
-        for (let i = 0; i < BENCHMARKS_COUNT; i++) {
+    generateData(topologyCount, benchmarksResultCount) {
+        let expId = 0;
+        for (let i = 0; i < topologyCount; i++) {
+            let emulatedTopology = this.generateTopology();
             if (i == 0) {
                 this.impl = 'ethereum';
             }
-            this.generateBenchmarkedExperiment(i);
-            if (i == Math.floor(BENCHMARKS_COUNT / 3)) {
+            if (i == Math.floor(topologyCount / 3)) {
                 this.impl = 'hyperledger-fabric';
             }
-            if (i == Math.floor(BENCHMARKS_COUNT / 3 * 2)) {
+            if (i == Math.floor(topologyCount / 3 * 2)) {
                 this.impl = 'eosio';
+            }
+            for (let j = 0; j < benchmarksResultCount; j++) {
+                let emulatedBenchmark = this.generateBenchmarkResults(emulatedTopology);
+                let experiment = {
+                    _id: null,
+                    topology: emulatedTopology,
+                    benchmark: emulatedBenchmark,
+                    depPattern: null
+                };
+                // writing experiment to file
+                this.logger.info("Writing benchmarks-" + expId);
+                fs.writeFileSync('../../giau/tests/data/emulated_data/performance-eval/benchmarks-' + expId, JSON.stringify(experiment, null, 4));
+                expId++;
             }
         }
     }
-    generateBenchmarkedExperiment(expId) {
-        this.logger.info("Generating emulated benchmark " + expId);
+    generateTopology() {
+        this.logger.info("Generating emulated topology");
         let topologySize = this.normalRandomInteger(100, 30);
         let randomNodesPool = [];
-        let randomNodesPoolCopy = [];
         while (topologySize-- > 0) {
             randomNodesPool.push(this.generateRandomNode());
-            randomNodesPoolCopy.push(randomNodesPool[randomNodesPool.length - 1]);
         }
-        let topologyStructure = this.generateRandomTree(randomNodesPoolCopy);
+        let topologyStructure = this.generateRandomTree(randomNodesPool);
         let topology = {
             structure: topologyStructure,
             specification: null,
@@ -39,11 +50,25 @@ class EmulatedDataGenerator {
             _id: null,
             caption: 'topology with root -' + topologyStructure.name
         };
+        return topology;
+    }
+    obtainNodesFromTopology(node) {
+        this.allNodes.push(node);
+        if (node.connections) {
+            for (let peer of node.connections) {
+                this.obtainNodesFromTopology(peer.connectionEndpoint);
+            }
+        }
+    }
+    generateBenchmarkResults(topology) {
+        this.allNodes = [];
+        this.obtainNodesFromTopology(topology.structure);
+        this.logger.info("Generating emulated benchmark result");
         let benchmark = {
             qualityAttributes: [],
             _id: null
         };
-        for (let node of randomNodesPool) {
+        for (let node of this.allNodes) {
             /**
              * Transaction analysis wrapper
              */
@@ -102,12 +127,12 @@ class EmulatedDataGenerator {
         /**
          * Synchronization State
          */
-        let nonSyncStateNodesCount = Math.floor(randomNodesPool.length * 0.2);
+        let nonSyncStateNodesCount = Math.floor(this.allNodes.length * 0.2);
         nonSyncStateNodesCount = this.generateRandomNr(0, nonSyncStateNodesCount);
         let outOfSyncNodes = [];
         for (let i = 0; i < nonSyncStateNodesCount; i++) {
             outOfSyncNodes.push({
-                name: randomNodesPool[i].name
+                name: this.allNodes[i].name
             });
         }
         let syncState = {
@@ -117,14 +142,7 @@ class EmulatedDataGenerator {
             name: ''
         };
         benchmark.qualityAttributes.push(syncState);
-        let experiment = {
-            _id: null,
-            topology: topology,
-            benchmark: benchmark,
-            depPattern: null
-        };
-        // writing experiment to file
-        fs.writeFileSync('emulated_data/benchmarks-' + expId, JSON.stringify(experiment, null, 4));
+        return benchmark;
     }
     generateRandomTree(nodes) {
         let rootNode = nodes[0];
