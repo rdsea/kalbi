@@ -1,6 +1,6 @@
 import {Logger} from "log4js";
 import {CommandExecutor} from "../util/CommandExecutor";
-import {Configuration, ExperimentsConfiguration, IV2XRunner, Node, NodeType, Topology} from "../types";
+import {Configuration, ExperimentsConfiguration, IV2XRunner, Node, ResourceType, Topology} from "../types";
 
 
 export abstract class AbsV2XRunner implements IV2XRunner{
@@ -26,7 +26,7 @@ export abstract class AbsV2XRunner implements IV2XRunner{
         this.visitedNode = {};
         this.visitedHostMachine = {};
         
-        let topologyVehicleNodeNames: string[] = this.obtainAllTopologyNodeTypeNames(topology.structure, NodeType.vehicle);
+        let topologyVehicleNodeNames: string[] = this.obtainAllTopologyNodeTypeNames(topology.structure, ResourceType.VEHICLE_IOT);
 
         this.visitedNode = {};
         this.visitedHostMachine = {};
@@ -57,7 +57,7 @@ export abstract class AbsV2XRunner implements IV2XRunner{
         }
         this.visitedNode[node.name] = true;
 
-        if (!this.visitedHostMachine[node.hostMachine.ipAddress] && node.nodeType == NodeType.vehicle) {
+        if (!this.visitedHostMachine[node.hostMachine.ipAddress] && node.nodeType == ResourceType.VEHICLE_IOT) {
             this.visitedHostMachine[node.hostMachine.ipAddress] = true;
             let stopedContainers: string[] = await this.obtainDockerFinishedContainersAtNode(node, 0);
             this.finishedContainers = this.finishedContainers.concat(stopedContainers);
@@ -94,7 +94,7 @@ export abstract class AbsV2XRunner implements IV2XRunner{
         }
     }
 
-    public obtainAllTopologyNodeTypeNames(topology: Node, nodeType: NodeType): string[] {
+    public obtainAllTopologyNodeTypeNames(topology: Node, nodeType: ResourceType): string[] {
 
         this.visitedNode = {};
         this.topologyNodeTypeNames = [];
@@ -103,7 +103,7 @@ export abstract class AbsV2XRunner implements IV2XRunner{
         return this.topologyNodeTypeNames;
     }
 
-    private obtainAllTopologyNodeTypeNamesRec(topology: Node, nodeType: NodeType) {
+    private obtainAllTopologyNodeTypeNamesRec(topology: Node, nodeType: ResourceType) {
 
         if (this.visitedNode[topology.name]) {
             return;

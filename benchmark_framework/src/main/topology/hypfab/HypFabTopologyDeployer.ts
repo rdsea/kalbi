@@ -4,7 +4,7 @@ import {
     ITopologyDeployer,
     Node,
     NodesAtContainer,
-    NodeType,
+    ResourceType,
     Topology
 } from "../../types";
 import {TCNetworkConfigurator} from "../../infrastructure/TCNetworkConfigurator";
@@ -135,11 +135,11 @@ export class HypFabTopologyDeployer implements ITopologyDeployer {
 
         let swarmLeader: Node = null;
 
-        if (node.nodeType == NodeType.vehicle) {
+        if (node.nodeType == ResourceType.VEHICLE_IOT) {
 
             for (let connection of node.connections) {
                 let peer: Node = connection.connectionEndpoint;
-                if (peer.nodeType != NodeType.vehicle) {
+                if (peer.nodeType != ResourceType.VEHICLE_IOT) {
                     swarmLeader = peer;
                     break;
                 }

@@ -33,7 +33,7 @@ class TopologyHelper {
             return;
         }
         this.visitedNode[topology.name] = true;
-        if (topology.nodeType == types_1.NodeType.vehicle) {
+        if (topology.nodeType == types_1.NodeType.VEHICLE_IOT) {
             topology.hostMachine.ipAddress = null;
             topology.hostMachine.name = null;
             topology.hostMachine.configuration = vehicleContainerConfig;

@@ -4,7 +4,7 @@ import {
     IV2XRunner,
     Node,
     NodesAtContainer,
-    NodeType,
+    ResourceType,
     Topology
 } from "../../types";
 import {Logger} from "log4js";
@@ -68,7 +68,7 @@ export class V2XRunnerHypFab extends AbsV2XRunner implements IV2XRunner {
 
             let node: Node = peers[i];
 
-            if (node.nodeType == NodeType.vehicle) {
+            if (node.nodeType == ResourceType.VEHICLE_IOT) {
                 this.addVehicleToDockerCompose(node, dockerComposeFilename);
                 vehicles++;
             }
@@ -124,7 +124,7 @@ export class V2XRunnerHypFab extends AbsV2XRunner implements IV2XRunner {
 
             let currentNode: Node = nodesAtContainer[i];
 
-            if (currentNode.nodeType == NodeType.vehicle) {
+            if (currentNode.nodeType == ResourceType.VEHICLE_IOT) {
                 containerNames = containerNames + ` ${currentNode.name}`;
                 pageSize++;
             }

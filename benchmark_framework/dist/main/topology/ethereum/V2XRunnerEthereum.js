@@ -46,7 +46,7 @@ class V2XRunnerEthereum extends AbsV2XRunner_1.AbsV2XRunner {
             for (let i = 0; i < peers.length; i++) {
                 let node = peers[i];
                 let bcIpAddress = bcIPAddressesMap[node.name];
-                if (node.nodeType == types_1.NodeType.vehicle) {
+                if (node.nodeType == types_1.NodeType.VEHICLE_IOT) {
                     this.addVehicleToDockerCompose(node, bcIpAddress, contractAddress, dockerComposeFilename);
                     vehicles++;
                 }
@@ -82,7 +82,7 @@ class V2XRunnerEthereum extends AbsV2XRunner_1.AbsV2XRunner {
             for (let i = 0; i < nodesAtContainer.length; i++) {
                 let lastIterantion = (i == (nodesAtContainer.length - 1));
                 let currentNode = nodesAtContainer[i];
-                if (currentNode.nodeType == types_1.NodeType.vehicle) {
+                if (currentNode.nodeType == types_1.NodeType.VEHICLE_IOT) {
                     containerNames = containerNames + ` ${currentNode.name}`;
                     pageSize++;
                 }

@@ -43,7 +43,6 @@ class Main {
 
 
     async run() {
-
         log4js.configure('config/log4js.json');
         this.logger = log4js.getLogger('default');
         this.configValidation = new ConfigurationValidation(this.logger);
@@ -82,8 +81,6 @@ class Main {
         } else {
             this.printUsage();
         }
-
-
     }
 
     private printUsage() {

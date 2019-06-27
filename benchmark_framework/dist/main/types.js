@@ -7,10 +7,10 @@ var BlockchainImpl;
 })(BlockchainImpl = exports.BlockchainImpl || (exports.BlockchainImpl = {}));
 var NodeType;
 (function (NodeType) {
-    NodeType[NodeType["cloud"] = 0] = "cloud";
-    NodeType[NodeType["edge"] = 1] = "edge";
-    NodeType[NodeType["rsu"] = 2] = "rsu";
-    NodeType[NodeType["vehicle"] = 3] = "vehicle";
+    NodeType[NodeType["CLOUD_SERVICE"] = 0] = "cloud";
+    NodeType[NodeType["EDGE_SERVICE"] = 1] = "edge";
+    NodeType[NodeType["RSU_RESOURCE"] = 2] = "rsu";
+    NodeType[NodeType["VEHICLE_IOT"] = 3] = "vehicle";
 })(NodeType = exports.NodeType || (exports.NodeType = {}));
 /**
  * enums all possible bc features

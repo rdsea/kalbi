@@ -1,4 +1,4 @@
-import {Configuration, INetworkConfigurator, ITopologyKiller, Node, NodeType, Topology} from "../../types";
+import {Configuration, INetworkConfigurator, ITopologyKiller, Node, ResourceType, Topology} from "../../types";
 import {TCNetworkConfigurator} from "../../infrastructure/TCNetworkConfigurator";
 import {Logger} from "log4js";
 import {CommandExecutor} from "../../util/CommandExecutor";
@@ -119,11 +119,11 @@ export class HypFabTopologyKiller implements ITopologyKiller{
 
         let swarmLeader: Node = null;
 
-        if (node.nodeType == NodeType.vehicle) {
+        if (node.nodeType == ResourceType.VEHICLE_IOT) {
 
             for (let connection of node.connections) {
                 let peer: Node = connection.connectionEndpoint;
-                if (peer.nodeType != NodeType.vehicle) {
+                if (peer.nodeType != ResourceType.VEHICLE_IOT) {
                     swarmLeader = peer;
                     break;
                 }
@@ -150,7 +150,7 @@ export class HypFabTopologyKiller implements ITopologyKiller{
 
         this.visitedNode[node.name] = true;
 
-        if (node.nodeType == NodeType.vehicle) {
+        if (node.nodeType == ResourceType.VEHICLE_IOT) {
             try {
                 await this.removeHfcKeyStoreFolderOfVehicleNode(node.hostMachine.ipAddress, node.name);
             } catch (e) {

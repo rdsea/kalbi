@@ -1,4 +1,4 @@
-import {BlockchainRole, Node, NodeType} from "../../types";
+import {BlockchainRole, Node, ResourceType} from "../../types";
 import {AbsTopologyUtils} from "../AbsTopologyUtils";
 
 

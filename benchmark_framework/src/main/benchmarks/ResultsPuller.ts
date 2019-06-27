@@ -1,5 +1,5 @@
 import {Logger} from "log4js";
-import {Configuration, Experiment, Node, NodeType} from "../types";
+import {Configuration, Experiment, Node, ResourceType} from "../types";
 import {CommandExecutor} from "../util/CommandExecutor";
 import * as fs from "fs";
 
@@ -72,7 +72,7 @@ export class ResultsPuller {
 
     private async copyLogsFromVM(node: Node) {
 
-        if (node.nodeType != NodeType.vehicle) { // we have logs only in vehicles
+        if (node.nodeType != ResourceType.VEHICLE_IOT) { // we have logs only in vehicles
             return;
         }
 
@@ -90,7 +90,7 @@ export class ResultsPuller {
 
     private async copyResultsFromVM(node: Node) {
 
-        if (node.nodeType != NodeType.vehicle) { // simulations are done only at vehicles
+        if (node.nodeType != ResourceType.VEHICLE_IOT) { // simulations are done only at vehicles
             return;
         }
 
@@ -109,7 +109,7 @@ export class ResultsPuller {
 
     private async removeLogsFromVM(node: Node) {
 
-        if (node.nodeType != NodeType.vehicle) { // we have logs only in vehicles
+        if (node.nodeType != ResourceType.VEHICLE_IOT) { // we have logs only in vehicles
             return;
         }
 
@@ -128,7 +128,7 @@ export class ResultsPuller {
 
     private async removeResultsFromVM(node: Node) {
 
-        if (node.nodeType != NodeType.vehicle) { // simulations are done only at vehicles
+        if (node.nodeType != ResourceType.VEHICLE_IOT) { // simulations are done only at vehicles
             return;
         }
 

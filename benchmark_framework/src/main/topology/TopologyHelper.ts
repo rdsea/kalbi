@@ -4,7 +4,7 @@ import {
     ContainerConfiguration,
     NetworkQuality,
     Node,
-    NodeType,
+    ResourceType,
     Topology
 } from "../types";
 import {Logger} from "log4js";
@@ -22,14 +22,14 @@ export class TopologyHelper {
 
     }
 
-    public updateBlockchainArtefactInNodeType(node: Node, bcArtefact: BlockchainArtefact, nodeType: NodeType) {
+    public updateBlockchainArtefactInNodeType(node: Node, bcArtefact: BlockchainArtefact, nodeType: ResourceType) {
 
         this.visitedNode = {};
         this.visitedHostMachine = {};
         this.updateBlockchainArtefactInNodeTypeRec(node, bcArtefact, nodeType);
     }
 
-    private updateBlockchainArtefactInNodeTypeRec(node: Node, bcArtefact: BlockchainArtefact, nodeType: NodeType) {
+    private updateBlockchainArtefactInNodeTypeRec(node: Node, bcArtefact: BlockchainArtefact, nodeType: ResourceType) {
 
         if (this.visitedNode[node.name]) {
             return;
@@ -64,7 +64,7 @@ export class TopologyHelper {
 
         this.visitedNode[topology.name] = true;
 
-        if (topology.nodeType == NodeType.vehicle) {
+        if (topology.nodeType == ResourceType.VEHICLE_IOT) {
 
             topology.hostMachine.ipAddress = null;
             topology.hostMachine.name = null;

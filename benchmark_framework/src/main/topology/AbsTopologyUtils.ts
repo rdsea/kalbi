@@ -1,4 +1,4 @@
-import {Node, NodesAtContainer, NodeType} from "../types";
+import {Node, NodesAtContainer, ResourceType} from "../types";
 
 
 export abstract class AbsTopologyUtils {
@@ -20,7 +20,7 @@ export abstract class AbsTopologyUtils {
     }
 
 
-    public obtainAllTopologyNodeTypeNames(topology: Node, nodeType: NodeType): string[] {
+    public obtainAllTopologyNodeTypeNames(topology: Node, nodeType: ResourceType): string[] {
 
         this.visitedNode = {};
         this.topologyNodeTypeNames = [];
@@ -29,7 +29,7 @@ export abstract class AbsTopologyUtils {
         return this.topologyNodeTypeNames;
     }
 
-    private obtainAllTopologyNodeTypeNamesRec(topology: Node, nodeType: NodeType) {
+    private obtainAllTopologyNodeTypeNamesRec(topology: Node, nodeType: ResourceType) {
 
         if (this.visitedNode[topology.name]) {
             return;

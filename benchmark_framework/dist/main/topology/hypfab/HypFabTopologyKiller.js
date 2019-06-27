@@ -89,10 +89,10 @@ class HypFabTopologyKiller {
     }
     getSwarmLeader(node) {
         let swarmLeader = null;
-        if (node.nodeType == types_1.NodeType.vehicle) {
+        if (node.nodeType == types_1.NodeType.VEHICLE_IOT) {
             for (let connection of node.connections) {
                 let peer = connection.connectionEndpoint;
-                if (peer.nodeType != types_1.NodeType.vehicle) {
+                if (peer.nodeType != types_1.NodeType.VEHICLE_IOT) {
                     swarmLeader = peer;
                     break;
                 }
@@ -114,7 +114,7 @@ class HypFabTopologyKiller {
                 return;
             }
             this.visitedNode[node.name] = true;
-            if (node.nodeType == types_1.NodeType.vehicle) {
+            if (node.nodeType == types_1.NodeType.VEHICLE_IOT) {
                 try {
                     yield this.removeHfcKeyStoreFolderOfVehicleNode(node.hostMachine.ipAddress, node.name);
                 }

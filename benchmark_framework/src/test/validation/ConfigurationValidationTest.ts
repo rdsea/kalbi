@@ -1,4 +1,4 @@
-import {BlockchainImpl, BlockchainRole, ExperimentsConfiguration, NodeType} from "../../main/types";
+import {BlockchainImpl, BlockchainRole, ExperimentsConfiguration, ResourceType} from "../../main/types";
 import * as log4js from "log4js";
 import {ConfigurationValidation} from "../../main/validation/ConfigurationValidation";
 import {Logger} from "log4js";
@@ -34,15 +34,15 @@ describe('ConfigurationValidation tests', () => {
                     featuresMapping: [
                         {
                             feature: BlockchainRole.all,
-                            nodeType: NodeType.edge
+                            nodeType: ResourceType.EDGE_SERVICE
                         },
                         {
                             feature: BlockchainRole.creator,
-                            nodeType: NodeType.rsu
+                            nodeType: ResourceType.RSU_RESOURCE
                         },
                         {
                             feature: BlockchainRole.creator,
-                            nodeType: NodeType.vehicle
+                            nodeType: ResourceType.VEHICLE_IOT
                         }
                     ]
                 }
@@ -98,15 +98,15 @@ describe('ConfigurationValidation tests', () => {
                     featuresMapping: [
                         {
                             feature: BlockchainRole.all,
-                            nodeType: NodeType.edge
+                            nodeType: ResourceType.EDGE_SERVICE
                         },
                         {
                             feature: BlockchainRole.creator,
-                            nodeType: NodeType.rsu
+                            nodeType: ResourceType.RSU_RESOURCE
                         },
                         {
                             feature: BlockchainRole.creator,
-                            nodeType: NodeType.vehicle
+                            nodeType: ResourceType.VEHICLE_IOT
                         }
                     ]
                 }

@@ -92,7 +92,7 @@ export interface Deployment {
 
 
 export interface BlockchainOperationComponentMapping {
-    nodeType: NodeType,
+    nodeType: ResourceType,
     feature: BlockchainRole
 }
 
@@ -131,7 +131,7 @@ export interface Topology {
 
 export interface Node {
     name: string,
-    nodeType: NodeType,
+    nodeType: ResourceType,
     blockchainArtefact: BlockchainArtefact,
     hostMachine: HostMachine,
     connections: NodeNetworkQualityAssociationClass[],
@@ -150,8 +150,8 @@ export interface BlockchainArtefact {
 }
 
 
-export enum NodeType {
-    cloud, edge, rsu, vehicle
+export enum ResourceType {
+    CLOUD_SERVICE = 0, EDGE_SERVICE = 1, RSU_RESOURCE = 2, VEHICLE_IOT = 3, IOT_RESOURCE = 4
 }
 
 /**

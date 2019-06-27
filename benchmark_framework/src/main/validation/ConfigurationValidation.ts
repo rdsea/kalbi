@@ -1,6 +1,6 @@
 import {Logger} from "log4js";
 import {InvalidConfigurationException} from "../exception/InvalidConfigurationException";
-import {BlockchainImpl, BlockchainRole, Configuration, ExperimentsConfiguration, NodeType} from "../types";
+import {BlockchainImpl, BlockchainRole, Configuration, ExperimentsConfiguration, ResourceType} from "../types";
 
 export class ConfigurationValidation {
 
@@ -96,8 +96,8 @@ export class ConfigurationValidation {
                     }
 
                     let nodeTypeStr: string = mapping.nodeType.toString();
-                    nodeTypeStr = nodeTypeStr as keyof NodeType;
-                    mapping.nodeType = NodeType[nodeTypeStr];
+                    nodeTypeStr = nodeTypeStr as keyof ResourceType;
+                    mapping.nodeType = ResourceType[nodeTypeStr];
                     if (!mapping.nodeType && mapping.nodeType != 0) {
                         throw new InvalidConfigurationException(`${nodeTypeStr} is an invalid nodeType`);
                     }

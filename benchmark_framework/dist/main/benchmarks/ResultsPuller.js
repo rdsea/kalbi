@@ -65,7 +65,7 @@ class ResultsPuller {
     }
     copyLogsFromVM(node) {
         return __awaiter(this, void 0, void 0, function* () {
-            if (node.nodeType != types_1.NodeType.vehicle) { // we have logs only in vehicles
+            if (node.nodeType != types_1.NodeType.VEHICLE_IOT) { // we have logs only in vehicles
                 return;
             }
             this.logger.info(`====== Copying logs from ${node.hostMachine.name}`);
@@ -80,7 +80,7 @@ class ResultsPuller {
     }
     copyResultsFromVM(node) {
         return __awaiter(this, void 0, void 0, function* () {
-            if (node.nodeType != types_1.NodeType.vehicle) { // simulations are done only at vehicles
+            if (node.nodeType != types_1.NodeType.VEHICLE_IOT) { // simulations are done only at vehicles
                 return;
             }
             this.logger.info(`====== Copying simulation results from ${node.hostMachine.name}`);
@@ -95,7 +95,7 @@ class ResultsPuller {
     }
     removeLogsFromVM(node) {
         return __awaiter(this, void 0, void 0, function* () {
-            if (node.nodeType != types_1.NodeType.vehicle) { // we have logs only in vehicles
+            if (node.nodeType != types_1.NodeType.VEHICLE_IOT) { // we have logs only in vehicles
                 return;
             }
             this.logger.info(`====== Removing logs in ${node.hostMachine.name}`);
@@ -110,7 +110,7 @@ class ResultsPuller {
     }
     removeResultsFromVM(node) {
         return __awaiter(this, void 0, void 0, function* () {
-            if (node.nodeType != types_1.NodeType.vehicle) { // simulations are done only at vehicles
+            if (node.nodeType != types_1.NodeType.VEHICLE_IOT) { // simulations are done only at vehicles
                 return;
             }
             this.logger.info(`====== Removing results in ${node.hostMachine.name}`);

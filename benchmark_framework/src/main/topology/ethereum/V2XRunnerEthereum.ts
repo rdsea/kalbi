@@ -5,7 +5,7 @@ import {
     IV2XRunner,
     Node,
     NodesAtContainer,
-    NodeType,
+    ResourceType,
     StringMap,
     Topology
 } from "../../types";
@@ -71,7 +71,7 @@ export class V2XRunnerEthereum extends AbsV2XRunner implements IV2XRunner {
 
             let bcIpAddress: string = bcIPAddressesMap[node.name];
 
-            if (node.nodeType == NodeType.vehicle) {
+            if (node.nodeType == ResourceType.VEHICLE_IOT) {
                 this.addVehicleToDockerCompose(node, bcIpAddress, contractAddress, dockerComposeFilename);
                 vehicles++;
             }
@@ -118,7 +118,7 @@ export class V2XRunnerEthereum extends AbsV2XRunner implements IV2XRunner {
             let lastIterantion: boolean = (i == (nodesAtContainer.length - 1));
             let currentNode: Node = nodesAtContainer[i];
 
-            if (currentNode.nodeType == NodeType.vehicle) {
+            if (currentNode.nodeType == ResourceType.VEHICLE_IOT) {
                 containerNames = containerNames + ` ${currentNode.name}`;
                 pageSize++;
             }

@@ -1,4 +1,4 @@
-import {Configuration, ContainerConfiguration, HostMachine, ICloudVMService, Node, NodeType, Topology} from "../types";
+import {Configuration, ContainerConfiguration, HostMachine, ICloudVMService, Node, ResourceType, Topology} from "../types";
 import {Logger} from "log4js";
 import {CommandExecutor} from "../util/CommandExecutor";
 
@@ -135,10 +135,10 @@ export class InfrastructureBuilder {
 
         let hostMachines: HostMachine[] = await this.vmService.findAvailableVMs();
 
-        let vehContainerReqs: ContainerConfiguration = this.buildContainerRequirementsForNodeType(topology.structure, NodeType.vehicle);
-        let rsuContainerReqs: ContainerConfiguration = this.buildContainerRequirementsForNodeType(topology.structure, NodeType.rsu);
-        let edgeContainerReqs: ContainerConfiguration = this.buildContainerRequirementsForNodeType(topology.structure, NodeType.edge);
-        let cloudContainerReqs: ContainerConfiguration = this.buildContainerRequirementsForNodeType(topology.structure, NodeType.cloud);
+        let vehContainerReqs: ContainerConfiguration = this.buildContainerRequirementsForNodeType(topology.structure, ResourceType.VEHICLE_IOT);
+        let rsuContainerReqs: ContainerConfiguration = this.buildContainerRequirementsForNodeType(topology.structure, ResourceType.RSU_RESOURCE);
+        let edgeContainerReqs: ContainerConfiguration = this.buildContainerRequirementsForNodeType(topology.structure, ResourceType.EDGE_SERVICE);
+        let cloudContainerReqs: ContainerConfiguration = this.buildContainerRequirementsForNodeType(topology.structure, ResourceType.CLOUD_SERVICE);
 
         let veh, rsu, edge, cloud: boolean;
 
@@ -148,7 +148,7 @@ export class InfrastructureBuilder {
 
                 hostMachine.ipAddress = await this.vmService.startVM(hostMachine.name);
 
-                this.updateHostMachinesInTopology(topology.structure, hostMachine, NodeType.vehicle);
+                this.updateHostMachinesInTopology(topology.structure, hostMachine, ResourceType.VEHICLE_IOT);
                 veh = true;
             }
             else if (!rsu && this.equalRequirements(hostMachine.configuration, rsuContainerReqs)) {
@@ -156,7 +156,7 @@ export class InfrastructureBuilder {
 
                 hostMachine.ipAddress = await this.vmService.startVM(hostMachine.name);
 
-                this.updateHostMachinesInTopology(topology.structure, hostMachine, NodeType.rsu);
+                this.updateHostMachinesInTopology(topology.structure, hostMachine, ResourceType.RSU_RESOURCE);
                 rsu = true;
             }
             else if (!edge && this.equalRequirements(hostMachine.configuration, edgeContainerReqs)) {
@@ -164,7 +164,7 @@ export class InfrastructureBuilder {
 
                 hostMachine.ipAddress = await this.vmService.startVM(hostMachine.name);
 
-                this.updateHostMachinesInTopology(topology.structure, hostMachine, NodeType.edge);
+                this.updateHostMachinesInTopology(topology.structure, hostMachine, ResourceType.EDGE_SERVICE);
                 edge = true;
             }
             else if (!cloud && this.equalRequirements(hostMachine.configuration, cloudContainerReqs)) {
@@ -172,29 +172,29 @@ export class InfrastructureBuilder {
 
                 hostMachine.ipAddress = await this.vmService.startVM(hostMachine.name);
 
-                this.updateHostMachinesInTopology(topology.structure, hostMachine, NodeType.cloud);
+                this.updateHostMachinesInTopology(topology.structure, hostMachine, ResourceType.CLOUD_SERVICE);
                 cloud = true;
             }
         }
         if (vehContainerReqs && !veh) {
             this.logger.info('>>> Machine for vehicles need to be created');
             let machine: HostMachine = await this.vmService.createAndStartVM(vehContainerReqs, 'vehicle-fleet');
-            this.updateHostMachinesInTopology(topology.structure, machine, NodeType.vehicle);
+            this.updateHostMachinesInTopology(topology.structure, machine, ResourceType.VEHICLE_IOT);
         }
         if (rsuContainerReqs && !rsu) {
             this.logger.info('>>> Machine for rsus need to be created');
             let machine: HostMachine = await this.vmService.createAndStartVM(rsuContainerReqs, 'rsu-nodes');
-            this.updateHostMachinesInTopology(topology.structure, machine, NodeType.rsu);
+            this.updateHostMachinesInTopology(topology.structure, machine, ResourceType.RSU_RESOURCE);
         }
         if (edgeContainerReqs && !edge) {
             this.logger.info('>>> Machine for edges need to be created');
             let machine: HostMachine = await this.vmService.createAndStartVM(edgeContainerReqs, 'edge-nodes');
-            this.updateHostMachinesInTopology(topology.structure, machine, NodeType.edge);
+            this.updateHostMachinesInTopology(topology.structure, machine, ResourceType.EDGE_SERVICE);
         }
         if (cloudContainerReqs && !cloud) {
             this.logger.info('>>> Machine for cloud need to be created');
             let machine: HostMachine = await this.vmService.createAndStartVM(cloudContainerReqs, ' cloud-nodes');
-            this.updateHostMachinesInTopology(topology.structure, machine, NodeType.cloud);
+            this.updateHostMachinesInTopology(topology.structure, machine, ResourceType.CLOUD_SERVICE);
         }
 
         return topology;
@@ -209,12 +209,12 @@ export class InfrastructureBuilder {
         return contA.vCPUcount == contB.vCPUcount && contA.memory == contB.memory && contA.storageSSD == contB.storageSSD && contA.storageHDD == contB.storageHDD;
     }
 
-    private updateHostMachinesInTopology(node: Node, host: HostMachine, nodeType: NodeType) {
+    private updateHostMachinesInTopology(node: Node, host: HostMachine, nodeType: ResourceType) {
         this.visitedNode = {};
         this.updateHostMachinesInTopologyRec(node, host, nodeType);
     }
 
-    private updateHostMachinesInTopologyRec(node: Node, host: HostMachine, nodeType: NodeType) {
+    private updateHostMachinesInTopologyRec(node: Node, host: HostMachine, nodeType: ResourceType) {
         if (this.visitedNode[node.name]) {
             return;
         }
@@ -232,7 +232,7 @@ export class InfrastructureBuilder {
 
     private containerRequirements: ContainerConfiguration;
 
-    private buildContainerRequirementsForNodeType(node: Node, nodeType: NodeType): ContainerConfiguration {
+    private buildContainerRequirementsForNodeType(node: Node, nodeType: ResourceType): ContainerConfiguration {
         this.visitedNode = {};
 
         this.containerRequirements = null;
@@ -241,7 +241,7 @@ export class InfrastructureBuilder {
         return this.containerRequirements;
     }
 
-    private buildContainerRequirementsForNodeTypeRec(node: Node, nodeType: NodeType) {
+    private buildContainerRequirementsForNodeTypeRec(node: Node, nodeType: ResourceType) {
         if (this.visitedNode[node.name]) {
             return;
         }

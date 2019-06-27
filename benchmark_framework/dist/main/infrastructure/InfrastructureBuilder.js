@@ -119,56 +119,56 @@ class InfrastructureBuilder {
         return __awaiter(this, void 0, void 0, function* () {
             this.logger.info('=== Creating necessary virtual machines for a topology === ');
             let hostMachines = yield this.vmService.findAvailableVMs();
-            let vehContainerReqs = this.buildContainerRequirementsForNodeType(topology.structure, types_1.NodeType.vehicle);
-            let rsuContainerReqs = this.buildContainerRequirementsForNodeType(topology.structure, types_1.NodeType.rsu);
-            let edgeContainerReqs = this.buildContainerRequirementsForNodeType(topology.structure, types_1.NodeType.edge);
-            let cloudContainerReqs = this.buildContainerRequirementsForNodeType(topology.structure, types_1.NodeType.cloud);
+            let vehContainerReqs = this.buildContainerRequirementsForNodeType(topology.structure, types_1.NodeType.VEHICLE_IOT);
+            let rsuContainerReqs = this.buildContainerRequirementsForNodeType(topology.structure, types_1.NodeType.RSU_RESOURCE);
+            let edgeContainerReqs = this.buildContainerRequirementsForNodeType(topology.structure, types_1.NodeType.EDGE_SERVICE);
+            let cloudContainerReqs = this.buildContainerRequirementsForNodeType(topology.structure, types_1.NodeType.CLOUD_SERVICE);
             let veh, rsu, edge, cloud;
             for (let hostMachine of hostMachines) {
                 if (!veh && this.equalRequirements(hostMachine.configuration, vehContainerReqs)) {
                     this.logger.info(`>>> Virtual Machine ${hostMachine.name} will be reused for vehicles`);
                     hostMachine.ipAddress = yield this.vmService.startVM(hostMachine.name);
-                    this.updateHostMachinesInTopology(topology.structure, hostMachine, types_1.NodeType.vehicle);
+                    this.updateHostMachinesInTopology(topology.structure, hostMachine, types_1.NodeType.VEHICLE_IOT);
                     veh = true;
                 }
                 else if (!rsu && this.equalRequirements(hostMachine.configuration, rsuContainerReqs)) {
                     this.logger.info(`>>> Virtual Machine ${hostMachine.name} will be reused for rsus`);
                     hostMachine.ipAddress = yield this.vmService.startVM(hostMachine.name);
-                    this.updateHostMachinesInTopology(topology.structure, hostMachine, types_1.NodeType.rsu);
+                    this.updateHostMachinesInTopology(topology.structure, hostMachine, types_1.NodeType.RSU_RESOURCE);
                     rsu = true;
                 }
                 else if (!edge && this.equalRequirements(hostMachine.configuration, edgeContainerReqs)) {
                     this.logger.info(`>>> Virtual Machine ${hostMachine.name} will be reused for edges`);
                     hostMachine.ipAddress = yield this.vmService.startVM(hostMachine.name);
-                    this.updateHostMachinesInTopology(topology.structure, hostMachine, types_1.NodeType.edge);
+                    this.updateHostMachinesInTopology(topology.structure, hostMachine, types_1.NodeType.EDGE_SERVICE);
                     edge = true;
                 }
                 else if (!cloud && this.equalRequirements(hostMachine.configuration, cloudContainerReqs)) {
                     this.logger.info(`>>> Virtual Machine ${hostMachine.name} will be reused for cloud`);
                     hostMachine.ipAddress = yield this.vmService.startVM(hostMachine.name);
-                    this.updateHostMachinesInTopology(topology.structure, hostMachine, types_1.NodeType.cloud);
+                    this.updateHostMachinesInTopology(topology.structure, hostMachine, types_1.NodeType.CLOUD_SERVICE);
                     cloud = true;
                 }
             }
             if (vehContainerReqs && !veh) {
                 this.logger.info('>>> Machine for vehicles need to be created');
                 let machine = yield this.vmService.createAndStartVM(vehContainerReqs, 'vehicle-fleet');
-                this.updateHostMachinesInTopology(topology.structure, machine, types_1.NodeType.vehicle);
+                this.updateHostMachinesInTopology(topology.structure, machine, types_1.NodeType.VEHICLE_IOT);
             }
             if (rsuContainerReqs && !rsu) {
                 this.logger.info('>>> Machine for rsus need to be created');
                 let machine = yield this.vmService.createAndStartVM(rsuContainerReqs, 'rsu-nodes');
-                this.updateHostMachinesInTopology(topology.structure, machine, types_1.NodeType.rsu);
+                this.updateHostMachinesInTopology(topology.structure, machine, types_1.NodeType.RSU_RESOURCE);
             }
             if (edgeContainerReqs && !edge) {
                 this.logger.info('>>> Machine for edges need to be created');
                 let machine = yield this.vmService.createAndStartVM(edgeContainerReqs, 'edge-nodes');
-                this.updateHostMachinesInTopology(topology.structure, machine, types_1.NodeType.edge);
+                this.updateHostMachinesInTopology(topology.structure, machine, types_1.NodeType.EDGE_SERVICE);
             }
             if (cloudContainerReqs && !cloud) {
                 this.logger.info('>>> Machine for cloud need to be created');
                 let machine = yield this.vmService.createAndStartVM(cloudContainerReqs, ' cloud-nodes');
-                this.updateHostMachinesInTopology(topology.structure, machine, types_1.NodeType.cloud);
+                this.updateHostMachinesInTopology(topology.structure, machine, types_1.NodeType.CLOUD_SERVICE);
             }
             return topology;
         });
