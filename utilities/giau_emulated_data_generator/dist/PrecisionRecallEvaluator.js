@@ -93,8 +93,8 @@ class PrecisionRecallEvaluator {
                 let pureNodeType = this.generateRandomNodeType();
                 let pureNode = {
                     peers: [],
-                    nodeType: pureNodeType,
-                    name: types_1.NodeType[pureNodeType] + '-' + this.makeid(5)
+                    resourceType: pureNodeType,
+                    name: types_1.ResourceType[pureNodeType] + '-' + this.makeid(5)
                 };
                 childNode.peers.push(pureNode);
                 this.appendRandomNodesToPureNode(childNode, nodesToAppend - 1);
@@ -147,10 +147,10 @@ class PrecisionRecallEvaluator {
                 }
             }
         }
-        let id = types_1.NodeType[node.nodeType] + this.makeid(5);
+        let id = types_1.ResourceType[node.resourceType] + this.makeid(5);
         let pureNode = {
             name: id,
-            nodeType: node.nodeType,
+            resourceType: node.resourceType,
             peers: purePeers
         };
         return pureNode;
@@ -167,26 +167,26 @@ class PrecisionRecallEvaluator {
             anchestorsInString.push(strRepre);
         }
         if (anchestorsInString.length == 0) {
-            return `${types_1.NodeType[tree.nodeType]}${level}`;
+            return `${types_1.ResourceType[tree.resourceType]}${level}`;
         }
         else {
             anchestorsInString.sort((one, two) => (one > two ? -1 : 1));
-            return `${types_1.NodeType[tree.nodeType]}${level}-${anchestorsInString.join('-')}`;
+            return `${types_1.ResourceType[tree.resourceType]}${level}-${anchestorsInString.join('-')}`;
         }
     }
     generateRandomNodeType() {
         let random = this.normalRandomInteger(2, 1);
         if (random == 2) {
-            return types_1.NodeType.vehicle;
+            return types_1.ResourceType.VEHICLE_IOT;
         }
         else if (random == 3) {
-            return types_1.NodeType.edge;
+            return types_1.ResourceType.EDGE_SERVICE;
         }
         else if (random == 1 || random == 4) {
-            return types_1.NodeType.rsu;
+            return types_1.ResourceType.RSU_RESOURCE;
         }
         else {
-            return types_1.NodeType.cloud;
+            return types_1.ResourceType.CLOUD_SERVICE;
         }
     }
     normalRandomInteger(mu, sigma) {

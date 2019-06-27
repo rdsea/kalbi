@@ -171,7 +171,7 @@ class EmulatedDataGenerator {
             connections: null,
             application: null,
             container: this.generateNormalRandomMachineConfiguration(),
-            nodeType: this.generateRandomNodeType(),
+            resourceType: this.generateRandomNodeType(),
             _id: null,
             name: this.makeid(7),
             blockchainArterfacts: [this.generateBlockchainArtefact(this.impl)]
@@ -214,16 +214,16 @@ class EmulatedDataGenerator {
         let randomFcn = random.normal(2, 1);
         let randNr = randomFcn();
         if (randNr < 1) {
-            return types_1.NodeType.edge;
+            return types_1.ResourceType.EDGE_SERVICE;
         }
         else if (randNr >= 1 && randNr < 2.5) {
-            return types_1.NodeType.vehicle;
+            return types_1.ResourceType.VEHICLE_IOT;
         }
         else if (randNr >= 2.5 && randNr < 3.5) {
-            return types_1.NodeType.rsu;
+            return types_1.ResourceType.RSU_RESOURCE;
         }
         else {
-            return types_1.NodeType.cloud;
+            return types_1.ResourceType.CLOUD_SERVICE;
         }
     }
     normalRandomInteger(mu, sigma) {

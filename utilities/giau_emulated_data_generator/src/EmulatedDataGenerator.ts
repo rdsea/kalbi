@@ -9,7 +9,7 @@ import {
     Node,
     NodeNetworkQualityAssociationClass,
     NodeRef,
-    NodeType,
+    ResourceType,
     SynchronisationState,
     Topology,
     TransactionResult
@@ -235,7 +235,7 @@ export class EmulatedDataGenerator {
             connections: null, // will be added by generateRandomTree
             application: null,
             container: this.generateNormalRandomMachineConfiguration(),
-            nodeType: this.generateRandomNodeType(),
+            resourceType: this.generateRandomNodeType(),
             _id: null,
             name: this.makeid(7),
             blockchainArterfacts: [this.generateBlockchainArtefact(this.impl)]
@@ -284,19 +284,19 @@ export class EmulatedDataGenerator {
         return machineConfig;
     }
 
-    private generateRandomNodeType(): NodeType {
+    private generateRandomNodeType(): ResourceType {
 
         let randomFcn = random.normal(2, 1);
         let randNr: number = randomFcn();
 
         if (randNr < 1) {
-            return NodeType.edge;
+            return ResourceType.EDGE_SERVICE;
         } else if (randNr >= 1 && randNr < 2.5) {
-            return NodeType.vehicle;
+            return ResourceType.VEHICLE_IOT;
         } else if (randNr >= 2.5 && randNr < 3.5) {
-            return NodeType.rsu;
+            return ResourceType.RSU_RESOURCE;
         } else {
-            return NodeType.cloud;
+            return ResourceType.CLOUD_SERVICE;
         }
     }
 

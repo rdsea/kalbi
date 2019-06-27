@@ -1,5 +1,5 @@
 import {Logger} from "log4js";
-import {PureNode, Node, NodeType, Experiment, Topology} from "./types";
+import {DPNode, Node, ResourceType, Experiment, Topology} from "./types";
 import * as fs from "fs";
 import * as request from "request";
 import * as random from 'random';
@@ -27,12 +27,12 @@ export class PrecisionRecallEvaluator {
 
             this.logger.info(`Loaded topology with id = ${experiment.topology.caption}`);
 
-            let pureTree: PureNode = this.createPureNodeFromNode(experiment.topology.structure);
+            let pureTree: DPNode = this.createPureNodeFromNode(experiment.topology.structure);
 
             this.logger.info(`Obtaining recommendation based on the read PureNode...`);
 
             let recommendedTopology: Topology = await this.obtainRecommendedTopology(pureTree);
-            let recommendedPureNode: PureNode = this.createPureNodeFromNode(recommendedTopology.structure);
+            let recommendedPureNode: DPNode = this.createPureNodeFromNode(recommendedTopology.structure);
 
             this.logger.info(`Topology ${recommendedTopology.caption} has been returned by GIAU`);
 
@@ -63,7 +63,7 @@ export class PrecisionRecallEvaluator {
             let contentString: string = fs.readFileSync('emulated_data/' + content).toString();
             let experiment: Experiment = JSON.parse(contentString);
 
-            let pureTree: PureNode = this.createPureNodeFromNode(experiment.topology.structure);
+            let pureTree: DPNode = this.createPureNodeFromNode(experiment.topology.structure);
 
             this.cutTreeFromLevel(1, pureTree);
 
@@ -71,7 +71,7 @@ export class PrecisionRecallEvaluator {
             await this.determinePredictedTopology(pureTree, i, confusionMatrix);
 
             for (let n = 0; n < 4; n++) {
-                let actualPureNodeCopy: PureNode = JSON.parse(JSON.stringify(pureTree).toString());
+                let actualPureNodeCopy: DPNode = JSON.parse(JSON.stringify(pureTree).toString());
                 // append 3 random nodes to the cut tree
                 this.appendRandomNodesToPureNode(actualPureNodeCopy, 3);
                 // should be correctly predicted to the i-th topology
@@ -92,7 +92,7 @@ export class PrecisionRecallEvaluator {
     }
 
 
-    private async determinePredictedTopology(actualPureNode: PureNode, actualPureNodeIndex: number, confusionMatrix: number[][]) {
+    private async determinePredictedTopology(actualPureNode: DPNode, actualPureNodeIndex: number, confusionMatrix: number[][]) {
 
         let filenames: string[] = fs.readdirSync('emulated_data');
 
@@ -111,7 +111,7 @@ export class PrecisionRecallEvaluator {
     }
 
 
-    private appendRandomNodesToPureNode(pureNode: PureNode, nodesToAppend: number) {
+    private appendRandomNodesToPureNode(pureNode: DPNode, nodesToAppend: number) {
 
         if (nodesToAppend == 0) {
             return;
@@ -119,11 +119,11 @@ export class PrecisionRecallEvaluator {
 
         for (let childNode of pureNode.peers) {
             if (this.generateRandomNr(0, 4) == 0) {
-                let pureNodeType: NodeType = this.generateRandomNodeType();
-                let pureNode: PureNode = {
+                let pureNodeType: ResourceType = this.generateRandomNodeType();
+                let pureNode: DPNode = {
                     peers: [],
-                    nodeType: pureNodeType,
-                    name: NodeType[pureNodeType] + '-' + this.makeid(5)
+                    resourceType: pureNodeType,
+                    name: ResourceType[pureNodeType] + '-' + this.makeid(5)
                 };
                 childNode.peers.push(pureNode);
                 this.appendRandomNodesToPureNode(childNode, nodesToAppend - 1);
@@ -133,7 +133,7 @@ export class PrecisionRecallEvaluator {
         }
     }
 
-    private cutTreeFromLevel(level: number, pureNode: PureNode) {
+    private cutTreeFromLevel(level: number, pureNode: DPNode) {
         if (level == 0) {
             pureNode.peers = [];
         }
@@ -142,7 +142,7 @@ export class PrecisionRecallEvaluator {
         }
     }
 
-    private async obtainRecommendedTopology(pureNode: PureNode): Promise<Topology> {
+    private async obtainRecommendedTopology(pureNode: DPNode): Promise<Topology> {
 
         let options = {
             method: 'POST',
@@ -168,33 +168,33 @@ export class PrecisionRecallEvaluator {
         });
     }
 
-    private createPureNodeFromNode(node: Node): PureNode {
+    private createPureNodeFromNode(node: Node): DPNode {
 
-        let purePeers: PureNode[] = [];
+        let purePeers: DPNode[] = [];
 
         if (node.connections) {
             for (let connection of node.connections) {
                 let peer: Node = connection.connectionEndpoint;
 
-                let purePeer: PureNode = this.createPureNodeFromNode(peer);
+                let purePeer: DPNode = this.createPureNodeFromNode(peer);
                 if (purePeer) {
                     purePeers.push(purePeer);
                 }
             }
         }
 
-        let id: string = NodeType[node.nodeType] + this.makeid(5);
+        let id: string = ResourceType[node.resourceType] + this.makeid(5);
 
-        let pureNode: PureNode = {
+        let pureNode: DPNode = {
             name: id,
-            nodeType: node.nodeType,
+            resourceType: node.resourceType,
             peers: purePeers
         };
 
         return pureNode;
     }
 
-    private equalsPureNodes(nodeA: PureNode, nodeB: PureNode): boolean {
+    private equalsPureNodes(nodeA: DPNode, nodeB: DPNode): boolean {
 
         let nodeAStr: string = this.createStringRepresentationOfTree(nodeA, 0);
         let nodeBStr: string = this.createStringRepresentationOfTree(nodeB, 0);
@@ -202,7 +202,7 @@ export class PrecisionRecallEvaluator {
         return nodeAStr === nodeBStr;
     }
 
-    private createStringRepresentationOfTree(tree: PureNode, level: number): string {
+    private createStringRepresentationOfTree(tree: DPNode, level: number): string {
 
         let anchestorsInString: string[] = [];
         for (let child of tree.peers) {
@@ -211,25 +211,25 @@ export class PrecisionRecallEvaluator {
         }
 
         if (anchestorsInString.length == 0) {
-            return `${NodeType[tree.nodeType]}${level}`;
+            return `${ResourceType[tree.resourceType]}${level}`;
         } else {
             anchestorsInString.sort((one, two) => (one > two ? -1 : 1));
-            return `${NodeType[tree.nodeType]}${level}-${anchestorsInString.join('-')}`;
+            return `${ResourceType[tree.resourceType]}${level}-${anchestorsInString.join('-')}`;
         }
 
     }
 
-    public generateRandomNodeType(): NodeType {
+    public generateRandomNodeType(): ResourceType {
         let random: number = this.normalRandomInteger(2, 1);
 
         if (random == 2) {
-            return NodeType.vehicle;
+            return ResourceType.VEHICLE_IOT;
         } else if (random == 3) {
-            return NodeType.edge;
+            return ResourceType.EDGE_SERVICE;
         } else if (random == 1 || random == 4) {
-            return NodeType.rsu;
+            return ResourceType.RSU_RESOURCE;
         } else {
-            return NodeType.cloud;
+            return ResourceType.CLOUD_SERVICE;
         }
     }
 
