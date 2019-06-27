@@ -36,15 +36,15 @@ describe('ConfigurationValidation tests', () => {
                     featuresMapping: [
                         {
                             feature: types_1.BlockchainRole.all,
-                            nodeType: types_1.NodeType.EDGE_SERVICE
+                            nodeType: types_1.ResourceType.EDGE_SERVICE
                         },
                         {
                             feature: types_1.BlockchainRole.creator,
-                            nodeType: types_1.NodeType.RSU_RESOURCE
+                            nodeType: types_1.ResourceType.RSU_RESOURCE
                         },
                         {
                             feature: types_1.BlockchainRole.creator,
-                            nodeType: types_1.NodeType.VEHICLE_IOT
+                            nodeType: types_1.ResourceType.VEHICLE_IOT
                         }
                     ]
                 }
@@ -98,15 +98,15 @@ describe('ConfigurationValidation tests', () => {
                     featuresMapping: [
                         {
                             feature: types_1.BlockchainRole.all,
-                            nodeType: types_1.NodeType.EDGE_SERVICE
+                            nodeType: types_1.ResourceType.EDGE_SERVICE
                         },
                         {
                             feature: types_1.BlockchainRole.creator,
-                            nodeType: types_1.NodeType.RSU_RESOURCE
+                            nodeType: types_1.ResourceType.RSU_RESOURCE
                         },
                         {
                             feature: types_1.BlockchainRole.creator,
-                            nodeType: types_1.NodeType.VEHICLE_IOT
+                            nodeType: types_1.ResourceType.VEHICLE_IOT
                         }
                     ]
                 }

@@ -37,7 +37,7 @@ export abstract class AbsTopologyUtils {
 
         this.visitedNode[topology.name] = true;
 
-        if (topology.nodeType == nodeType) {
+        if (topology.resourceType == nodeType) {
             this.topologyNodeTypeNames.push(topology.name);
         }
 

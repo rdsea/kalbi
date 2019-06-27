@@ -220,7 +220,7 @@ export class InfrastructureBuilder {
         }
         this.visitedNode[node.name] = true;
 
-        if (node.nodeType == nodeType && node.hostMachine.ipAddress == null) {
+        if (node.resourceType == nodeType && node.hostMachine.ipAddress == null) {
             node.hostMachine.ipAddress = host.ipAddress;
             node.hostMachine.name = host.name;
         }
@@ -247,7 +247,7 @@ export class InfrastructureBuilder {
         }
         this.visitedNode[node.name] = true;
 
-        if (node.nodeType == nodeType && node.hostMachine.ipAddress == null) { // build requirements, only for those machines, which dont have an ipaddress, these represent the ones we have to create in cloud
+        if (node.resourceType == nodeType && node.hostMachine.ipAddress == null) { // build requirements, only for those machines, which dont have an ipaddress, these represent the ones we have to create in cloud
             if (this.containerRequirements) {
                 this.containerRequirements.storageHDD = this.containerRequirements.storageHDD + node.hostMachine.configuration.storageHDD;
                 this.containerRequirements.storageSSD = this.containerRequirements.storageSSD + node.hostMachine.configuration.storageSSD;

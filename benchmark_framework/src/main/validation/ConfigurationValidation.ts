@@ -95,10 +95,10 @@ export class ConfigurationValidation {
                         throw new InvalidConfigurationException(`${featureStr} is an invalid blockchain operation`);
                     }
 
-                    let nodeTypeStr: string = mapping.nodeType.toString();
+                    let nodeTypeStr: string = mapping.resourceType.toString();
                     nodeTypeStr = nodeTypeStr as keyof ResourceType;
-                    mapping.nodeType = ResourceType[nodeTypeStr];
-                    if (!mapping.nodeType && mapping.nodeType != 0) {
+                    mapping.resourceType = ResourceType[nodeTypeStr];
+                    if (!mapping.resourceType && mapping.resourceType != 0) {
                         throw new InvalidConfigurationException(`${nodeTypeStr} is an invalid nodeType`);
                     }
                 }

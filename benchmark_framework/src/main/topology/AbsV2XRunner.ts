@@ -57,7 +57,7 @@ export abstract class AbsV2XRunner implements IV2XRunner{
         }
         this.visitedNode[node.name] = true;
 
-        if (!this.visitedHostMachine[node.hostMachine.ipAddress] && node.nodeType == ResourceType.VEHICLE_IOT) {
+        if (!this.visitedHostMachine[node.hostMachine.ipAddress] && node.resourceType == ResourceType.VEHICLE_IOT) {
             this.visitedHostMachine[node.hostMachine.ipAddress] = true;
             let stopedContainers: string[] = await this.obtainDockerFinishedContainersAtNode(node, 0);
             this.finishedContainers = this.finishedContainers.concat(stopedContainers);
@@ -111,7 +111,7 @@ export abstract class AbsV2XRunner implements IV2XRunner{
 
         this.visitedNode[topology.name] = true;
 
-        if (topology.nodeType == nodeType) {
+        if (topology.resourceType == nodeType) {
             this.topologyNodeTypeNames.push(topology.name);
         }
 

@@ -76,10 +76,10 @@ class ConfigurationValidation {
                     if (!mapping.feature && mapping.feature != 0) {
                         throw new InvalidConfigurationException_1.InvalidConfigurationException(`${featureStr} is an invalid blockchain operation`);
                     }
-                    let nodeTypeStr = mapping.nodeType.toString();
+                    let nodeTypeStr = mapping.resourceType.toString();
                     nodeTypeStr = nodeTypeStr;
-                    mapping.nodeType = types_1.NodeType[nodeTypeStr];
-                    if (!mapping.nodeType && mapping.nodeType != 0) {
+                    mapping.resourceType = types_1.ResourceType[nodeTypeStr];
+                    if (!mapping.resourceType && mapping.resourceType != 0) {
                         throw new InvalidConfigurationException_1.InvalidConfigurationException(`${nodeTypeStr} is an invalid nodeType`);
                     }
                 }

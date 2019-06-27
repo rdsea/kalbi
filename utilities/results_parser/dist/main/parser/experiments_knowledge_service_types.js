@@ -2,8 +2,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var NodeType;
 (function (NodeType) {
-    NodeType[NodeType["cloud"] = 0] = "cloud";
-    NodeType[NodeType["edge"] = 1] = "edge";
-    NodeType[NodeType["rsu"] = 2] = "rsu";
-    NodeType[NodeType["vehicle"] = 3] = "vehicle";
+    NodeType[NodeType["CLOUD_SERVICE"] = 0] = "CLOUD_SERVICE";
+    NodeType[NodeType["EDGE_SERVICE"] = 1] = "EDGE_SERVICE";
+    NodeType[NodeType["RSU_RESOURCE"] = 2] = "RSU_RESOURCE";
+    NodeType[NodeType["VEHICLE_IOT"] = 3] = "VEHICLE_IOT";
 })(NodeType = exports.NodeType || (exports.NodeType = {}));

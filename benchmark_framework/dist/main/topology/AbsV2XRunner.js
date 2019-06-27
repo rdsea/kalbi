@@ -24,7 +24,7 @@ class AbsV2XRunner {
         return __awaiter(this, void 0, void 0, function* () {
             this.visitedNode = {};
             this.visitedHostMachine = {};
-            let topologyVehicleNodeNames = this.obtainAllTopologyNodeTypeNames(topology.structure, types_1.NodeType.VEHICLE_IOT);
+            let topologyVehicleNodeNames = this.obtainAllTopologyNodeTypeNames(topology.structure, types_1.ResourceType.VEHICLE_IOT);
             this.visitedNode = {};
             this.visitedHostMachine = {};
             this.finishedContainers = [];
@@ -48,7 +48,7 @@ class AbsV2XRunner {
                 return;
             }
             this.visitedNode[node.name] = true;
-            if (!this.visitedHostMachine[node.hostMachine.ipAddress] && node.nodeType == types_1.NodeType.VEHICLE_IOT) {
+            if (!this.visitedHostMachine[node.hostMachine.ipAddress] && node.resourceType == types_1.ResourceType.VEHICLE_IOT) {
                 this.visitedHostMachine[node.hostMachine.ipAddress] = true;
                 let stopedContainers = yield this.obtainDockerFinishedContainersAtNode(node, 0);
                 this.finishedContainers = this.finishedContainers.concat(stopedContainers);
@@ -93,7 +93,7 @@ class AbsV2XRunner {
             return;
         }
         this.visitedNode[topology.name] = true;
-        if (topology.nodeType == nodeType) {
+        if (topology.resourceType == nodeType) {
             this.topologyNodeTypeNames.push(topology.name);
         }
         for (let connection of topology.connections) {

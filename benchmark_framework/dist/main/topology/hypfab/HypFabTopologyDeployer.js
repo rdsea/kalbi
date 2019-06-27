@@ -94,10 +94,10 @@ class HypFabTopologyDeployer {
     }
     getSwarmLeader(node) {
         let swarmLeader = null;
-        if (node.nodeType == types_1.NodeType.VEHICLE_IOT) {
+        if (node.resourceType == types_1.ResourceType.VEHICLE_IOT) {
             for (let connection of node.connections) {
                 let peer = connection.connectionEndpoint;
-                if (peer.nodeType != types_1.NodeType.VEHICLE_IOT) {
+                if (peer.resourceType != types_1.ResourceType.VEHICLE_IOT) {
                     swarmLeader = peer;
                     break;
                 }

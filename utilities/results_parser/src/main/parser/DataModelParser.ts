@@ -7,7 +7,7 @@ import {
     Experiment,
     Node,
     NodeNetworkQualityAssociationClass,
-    NodeType,
+    ResourceType,
     Topology
 } from "./experiments_knowledge_service_types";
 import {
@@ -105,7 +105,7 @@ export class DataModelParser {
 
         let application: EdgeProcessingApplication = null;
 
-        if (bfNode.nodeType == NodeType.vehicle) {
+        if (bfNode.nodeType == ResourceType.VEHICLE_IOT) {
             application = {
                 _id: null,
                 executionEnvironment: 'docker',
@@ -117,7 +117,7 @@ export class DataModelParser {
         let node: Node = {
             _id: null,
             container: this.parseContainer(bfNode.hostMachine.configuration),
-            nodeType: bfNode.nodeType,
+            resourceType: bfNode.nodeType,
             blockchainArterfacts: this.parseBlockchainArtefact(bfNode.blockchainArtefact),
             name: bfNode.name,
             connections: nodeConnections,
@@ -188,11 +188,11 @@ export class DataModelParser {
 
         let swarmLeader: Node = null;
 
-        if (node.nodeType == NodeType.vehicle) {
+        if (node.resourceType == ResourceType.VEHICLE_IOT) {
 
             for (let connection of node.connections) {
                 let peer: Node = connection.connectionEndpoint;
-                if (peer.nodeType != NodeType.vehicle) {
+                if (peer.resourceType != ResourceType.VEHICLE_IOT) {
                     swarmLeader = peer;
                     break;
                 }

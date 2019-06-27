@@ -1,4 +1,4 @@
-import {Benchmark, NetworkQuality, NodeType} from "./experiments_knowledge_service_types";
+import {Benchmark, NetworkQuality, ResourceType} from "./experiments_knowledge_service_types";
 
 export interface BFContainerConfiguration {
     name: string,
@@ -34,7 +34,7 @@ export interface BFTopology {
 
 export interface BFNode {
     name: string,
-    nodeType: NodeType,
+    nodeType: ResourceType,
     blockchainArtefact: BFBlockchainArtefact,
     hostMachine: BFHostMachine,
     connections: BFNodeNetworkQualityAssociationClass[],

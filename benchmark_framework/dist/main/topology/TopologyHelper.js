@@ -15,7 +15,7 @@ class TopologyHelper {
             return;
         }
         this.visitedNode[node.name] = true;
-        if (node.nodeType == nodeType) {
+        if (node.resourceType == nodeType) {
             node.blockchainArtefact = bcArtefact;
         }
         for (let connection of node.connections) {
@@ -33,7 +33,7 @@ class TopologyHelper {
             return;
         }
         this.visitedNode[topology.name] = true;
-        if (topology.nodeType == types_1.NodeType.VEHICLE_IOT) {
+        if (topology.resourceType == types_1.ResourceType.VEHICLE_IOT) {
             topology.hostMachine.ipAddress = null;
             topology.hostMachine.name = null;
             topology.hostMachine.configuration = vehicleContainerConfig;

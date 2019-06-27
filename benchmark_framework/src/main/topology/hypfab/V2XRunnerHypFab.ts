@@ -68,7 +68,7 @@ export class V2XRunnerHypFab extends AbsV2XRunner implements IV2XRunner {
 
             let node: Node = peers[i];
 
-            if (node.nodeType == ResourceType.VEHICLE_IOT) {
+            if (node.resourceType == ResourceType.VEHICLE_IOT) {
                 this.addVehicleToDockerCompose(node, dockerComposeFilename);
                 vehicles++;
             }
@@ -124,7 +124,7 @@ export class V2XRunnerHypFab extends AbsV2XRunner implements IV2XRunner {
 
             let currentNode: Node = nodesAtContainer[i];
 
-            if (currentNode.nodeType == ResourceType.VEHICLE_IOT) {
+            if (currentNode.resourceType == ResourceType.VEHICLE_IOT) {
                 containerNames = containerNames + ` ${currentNode.name}`;
                 pageSize++;
             }

@@ -119,11 +119,11 @@ export class HypFabTopologyKiller implements ITopologyKiller{
 
         let swarmLeader: Node = null;
 
-        if (node.nodeType == ResourceType.VEHICLE_IOT) {
+        if (node.resourceType == ResourceType.VEHICLE_IOT) {
 
             for (let connection of node.connections) {
                 let peer: Node = connection.connectionEndpoint;
-                if (peer.nodeType != ResourceType.VEHICLE_IOT) {
+                if (peer.resourceType != ResourceType.VEHICLE_IOT) {
                     swarmLeader = peer;
                     break;
                 }
@@ -150,7 +150,7 @@ export class HypFabTopologyKiller implements ITopologyKiller{
 
         this.visitedNode[node.name] = true;
 
-        if (node.nodeType == ResourceType.VEHICLE_IOT) {
+        if (node.resourceType == ResourceType.VEHICLE_IOT) {
             try {
                 await this.removeHfcKeyStoreFolderOfVehicleNode(node.hostMachine.ipAddress, node.name);
             } catch (e) {

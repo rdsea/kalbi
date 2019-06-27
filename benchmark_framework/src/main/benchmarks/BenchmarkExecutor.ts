@@ -75,7 +75,7 @@ export class BenchmarkExecutor {
                             bcImplementation: bcImpl,
                             bcOperation: bcOpsDeployment.feature
                         };
-                        this.topologyHelper.updateBlockchainArtefactInNodeType(topology.structure, bcArtefact, bcOpsDeployment.nodeType);
+                        this.topologyHelper.updateBlockchainArtefactInNodeType(topology.structure, bcArtefact, bcOpsDeployment.resourceType);
                     }
                     this.logger.info('==============================================================================');
                     this.logger.info(`=================== PREPARING BENCHMARKS FOR ${experimentConfig.name}, DEPLOYMENT ${deployment.id} ==================`);

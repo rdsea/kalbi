@@ -34,15 +34,15 @@ describe('ConfigurationValidation tests', () => {
                     featuresMapping: [
                         {
                             feature: BlockchainRole.all,
-                            nodeType: ResourceType.EDGE_SERVICE
+                            resourceType: ResourceType.EDGE_SERVICE
                         },
                         {
                             feature: BlockchainRole.creator,
-                            nodeType: ResourceType.RSU_RESOURCE
+                            resourceType: ResourceType.RSU_RESOURCE
                         },
                         {
                             feature: BlockchainRole.creator,
-                            nodeType: ResourceType.VEHICLE_IOT
+                            resourceType: ResourceType.VEHICLE_IOT
                         }
                     ]
                 }
@@ -98,15 +98,15 @@ describe('ConfigurationValidation tests', () => {
                     featuresMapping: [
                         {
                             feature: BlockchainRole.all,
-                            nodeType: ResourceType.EDGE_SERVICE
+                            resourceType: ResourceType.EDGE_SERVICE
                         },
                         {
                             feature: BlockchainRole.creator,
-                            nodeType: ResourceType.RSU_RESOURCE
+                            resourceType: ResourceType.RSU_RESOURCE
                         },
                         {
                             feature: BlockchainRole.creator,
-                            nodeType: ResourceType.VEHICLE_IOT
+                            resourceType: ResourceType.VEHICLE_IOT
                         }
                     ]
                 }

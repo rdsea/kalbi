@@ -135,11 +135,11 @@ export class HypFabTopologyDeployer implements ITopologyDeployer {
 
         let swarmLeader: Node = null;
 
-        if (node.nodeType == ResourceType.VEHICLE_IOT) {
+        if (node.resourceType == ResourceType.VEHICLE_IOT) {
 
             for (let connection of node.connections) {
                 let peer: Node = connection.connectionEndpoint;
-                if (peer.nodeType != ResourceType.VEHICLE_IOT) {
+                if (peer.resourceType != ResourceType.VEHICLE_IOT) {
                     swarmLeader = peer;
                     break;
                 }

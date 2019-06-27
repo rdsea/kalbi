@@ -37,7 +37,7 @@ export class TopologyHelper {
 
         this.visitedNode[node.name] = true;
 
-        if (node.nodeType == nodeType) {
+        if (node.resourceType == nodeType) {
             node.blockchainArtefact = bcArtefact;
         }
 
@@ -64,7 +64,7 @@ export class TopologyHelper {
 
         this.visitedNode[topology.name] = true;
 
-        if (topology.nodeType == ResourceType.VEHICLE_IOT) {
+        if (topology.resourceType == ResourceType.VEHICLE_IOT) {
 
             topology.hostMachine.ipAddress = null;
             topology.hostMachine.name = null;

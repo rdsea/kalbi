@@ -19,7 +19,7 @@ export interface DeploymentPattern extends HasUUIDProp {
 
 export interface PureNode {
     name: string,
-    nodeType: NodeType,
+    resourceType: ResourceType,
     peers: PureNode[]
 }
 
@@ -104,11 +104,11 @@ export interface Node extends HasUUIDProp {
     application: EdgeProcessingApplication,
     blockchainArterfacts: BlockchainArtefact[],
     container: ContainerConfiguration,
-    nodeType: NodeType
+    resourceType: ResourceType
 }
 
-export enum NodeType {
-    cloud, edge, rsu, vehicle
+export enum ResourceType {
+    CLOUD_SERVICE = 0, EDGE_SERVICE = 1, RSU_RESOURCE = 2, VEHICLE_IOT = 3, IOT_RESOURCE = 4
 }
 
 

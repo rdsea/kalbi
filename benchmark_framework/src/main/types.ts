@@ -92,7 +92,7 @@ export interface Deployment {
 
 
 export interface BlockchainOperationComponentMapping {
-    nodeType: ResourceType,
+    resourceType: ResourceType,
     feature: BlockchainRole
 }
 
@@ -131,7 +131,7 @@ export interface Topology {
 
 export interface Node {
     name: string,
-    nodeType: ResourceType,
+    resourceType: ResourceType,
     blockchainArtefact: BlockchainArtefact,
     hostMachine: HostMachine,
     connections: NodeNetworkQualityAssociationClass[],

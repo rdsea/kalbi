@@ -5,13 +5,14 @@ var BlockchainImpl;
     BlockchainImpl[BlockchainImpl["eth"] = 0] = "eth";
     BlockchainImpl[BlockchainImpl["hypfab"] = 1] = "hypfab";
 })(BlockchainImpl = exports.BlockchainImpl || (exports.BlockchainImpl = {}));
-var NodeType;
-(function (NodeType) {
-    NodeType[NodeType["CLOUD_SERVICE"] = 0] = "cloud";
-    NodeType[NodeType["EDGE_SERVICE"] = 1] = "edge";
-    NodeType[NodeType["RSU_RESOURCE"] = 2] = "rsu";
-    NodeType[NodeType["VEHICLE_IOT"] = 3] = "vehicle";
-})(NodeType = exports.NodeType || (exports.NodeType = {}));
+var ResourceType;
+(function (ResourceType) {
+    ResourceType[ResourceType["CLOUD_SERVICE"] = 0] = "CLOUD_SERVICE";
+    ResourceType[ResourceType["EDGE_SERVICE"] = 1] = "EDGE_SERVICE";
+    ResourceType[ResourceType["RSU_RESOURCE"] = 2] = "RSU_RESOURCE";
+    ResourceType[ResourceType["VEHICLE_IOT"] = 3] = "VEHICLE_IOT";
+    ResourceType[ResourceType["IOT_RESOURCE"] = 4] = "IOT_RESOURCE";
+})(ResourceType = exports.ResourceType || (exports.ResourceType = {}));
 /**
  * enums all possible bc features
  */
