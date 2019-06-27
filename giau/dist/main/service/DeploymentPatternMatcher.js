@@ -8,7 +8,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-class NodeTypePair {
+class ResourceTypePair {
     constructor(a, b) {
         this.a = a;
         this.b = b;
@@ -27,9 +27,9 @@ class DeploymentPatternMatcher {
             let depPatternsStructure = yield this.depPatternService.readAll();
             let newStructureInteractPairs = this.splitToInteractionPairs(newStructure);
             if (newStructureInteractPairs.length == 0) {
-                // there is no interaction, matching only nodetypes
+                // there is no interaction, matching only resource types
                 for (let depPattern of depPatternsStructure) {
-                    if (depPattern.structure.nodeType == newStructure.nodeType) {
+                    if (depPattern.structure.resourceType == newStructure.resourceType) {
                         return depPattern;
                     }
                 }
@@ -62,7 +62,7 @@ class DeploymentPatternMatcher {
     splitToInteractionPairs(pureNode) {
         let pairs = [];
         for (let peer of pureNode.peers) {
-            let pair = new NodeTypePair(pureNode.nodeType, peer.nodeType);
+            let pair = new ResourceTypePair(pureNode.resourceType, peer.resourceType);
             if (!peer.peers || peer.peers.length == 0) {
                 pairs.push(pair);
             }

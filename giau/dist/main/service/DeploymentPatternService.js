@@ -87,11 +87,11 @@ class DeploymentPatternService {
             anchestorsInString.push(strRepre);
         }
         if (anchestorsInString.length == 0) {
-            return `${dtos_1.NodeType[tree.nodeType]}${level}`;
+            return `${dtos_1.ResourceType[tree.resourceType]}${level}`;
         }
         else {
             anchestorsInString.sort((one, two) => (one > two ? -1 : 1));
-            return `${dtos_1.NodeType[tree.nodeType]}${level}-${anchestorsInString.join('-')}`;
+            return `${dtos_1.ResourceType[tree.resourceType]}${level}-${anchestorsInString.join('-')}`;
         }
     }
     createPureNodeFromNode(node) {
@@ -109,10 +109,10 @@ class DeploymentPatternService {
                 }
             }
         }
-        let id = dtos_1.NodeType[node.nodeType] + this.makeid(5);
+        let id = dtos_1.ResourceType[node.resourceType] + this.makeid(5);
         let pureNode = {
             name: id,
-            nodeType: node.nodeType,
+            resourceType: node.resourceType,
             peers: purePeers
         };
         return pureNode;

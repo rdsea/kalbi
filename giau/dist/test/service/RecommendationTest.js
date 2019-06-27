@@ -68,22 +68,22 @@ describe('RecommendationService tests', () => {
         let large2 = yield depPatternService.create(createDeploymentPatternLarge2());
         let large3 = yield depPatternService.create(createDeploymentPatternLarge3());
         let structure = {
-            nodeType: dtos_1.NodeType.edge,
+            resourceType: dtos_1.ResourceType.EDGE_SERVICE,
             name: 'edge1',
             peers: []
         };
         let rsu = {
-            nodeType: dtos_1.NodeType.rsu,
+            resourceType: dtos_1.ResourceType.RSU_RESOURCE,
             name: 'rsu1',
             peers: []
         };
         let rsu2 = {
-            nodeType: dtos_1.NodeType.rsu,
+            resourceType: dtos_1.ResourceType.RSU_RESOURCE,
             name: 'rsu2',
             peers: []
         };
         let vehicle = {
-            nodeType: dtos_1.NodeType.vehicle,
+            resourceType: dtos_1.ResourceType.VEHICLE_IOT,
             name: 'vehicle1',
             peers: []
         };
@@ -98,12 +98,12 @@ describe('RecommendationService tests', () => {
 function createDeploymentPatternSmall1() {
     let mainNode = {
         name: "rsu2",
-        nodeType: dtos_1.NodeType.rsu,
+        resourceType: dtos_1.ResourceType.RSU_RESOURCE,
         peers: []
     };
     for (let i = 0; i < 2; i++) {
         let peerNode = {
-            nodeType: dtos_1.NodeType.vehicle,
+            resourceType: dtos_1.ResourceType.VEHICLE_IOT,
             name: `vehicle${i + 1}`,
             peers: []
         };
@@ -120,12 +120,12 @@ exports.createDeploymentPatternSmall1 = createDeploymentPatternSmall1;
 function createDeploymentPatternLarge1() {
     let mainNode = {
         name: "rsu2",
-        nodeType: dtos_1.NodeType.rsu,
+        resourceType: dtos_1.ResourceType.RSU_RESOURCE,
         peers: []
     };
     for (let i = 0; i < 48; i++) {
         let peerNode = {
-            nodeType: dtos_1.NodeType.vehicle,
+            resourceType: dtos_1.ResourceType.VEHICLE_IOT,
             name: `vehicle${i + 1}`,
             peers: []
         };
@@ -142,12 +142,12 @@ exports.createDeploymentPatternLarge1 = createDeploymentPatternLarge1;
 function createDeploymentPatternSmall2() {
     let mainNode = {
         name: "edge1",
-        nodeType: dtos_1.NodeType.edge,
+        resourceType: dtos_1.ResourceType.EDGE_SERVICE,
         peers: []
     };
     for (let i = 0; i < 2; i++) {
         let peerNode = {
-            nodeType: dtos_1.NodeType.vehicle,
+            resourceType: dtos_1.ResourceType.VEHICLE_IOT,
             name: `vehicle${i + 1}`,
             peers: []
         };
@@ -164,12 +164,12 @@ exports.createDeploymentPatternSmall2 = createDeploymentPatternSmall2;
 function createDeploymentPatternLarge2() {
     let mainNode = {
         name: "edge1",
-        nodeType: dtos_1.NodeType.edge,
+        resourceType: dtos_1.ResourceType.EDGE_SERVICE,
         peers: []
     };
     for (let i = 0; i < 48; i++) {
         let peerNode = {
-            nodeType: dtos_1.NodeType.vehicle,
+            resourceType: dtos_1.ResourceType.VEHICLE_IOT,
             name: `vehicle${i + 1}`,
             peers: []
         };
@@ -186,26 +186,26 @@ exports.createDeploymentPatternLarge2 = createDeploymentPatternLarge2;
 function createDeploymentPatternSmall3() {
     let mainNode = {
         name: "edge1",
-        nodeType: dtos_1.NodeType.edge,
+        resourceType: dtos_1.ResourceType.EDGE_SERVICE,
         peers: []
     };
     let rsuNode1 = {
         name: "rsu1",
-        nodeType: dtos_1.NodeType.rsu,
+        resourceType: dtos_1.ResourceType.RSU_RESOURCE,
         peers: []
     };
     let rsuNode2 = {
         name: "rsu2",
-        nodeType: dtos_1.NodeType.rsu,
+        resourceType: dtos_1.ResourceType.RSU_RESOURCE,
         peers: []
     };
     let peerNode1 = {
-        nodeType: dtos_1.NodeType.vehicle,
+        resourceType: dtos_1.ResourceType.VEHICLE_IOT,
         name: `vehicle1`,
         peers: []
     };
     let peerNode2 = {
-        nodeType: dtos_1.NodeType.vehicle,
+        resourceType: dtos_1.ResourceType.VEHICLE_IOT,
         name: `vehicle2`,
         peers: []
     };
@@ -224,22 +224,22 @@ exports.createDeploymentPatternSmall3 = createDeploymentPatternSmall3;
 function createDeploymentPatternLarge3() {
     let mainNode = {
         name: "edge1",
-        nodeType: dtos_1.NodeType.edge,
+        resourceType: dtos_1.ResourceType.EDGE_SERVICE,
         peers: []
     };
     let rsuNode1 = {
         name: "rsu1",
-        nodeType: dtos_1.NodeType.rsu,
+        resourceType: dtos_1.ResourceType.RSU_RESOURCE,
         peers: []
     };
     let rsuNode2 = {
         name: "rsu2",
-        nodeType: dtos_1.NodeType.rsu,
+        resourceType: dtos_1.ResourceType.RSU_RESOURCE,
         peers: []
     };
     for (let i = 0; i < 24; i++) {
         let peerNode = {
-            nodeType: dtos_1.NodeType.vehicle,
+            resourceType: dtos_1.ResourceType.VEHICLE_IOT,
             name: `vehicle${i + 1}`,
             peers: []
         };
@@ -247,7 +247,7 @@ function createDeploymentPatternLarge3() {
     }
     for (let i = 24; i < 48; i++) {
         let peerNode = {
-            nodeType: dtos_1.NodeType.vehicle,
+            resourceType: dtos_1.ResourceType.VEHICLE_IOT,
             name: `vehicle${i + 1}`,
             peers: []
         };

@@ -10,10 +10,10 @@ class DeploymentPatternValidation {
         this.validatePureNode(dto.structure);
     }
     static validatePureNode(pureNode) {
-        if (!pureNode.hasOwnProperty('nodeType') || !pureNode.name) {
-            throw new ValidationException_1.ValidationException('Invalid PureNode');
+        if (!pureNode.hasOwnProperty('resourceType') || !pureNode.name) {
+            throw new ValidationException_1.ValidationException('Invalid DPNode');
         }
-        pureNode.nodeType = Utils_1.Utils.convertStringToNumber(pureNode.nodeType);
+        pureNode.resourceType = Utils_1.Utils.convertStringToNumber(pureNode.resourceType);
         if (pureNode.peers) {
             for (let i = 0; i < pureNode.peers.length; i++) {
                 this.validatePureNode(pureNode.peers[i]);

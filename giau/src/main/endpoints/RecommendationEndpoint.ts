@@ -3,7 +3,7 @@ import {Logger} from "log4js";
 import * as express from "express";
 import {Request} from "express";
 import {Response} from "express";
-import {DeploymentPattern, Experiment, PureNode, Topology} from "../model/dtos";
+import {DeploymentPattern, Experiment, DPNode, Topology} from "../model/dtos";
 
 
 export class RecommendationEndpoint {
@@ -17,7 +17,7 @@ export class RecommendationEndpoint {
         app.route('/findMostSimilarDeploymentPattern')
             .post(async (req: Request, res: Response) => {
 
-                    let pureNode: PureNode = req.body;
+                    let pureNode: DPNode = req.body;
                     let depPattern: DeploymentPattern = await this.recommendationService.findMostSimilarDeploymentPattern(pureNode);
                     res.status(200).send(depPattern);
                 }
@@ -46,7 +46,7 @@ export class RecommendationEndpoint {
                     let txAcceptTime: number = req.query.txAcceptTime ? req.query.txAcceptTime : -1;
                     let infrastructureResourceUtil: number = req.query.infRes ? req.query.infRes : -1;
 
-                    let pureNode: PureNode = req.body;
+                    let pureNode: DPNode = req.body;
 
                     let topology: Topology = await this.recommendationService.recommendTopology(pureNode, syncPriority, txAcceptRate, txAcceptTime, infrastructureResourceUtil);
 

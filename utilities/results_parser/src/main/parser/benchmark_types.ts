@@ -34,7 +34,7 @@ export interface BFTopology {
 
 export interface BFNode {
     name: string,
-    nodeType: ResourceType,
+    resourceType: ResourceType,
     blockchainArtefact: BFBlockchainArtefact,
     hostMachine: BFHostMachine,
     connections: BFNodeNetworkQualityAssociationClass[],

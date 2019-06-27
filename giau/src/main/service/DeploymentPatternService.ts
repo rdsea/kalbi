@@ -1,7 +1,7 @@
 import {IDeploymentPatternService} from "./interfaces";
 import {IDeploymentPatternGraphRepository} from "../repository/interfaces";
 import {Logger} from "log4js";
-import {DeploymentPattern, PureNode, Topology, Node, Experiment, NodeType} from "../model/dtos";
+import {DeploymentPattern, DPNode, Topology, Node, Experiment, ResourceType} from "../model/dtos";
 import {ServiceException} from "./ServiceException";
 import {PersistenceException} from "../repository/PersistenceException";
 import {DeploymentPatternValidation} from "../validation/DeploymentPatternValidation";
@@ -39,7 +39,7 @@ export class DeploymentPatternService implements IDeploymentPatternService {
 
             // this.visited = {};
 
-            let rootNode: PureNode = this.createPureNodeFromNode(topology.structure);
+            let rootNode: DPNode = this.createPureNodeFromNode(topology.structure);
 
             let allDepPatterns = await this.readAll();
 
@@ -47,7 +47,7 @@ export class DeploymentPatternService implements IDeploymentPatternService {
 
             if (allDepPatterns) {
                 for (let depPattern of allDepPatterns) {
-                    let patternRootNode: PureNode = depPattern.structure;
+                    let patternRootNode: DPNode = depPattern.structure;
                     if (this.equalsPureNodes(rootNode, patternRootNode)) {
                         this.logger.info(`DeploymentPattern structure already exists (id = ${patternRootNode.name}), returning`);
                         return depPattern;
@@ -79,7 +79,7 @@ export class DeploymentPatternService implements IDeploymentPatternService {
 
     }
 
-    private equalsPureNodes(nodeA: PureNode, nodeB: PureNode): boolean {
+    private equalsPureNodes(nodeA: DPNode, nodeB: DPNode): boolean {
 
         let nodeAStr: string = this.createStringRepresentationOfTree(nodeA, 0);
         let nodeBStr: string = this.createStringRepresentationOfTree(nodeB, 0);
@@ -87,7 +87,7 @@ export class DeploymentPatternService implements IDeploymentPatternService {
         return nodeAStr === nodeBStr;
     }
 
-    private createStringRepresentationOfTree(tree: PureNode, level: number): string {
+    private createStringRepresentationOfTree(tree: DPNode, level: number): string {
 
         let anchestorsInString: string[] = [];
         for (let child of tree.peers) {
@@ -96,40 +96,40 @@ export class DeploymentPatternService implements IDeploymentPatternService {
         }
 
         if (anchestorsInString.length == 0) {
-            return `${NodeType[tree.nodeType]}${level}`;
+            return `${ResourceType[tree.resourceType]}${level}`;
         } else {
             anchestorsInString.sort((one, two) => (one > two ? -1 : 1));
-            return `${NodeType[tree.nodeType]}${level}-${anchestorsInString.join('-')}`;
+            return `${ResourceType[tree.resourceType]}${level}-${anchestorsInString.join('-')}`;
         }
 
     }
 
 
-    private createPureNodeFromNode(node: Node): PureNode {
+    private createPureNodeFromNode(node: Node): DPNode {
 
         // if (this.visited[node.name]) {
         //     return;
         // }
         // this.visited[node.name] = true;
 
-        let purePeers: PureNode[] = [];
+        let purePeers: DPNode[] = [];
 
         if (node.connections) {
             for (let connection of node.connections) {
                 let peer: Node = connection.connectionEndpoint;
 
-                let purePeer: PureNode = this.createPureNodeFromNode(peer);
+                let purePeer: DPNode = this.createPureNodeFromNode(peer);
                 if (purePeer) {
                     purePeers.push(purePeer);
                 }
             }
         }
 
-        let id: string = NodeType[node.nodeType] + this.makeid(5);
+        let id: string = ResourceType[node.resourceType] + this.makeid(5);
 
-        let pureNode: PureNode = {
+        let pureNode: DPNode = {
             name: id,
-            nodeType: node.nodeType,
+            resourceType: node.resourceType,
             peers: purePeers
         };
 

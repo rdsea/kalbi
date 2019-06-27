@@ -8,15 +8,15 @@ import {
     BlockchainArtefact,
     BlockchainMetadata,
     ContainerConfiguration,
-    Edge,
+    EdgeService,
     EdgeProcessingApplication,
     NetworkQuality,
     Node,
     NodeNetworkQualityAssociationClass,
-    NodeType,
-    RSU,
+    ResourceType,
+    RSUResource,
     SoftwareArtefact,
-    Vehicle
+    VehicleIoT
 } from "../../main/model/dtos";
 import {MongoDb} from "../../main/repository/MongoDb";
 import {INodeStructureRepository} from "../../main/repository/interfaces";
@@ -117,7 +117,7 @@ describe('NodeStructureService tests', () => {
             name: 'node1',
             connections: [],
             blockchainArterfacts: [],
-            nodeType: NodeType.cloud,
+            resourceType: ResourceType.CLOUD_SERVICE,
             container: container,
             application: null
         };
@@ -127,7 +127,7 @@ describe('NodeStructureService tests', () => {
             name: 'node2',
             connections: [],
             blockchainArterfacts: [],
-            nodeType: NodeType.cloud,
+            resourceType: ResourceType.CLOUD_SERVICE,
             container: container,
             application: null
         };
@@ -137,7 +137,7 @@ describe('NodeStructureService tests', () => {
             name: 'node3',
             connections: [],
             blockchainArterfacts: [],
-            nodeType: NodeType.cloud,
+            resourceType: ResourceType.CLOUD_SERVICE,
             container: container,
             application: null
         };
@@ -195,7 +195,7 @@ describe('NodeStructureService tests', () => {
             name: 'node1',
             connections: [],
             blockchainArterfacts: [],
-            nodeType: NodeType.cloud,
+            resourceType: ResourceType.CLOUD_SERVICE,
             container: container,
             application: null
         };
@@ -205,7 +205,7 @@ describe('NodeStructureService tests', () => {
             name: 'node2',
             connections: [],
             blockchainArterfacts: [],
-            nodeType: NodeType.cloud,
+            resourceType: ResourceType.CLOUD_SERVICE,
             container: container,
             application: null
         };
@@ -215,7 +215,7 @@ describe('NodeStructureService tests', () => {
             name: 'node3',
             connections: [],
             blockchainArterfacts: [],
-            nodeType: NodeType.cloud,
+            resourceType: ResourceType.CLOUD_SERVICE,
             container: container,
             application: null
         };
@@ -402,36 +402,36 @@ export function createStructureForInteraction4Large(): Node {
 
     let deploymentMap = {};
 
-    deploymentMap[NodeType.edge] = [ethMiner];
-    deploymentMap[NodeType.vehicle] = [ethMiner];
-    deploymentMap[NodeType.rsu] = [ethPeer];
+    deploymentMap[ResourceType.EDGE_SERVICE] = [ethMiner];
+    deploymentMap[ResourceType.VEHICLE_IOT] = [ethMiner];
+    deploymentMap[ResourceType.RSU_RESOURCE] = [ethPeer];
 
-    let mainNode: Edge = {
+    let mainNode: EdgeService = {
         _id: null,
-        nodeType: NodeType.edge,
+        resourceType: ResourceType.EDGE_SERVICE,
         name: "edge1",
         connections: [],
         application: edgeProcessingApplication,
-        blockchainArterfacts: deploymentMap[NodeType.edge],
+        blockchainArterfacts: deploymentMap[ResourceType.EDGE_SERVICE],
         container: edgeMachine
     };
 
-    let rsuNode1: RSU = {
+    let rsuNode1: RSUResource = {
         _id: null,
-        nodeType: NodeType.rsu,
+        resourceType: ResourceType.RSU_RESOURCE,
         name: 'rsu1',
         connections: [],
-        blockchainArterfacts: deploymentMap[NodeType.rsu],
+        blockchainArterfacts: deploymentMap[ResourceType.RSU_RESOURCE],
         application: edgeProcessingApplication,
         container: rsuMachine
     };
 
-    let rsuNode2: RSU = {
+    let rsuNode2: RSUResource = {
         _id: null,
-        nodeType: NodeType.rsu,
+        resourceType: ResourceType.RSU_RESOURCE,
         name: 'rsu2',
         connections: [],
-        blockchainArterfacts: deploymentMap[NodeType.rsu],
+        blockchainArterfacts: deploymentMap[ResourceType.RSU_RESOURCE],
         application: edgeProcessingApplication,
         container: rsuMachine
     };
@@ -448,14 +448,14 @@ export function createStructureForInteraction4Large(): Node {
 
     for (let i = 0; i < 24; i++) {
 
-        let peerNode: Vehicle = {
+        let peerNode: VehicleIoT = {
             _id: null,
-            nodeType: NodeType.vehicle,
+            resourceType: ResourceType.VEHICLE_IOT,
             name: `vehicle${i + 1}`,
             connections: [],
             container: vehicleVM,
             application: edgeProcessingApplication,
-            blockchainArterfacts: deploymentMap[NodeType.vehicle]
+            blockchainArterfacts: deploymentMap[ResourceType.VEHICLE_IOT]
         };
 
         let connection: NodeNetworkQualityAssociationClass = {
@@ -468,14 +468,14 @@ export function createStructureForInteraction4Large(): Node {
 
     for (let i = 24; i < 48; i++) {
 
-        let peerNode: Vehicle = {
+        let peerNode: VehicleIoT = {
             _id: null,
-            nodeType: NodeType.vehicle,
+            resourceType: ResourceType.VEHICLE_IOT,
             name: `vehicle${i + 1}`,
             connections: [],
             container: vehicleVM,
             application: edgeProcessingApplication,
-            blockchainArterfacts: deploymentMap[NodeType.vehicle]
+            blockchainArterfacts: deploymentMap[ResourceType.VEHICLE_IOT]
         };
 
         let connection: NodeNetworkQualityAssociationClass = {

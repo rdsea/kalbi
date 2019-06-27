@@ -45,12 +45,12 @@ class DeploymentPatternGraphRepository {
             return;
         }
         this.visitedNode[node.name] = true;
-        let nodeTypeString = dtos_1.NodeType[node.nodeType];
-        nodeTypeString = this.capitalizeFirstLetter(nodeTypeString);
-        let createNodeCypher = `CREATE (${node.name}:${nodeTypeString} {name: '${node.name}', nodeType: '${dtos_1.NodeType[node.nodeType]}'})`;
+        let resourceTypeString = dtos_1.ResourceType[node.resourceType];
+        resourceTypeString = this.capitalizeFirstLetter(resourceTypeString);
+        let createNodeCypher = `CREATE (${node.name}:${resourceTypeString} {name: '${node.name}', resourceType: '${dtos_1.ResourceType[node.resourceType]}'})`;
         this.createNodesCypher = this.createNodesCypher + createNodeCypher + '\n';
         for (let peer of node.peers) {
-            let peerTypeString = dtos_1.NodeType[peer.nodeType];
+            let peerTypeString = dtos_1.ResourceType[peer.resourceType];
             peerTypeString = this.capitalizeFirstLetter(peerTypeString);
             let createRelCypher = `CREATE (${node.name})-[:CONNECTED_TO]->(${peer.name})`;
             this.createRelsCypher = this.createRelsCypher + createRelCypher + '\n';
@@ -125,22 +125,22 @@ class DeploymentPatternGraphRepository {
             }
         }
         let type = null;
-        if (resp.nodeType === 'vehicle') {
-            type = dtos_1.NodeType.vehicle;
+        if (resp.resourceType === 'VEHICLE_IOT') {
+            type = dtos_1.ResourceType.VEHICLE_IOT;
         }
-        else if (resp.nodeType === 'rsu') {
-            type = dtos_1.NodeType.rsu;
+        else if (resp.resourceType === 'RSU_RESOURCE') {
+            type = dtos_1.ResourceType.RSU_RESOURCE;
         }
-        else if (resp.nodeType === 'edge') {
-            type = dtos_1.NodeType.edge;
+        else if (resp.resourceType === 'EDGE_SERVICE') {
+            type = dtos_1.ResourceType.EDGE_SERVICE;
         }
-        else if (resp.nodeType === 'cloud') {
-            type = dtos_1.NodeType.cloud;
+        else if (resp.resourceType === 'CLOUD_SERVICE') {
+            type = dtos_1.ResourceType.CLOUD_SERVICE;
         }
         let pureNode = {
             name: resp.name,
             peers: peers,
-            nodeType: type
+            resourceType: type
         };
         return pureNode;
     }

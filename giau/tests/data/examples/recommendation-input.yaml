@@ -118,12 +118,12 @@ relationships:
     target_interfaces: {}
 node_templates:
   edge_dev1:
-    type: giau.nodes.rsu
+    type: giau.nodes.RSU_RESOURCE
     relationships:
       - target: iot1
         type: giau.relationships.nodes_network
   edge_node:
-    type: giau.nodes.edge
+    type: giau.nodes.EDGE_SERVICE
     relationships:
       - target: edge_dev2
         type: giau.relationships.nodes_network
@@ -132,13 +132,13 @@ node_templates:
       - target: iot3
         type: giau.relationships.nodes_network
   edge_dev2:
-    type: giau.nodes.rsu
+    type: giau.nodes.RSU_RESOURCE
     relationships:
       - target: iot2
         type: giau.relationships.nodes_network
   iot1:
-    type: giau.nodes.vehicle
+    type: giau.nodes.VEHICLE_IOT
   iot2:
-    type: giau.nodes.vehicle
+    type: giau.nodes.VEHICLE_IOT
   iot3:
-    type: giau.nodes.vehicle
+    type: giau.nodes.VEHICLE_IOT

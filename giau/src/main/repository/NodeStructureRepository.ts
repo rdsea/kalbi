@@ -56,7 +56,7 @@ export class NodeStructureRepository extends AbsCRUDMongoDBRepository<NodeDataMo
                     blockchainArterfacts: 1,
                     connections: 1,
                     name: 1,
-                    nodeType: 1,
+                    resourceType: 1,
                     container: {
                         $arrayElemAt: [
                             '$container',

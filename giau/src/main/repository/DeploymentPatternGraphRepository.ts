@@ -1,5 +1,5 @@
 import {IDeploymentPatternGraphRepository, IGraphDBAPI} from "./interfaces";
-import {DeploymentPattern, NodeType, PureNode} from "../model/dtos";
+import {DeploymentPattern, ResourceType, DPNode} from "../model/dtos";
 import {Logger} from "log4js";
 import * as crypto from "crypto";
 import {PersistenceException} from "./PersistenceException";
@@ -45,7 +45,7 @@ export class DeploymentPatternGraphRepository implements IDeploymentPatternGraph
 
     }
 
-    private createGraphTopologyRec(node: PureNode) {
+    private createGraphTopologyRec(node: DPNode) {
 
         if (this.visitedNode[node.name]) {
             return;
@@ -53,17 +53,17 @@ export class DeploymentPatternGraphRepository implements IDeploymentPatternGraph
 
         this.visitedNode[node.name] = true;
 
-        let nodeTypeString: string = NodeType[node.nodeType];
-        nodeTypeString = this.capitalizeFirstLetter(nodeTypeString);
+        let resourceTypeString: string = ResourceType[node.resourceType];
+        resourceTypeString = this.capitalizeFirstLetter(resourceTypeString);
 
 
-        let createNodeCypher: string = `CREATE (${node.name}:${nodeTypeString} {name: '${node.name}', nodeType: '${NodeType[node.nodeType]}'})`;
+        let createNodeCypher: string = `CREATE (${node.name}:${resourceTypeString} {name: '${node.name}', resourceType: '${ResourceType[node.resourceType]}'})`;
 
         this.createNodesCypher = this.createNodesCypher + createNodeCypher + '\n';
 
         for (let peer of node.peers) {
 
-            let peerTypeString: string = NodeType[peer.nodeType];
+            let peerTypeString: string = ResourceType[peer.resourceType];
             peerTypeString = this.capitalizeFirstLetter(peerTypeString);
 
             let createRelCypher: string = `CREATE (${node.name})-[:CONNECTED_TO]->(${peer.name})`;
@@ -147,34 +147,34 @@ export class DeploymentPatternGraphRepository implements IDeploymentPatternGraph
 
     }
 
-    private createPureNodeFromGraphResponse(resp): PureNode {
+    private createPureNodeFromGraphResponse(resp): DPNode {
 
-        let peers: PureNode[] = [];
+        let peers: DPNode[] = [];
 
         if (resp.connected_to) {
 
             for (let rawNode of resp.connected_to) {
 
-                let pureNode: PureNode = this.createPureNodeFromGraphResponse(rawNode);
+                let pureNode: DPNode = this.createPureNodeFromGraphResponse(rawNode);
                 peers.push(pureNode);
             }
         }
 
-        let type: NodeType = null;
-        if (resp.nodeType === 'vehicle') {
-            type = NodeType.vehicle;
-        } else if (resp.nodeType === 'rsu') {
-            type = NodeType.rsu;
-        } else if (resp.nodeType === 'edge') {
-            type = NodeType.edge;
-        } else if (resp.nodeType === 'cloud') {
-            type = NodeType.cloud;
+        let type: ResourceType = null;
+        if (resp.resourceType === 'VEHICLE_IOT') {
+            type = ResourceType.VEHICLE_IOT;
+        } else if (resp.resourceType === 'RSU_RESOURCE') {
+            type = ResourceType.RSU_RESOURCE;
+        } else if (resp.resourceType === 'EDGE_SERVICE') {
+            type = ResourceType.EDGE_SERVICE;
+        } else if (resp.resourceType === 'CLOUD_SERVICE') {
+            type = ResourceType.CLOUD_SERVICE;
         }
 
-        let pureNode: PureNode = {
+        let pureNode: DPNode = {
             name: resp.name,
             peers: peers,
-            nodeType: type
+            resourceType: type
         };
 
         return pureNode;

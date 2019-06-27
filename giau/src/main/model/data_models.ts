@@ -6,7 +6,7 @@ import {
     BlockchainArtefact,
     EdgeProcessingApplication,
     NetworkQuality,
-    NodeType,
+    ResourceType,
     ContainerConfiguration, BlockchainMetadata, QualityMetric
 } from "./dtos";
 import {ObjectId} from "mongodb";
@@ -62,7 +62,7 @@ export interface NodeDataModel extends HasObjectId {
     application: ObjectId,
     blockchainArterfacts: ObjectId[],
     container_id: ObjectId,
-    nodeType: NodeType,
+    resourceType: ResourceType,
     connections: NodeNetworkQualityAssociationClassDataModel[]
 }
 
@@ -71,7 +71,7 @@ export interface NodeJoinedDataModel extends HasObjectId {
     application: EdgeProcessingApplication,
     blockchainArterfacts: BlockchainArtefact[],
     container: ContainerConfiguration,
-    nodeType: NodeType,
+    resourceType: ResourceType,
     connections: NodeNetworkQualityAssociationClassDataModel[]
 }
 

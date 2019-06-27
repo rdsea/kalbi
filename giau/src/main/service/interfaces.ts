@@ -5,7 +5,7 @@ import {
     Node,
     SoftwareArtefact,
     Topology,
-    ContainerConfiguration, PureNode
+    ContainerConfiguration, DPNode
 } from "../model/dtos";
 
 
@@ -103,11 +103,11 @@ export interface IDeploymentPatternService {
 
 export interface IRecommendationService {
 
-    findMostSimilarDeploymentPattern(node: PureNode): Promise<DeploymentPattern>;
+    findMostSimilarDeploymentPattern(node: DPNode): Promise<DeploymentPattern>;
 
     bestBenchmarkForDeploymentPattern(deploymentPatternId: string, syncStatePriority: number, acceptedTxRatePriority: number, mediumAcceptanceTxTimePriority: number, infrastructureRes: number): Promise<Experiment>;
 
-    recommendTopology(node: PureNode, syncStatePriority: number, acceptedTxRatePriority: number, medianAcceptanceTxTimePriority: number, infrastructureRes: number): Promise<Topology>;
+    recommendTopology(node: DPNode, syncStatePriority: number, acceptedTxRatePriority: number, medianAcceptanceTxTimePriority: number, infrastructureRes: number): Promise<Topology>;
 
     recommendTopologyTOSCA(toscaTopologyDefinitionYamlString: string, syncStatePriority: number, acceptedTxRatePriority: number, medianAcceptanceTxTimePriority: number, infrastructureRes: number): Promise<any>;
 

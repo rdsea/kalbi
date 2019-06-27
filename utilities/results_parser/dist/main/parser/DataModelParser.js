@@ -61,7 +61,7 @@ class DataModelParser {
             nodeConnections.push(nodeConnection);
         }
         let application = null;
-        if (bfNode.resourceType == experiments_knowledge_service_types_1.NodeType.VEHICLE_IOT) {
+        if (bfNode.resourceType == experiments_knowledge_service_types_1.ResourceType.VEHICLE_IOT) {
             application = {
                 _id: null,
                 executionEnvironment: 'docker',
@@ -72,7 +72,7 @@ class DataModelParser {
         let node = {
             _id: null,
             container: this.parseContainer(bfNode.hostMachine.configuration),
-            nodeType: bfNode.resourceType,
+            resourceType: bfNode.resourceType,
             blockchainArterfacts: this.parseBlockchainArtefact(bfNode.blockchainArtefact),
             name: bfNode.name,
             connections: nodeConnections,
@@ -127,10 +127,10 @@ class DataModelParser {
     }
     getSwarmLeader(node) {
         let swarmLeader = null;
-        if (node.resourceType == experiments_knowledge_service_types_1.NodeType.VEHICLE_IOT) {
+        if (node.resourceType == experiments_knowledge_service_types_1.ResourceType.VEHICLE_IOT) {
             for (let connection of node.connections) {
                 let peer = connection.connectionEndpoint;
-                if (peer.resourceType != experiments_knowledge_service_types_1.NodeType.VEHICLE_IOT) {
+                if (peer.resourceType != experiments_knowledge_service_types_1.ResourceType.VEHICLE_IOT) {
                     swarmLeader = peer;
                     break;
                 }

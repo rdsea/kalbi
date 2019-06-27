@@ -105,7 +105,7 @@ export class DataModelParser {
 
         let application: EdgeProcessingApplication = null;
 
-        if (bfNode.nodeType == ResourceType.VEHICLE_IOT) {
+        if (bfNode.resourceType == ResourceType.VEHICLE_IOT) {
             application = {
                 _id: null,
                 executionEnvironment: 'docker',
@@ -117,7 +117,7 @@ export class DataModelParser {
         let node: Node = {
             _id: null,
             container: this.parseContainer(bfNode.hostMachine.configuration),
-            resourceType: bfNode.nodeType,
+            resourceType: bfNode.resourceType,
             blockchainArterfacts: this.parseBlockchainArtefact(bfNode.blockchainArtefact),
             name: bfNode.name,
             connections: nodeConnections,

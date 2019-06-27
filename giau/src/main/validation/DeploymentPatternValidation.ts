@@ -1,4 +1,4 @@
-import {DeploymentPattern, PureNode} from "../model/dtos";
+import {DeploymentPattern, DPNode} from "../model/dtos";
 import {ValidationException} from "./ValidationException";
 import {Utils} from "./Utils";
 
@@ -14,12 +14,12 @@ export class DeploymentPatternValidation {
         this.validatePureNode(dto.structure);
     }
 
-    static validatePureNode(pureNode: PureNode) {
-        if (!pureNode.hasOwnProperty('nodeType') || !pureNode.name) {
-            throw new ValidationException('Invalid PureNode');
+    static validatePureNode(pureNode: DPNode) {
+        if (!pureNode.hasOwnProperty('resourceType') || !pureNode.name) {
+            throw new ValidationException('Invalid DPNode');
         }
 
-        pureNode.nodeType = Utils.convertStringToNumber(pureNode.nodeType);
+        pureNode.resourceType = Utils.convertStringToNumber(pureNode.resourceType);
 
         if (pureNode.peers) {
             for (let i = 0; i < pureNode.peers.length; i++) {

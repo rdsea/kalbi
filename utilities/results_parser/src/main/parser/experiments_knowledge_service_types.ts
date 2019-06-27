@@ -13,29 +13,33 @@ export interface HasUUIDProp {
 
 export interface DeploymentPattern extends HasUUIDProp {
     name: string,
-    structure: PureNode
+    structure: DPNode
 }
 
 
-export interface PureNode {
+export interface DPNode {
     name: string,
     resourceType: ResourceType,
-    peers: PureNode[]
+    peers: DPNode[]
 }
 
-export interface PureVehicle extends PureNode {
-
-}
-
-export interface PureRSU extends PureNode {
+export interface DPCloudService extends DPNode {
 
 }
 
-export interface PureEdge extends PureNode {
+export interface DPEdgeService extends DPNode {
 
 }
 
-export interface PureCloud extends PureNode {
+export interface DPRSUResource extends DPNode {
+
+}
+
+export interface DPIoTResource extends DPNode {
+
+}
+
+export interface DPVehicleIoT extends DPIoTResource {
 
 }
 
@@ -117,21 +121,26 @@ export interface NodeNetworkQualityAssociationClass {
     networkQuality: NetworkQuality
 }
 
-export interface Vehicle extends Node {
+export interface CloudService extends Node {
 
 }
 
-export interface RSU extends Node {
+export interface EdgeService extends Node {
 
 }
 
-export interface Edge extends Node {
+export interface RSUResource extends Node {
 
 }
 
-export interface Cloud extends Node {
+export interface IoTResource extends Node {
 
 }
+
+export interface VehicleIoT extends IoTResource {
+
+}
+
 
 
 /**

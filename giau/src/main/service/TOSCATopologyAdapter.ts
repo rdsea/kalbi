@@ -3,15 +3,15 @@ import {
     BlockchainArtefact,
     Node,
     NodeNetworkQualityAssociationClass,
-    NodeType,
-    PureNode,
+    ResourceType,
+    DPNode,
     Topology
 } from "../model/dtos";
 
 export class TOSCATopologyAdapter {
 
     private visited = {};
-    private nodeTypeDeploymentMap = {};
+    private resourceTypeDeploymentMap = {};
     private artefactCounter = {};
 
     private connectionTargetNodeName = {};
@@ -26,9 +26,9 @@ export class TOSCATopologyAdapter {
      * TOSCA topology is a tree, with a single root.
      * @param toscaTopologyInJSON
      */
-    public translateTOSCAToPureNodeStructure(toscaTopologyInJSON: any): PureNode {
+    public translateTOSCAToPureNodeStructure(toscaTopologyInJSON: any): DPNode {
 
-        this.logger.info('Translating TOSCA to PureNode structure.');
+        this.logger.info('Translating TOSCA to DPNode structure.');
 
         this.connectionTargetNodeName = {};
 
@@ -37,13 +37,13 @@ export class TOSCATopologyAdapter {
 
             let validNode: boolean = false;
 
-            if (object.type && object.type === 'giau.nodes.rsu') {
+            if (object.type && object.type === 'giau.nodes.RSU_RESOURCE') {
                 validNode = true;
-            } else if (object.type && object.type == 'giau.nodes.edge') {
+            } else if (object.type && object.type == 'giau.nodes.EDGE_SERVICE') {
                 validNode = true;
-            } else if (object.type && object.type == 'giau.nodes.vehicle') {
+            } else if (object.type && object.type == 'giau.nodes.VEHICLE_IOT') {
                 validNode = true;
-            } else if (object.type && object.type == 'giau.nodes.cloud') {
+            } else if (object.type && object.type == 'giau.nodes.CLOUD_SERVICE') {
                 validNode = true;
             }
 
@@ -66,13 +66,13 @@ export class TOSCATopologyAdapter {
 
             let validNode: boolean = false;
 
-            if (object.type && object.type === 'giau.nodes.rsu') {
+            if (object.type && object.type === 'giau.nodes.RSU_RESOURCE') {
                 validNode = true;
-            } else if (object.type && object.type == 'giau.nodes.edge') {
+            } else if (object.type && object.type == 'giau.nodes.EDGE_SERVICE') {
                 validNode = true;
-            } else if (object.type && object.type == 'giau.nodes.vehicle') {
+            } else if (object.type && object.type == 'giau.nodes.VEHICLE_IOT') {
                 validNode = true;
-            } else if (object.type && object.type == 'giau.nodes.cloud') {
+            } else if (object.type && object.type == 'giau.nodes.CLOUD_SERVICE') {
                 validNode = true;
             }
 
@@ -84,46 +84,46 @@ export class TOSCATopologyAdapter {
             }
         }
 
-        this.logger.info('>>> Constructing PureNode structure with root at ' + myNodeRootName);
+        this.logger.info('>>> Constructing DPNode structure with root at ' + myNodeRootName);
 
-        let rootNode: PureNode = this.buildStructureFromToscaTopology(myNodeRootName, toscaTopologyInJSON);
+        let rootNode: DPNode = this.buildStructureFromToscaTopology(myNodeRootName, toscaTopologyInJSON);
         return rootNode;
     }
 
 
-    private buildStructureFromToscaTopology(rootNodeName: string, toscaTopologyInJSON): PureNode {
+    private buildStructureFromToscaTopology(rootNodeName: string, toscaTopologyInJSON): DPNode {
 
         for (let key in toscaTopologyInJSON.node_templates) {
             let object = toscaTopologyInJSON.node_templates[key];
 
             if (key == rootNodeName) {
 
-                let nodeType: NodeType = null;
+                let resourceType: ResourceType = null;
 
-                if (object.type && object.type === 'giau.nodes.rsu') {
-                    nodeType = NodeType.rsu;
-                } else if (object.type && object.type == 'giau.nodes.edge') {
-                    nodeType = NodeType.edge;
-                } else if (object.type && object.type == 'giau.nodes.vehicle') {
-                    nodeType = NodeType.vehicle;
-                } else if (object.type && object.type == 'giau.nodes.cloud') {
-                    nodeType = NodeType.cloud;
+                if (object.type && object.type === 'giau.nodes.RSU_RESOURCE') {
+                    resourceType = ResourceType.RSU_RESOURCE;
+                } else if (object.type && object.type == 'giau.nodes.EDGE_SERVICE') {
+                    resourceType = ResourceType.EDGE_SERVICE;
+                } else if (object.type && object.type == 'giau.nodes.VEHICLE_IOT') {
+                    resourceType = ResourceType.VEHICLE_IOT;
+                } else if (object.type && object.type == 'giau.nodes.CLOUD_SERVICE') {
+                    resourceType = ResourceType.CLOUD_SERVICE;
                 }
 
-                if (!nodeType) {
+                if (!resourceType) {
                     return;
                 }
 
-                let pureNode: PureNode = {
+                let pureNode: DPNode = {
                     name: key,
-                    nodeType: nodeType,
+                    resourceType: resourceType,
                     peers: []
                 };
 
                 if (object.relationships) {
                     for (let relationship of object.relationships) {
                         if (relationship.type == 'giau.relationships.nodes_network') {
-                            let peerNode: PureNode = this.buildStructureFromToscaTopology(relationship.target, toscaTopologyInJSON);
+                            let peerNode: DPNode = this.buildStructureFromToscaTopology(relationship.target, toscaTopologyInJSON);
                             pureNode.peers.push(peerNode);
                         }
                     }
@@ -148,14 +148,14 @@ export class TOSCATopologyAdapter {
 
         let typeStr: string = '';
 
-        if (node.nodeType == NodeType.cloud) {
-            typeStr = 'giau.nodes.cloud';
-        } else if (node.nodeType == NodeType.rsu) {
-            typeStr = 'giau.nodes.rsu';
-        } else if (node.nodeType == NodeType.edge) {
-            typeStr = 'giau.nodes.edge';
-        } else if (node.nodeType == NodeType.vehicle) {
-            typeStr = 'giau.nodes.vehicle';
+        if (node.resourceType == ResourceType.CLOUD_SERVICE) {
+            typeStr = 'giau.nodes.CLOUD_SERVICE';
+        } else if (node.resourceType == ResourceType.RSU_RESOURCE) {
+            typeStr = 'giau.nodes.RSU_RESOURCE';
+        } else if (node.resourceType == ResourceType.EDGE_SERVICE) {
+            typeStr = 'giau.nodes.EDGE_SERVICE';
+        } else if (node.resourceType == ResourceType.VEHICLE_IOT) {
+            typeStr = 'giau.nodes.VEHICLE_IOT';
         }
 
         let toscaNodeData = {
@@ -222,7 +222,7 @@ export class TOSCATopologyAdapter {
     public applyTopologyPropertiesToTOSCA(topology: Topology, toscaTopologyInJSON: any) {
 
         this.visited = {};
-        this.nodeTypeDeploymentMap = {};
+        this.resourceTypeDeploymentMap = {};
 
         this.traverseTopology(topology.structure);
 
@@ -232,14 +232,14 @@ export class TOSCATopologyAdapter {
 
             let originalNode: Node = null;
 
-            if (object.type && object.type === 'giau.nodes.rsu') {
-                originalNode = this.nodeTypeDeploymentMap[NodeType.rsu];
-            } else if (object.type && object.type == 'giau.nodes.edge') {
-                originalNode = this.nodeTypeDeploymentMap[NodeType.edge];
-            } else if (object.type && object.type == 'giau.nodes.vehicle') {
-                originalNode = this.nodeTypeDeploymentMap[NodeType.vehicle];
-            } else if (object.type && object.type == 'giau.nodes.cloud') {
-                originalNode = this.nodeTypeDeploymentMap[NodeType.cloud];
+            if (object.type && object.type === 'giau.nodes.RSU_RESOURCE') {
+                originalNode = this.resourceTypeDeploymentMap[ResourceType.RSU_RESOURCE];
+            } else if (object.type && object.type == 'giau.nodes.EDGE_SERVICE') {
+                originalNode = this.resourceTypeDeploymentMap[ResourceType.EDGE_SERVICE];
+            } else if (object.type && object.type == 'giau.nodes.VEHICLE_IOT') {
+                originalNode = this.resourceTypeDeploymentMap[ResourceType.VEHICLE_IOT];
+            } else if (object.type && object.type == 'giau.nodes.CLOUD_SERVICE') {
+                originalNode = this.resourceTypeDeploymentMap[ResourceType.CLOUD_SERVICE];
             }
 
             if (originalNode) {
@@ -332,11 +332,11 @@ export class TOSCATopologyAdapter {
             return;
         }
         this.visited[node.name];
-        if (!this.nodeTypeDeploymentMap[node.nodeType]) {
+        if (!this.resourceTypeDeploymentMap[node.resourceType]) {
             let nodeCopy: Node = node;
             nodeCopy = JSON.parse(JSON.stringify(nodeCopy));
             nodeCopy.connections = []; // we don't need the connections here
-            this.nodeTypeDeploymentMap[node.nodeType] = nodeCopy;
+            this.resourceTypeDeploymentMap[node.resourceType] = nodeCopy;
         }
         for (let connection of node.connections) {
             let peer: Node = connection.connectionEndpoint;

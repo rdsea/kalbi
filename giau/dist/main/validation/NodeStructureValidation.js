@@ -10,7 +10,7 @@ class NodeStructureValidation {
         this.validateRec(dto);
     }
     static validateRec(dto) {
-        if (!dto.hasOwnProperty('nodeType') || !dto.container || !dto.name) {
+        if (!dto.hasOwnProperty('resourceType') || !dto.container || !dto.name) {
             throw new ValidationException_1.ValidationException('Invalid Node');
         }
         if (this.visited[dto.name]) {
@@ -18,7 +18,7 @@ class NodeStructureValidation {
         }
         this.visited[dto.name] = true;
         ContainerConfigurationValidation_1.ContainerConfigurationValidation.validate(dto.container);
-        dto.nodeType = Utils_1.Utils.convertStringToNumber(dto.nodeType);
+        dto.resourceType = Utils_1.Utils.convertStringToNumber(dto.resourceType);
         if (dto.blockchainArterfacts) {
             for (let i = 0; i < dto.blockchainArterfacts.length; i++) {
                 SoftwareArtefactValidation_1.SoftwareArtefactValidation.validate(dto.blockchainArterfacts[i]);

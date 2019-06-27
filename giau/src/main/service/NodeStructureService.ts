@@ -135,7 +135,7 @@ export class NodeStructureService implements INodeStructureService {
             connections: [],
             container_id: new ObjectId(node.container._id),
             name: node.name,
-            nodeType: node.nodeType,
+            resourceType: node.resourceType,
             _id: null
         };
 
@@ -178,7 +178,7 @@ export class NodeStructureService implements INodeStructureService {
 
         let node: Node = {
             _id: rootDataModel._id.toHexString(),
-            nodeType: rootDataModel.nodeType,
+            resourceType: rootDataModel.resourceType,
             name: rootDataModel.name,
             container: rootDataModel.container,
             blockchainArterfacts: rootDataModel.blockchainArterfacts,

@@ -1,4 +1,4 @@
-import {DeploymentPattern, Experiment, PureNode, Topology} from "../model/dtos";
+import {DeploymentPattern, Experiment, DPNode, Topology} from "../model/dtos";
 import {IExperimentService, IRecommendationService} from "./interfaces";
 import {Logger} from "log4js";
 import {TOSCATopologyAdapter} from "./TOSCATopologyAdapter";
@@ -20,7 +20,7 @@ export class RecommendationService implements IRecommendationService {
 
     }
 
-    async findMostSimilarDeploymentPattern(node: PureNode): Promise<DeploymentPattern> {
+    async findMostSimilarDeploymentPattern(node: DPNode): Promise<DeploymentPattern> {
 
         this.logger.info('Looking for most similar deployment pattern to ' + JSON.stringify(node, null, 4));
 
@@ -40,7 +40,7 @@ export class RecommendationService implements IRecommendationService {
         return await this.experimentService.readBestExperimentByEvaluationMetric(deploymentPatternId, syncStatePriority, acceptedTxRatePriority, medianAcceptanceTxTimePriority, infrastructureRes);
     }
 
-    async recommendTopology(node: PureNode, syncStatePriority: number, acceptedTxRatePriority: number, medianAcceptanceTxTimePriority: number, infrastructureRes: number): Promise<Topology> {
+    async recommendTopology(node: DPNode, syncStatePriority: number, acceptedTxRatePriority: number, medianAcceptanceTxTimePriority: number, infrastructureRes: number): Promise<Topology> {
 
         DeploymentPatternValidation.validatePureNode(node);
 
@@ -65,7 +65,7 @@ export class RecommendationService implements IRecommendationService {
     async recommendTopologyTOSCA(toscaTopologyDefinitionInYAMLString: string, syncStatePriority: number, acceptedTxRatePriority: number, medianAcceptanceTxTimePriority: number, infrastructureRes: number): Promise<any> {
 
         let toscaTopologyDefinitionInJSON = yaml.safeLoad(toscaTopologyDefinitionInYAMLString);
-        let structure: PureNode = this.toscaTopologyAdapter.translateTOSCAToPureNodeStructure(toscaTopologyDefinitionInJSON);
+        let structure: DPNode = this.toscaTopologyAdapter.translateTOSCAToPureNodeStructure(toscaTopologyDefinitionInJSON);
         let bestTopology: Topology = await this.recommendTopology(structure, syncStatePriority, acceptedTxRatePriority, medianAcceptanceTxTimePriority, infrastructureRes);
 
         if (bestTopology) {

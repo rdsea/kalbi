@@ -16,7 +16,7 @@ export class NodeStructureValidation {
 
     static validateRec(dto: Node) {
 
-        if (!dto.hasOwnProperty('nodeType') || !dto.container || !dto.name ) {
+        if (!dto.hasOwnProperty('resourceType') || !dto.container || !dto.name ) {
             throw new ValidationException('Invalid Node');
         }
 
@@ -26,7 +26,7 @@ export class NodeStructureValidation {
         this.visited[dto.name] = true;
 
         ContainerConfigurationValidation.validate(dto.container);
-        dto.nodeType = Utils.convertStringToNumber(dto.nodeType);
+        dto.resourceType = Utils.convertStringToNumber(dto.resourceType);
 
         if (dto.blockchainArterfacts) {
             for (let i = 0; i < dto.blockchainArterfacts.length; i++) {

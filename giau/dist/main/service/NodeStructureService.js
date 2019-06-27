@@ -109,7 +109,7 @@ class NodeStructureService {
                 connections: [],
                 container_id: new mongodb_1.ObjectId(node.container._id),
                 name: node.name,
-                nodeType: node.nodeType,
+                resourceType: node.resourceType,
                 _id: null
             };
             nodeDataModel = yield this.repository.create(nodeDataModel);
@@ -145,7 +145,7 @@ class NodeStructureService {
             }
             let node = {
                 _id: rootDataModel._id.toHexString(),
-                nodeType: rootDataModel.nodeType,
+                resourceType: rootDataModel.resourceType,
                 name: rootDataModel.name,
                 container: rootDataModel.container,
                 blockchainArterfacts: rootDataModel.blockchainArterfacts,

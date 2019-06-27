@@ -1,15 +1,15 @@
 import {IDeploymentPatternService} from "./interfaces";
 import {Logger} from "log4js";
-import {DeploymentPattern, NodeType, PureNode} from "../model/dtos";
+import {DeploymentPattern, ResourceType, DPNode} from "../model/dtos";
 
 
-class NodeTypePair {
+class ResourceTypePair {
 
-    constructor(public a: NodeType, public b: NodeType) {
+    constructor(public a: ResourceType, public b: ResourceType) {
 
     }
 
-    equals(that: NodeTypePair): boolean {
+    equals(that: ResourceTypePair): boolean {
         return (this.a == that.a && this.b == that.b) || (this.b == that.a && this.a == that.b);
     }
 
@@ -22,16 +22,16 @@ export class DeploymentPatternMatcher {
 
     }
 
-    public async findSimilarDeploymentPattern(newStructure: PureNode): Promise<DeploymentPattern> {
+    public async findSimilarDeploymentPattern(newStructure: DPNode): Promise<DeploymentPattern> {
 
         let depPatternsStructure: DeploymentPattern[] = await this.depPatternService.readAll();
 
-        let newStructureInteractPairs: NodeTypePair[] = this.splitToInteractionPairs(newStructure);
+        let newStructureInteractPairs: ResourceTypePair[] = this.splitToInteractionPairs(newStructure);
 
         if (newStructureInteractPairs.length == 0) {
-            // there is no interaction, matching only nodetypes
+            // there is no interaction, matching only resource types
             for (let depPattern of depPatternsStructure) {
-                if (depPattern.structure.nodeType == newStructure.nodeType) {
+                if (depPattern.structure.resourceType == newStructure.resourceType) {
                     return depPattern;
                 }
             }
@@ -43,7 +43,7 @@ export class DeploymentPatternMatcher {
             for (let depPattern of depPatternsStructure) {
 
                 let matchesCount: number = 0;
-                let structureInteractionPairs: NodeTypePair[] = this.splitToInteractionPairs(depPattern.structure);
+                let structureInteractionPairs: ResourceTypePair[] = this.splitToInteractionPairs(depPattern.structure);
 
                 matchesCount = this.countMatchedInteractionPairs(newStructureInteractPairs, structureInteractionPairs);
 
@@ -64,10 +64,10 @@ export class DeploymentPatternMatcher {
         return null;
     }
 
-    private splitToInteractionPairs(pureNode: PureNode): NodeTypePair[] {
-        let pairs: NodeTypePair[] = [];
+    private splitToInteractionPairs(pureNode: DPNode): ResourceTypePair[] {
+        let pairs: ResourceTypePair[] = [];
         for (let peer of pureNode.peers) {
-            let pair: NodeTypePair = new NodeTypePair(pureNode.nodeType, peer.nodeType);
+            let pair: ResourceTypePair = new ResourceTypePair(pureNode.resourceType, peer.resourceType);
             if (!peer.peers || peer.peers.length == 0) {
                 pairs.push(pair);
             } else {
@@ -78,7 +78,7 @@ export class DeploymentPatternMatcher {
         return pairs;
     }
 
-    private countMatchedInteractionPairs(a: NodeTypePair[], b: NodeTypePair[]): number { // b - a
+    private countMatchedInteractionPairs(a: ResourceTypePair[], b: ResourceTypePair[]): number { // b - a
 
         let usedPair = {};
         let matchesCount: number = 0;

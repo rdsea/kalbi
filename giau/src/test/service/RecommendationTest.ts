@@ -6,7 +6,7 @@ import {
     ITopologyService
 } from "../../main/service/interfaces";
 import {MongoDb} from "../../main/repository/MongoDb";
-import {DeploymentPattern, NodeType, PureEdge, PureRSU, PureVehicle} from "../../main/model/dtos";
+import {DeploymentPattern, ResourceType, DPEdgeService, DPRSUResource, DPVehicleIoT} from "../../main/model/dtos";
 
 
 const assert = require('assert');
@@ -85,26 +85,26 @@ describe('RecommendationService tests', () => {
         let large2: DeploymentPattern = await depPatternService.create(createDeploymentPatternLarge2());
         let large3: DeploymentPattern = await depPatternService.create(createDeploymentPatternLarge3());
 
-        let structure: PureEdge = {
-            nodeType: NodeType.edge,
+        let structure: DPEdgeService = {
+            resourceType: ResourceType.EDGE_SERVICE,
             name: 'edge1',
             peers: []
         };
 
-        let rsu: PureRSU = {
-            nodeType: NodeType.rsu,
+        let rsu: DPRSUResource = {
+            resourceType: ResourceType.RSU_RESOURCE,
             name: 'rsu1',
             peers: []
         };
 
-        let rsu2: PureRSU = {
-            nodeType: NodeType.rsu,
+        let rsu2: DPRSUResource = {
+            resourceType: ResourceType.RSU_RESOURCE,
             name: 'rsu2',
             peers: []
         };
 
-        let vehicle: PureVehicle = {
-            nodeType: NodeType.vehicle,
+        let vehicle: DPVehicleIoT = {
+            resourceType: ResourceType.VEHICLE_IOT,
             name: 'vehicle1',
             peers: []
         };
@@ -124,16 +124,16 @@ describe('RecommendationService tests', () => {
 
 export function createDeploymentPatternSmall1(): DeploymentPattern {
 
-    let mainNode: PureRSU = {
+    let mainNode: DPRSUResource = {
         name: "rsu2",
-        nodeType: NodeType.rsu,
+        resourceType: ResourceType.RSU_RESOURCE,
         peers: []
     };
 
     for (let i = 0; i < 2; i++) {
 
-        let peerNode: PureVehicle = {
-            nodeType: NodeType.vehicle,
+        let peerNode: DPVehicleIoT = {
+            resourceType: ResourceType.VEHICLE_IOT,
             name: `vehicle${i + 1}`,
             peers: []
         };
@@ -152,16 +152,16 @@ export function createDeploymentPatternSmall1(): DeploymentPattern {
 
 export function createDeploymentPatternLarge1(): DeploymentPattern {
 
-    let mainNode: PureRSU = {
+    let mainNode: DPRSUResource = {
         name: "rsu2",
-        nodeType: NodeType.rsu,
+        resourceType: ResourceType.RSU_RESOURCE,
         peers: []
     };
 
     for (let i = 0; i < 48; i++) {
 
-        let peerNode: PureVehicle = {
-            nodeType: NodeType.vehicle,
+        let peerNode: DPVehicleIoT = {
+            resourceType: ResourceType.VEHICLE_IOT,
             name: `vehicle${i + 1}`,
             peers: []
         };
@@ -180,16 +180,16 @@ export function createDeploymentPatternLarge1(): DeploymentPattern {
 
 export function createDeploymentPatternSmall2(): DeploymentPattern {
 
-    let mainNode: PureEdge = {
+    let mainNode: DPEdgeService = {
         name: "edge1",
-        nodeType: NodeType.edge,
+        resourceType: ResourceType.EDGE_SERVICE,
         peers: []
     };
 
     for (let i = 0; i < 2; i++) {
 
-        let peerNode: PureVehicle = {
-            nodeType: NodeType.vehicle,
+        let peerNode: DPVehicleIoT = {
+            resourceType: ResourceType.VEHICLE_IOT,
             name: `vehicle${i + 1}`,
             peers: []
         };
@@ -208,16 +208,16 @@ export function createDeploymentPatternSmall2(): DeploymentPattern {
 
 export function createDeploymentPatternLarge2(): DeploymentPattern {
 
-    let mainNode: PureEdge = {
+    let mainNode: DPEdgeService = {
         name: "edge1",
-        nodeType: NodeType.edge,
+        resourceType: ResourceType.EDGE_SERVICE,
         peers: []
     };
 
     for (let i = 0; i < 48; i++) {
 
-        let peerNode: PureVehicle = {
-            nodeType: NodeType.vehicle,
+        let peerNode: DPVehicleIoT = {
+            resourceType: ResourceType.VEHICLE_IOT,
             name: `vehicle${i + 1}`,
             peers: []
         };
@@ -236,32 +236,32 @@ export function createDeploymentPatternLarge2(): DeploymentPattern {
 
 export function createDeploymentPatternSmall3(): DeploymentPattern {
 
-    let mainNode: PureEdge = {
+    let mainNode: DPEdgeService = {
         name: "edge1",
-        nodeType: NodeType.edge,
+        resourceType: ResourceType.EDGE_SERVICE,
         peers: []
     };
 
-    let rsuNode1: PureRSU = {
+    let rsuNode1: DPRSUResource = {
         name: "rsu1",
-        nodeType: NodeType.rsu,
+        resourceType: ResourceType.RSU_RESOURCE,
         peers: []
     };
 
-    let rsuNode2: PureRSU = {
+    let rsuNode2: DPRSUResource = {
         name: "rsu2",
-        nodeType: NodeType.rsu,
+        resourceType: ResourceType.RSU_RESOURCE,
         peers: []
     };
 
-    let peerNode1: PureVehicle = {
-        nodeType: NodeType.vehicle,
+    let peerNode1: DPVehicleIoT = {
+        resourceType: ResourceType.VEHICLE_IOT,
         name: `vehicle1`,
         peers: []
     };
 
-    let peerNode2: PureVehicle = {
-        nodeType: NodeType.vehicle,
+    let peerNode2: DPVehicleIoT = {
+        resourceType: ResourceType.VEHICLE_IOT,
         name: `vehicle2`,
         peers: []
     };
@@ -283,28 +283,28 @@ export function createDeploymentPatternSmall3(): DeploymentPattern {
 
 export function createDeploymentPatternLarge3(): DeploymentPattern {
 
-    let mainNode: PureEdge = {
+    let mainNode: DPEdgeService = {
         name: "edge1",
-        nodeType: NodeType.edge,
+        resourceType: ResourceType.EDGE_SERVICE,
         peers: []
     };
 
-    let rsuNode1: PureRSU = {
+    let rsuNode1: DPRSUResource = {
         name: "rsu1",
-        nodeType: NodeType.rsu,
+        resourceType: ResourceType.RSU_RESOURCE,
         peers: []
     };
 
-    let rsuNode2: PureRSU = {
+    let rsuNode2: DPRSUResource = {
         name: "rsu2",
-        nodeType: NodeType.rsu,
+        resourceType: ResourceType.RSU_RESOURCE,
         peers: []
     };
 
     for (let i = 0; i < 24; i++) {
 
-        let peerNode: PureVehicle = {
-            nodeType: NodeType.vehicle,
+        let peerNode: DPVehicleIoT = {
+            resourceType: ResourceType.VEHICLE_IOT,
             name: `vehicle${i + 1}`,
             peers: []
         };
@@ -313,8 +313,8 @@ export function createDeploymentPatternLarge3(): DeploymentPattern {
 
     for (let i = 24; i < 48; i++) {
 
-        let peerNode: PureVehicle = {
-            nodeType: NodeType.vehicle,
+        let peerNode: DPVehicleIoT = {
+            resourceType: ResourceType.VEHICLE_IOT,
             name: `vehicle${i + 1}`,
             peers: []
         };

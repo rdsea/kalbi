@@ -5,5 +5,5 @@ docker stop giau
 docker rm mongodb
 docker rm giau_neo4j_1
 docker rm giau
-docker rmi blockchainbenmarkservice/giau:0.8.4
+docker rmi blockchainbenmarkservice/giau:0.9.0
 docker-compose up

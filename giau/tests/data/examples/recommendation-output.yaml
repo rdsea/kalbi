@@ -118,7 +118,7 @@ relationships:
     target_interfaces: {}
 node_templates:
   vehicle1:
-    type: giau.nodes.vehicle
+    type: giau.nodes.VEHICLE_IOT
     relationships: []
     properties:
       memory: 8
@@ -138,7 +138,7 @@ node_templates:
       executionEnvironment: docker
       repositoryTag: hyperledger/fabric-peer
   rsu1:
-    type: giau.nodes.rsu
+    type: giau.nodes.RSU_RESOURCE
     relationships:
       - target: vehicle1
         type: giau.relationships.nodes_network
@@ -164,7 +164,7 @@ node_templates:
       executionEnvironment: docker
       repositoryTag: hyperledger/fabric-orderer
   vehicle2:
-    type: giau.nodes.vehicle
+    type: giau.nodes.VEHICLE_IOT
     relationships: []
     properties:
       memory: 8
@@ -184,7 +184,7 @@ node_templates:
       executionEnvironment: docker
       repositoryTag: hyperledger/fabric-peer
   rsu2:
-    type: giau.nodes.rsu
+    type: giau.nodes.RSU_RESOURCE
     relationships:
       - target: vehicle2
         type: giau.relationships.nodes_network
@@ -210,7 +210,7 @@ node_templates:
       executionEnvironment: docker
       repositoryTag: hyperledger/fabric-orderer
   edge1:
-    type: giau.nodes.edge
+    type: giau.nodes.EDGE_SERVICE
     relationships:
       - target: rsu1
         type: giau.relationships.nodes_network
