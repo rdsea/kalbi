@@ -30,6 +30,13 @@ npm run test
 ```
 
 ## Running
+### Note on MongoDB
+If you run MongoDB separately, then you should set
+```
+export MONGODB_URL='your mongodb url'
+```
+otherwise, the assumption is that a mongodb will be available from "mongodb://mongodb:27017/edgeblockchain" which should work when you run GIAU in a container and mongodb is in another container named "mongodb" (see docker-compose up)
+
 ### Locally
 ```
 npm run start-dev

@@ -18,16 +18,21 @@ class MongoDb {
             let testing = process.env.NODE_ENV === "test";
             let dev = process.env.NODE_ENV === 'dev';
             let prod = process.env.NODE_ENV === 'prod';
+            let mongodb_endpoint = process.env.MONGODB_URL;
+            if (mongodb_endpoint == null) {
+                mongodb_endpoint = "mongodb://localhost:27017/edgeblockchain";
+            }
             if (testing) {
                 this.mongoClient = yield mongodb_1.MongoClient.connect("mongodb://localhost:27017/edgeblockchain-test", { useNewUrlParser: true });
                 this.db = this.mongoClient.db('edgeblockchain-test');
             }
             else if (dev) {
-                this.mongoClient = yield mongodb_1.MongoClient.connect("mongodb://localhost:27017/edgeblockchain", { useNewUrlParser: true });
+                this.mongoClient = yield mongodb_1.MongoClient.connect(mongodb_endpoint, { useNewUrlParser: true });
                 this.db = this.mongoClient.db('edgeblockchain');
             }
             else if (prod) {
-                this.mongoClient = yield mongodb_1.MongoClient.connect("mongodb://mongodb:27017/edgeblockchain", { useNewUrlParser: true });
+                //mongodb://localhost:27017/edgeblockchain
+                this.mongoClient = yield mongodb_1.MongoClient.connect(mongodb_endpoint, { useNewUrlParser: true });
                 this.db = this.mongoClient.db('edgeblockchain');
             }
             else {
