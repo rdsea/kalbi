@@ -4,7 +4,9 @@
 
 * Filip Rydzi
 * Hong-Linh Truong
-
+## References:
+* Filip Rydzi, Hong-Linh Truong, [Sharing Blockchain Performance Knowledge for Edge Service Development](https://www.researchgate.net/publication/333533426_Sharing_Blockchain_Performance_Knowledge_for_Edge_Service_Development), Oct 2019.
+* Hong-Linh Truong, Filip Rydzi, [Benchmarking Blockchain Interactions in Mobile Edge Cloud Software Systems](https://www.researchgate.net/publication/333388734_Benchmarking_Blockchain_Interactions_in_Mobile_Edge_Cloud_Software_Systems), Sep 2019.
 
 ## Modules
 
@@ -30,7 +32,7 @@ View the README.md in the project for more information about startup and configu
 
 ### Utilities
 
-#### Results Parser 
+#### Results Parser
 
 This module can be found in the directory `utilities/results_parser`.
 This module is a simple NodeJS application, used to do some transformations of the experiments data.
@@ -48,10 +50,10 @@ This module includes various experiments, which were benchmarked by the Blockcha
 * `benchmarks_results` - a json representation of benchmarks' outcomes.
 * `emulated_vehicles_logs` - logs produced by v2x_communication emulator, when running the benchmarks.
 
-## References 
+## References
 
 ## Acknowledgement
-* Google Cloud Platform Research Grant 
+* Google Cloud Platform Research Grant
 
 
 ------------------------
