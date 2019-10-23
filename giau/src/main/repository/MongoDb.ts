@@ -1,12 +1,13 @@
 import {Logger} from "log4js";
 import {Db, MongoClient} from "mongodb";
+import {Configuration} from "../model/dtos";
 
 
 export class MongoDb {
 
     private mongoClient: MongoClient;
     private db: Db;
-    constructor(private logger: Logger) {
+    constructor(private logger: Logger, private config: Configuration) {
 
     }
 
@@ -14,20 +15,17 @@ export class MongoDb {
         let testing: boolean = process.env.NODE_ENV === "test";
         let dev: boolean = process.env.NODE_ENV === 'dev';
         let prod: boolean = process.env.NODE_ENV === 'prod';
-        let mongodb_endpoint = process.env.MONGODB_URL;
-        if (mongodb_endpoint == null) {
-          mongodb_endpoint="mongodb://mongodb:27017/edgeblockchain";
-        }
+
+        let mongoDBLocalAddress: string = this.config.mongoDBURL;
+
         if (testing) {
-            this.mongoClient = await MongoClient.connect("mongodb://localhost:27017/edgeblockchain-test", {useNewUrlParser: true});
+            this.mongoClient = await MongoClient.connect(`mongodb://${mongoDBLocalAddress}/edgeblockchain-test`, {useNewUrlParser: true});
             this.db = this.mongoClient.db('edgeblockchain-test');
         } else if (dev) {
-
-            this.mongoClient = await MongoClient.connect(mongodb_endpoint, {useNewUrlParser: true});
+            this.mongoClient = await MongoClient.connect(`mongodb://${mongoDBLocalAddress}/edgeblockchain`, {useNewUrlParser: true});
             this.db = this.mongoClient.db('edgeblockchain');
         } else if (prod) {
-            //mongodb://localhost:27017/edgeblockchain
-            this.mongoClient = await MongoClient.connect(mongodb_endpoint, {useNewUrlParser: true});
+            this.mongoClient = await MongoClient.connect("mongodb://mongodb:27017/edgeblockchain", {useNewUrlParser: true});
             this.db = this.mongoClient.db('edgeblockchain');
         } else {
             this.logger.error('Invalid NODE_ENV setting!');

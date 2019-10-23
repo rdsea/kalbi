@@ -1,3 +1,4 @@
+
 # GIAU (knowledGe for blockchaIn Applications and Utilties)
 
 GIAU is a service, managing data related to the experiments, benchmarks, topologies and utilized infrastructure. Beside the data management, it can be used by the developers to obtain recommendations, related to the most suitable deployment of their Blockchain-based application accross the MEC environment. The recommendations are based on the data (experiments), stored in the service. You can interact with the data via a set of the exposed APIs or by connecting directly to the MongoDB database instance, which contains the data.
@@ -24,20 +25,23 @@ npm install
 ```
 npm run build
 ```
+
+### Configuration
+A configuration file is stored under /config/config.yaml. You can override the following fields:
+* mongoDBURL: an address to a mongodb instance.
+* neo4JURL: an address to a neo4j instance.
+
+Those addresses are set automatically if you run the project via `docker-compose up`, because the mongodb and neo4j instance are being executed in separate containers.
+
 ## Running the tests
 ```
 npm run test
 ```
 
 ## Running
-### Note on MongoDB
-If you run MongoDB separately, then you should set
-```
-export MONGODB_URL='your mongodb url'
-```
-otherwise, the assumption is that a mongodb will be available from "mongodb://mongodb:27017/edgeblockchain" which should work when you run GIAU in a container and mongodb is in another container named "mongodb" (see docker-compose up)
 
 ### Locally
+
 ```
 npm run start-dev
 ```
@@ -47,6 +51,11 @@ A swagger-api documentation is available at http://localhost:9000/api-docs/. It 
 docker-compose up
 ```
 A swagger-api documentation is available at http://localhost:9000/api-docs/. It documents all used data models, and exposed APIs.
+
+## Deployment
+### Important note on swagger
+If you want to use the swagger when the giau is deployed remotely (on a different address than localhost), you should override the `host` parameter in `swagger.json` to point to the giau's address.
+
 ## Built With
 
 * [NodeJS](https://nodejs.org/en/) - Runtime Environment

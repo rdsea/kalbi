@@ -194,3 +194,8 @@ export interface TransactionAnalysisWrapper {
 export interface NodeRef {
     name: string
 }
+
+export interface Configuration {
+    mongoDBURL: string,
+    neo4JURL: string
+}

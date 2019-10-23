@@ -1,5 +1,7 @@
 import * as log4js from "log4js";
 import {Logger} from "log4js";
+import * as yaml from 'js-yaml'
+
 import {
     IDeploymentPatternGraphRepository,
     IExperimentRepository, IBenchmarkRepository, IGraphDBAPI,
@@ -40,12 +42,16 @@ import {RecommendationService} from "./service/RecommendationService";
 import {RecommendationEndpoint} from "./endpoints/RecommendationEndpoint";
 import {MongoDb} from "./repository/MongoDb";
 import {DeploymentPatternMatcher} from "./service/DeploymentPatternMatcher";
+import {Configuration} from "./model/dtos";
+import * as fs from "fs";
 
 
 export class DependencyInjection {
 
     private logger: Logger;
     private mongoDb: MongoDb;
+
+    private config: Configuration;
 
     private vmConfigEndpoint: ContainerConfigurationEndpoint;
     private softArtefactsEndpoint: SoftwareArtefactEndpoint;
@@ -75,6 +81,13 @@ export class DependencyInjection {
     private depPatternGraphRepo: IDeploymentPatternGraphRepository;
 
 
+    public createConfigurationWrapper() {
+        if (this.config) {
+            return this.config;
+        }
+        this.config = yaml.safeLoad(fs.readFileSync('config/config.yaml').toString());
+        return this.config;
+    }
 
     public createDeploymentPatternGraphRepository() {
         if (this.depPatternGraphRepo) {
@@ -89,7 +102,7 @@ export class DependencyInjection {
         if (this.graphAPI) {
             return this.graphAPI;
         }
-        this.graphAPI = new Neo4jAPI(this.createLogger());
+        this.graphAPI = new Neo4jAPI(this.createLogger(), this.createConfigurationWrapper());
         return this.graphAPI;
     }
 
@@ -267,7 +280,7 @@ export class DependencyInjection {
         if (this.mongoDb) {
             return this.mongoDb;
         }
-        this.mongoDb = new MongoDb(this.logger);
+        this.mongoDb = new MongoDb(this.logger, this.createConfigurationWrapper());
         return this.mongoDb;
     }
     
