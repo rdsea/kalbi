@@ -31,7 +31,7 @@ A configuration file is stored under /config/config.yaml. You can override the f
 * mongoDBURL: an address to a mongodb instance.
 * neo4JURL: an address to a neo4j instance.
 
-Those addresses are set automatically if you run the project via `docker-compose up`, because the mongodb and neo4j instance are being executed in separate containers.
+Those addresses are set automatically if you run the project via `docker-compose up`, because the mongodb and neo4j instance are being executed in separate containers. See Running Section for further information.
 
 ## Running the tests
 ```
