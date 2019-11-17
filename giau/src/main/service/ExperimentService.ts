@@ -1,5 +1,5 @@
 import {IDeploymentPatternService, IBenchmarkService, IExperimentService, ITopologyService} from "./interfaces";
-import {DeploymentPattern, Experiment, Benchmark, Topology} from "../model/dtos";
+import {DeploymentPattern, Experiment, Benchmark, Topology, DPNode} from "../model/dtos";
 import {IExperimentRepository} from "../repository/interfaces";
 import {Logger} from "log4js";
 import {ExperimentDataModel} from "../model/data_models";
@@ -8,6 +8,8 @@ import {MetricWrapper} from "../repository/ExperimentRepository";
 import {ServiceException} from "./ServiceException";
 import {PersistenceException} from "../repository/PersistenceException";
 import {ExperimentValidation} from "../validation/ExperimentValidation";
+import {DeploymentPatternValidation} from "../validation/DeploymentPatternValidation";
+import {DeploymentPatternMatcher} from "./DeploymentPatternMatcher";
 
 
 export class ExperimentService implements IExperimentService {
@@ -16,6 +18,7 @@ export class ExperimentService implements IExperimentService {
                 private topologyService: ITopologyService,
                 private expResultService: IBenchmarkService,
                 private depPatternService: IDeploymentPatternService,
+                private depPatternMatcher: DeploymentPatternMatcher,
                 private logger: Logger) {
 
     }
@@ -143,6 +146,41 @@ export class ExperimentService implements IExperimentService {
         }
 
     }
+
+    async readExperimentsByDeploymentPattern(node: DPNode): Promise<Experiment[]> {
+
+        DeploymentPatternValidation.validatePureNode(node);
+
+        let mostSimilarDeploymentPattern: DeploymentPattern = await this.depPatternMatcher.findSimilarDeploymentPattern(node);
+
+        if (!mostSimilarDeploymentPattern) {
+            this.logger.info('Deployment pattern cant be found');
+            return [];
+        }
+
+
+        try {
+            let expsDataModel: ExperimentDataModel[] = await this.repository.findAllForDeploymentPattern(mostSimilarDeploymentPattern._id);
+
+            let experiments: Experiment[] = [];
+
+            for (let expDataModel of expsDataModel) {
+                let exp: Experiment = await this.readOne(expDataModel._id.toString());
+                if (exp) {
+                    experiments.push(exp);
+                }
+            }
+
+            return experiments;
+        } catch (e) {
+            if (e instanceof PersistenceException) {
+                throw new ServiceException('Experiments cannot be fetched from DB');
+            } else {
+                throw e;
+            }
+        }
+    }
+
 
     async readBestExperimentByEvaluationMetric(deploymentPatternId: string, syncStatePriority: number, acceptedTxRatePriority: number, medianTxAcceptanceTimePriority: number, infrastructureRes: number): Promise<Experiment> {
 

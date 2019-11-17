@@ -69,6 +69,8 @@ export interface IExperimentService {
         infrastructureRes: number
     ): Promise<Experiment>;
 
+    readExperimentsByDeploymentPattern(node: DPNode): Promise<Experiment[]>;
+
     readAll(): Promise<Experiment[]>;
 
     delete(id: string);
@@ -103,11 +105,9 @@ export interface IDeploymentPatternService {
 
 export interface IRecommendationService {
 
-    findMostSimilarDeploymentPattern(node: DPNode): Promise<DeploymentPattern>;
-
     bestBenchmarkForDeploymentPattern(deploymentPatternId: string, syncStatePriority: number, acceptedTxRatePriority: number, mediumAcceptanceTxTimePriority: number, infrastructureRes: number): Promise<Experiment>;
 
-    recommendTopology(node: DPNode, syncStatePriority: number, acceptedTxRatePriority: number, medianAcceptanceTxTimePriority: number, infrastructureRes: number): Promise<Topology>;
+    recommendTopology(node: DPNode, syncStatePriority: number, acceptedTxRatePriority: number, medianAcceptanceTxTimePriority: number, infrastructureRes: number, returnBenchmark: boolean): Promise<any>;
 
     recommendTopologyTOSCA(toscaTopologyDefinitionYamlString: string, syncStatePriority: number, acceptedTxRatePriority: number, medianAcceptanceTxTimePriority: number, infrastructureRes: number): Promise<any>;
 

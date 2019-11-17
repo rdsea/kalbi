@@ -190,7 +190,7 @@ export class DependencyInjection {
         if (this.experimentService) {
             return this.experimentService;
         }
-        this.experimentService = new ExperimentService(this.createExperimentRepository(), this.createTopologyService(), this.createBenchmarkService(), this.createDeploymentPatternService(), this.createLogger());
+        this.experimentService = new ExperimentService(this.createExperimentRepository(), this.createTopologyService(), this.createBenchmarkService(), this.createDeploymentPatternService(), this.createDeploymentPatternMatcher(), this.createLogger());
         return this.experimentService;
     }
 
@@ -275,7 +275,6 @@ export class DependencyInjection {
     }
 
 
-
     public async createMongoDB(): Promise<MongoDb> {
         if (this.mongoDb) {
             return this.mongoDb;
@@ -283,7 +282,7 @@ export class DependencyInjection {
         this.mongoDb = new MongoDb(this.logger, this.createConfigurationWrapper());
         return this.mongoDb;
     }
-    
+
 
     public createLogger(): Logger {
         if (this.logger) {

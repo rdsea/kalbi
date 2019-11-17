@@ -58,6 +58,8 @@ export interface ITopologyRepository extends IAbsCRUDMongoRepository<TopologyDat
 
 export interface IExperimentRepository extends IAbsCRUDMongoRepository<ExperimentDataModel> {
 
+    findAllForDeploymentPattern(deploymentPatternId: string): Promise<ExperimentDataModel[]>;
+
     findAllForDeploymentPatternSortByMedianAcceptanceTime(deploymentPatternId: string): Promise<MetricWrapper[]>;
 
     findAllForExperimentsSortByMedianAcceptanceTime(experimentIds: string[]): Promise<MetricWrapper[]>;

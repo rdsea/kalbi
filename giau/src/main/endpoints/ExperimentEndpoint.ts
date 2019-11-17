@@ -3,8 +3,9 @@ import {Logger} from "log4js";
 import * as express from "express";
 import {Request} from "express";
 import {Response} from "express";
-import {Experiment} from "../model/dtos";
+import {DPNode, Experiment} from "../model/dtos";
 import {ValidationException} from "../validation/ValidationException";
+import {ServiceException} from "../service/ServiceException";
 
 
 export class ExperimentEndpoint {
@@ -20,7 +21,6 @@ export class ExperimentEndpoint {
 
                     try {
                         let newExp: Experiment = req.body;
-
                         newExp = await this.experimentService.create(newExp);
                         res.status(200).send(newExp);
                     } catch (e) {
@@ -29,7 +29,28 @@ export class ExperimentEndpoint {
                             res.status(400).send(e);
                         } else {
                             this.logger.error(e);
+                            throw e;
+                        }
+                    }
+                }
+            );
+
+
+        app.route('/experimentsOfDeploymentPattern')
+            .post(async (req: Request, res: Response) => {
+
+                    let pureNode: DPNode = req.body;
+
+                    try {
+                        let experiments: Experiment[] = await this.experimentService.readExperimentsByDeploymentPattern(pureNode);
+                        res.status(200).send(experiments);
+                    } catch (e) {
+                        if (e instanceof ValidationException) {
+                            this.logger.info(e);
                             res.status(400).send(e);
+                        } else {
+                            this.logger.error(e);
+                            throw e;
                         }
                     }
 

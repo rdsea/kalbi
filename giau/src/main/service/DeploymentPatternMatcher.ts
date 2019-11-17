@@ -24,6 +24,10 @@ export class DeploymentPatternMatcher {
 
     public async findSimilarDeploymentPattern(newStructure: DPNode): Promise<DeploymentPattern> {
 
+        let matchedDepPattern: DeploymentPattern = null;
+
+        this.logger.info('Looking for most similar deployment pattern to ' + JSON.stringify(newStructure, null, 4));
+
         let depPatternsStructure: DeploymentPattern[] = await this.depPatternService.readAll();
 
         let newStructureInteractPairs: ResourceTypePair[] = this.splitToInteractionPairs(newStructure);
@@ -32,7 +36,7 @@ export class DeploymentPatternMatcher {
             // there is no interaction, matching only resource types
             for (let depPattern of depPatternsStructure) {
                 if (depPattern.structure.resourceType == newStructure.resourceType) {
-                    return depPattern;
+                    matchedDepPattern = depPattern;
                 }
             }
         } else {
@@ -59,9 +63,15 @@ export class DeploymentPatternMatcher {
                     }
                 }
             }
-            return bestPattern;
+            matchedDepPattern = bestPattern;
         }
-        return null;
+
+        if (matchedDepPattern) {
+            this.logger.info(`Find matched pattern id = ${matchedDepPattern._id}`);
+        } else {
+            this.logger.info('No similar deployment pattern has been found');
+        }
+        return matchedDepPattern;
     }
 
     private splitToInteractionPairs(pureNode: DPNode): ResourceTypePair[] {

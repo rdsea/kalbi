@@ -7,6 +7,7 @@ import {
 } from "../../main/service/interfaces";
 import {MongoDb} from "../../main/repository/MongoDb";
 import {DeploymentPattern, ResourceType, DPEdgeService, DPRSUResource, DPVehicleIoT} from "../../main/model/dtos";
+import {DeploymentPatternMatcher} from "../../main/service/DeploymentPatternMatcher";
 
 
 const assert = require('assert');
@@ -18,6 +19,7 @@ describe('RecommendationService tests', () => {
     let experimentService: IExperimentService = null;
     let depPatternService: IDeploymentPatternService = null;
     let recommendationService: IRecommendationService = null;
+    let deploymentPatternMatcher: DeploymentPatternMatcher = null;
 
     before(async () => {
         let mongoDb: MongoDb = await dependecnyInjection.createMongoDB();
@@ -26,6 +28,7 @@ describe('RecommendationService tests', () => {
         experimentService = dependecnyInjection.createExperimentService();
         depPatternService = dependecnyInjection.createDeploymentPatternService();
         recommendationService = dependecnyInjection.createRecommendationService();
+        deploymentPatternMatcher = dependecnyInjection.createDeploymentPatternMatcher();
     });
 
     after(async () => {
@@ -43,7 +46,7 @@ describe('RecommendationService tests', () => {
 
     it('findMostSimilarDeploymentPatternShouldReturnNull', async () => {
 
-        let mostSimilar: DeploymentPattern = await recommendationService.findMostSimilarDeploymentPattern(createDeploymentPatternLarge1().structure);
+        let mostSimilar: DeploymentPattern = await deploymentPatternMatcher.findSimilarDeploymentPattern(createDeploymentPatternLarge1().structure);
         assert(mostSimilar == null);
 
     });
@@ -57,22 +60,22 @@ describe('RecommendationService tests', () => {
         let large2: DeploymentPattern = await depPatternService.create(createDeploymentPatternLarge2());
         let large3: DeploymentPattern = await depPatternService.create(createDeploymentPatternLarge3());
 
-        let mostSimilar: DeploymentPattern = await recommendationService.findMostSimilarDeploymentPattern(createDeploymentPatternSmall1().structure);
+        let mostSimilar: DeploymentPattern = await deploymentPatternMatcher.findSimilarDeploymentPattern(createDeploymentPatternSmall1().structure);
         assert(mostSimilar._id == small1._id);
 
-        mostSimilar = await recommendationService.findMostSimilarDeploymentPattern(createDeploymentPatternSmall2().structure);
+        mostSimilar = await deploymentPatternMatcher.findSimilarDeploymentPattern(createDeploymentPatternSmall2().structure);
         assert(mostSimilar._id == small2._id);
 
-        mostSimilar = await recommendationService.findMostSimilarDeploymentPattern(createDeploymentPatternSmall3().structure);
+        mostSimilar = await deploymentPatternMatcher.findSimilarDeploymentPattern(createDeploymentPatternSmall3().structure);
         assert(mostSimilar._id == small3._id);
 
-        mostSimilar = await recommendationService.findMostSimilarDeploymentPattern(createDeploymentPatternLarge1().structure);
+        mostSimilar = await deploymentPatternMatcher.findSimilarDeploymentPattern(createDeploymentPatternLarge1().structure);
         assert(mostSimilar._id == large1._id);
 
-        mostSimilar = await recommendationService.findMostSimilarDeploymentPattern(createDeploymentPatternLarge2().structure);
+        mostSimilar = await deploymentPatternMatcher.findSimilarDeploymentPattern(createDeploymentPatternLarge2().structure);
         assert(mostSimilar._id == large2._id);
 
-        mostSimilar = await recommendationService.findMostSimilarDeploymentPattern(createDeploymentPatternLarge3().structure);
+        mostSimilar = await deploymentPatternMatcher.findSimilarDeploymentPattern(createDeploymentPatternLarge3().structure);
         assert(mostSimilar._id == large3._id);
     });
 
@@ -113,7 +116,7 @@ describe('RecommendationService tests', () => {
         rsu.peers.push(rsu2);
         structure.peers.push(rsu);
 
-        let mostSimilar: DeploymentPattern = await recommendationService.findMostSimilarDeploymentPattern(structure);
+        let mostSimilar: DeploymentPattern = await deploymentPatternMatcher.findSimilarDeploymentPattern(structure);
         assert(mostSimilar);
         assert(mostSimilar._id == small3._id);
 

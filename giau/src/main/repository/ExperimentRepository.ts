@@ -17,6 +17,28 @@ export class ExperimentRepository extends AbsCRUDMongoDBRepository<ExperimentDat
         super(mongoDb, 'experiment', logger);
     }
 
+    async findAllForDeploymentPattern(deploymentPatternId: string): Promise<ExperimentDataModel[]> {
+        try {
+            let matchFunction: Object = {
+                $match: {
+                    benchmark_id: {
+                        $ne: null
+                    },
+                    deployment_pattern_id: `${deploymentPatternId}`
+                }
+            };
+            let result: AggregationCursor<any> = await this.db.collection<any>(this.collectionName).aggregate([matchFunction]);
+            let results: ExperimentDataModel[] = await result.toArray();
+
+            return results;
+        } catch (e) {
+            this.logger.warn('Persistence Layer Exception: ' + e);
+            throw new PersistenceException(e);
+        }
+    }
+
+
+
     async findAllForDeploymentPatternSortByAcceptedTxCount(deploymentPatternId: string): Promise<MetricWrapper[]> {
 
         try {
@@ -321,11 +343,8 @@ export class ExperimentRepository extends AbsCRUDMongoDBRepository<ExperimentDat
 
     private insertToArrayIndex(index: number, orignal: any[], elem: any): any[] {
         let out: any[] = [];
-        let i = 0;
+        out.push(elem);
         for (let j = 0; j < orignal.length; j++) {
-            if (i == j) {
-                out.push(elem);
-            }
             out.push(orignal[j]);
         }
         return out;

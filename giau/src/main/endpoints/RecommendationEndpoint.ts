@@ -3,7 +3,8 @@ import {Logger} from "log4js";
 import * as express from "express";
 import {Request} from "express";
 import {Response} from "express";
-import {DeploymentPattern, Experiment, DPNode, Topology} from "../model/dtos";
+import {Experiment, DPNode} from "../model/dtos";
+import {ValidationException} from "../validation/ValidationException";
 
 
 export class RecommendationEndpoint {
@@ -13,15 +14,6 @@ export class RecommendationEndpoint {
     }
 
     public routes(app: express.Router): void {
-
-        app.route('/findMostSimilarDeploymentPattern')
-            .post(async (req: Request, res: Response) => {
-
-                    let pureNode: DPNode = req.body;
-                    let depPattern: DeploymentPattern = await this.recommendationService.findMostSimilarDeploymentPattern(pureNode);
-                    res.status(200).send(depPattern);
-                }
-            );
 
         app.route('/bestBenchmarkForDeploymentPattern/:id')
             .get(async (req: Request, res: Response) => {
@@ -45,12 +37,21 @@ export class RecommendationEndpoint {
                     let txAcceptRate: number = req.query.txAcceptRate ? req.query.txAcceptRate : -1;
                     let txAcceptTime: number = req.query.txAcceptTime ? req.query.txAcceptTime : -1;
                     let infrastructureResourceUtil: number = req.query.infRes ? req.query.infRes : -1;
+                    let returnBenchmarks: boolean = req.query.returnBenchmarks ? req.query.returnBenchmarks: false;
 
                     let pureNode: DPNode = req.body;
 
-                    let topology: Topology = await this.recommendationService.recommendTopology(pureNode, syncPriority, txAcceptRate, txAcceptTime, infrastructureResourceUtil);
-
-                    res.status(200).send(topology);
+                    try {
+                        let result: any = await this.recommendationService.recommendTopology(pureNode, syncPriority, txAcceptRate, txAcceptTime, infrastructureResourceUtil, returnBenchmarks);
+                        res.status(200).send(result);
+                    } catch (e) {
+                        if (e instanceof ValidationException) {
+                            this.logger.info(e);
+                            res.status(400).send (e);
+                        } else {
+                            throw e;
+                        }
+                    }
                 }
             );
 

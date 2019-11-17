@@ -3,7 +3,6 @@ import {
     INodeStructureService,
     ITopologyService
 } from "../../main/service/interfaces";
-import {MongoClient} from "mongodb";
 import {Node, Topology} from "../../main/model/dtos";
 import {createStructureForInteraction4Large} from "./NodeStructureTest";
 import {MongoDb} from "../../main/repository/MongoDb";

@@ -20,32 +20,16 @@ export class RecommendationService implements IRecommendationService {
 
     }
 
-    async findMostSimilarDeploymentPattern(node: DPNode): Promise<DeploymentPattern> {
-
-        this.logger.info('Looking for most similar deployment pattern to ' + JSON.stringify(node, null, 4));
-
-        if (!node) {
-            return null;
-        }
-        let matchedDepPattern: DeploymentPattern = await this.deploymentPatternMatcher.findSimilarDeploymentPattern(node);
-        if (matchedDepPattern) {
-            this.logger.info(`Find matched pattern id = ${matchedDepPattern._id}`);
-        } else {
-            this.logger.info('No similar deployment pattern has been found');
-        }
-        return matchedDepPattern;
-    }
-
     async bestBenchmarkForDeploymentPattern(deploymentPatternId: string, syncStatePriority: number, acceptedTxRatePriority: number, medianAcceptanceTxTimePriority: number, infrastructureRes: number): Promise<Experiment> {
         return await this.experimentService.readBestExperimentByEvaluationMetric(deploymentPatternId, syncStatePriority, acceptedTxRatePriority, medianAcceptanceTxTimePriority, infrastructureRes);
     }
 
-    async recommendTopology(node: DPNode, syncStatePriority: number, acceptedTxRatePriority: number, medianAcceptanceTxTimePriority: number, infrastructureRes: number): Promise<Topology> {
+    async recommendTopology(node: DPNode, syncStatePriority: number, acceptedTxRatePriority: number, medianAcceptanceTxTimePriority: number, infrastructureRes: number, returnBenchmark: boolean): Promise<any> {
 
         DeploymentPatternValidation.validatePureNode(node);
 
         this.logger.info('Recommending a topology');
-        let mostSimilarDeploymentPattern: DeploymentPattern = await this.findMostSimilarDeploymentPattern(node);
+        let mostSimilarDeploymentPattern: DeploymentPattern = await this.deploymentPatternMatcher.findSimilarDeploymentPattern(node);
 
         if (!mostSimilarDeploymentPattern) {
             this.logger.info('A Topology cannot be recommended');
@@ -58,7 +42,11 @@ export class RecommendationService implements IRecommendationService {
             this.logger.info(`No Experiment for deployment pattern ${mostSimilarDeploymentPattern._id} has been found. Topology cannot be recommended`);
             return null;
         } else {
-            return bestExperiment.topology;
+            if (returnBenchmark) {
+                return bestExperiment;
+            } else {
+                return bestExperiment.topology;
+            }
         }
     }
 
@@ -66,7 +54,7 @@ export class RecommendationService implements IRecommendationService {
 
         let toscaTopologyDefinitionInJSON = yaml.safeLoad(toscaTopologyDefinitionInYAMLString);
         let structure: DPNode = this.toscaTopologyAdapter.translateTOSCAToPureNodeStructure(toscaTopologyDefinitionInJSON);
-        let bestTopology: Topology = await this.recommendTopology(structure, syncStatePriority, acceptedTxRatePriority, medianAcceptanceTxTimePriority, infrastructureRes);
+        let bestTopology: Topology = await this.recommendTopology(structure, syncStatePriority, acceptedTxRatePriority, medianAcceptanceTxTimePriority, infrastructureRes, false);
 
         if (bestTopology) {
             toscaTopologyDefinitionInJSON = this.toscaTopologyAdapter.translateTopologyToTOSCA(bestTopology);
