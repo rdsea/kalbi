@@ -35,6 +35,7 @@ export class ContainerConfigurationEndpoint {
                             this.logger.info(e);
                             res.status(400).send(e);
                         } else {
+                            this.logger.error(e);
                             throw e;
                         }
                     }
