@@ -3,6 +3,10 @@
 
 GIAU is a service, managing data related to the experiments, benchmarks, topologies and utilized infrastructure. Beside the data management, it can be used by the developers to obtain recommendations, related to the most suitable deployment of their Blockchain-based application accross the MEC environment. The recommendations are based on the data (experiments), stored in the service. You can interact with the data via a set of the exposed APIs or by connecting directly to the MongoDB database instance, which contains the data.
 
+If you use this software, pls. cite the following paper:
+
+* Filip Rydzi, Hong-Linh Truong, [Sharing Blockchain Performance Knowledge for Edge Service Development](https://www.researchgate.net/publication/333533426_Sharing_Blockchain_Performance_Knowledge_for_Edge_Service_Development), The 5th IEEE International Conference on Collaboration and Internet Computing - Los Angeles, United States, 12 Dec 2019-14 Dec 2019
+
 ## Getting Started
 These instructions will guide you through the process of installation and configuration of the service.
 ### Prerequisites
