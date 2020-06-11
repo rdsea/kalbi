@@ -1,12 +1,4 @@
-# Benchmark Service for Blockchain-based Software Systems
-
-## Contributors
-
-* Filip Rydzi
-* Hong-Linh Truong
-## References:
-* Filip Rydzi, Hong-Linh Truong, [Sharing Blockchain Performance Knowledge for Edge Service Development](https://www.researchgate.net/publication/333533426_Sharing_Blockchain_Performance_Knowledge_for_Edge_Service_Development), The 5th IEEE International Conference on Collaboration and Internet Computing - Los Angeles, United States, 12 Dec 2019-14 Dec 2019
-* Hong-Linh Truong, Filip Rydzi, [Benchmarking Blockchain Interactions in Mobile Edge Cloud Software Systems](https://www.researchgate.net/publication/333388734_Benchmarking_Blockchain_Interactions_in_Mobile_Edge_Cloud_Software_Systems), Sep 2019.
+# KALBI - Knowledge, Artefacts, and utiLities for Blockchain Interactions
 
 ## Modules
 
@@ -50,7 +42,15 @@ This module includes various experiments, which were benchmarked by the Blockcha
 * `benchmarks_results` - a json representation of benchmarks' outcomes.
 * `emulated_vehicles_logs` - logs produced by v2x_communication emulator, when running the benchmarks.
 
-## References
+## References:
+* Filip Rydzi, Hong-Linh Truong, [Sharing Blockchain Performance Knowledge for Edge Service Development](https://www.researchgate.net/publication/333533426_Sharing_Blockchain_Performance_Knowledge_for_Edge_Service_Development), The 5th IEEE International Conference on Collaboration and Internet Computing - Los Angeles, United States, 12 Dec 2019-14 Dec 2019
+* Hong-Linh Truong, Filip Rydzi, [Benchmarking Blockchain Interactions in Mobile Edge Cloud Software Systems](https://www.researchgate.net/publication/333388734_Benchmarking_Blockchain_Interactions_in_Mobile_Edge_Cloud_Software_Systems), Sep 2019.
+
+## Contributors
+
+* Filip Rydzi
+* Hong-Linh Truong
+
 
 ## Acknowledgement
 * Google Cloud Platform Research Grant
