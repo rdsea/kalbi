@@ -4,7 +4,7 @@ from django.utils.decorators import method_decorator
 from rest_framework import viewsets, generics, mixins
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from rest_framework import status, serializers
+from rest_framework import status
 from drf_yasg.utils import swagger_auto_schema
 
 from .models import (
@@ -13,9 +13,7 @@ from .models import (
     Language, Community, CommunicationChannel,
     EngineeringMethod, TestingPath, TestingScope,
 )
-from .serializers import (
-    ChainSerializer, BaseSerializer,
-)
+from core import serializers
 from .utils import BaseDetailView, BaseListView
 
 
@@ -24,7 +22,7 @@ from .utils import BaseDetailView, BaseListView
 @method_decorator(
     name='post',
     decorator=swagger_auto_schema(
-        request_body=ChainSerializer
+        request_body=serializers.ChainSerializer
     )
 )
 class ChainListView(BaseListView):
@@ -33,7 +31,7 @@ class ChainListView(BaseListView):
 @method_decorator(
     name='put',
     decorator=swagger_auto_schema(
-        request_body=ChainSerializer
+        request_body=serializers.ChainSerializer
     )
 )
 class ChainDetailView(BaseDetailView):
@@ -44,7 +42,7 @@ class ChainDetailView(BaseDetailView):
 @method_decorator(
     name='post',
     decorator=swagger_auto_schema(
-        request_body=BaseSerializer
+        request_body=serializers.ProjectSerializer
     )
 )
 class ProjectListView(BaseListView):
@@ -53,7 +51,7 @@ class ProjectListView(BaseListView):
 @method_decorator(
     name='put',
     decorator=swagger_auto_schema(
-        request_body=BaseSerializer
+        request_body=serializers.ProjectSerializer
     )
 )
 class ProjectDetailView(BaseDetailView):
@@ -63,7 +61,7 @@ class ProjectDetailView(BaseDetailView):
 @method_decorator(
     name='post',
     decorator=swagger_auto_schema(
-        request_body=BaseSerializer
+        request_body=serializers.PipelineSerializer
     )
 )
 class PipelineListView(BaseListView):
@@ -72,7 +70,7 @@ class PipelineListView(BaseListView):
 @method_decorator(
     name='put',
     decorator=swagger_auto_schema(
-        request_body=BaseSerializer
+        request_body=serializers.PipelineSerializer
     )
 )
 class PipelineDetailView(BaseDetailView):
@@ -82,7 +80,7 @@ class PipelineDetailView(BaseDetailView):
 @method_decorator(
     name='post',
     decorator=swagger_auto_schema(
-        request_body=BaseSerializer
+        request_body=serializers.ActivityCategorySerializer
     )
 )
 class ActivityCategoryListView(BaseListView):
@@ -91,7 +89,7 @@ class ActivityCategoryListView(BaseListView):
 @method_decorator(
     name='put',
     decorator=swagger_auto_schema(
-        request_body=BaseSerializer
+        request_body=serializers.ActivityCategorySerializer
     )
 )
 class ActivityCategoryDetailView(BaseDetailView):
@@ -101,7 +99,7 @@ class ActivityCategoryDetailView(BaseDetailView):
 @method_decorator(
     name='post',
     decorator=swagger_auto_schema(
-        request_body=BaseSerializer
+        request_body=serializers.ActivitySerializer
     )
 )
 class ActivityListView(BaseListView):
@@ -110,7 +108,7 @@ class ActivityListView(BaseListView):
 @method_decorator(
     name='put',
     decorator=swagger_auto_schema(
-        request_body=BaseSerializer
+        request_body=serializers.ActivitySerializer
     )
 )
 class ActivityDetailView(BaseDetailView):
@@ -120,7 +118,7 @@ class ActivityDetailView(BaseDetailView):
 @method_decorator(
     name='post',
     decorator=swagger_auto_schema(
-        request_body=BaseSerializer
+        request_body=serializers.ToolSerializer
     )
 )
 class ToolListView(BaseListView):
@@ -129,7 +127,7 @@ class ToolListView(BaseListView):
 @method_decorator(
     name='put',
     decorator=swagger_auto_schema(
-        request_body=BaseSerializer
+        request_body=serializers.ToolSerializer
     )
 )
 class ToolDetailView(BaseDetailView):
@@ -139,7 +137,7 @@ class ToolDetailView(BaseDetailView):
 @method_decorator(
     name='post',
     decorator=swagger_auto_schema(
-        request_body=BaseSerializer
+        request_body=serializers.LanguageSerializer
     )
 )
 class LanguageListView(BaseListView):
@@ -148,7 +146,7 @@ class LanguageListView(BaseListView):
 @method_decorator(
     name='put',
     decorator=swagger_auto_schema(
-        request_body=BaseSerializer
+        request_body=serializers.LanguageSerializer
     )
 )
 class LanguageDetailView(BaseDetailView):
@@ -158,7 +156,7 @@ class LanguageDetailView(BaseDetailView):
 @method_decorator(
     name='post',
     decorator=swagger_auto_schema(
-        request_body=BaseSerializer
+        request_body=serializers.CommunicationChannelSerializer
     )
 )
 class CommunicationChannelListView(BaseListView):
@@ -167,36 +165,36 @@ class CommunicationChannelListView(BaseListView):
 @method_decorator(
     name='put',
     decorator=swagger_auto_schema(
-        request_body=BaseSerializer
+        request_body=serializers.CommunicationChannelSerializer
     )
 )
 class CommunicationChannelDetailView(BaseDetailView):
     model = CommunicationChannel
 
 
+# @method_decorator(
+#     name='post',
+#     decorator=swagger_auto_schema(
+#         request_body=BaseSerializer
+#     )
+# )
+# class EngineeringMethodListView(BaseListView):
+#     model = EngineeringMethod
+
+# @method_decorator(
+#     name='put',
+#     decorator=swagger_auto_schema(
+#         request_body=BaseSerializer
+#     )
+# )
+# class EngineeringMethodDetailView(BaseDetailView):
+#     model = EngineeringMethod
+
+
 @method_decorator(
     name='post',
     decorator=swagger_auto_schema(
-        request_body=BaseSerializer
-    )
-)
-class EngineeringMethodListView(BaseListView):
-    model = EngineeringMethod
-
-@method_decorator(
-    name='put',
-    decorator=swagger_auto_schema(
-        request_body=BaseSerializer
-    )
-)
-class EngineeringMethodDetailView(BaseDetailView):
-    model = EngineeringMethod
-
-
-@method_decorator(
-    name='post',
-    decorator=swagger_auto_schema(
-        request_body=BaseSerializer
+        request_body=serializers.TestingPathSerializer
     )
 )
 class TestingPathListView(BaseListView):
@@ -205,7 +203,7 @@ class TestingPathListView(BaseListView):
 @method_decorator(
     name='put',
     decorator=swagger_auto_schema(
-        request_body=BaseSerializer
+        request_body=serializers.TestingPathSerializer
     )
 )
 class TestingPathDetailView(BaseDetailView):
@@ -214,7 +212,7 @@ class TestingPathDetailView(BaseDetailView):
 @method_decorator(
     name='post',
     decorator=swagger_auto_schema(
-        request_body=BaseSerializer
+        request_body=serializers.TestingScopeSerializer
     )
 )
 class TestingScopeListView(BaseListView):
@@ -223,7 +221,7 @@ class TestingScopeListView(BaseListView):
 @method_decorator(
     name='put',
     decorator=swagger_auto_schema(
-        request_body=BaseSerializer
+        request_body=serializers.TestingScopeSerializer
     )
 )
 class TestingScopeDetailView(BaseDetailView):
@@ -233,7 +231,7 @@ class TestingScopeDetailView(BaseDetailView):
 @method_decorator(
     name='post',
     decorator=swagger_auto_schema(
-        request_body=BaseSerializer
+        request_body=serializers.CommunitySerializer
     )
 )
 class CommunityListView(BaseListView):
@@ -242,7 +240,7 @@ class CommunityListView(BaseListView):
 @method_decorator(
     name='put',
     decorator=swagger_auto_schema(
-        request_body=BaseSerializer
+        request_body=serializers.CommunitySerializer
     )
 )
 class CommunityDetailView(BaseDetailView):
@@ -252,7 +250,7 @@ class CommunityDetailView(BaseDetailView):
 @method_decorator(
     name='post',
     decorator=swagger_auto_schema(
-        request_body=BaseSerializer
+        request_body=serializers.ReleasingChannelSerializer
     )
 )
 class ReleasingChannelListView(BaseListView):
@@ -261,7 +259,7 @@ class ReleasingChannelListView(BaseListView):
 @method_decorator(
     name='put',
     decorator=swagger_auto_schema(
-        request_body=BaseSerializer
+        request_body=serializers.ReleasingChannelSerializer
     )
 )
 class ReleasingChannelDetailView(BaseDetailView):
@@ -271,7 +269,7 @@ class ReleasingChannelDetailView(BaseDetailView):
 @method_decorator(
     name='post',
     decorator=swagger_auto_schema(
-        request_body=BaseSerializer
+        request_body=serializers.LimitationSerializer
     )
 )
 class LimitationListView(BaseListView):
@@ -280,7 +278,7 @@ class LimitationListView(BaseListView):
 @method_decorator(
     name='put',
     decorator=swagger_auto_schema(
-        request_body=BaseSerializer
+        request_body=serializers.LimitationSerializer
     )
 )
 class LimitationDetailView(BaseDetailView):
@@ -290,7 +288,7 @@ class LimitationDetailView(BaseDetailView):
 @method_decorator(
     name='post',
     decorator=swagger_auto_schema(
-        request_body=BaseSerializer
+        request_body=serializers.PracticeSerializer
     )
 )
 class PracticeListView(BaseListView):
@@ -299,7 +297,7 @@ class PracticeListView(BaseListView):
 @method_decorator(
     name='put',
     decorator=swagger_auto_schema(
-        request_body=BaseSerializer
+        request_body=serializers.PracticeSerializer
     )
 )
 class PracticeDetailView(BaseDetailView):

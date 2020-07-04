@@ -48,8 +48,8 @@ urlpatterns = [
     path(r"communication_channels/", views.CommunicationChannelListView.as_view()),
     path(r"communication_channels/<pk>/", views.CommunicationChannelDetailView.as_view()),
 
-    path(r"engineering_methods/", views.EngineeringMethodListView.as_view()),
-    path(r"engineering_methods/<pk>/", views.EngineeringMethodDetailView.as_view()),
+   #  path(r"engineering_methods/", views.EngineeringMethodListView.as_view()),
+   #  path(r"engineering_methods/<pk>/", views.EngineeringMethodDetailView.as_view()),
 
     path(r"testing_paths/", views.TestingPathListView.as_view()),
     path(r"testing_paths/<pk>/", views.TestingPathDetailView.as_view()),
