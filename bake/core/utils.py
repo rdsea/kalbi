@@ -7,6 +7,59 @@ from rest_framework import serializers
 from drf_yasg import openapi
 
 
+def custom_view(detail=True, method='post'):
+    class CustomClass(
+        APIView
+    ):
+        model = None
+
+        def get_queryset(self):
+            return self.model.nodes.all()
+
+        def get_object(self, pk):
+            try:
+                return self.model.nodes.get(uuid=pk)
+            except:
+                raise Http404
+
+
+    def inner_func(self, request):
+        pass
+
+    def inner_detail_funcc(self, request, pk):
+        pass
+
+    if detail:
+        func = inner_detail_funcc
+    else:
+        func = inner_func
+
+    setattr(CustomClass, method, func)
+
+    return CustomClass
+
+class BaseDetailPostView(
+    APIView
+):
+    model = None
+
+    def get_queryset(self):
+        return self.model.nodes.all()
+
+    def get_object(self, pk):
+        try:
+            return self.model.nodes.get(uuid=pk)
+        except:
+            raise Http404
+
+    def post(self, request, pk):
+        obj = self.get_object(pk)
+        obj.update_attributes(request.data)
+        obj.save()
+        obj.refresh()
+        return Response(obj.serialize, status=status.HTTP_200_OK)
+
+
 class BaseDetailView(
     APIView
 ):

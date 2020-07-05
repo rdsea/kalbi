@@ -32,6 +32,16 @@ class TestingPathSerializer(BaseSerializer):
 class TestingScopeSerializer(BaseSerializer):
     pass 
 
+class AppSerializer(BaseSerializer):
+    properties = {
+        "scale": openapi.Schema(
+            type=openapi.TYPE_STRING,
+        ),
+        "domain": openapi.Schema(
+            type=openapi.TYPE_STRING,
+        ),
+    }
+
 class ProjectSerializer(BaseSerializer):
     pass 
 

@@ -9,12 +9,12 @@ from drf_yasg.utils import swagger_auto_schema
 
 from .models import (
     Chain, Tool, Project, Pipeline, ActivityCategory, Activity,
-    Limitation, Practice, ReleasingChannel,
+    Limitation, Practice, ReleasingChannel, App,
     Language, Community, CommunicationChannel,
     EngineeringMethod, TestingPath, TestingScope,
 )
 from core import serializers
-from .utils import BaseDetailView, BaseListView
+from .utils import BaseDetailView, BaseListView, BaseDetailPostView, custom_view
 
 
 
@@ -38,6 +38,23 @@ class ChainDetailView(BaseDetailView):
     model = Chain
 
 
+@method_decorator(
+    name='post',
+    decorator=swagger_auto_schema(
+        request_body=serializers.AppSerializer
+    )
+)
+class AppListView(BaseListView):
+    model = App
+
+@method_decorator(
+    name='put',
+    decorator=swagger_auto_schema(
+        request_body=serializers.AppSerializer
+    )
+)
+class AppDetailView(BaseDetailView):
+    model = App
 
 @method_decorator(
     name='post',
@@ -132,6 +149,43 @@ class ToolListView(BaseListView):
 )
 class ToolDetailView(BaseDetailView):
     model = Tool
+
+@method_decorator(
+    name='post',
+    decorator=swagger_auto_schema(
+        request_body=serializers.ToolSerializer
+    )
+)
+class ToolWorkWithView(
+    custom_view(detail=True, method='post')
+):
+    model = Tool
+
+    def post(self, request, pk):
+        obj = self.get_object(pk)
+        obj.update_attributes(request.data)
+        obj.save()
+        obj.refresh()
+        return Response(obj.serialize, status=status.HTTP_200_OK)
+    
+
+@method_decorator(
+    name='post',
+    decorator=swagger_auto_schema(
+        request_body=serializers.ToolSerializer
+    )
+)
+class ToolConflictWithView(
+    custom_view(detail=True, method='post')
+):
+    model = Tool
+
+    def post(self, request, pk):
+        obj = self.get_object(pk)
+        obj.update_attributes(request.data)
+        obj.save()
+        obj.refresh()
+        return Response(obj.serialize, status=status.HTTP_200_OK)
 
 
 @method_decorator(
