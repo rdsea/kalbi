@@ -137,6 +137,7 @@ class TestingPath(StructuredNode, NodeUtils):
         return {
             "uuid": self.uuid,
             "name": self.name,
+            "type": self.type,
         }
 
     @property

@@ -18,8 +18,8 @@ Filling username and password as: `neo4j` and `neo4j`, and then fill in new pass
 
 ### survey link
 
-old link: https://ductm310.typeform.com/to/sSZAiJ
-new link: https://www.surveymonkey.com/r/8P568WG
+1st survey link: https://www.surveymonkey.com/r/8P568WG
+survey link for populating data: https://ductm310.typeform.com/to/sSZAiJ
 
 ### How to register/update information
 

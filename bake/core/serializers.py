@@ -1,56 +1,82 @@
 from rest_framework import serializers
 from drf_yasg import openapi
+from .utils import BaseSerializer
 
 
-
-class ChainSerializer(serializers.Serializer):
+class ChainSerializer(BaseSerializer):
     """
     Serializing Chain
     """
-    class Meta:
-        swagger_schema_fields = {
-            "properties": {
-                "name": openapi.Schema(
-                    title="Name of chain",
-                    type=openapi.TYPE_STRING,
-                ),
-                "consensus": openapi.Schema(
-                    title="Consensus algorithm",
-                    type=openapi.TYPE_STRING,
-                ),
-            },
-            "required": ["name", "consensus"],
-        }
+    properties = {
+        "consensus": openapi.Schema(
+            title="Consensus algorithm",
+            type=openapi.TYPE_STRING,
+        ),
+    }
 
-
-class BaseSerializer(serializers.Serializer):
-    """
-    Serializing Base
-    """
-    class Meta:
-        swagger_schema_fields = {
-            "properties": {
-                "name": openapi.Schema(
-                    title="Name of chain",
-                    type=openapi.TYPE_STRING,
-                ),
-            },
-            "required": ["name",],
-        }
-
-# TODO: filling all serializers
-        
-class ToolSerializer(serializers.Serializer):
+class LanguageSerializer(BaseSerializer):
     pass
 
-class ActivityCategorySerializer(serializers.Serializer):
+class CommunicationChannelSerializer(BaseSerializer):
     pass
 
-class ActivityCategorySerializer(serializers.Serializer):
+
+class TestingPathSerializer(BaseSerializer):
+    properties = {
+        "type": openapi.Schema(
+            title="Type of testing path",
+            type=openapi.TYPE_STRING,
+        ),
+    }
+
+class TestingScopeSerializer(BaseSerializer):
+    pass 
+
+class AppSerializer(BaseSerializer):
+    properties = {
+        "scale": openapi.Schema(
+            type=openapi.TYPE_STRING,
+        ),
+        "domain": openapi.Schema(
+            type=openapi.TYPE_STRING,
+        ),
+    }
+
+class ProjectSerializer(BaseSerializer):
+    pass 
+
+class PipelineSerializer(BaseSerializer):
     pass
 
-class PipelineSerializer(serializers.Serializer):
+class ActivityCategorySerializer(BaseSerializer):
     pass
 
-class ProjectSerializer(serializers.Serializer):
+class ActivitySerializer(BaseSerializer):
+    pass
+
+class ToolSerializer(BaseSerializer):
+    properties = {
+        "git": openapi.Schema(
+            title="Link to git",
+            type=openapi.TYPE_STRING,
+        ),
+        "version": openapi.Schema(
+            type=openapi.TYPE_STRING,
+        ),
+        "type": openapi.Schema(
+            title="Type of tool",
+            type=openapi.TYPE_STRING,
+        ),
+    }
+
+class CommunitySerializer(BaseSerializer):
+    pass
+
+class ReleasingChannelSerializer(BaseSerializer):
+    pass
+
+class LimitationSerializer(BaseSerializer):
+    pass
+
+class PracticeSerializer(BaseSerializer):
     pass
