@@ -6,6 +6,27 @@ from core import models
 
 
 class Command(BaseCommand):
+    """
+    The command reads data.csv and populate the data in Neo4J.
+    data.csv is collected through simple survey form https://ductm310.typeform.com/to/sSZAiJ and follow up discussion.
+
+    The CSV file consists of the following columns:
+    - project name
+    - scale: project's scale goal
+    - domain: working domain
+    - development role: role of activity doer
+    - activity: activity description
+    - communication channel: list of working communication channels
+    - releasing channel: list of releasing channels
+    - releasing tool: list of tools for releasing
+    - testing tool: list of tools for testing
+    - monitoring tool: list of tools for monitoring
+    - testing scope
+    - testing path
+    - limitation: project's limitation
+    - practice: project's practice
+    - chain: information of working chains
+    """
     help = ''
 
     def add_arguments(self, parser):
