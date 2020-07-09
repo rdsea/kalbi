@@ -15,14 +15,25 @@ MODEL_MAPPING = {
 }
 RELATIONSHIP_MODEL_MAPPING = {
     "tools": {
-        "conflicts": models.Tool,
-        "chains": models.Chain,
-        "works": models.Tool,
-        "languages": models.Language,
+        "conflicts": models.Tool, # to draw conflict_with connection
+        "chains": models.Chain, # to draw connection with the chain model
+        "works": models.Tool, # to draw work_with connection
+        "languages": models.Language, # to draw connection with language
     },
 }
 
 class Command(BaseCommand):
+    """
+    The command reads fixtures.json and populate the data in Neo4J.
+    fixtures.json is gathered and prepared manually.
+
+    The JSON file stores boostraping data and is listed/mapped as in MODEL_MAPPING
+    Then for each type of model, the script below does:
+    1. Fetch and populate the information
+    2. Looks for relationship information in a dedicated JSON key `relationships`.
+       The relationship are listed and defined as in RELATIONSHIP_MODEL_MAPPING
+
+    """
     help = ''
 
     def add_arguments(self, parser):
