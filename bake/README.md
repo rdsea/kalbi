@@ -186,6 +186,14 @@ Script to import from survey:
 python manage.py import 
 ```
 
+4. Changing Neo4J password via CLI
+
+Not locally or in environment that CLI is the only possible way, use the following command to update password:
+
+```
+curl -H "Content-Type: application/json" -H "Authorization: Basic `echo -n 'neo4j:old password' | base64`" -XPOST -d '{"password":"new password"}' -I http://localhost:7474/user/neo4j/password
+```
+
 ## Built With
 
 * [Python](https://www.python.org/) - Runtime Environment
