@@ -13,11 +13,14 @@ from neomodel import db
 class NodeUtils:
     __metaclass__ = ABCMeta
 
-    def serialize_relationships(self, nodes):
+    def serialize_relationships(self, nodes, meta=True):
         serialized_nodes = []
         for node in nodes:
             # serialize node
-            serialized_node = node.serialize
+            if meta:
+                serialized_node = node.name
+            else:
+                serialized_node = node.serialize
 
             # UNCOMMENT to get relationship type
             # results, colums = self.cypher('''
@@ -232,7 +235,7 @@ class Tool(StructuredNode, NodeUtils):
             "git": self.git,
             "version": self.version,
             "type": self.type,
-            "connections": self.serialize_connections,
+            "connections": self.serialize_connections
         }
 
     @property
