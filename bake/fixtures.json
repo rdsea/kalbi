@@ -1,0 +1,498 @@
+{
+    "chains": [
+        {
+            "name": "Ethereum",
+            "consensus": ""
+        },
+        {
+            "name": "Bitcoin",
+            "consensus": ""
+        },
+        {
+            "name": "GoChain",
+            "consensus": ""
+        },
+        {
+            "name": "Ganache",
+            "consensus": ""
+        }
+    ],
+    "communication_channels": [
+        {
+            "name": "Telegram"
+        },
+        {
+            "name": "Slack"
+        },
+        {
+            "name": "Zoom"
+        },
+        {
+            "name": "Skype"
+        },
+        {
+            "name": "Whatsapp"
+        },
+        {
+            "name": "Microsoft Teams"
+        }
+    ],
+    "testing_paths": [
+        {
+            "name": "Control flow testing",
+            "type": "whitebox"
+        },
+        {
+            "name": "Data flow testing",
+            "type": "whitebox"
+        },
+        {
+            "name": "Statement coverage",
+            "type": "whitebox"
+        },
+        {
+            "name": "Decision coverage",
+            "type": "whitebox"
+        },
+        {
+            "name": "Path testing",
+            "type": "whitebox"
+        },
+        {
+            "name": "Branch testing",
+            "type": "whitebox"
+        },
+        {
+            "name": "Smoke testing",
+            "type": "whitebox"
+        },
+        {
+            "name": "Sanity testing",
+            "type": "whitebox"
+        },
+        {
+            "name": "Decision table testing",
+            "type": "blackbox"
+        },
+        {
+            "name": "All-pairs testing",
+            "type": "blackbox"
+        },
+        {
+            "name": "Equivalence partitioning",
+            "type": "blackbox"
+        },
+        {
+            "name": "Boudary value analysis",
+            "type": "blackbox"
+        },
+        {
+            "name": "Cause-effect graph",
+            "type": "blackbox"
+        },
+        {
+            "name": "Error guessing",
+            "type": "blackbox"
+        },
+        {
+            "name": "State transition testing",
+            "type": "blackbox"
+        },
+        {
+            "name": "Use case testing",
+            "type": "blackbox"
+        },
+        {
+            "name": "User story testing",
+            "type": "blackbox"
+        },
+        {
+            "name": "Domain analysis",
+            "type": "blackbox"
+        },
+        {
+            "name": "Syntax testing",
+            "type": "blackbox"
+        },
+        {
+            "name": "Penetration testing",
+            "type": "blackbox"
+        }
+    ],
+    "pipelines": [
+        {
+            "name": "Planning"
+        },
+        {
+            "name": "Developing"
+        },
+        {
+            "name": "Testing"
+        },
+        {
+            "name": "Deploying"
+        }
+    ],
+    "engineering_methods": [
+        {
+            "name": "Macaulay",
+            "description": ""
+        },
+        {
+            "name": "Kotonya and Sommerville",
+            "description": ""
+        },
+        {
+            "name": "Loucopoulos and Karakostas",
+            "description": ""
+        }
+    ],
+    "languages": [
+        {
+            "name": "Solidity"
+        },
+        {
+            "name": "Ruby"
+        },
+        {
+            "name": "Python"
+        },
+        {
+            "name": "Java"
+        },
+        {
+            "name": "Javascript"
+        },
+        {
+            "name": "Swift"
+        },
+        {
+            "name": "Vyper"
+        },
+        {
+            "name": "Bash"
+        }
+    ],
+    "tools": [
+        {
+            "name": "Metamask",
+            "description": "Wallet",
+            "git": "",
+            "type": "development",
+            "version": "",
+            "relationships": {
+                "chains": ["GoChain", "Ethereum", "Ganache"],
+                "conflicts": [],
+                "works": [],
+                "languages": ["Javascript"]
+            }
+        },
+        {
+            "name": "Remix",
+            "description": "Ethereum IDE",
+            "git": "",
+            "type": "development",
+            "version": "",
+            "relationships": {
+                "chains": ["Ethereum"],
+                "conflicts": [],
+                "works": [],
+                "languages": ["Solidity", "Vyper"]
+            }
+        },
+        {
+            "name": "Ganache",
+            "description": "Ethereum development chain server",
+            "git": "https://github.com/trufflesuite/ganache",
+            "type": "development",
+            "version": "",
+            "relationships": {
+                "chains": ["Ganache"],
+                "conflicts": [],
+                "works": ["Metamask"],
+                "languages": []
+            }
+        },
+        {
+            "name": "Drizle",
+            "description": "frontend libraries for dapps",
+            "git": "https://github.com/trufflesuite/drizzle",
+            "type": "development",
+            "version": "",
+            "relationships": {
+                "chains": ["GoChain", "Ethereum", "Ganache"],
+                "conflicts": [],
+                "works": [],
+                "languages": ["Javascript"]
+            }
+        },
+        {
+            "name": "Truffle",
+            "description": "",
+            "git": "https://github.com/trufflesuite/truffle",
+            "type": "development",
+            "version": "",
+            "relationships": {
+                "chains": ["GoChain", "Ethereum"],
+                "conflicts": [],
+                "works": ["Drizle", "Ganache"],
+                "languages": ["Javascript"]
+            }
+        },
+        {
+            "name": "Populus",
+            "description": "Smartcontract development framework",
+            "git": "",
+            "type": "development",
+            "version": "",
+            "relationships": {
+                "chains": ["Ethereum"],
+                "conflicts": [],
+                "works": [],
+                "languages": ["Python"]
+            }
+        },
+        {
+            "name": "Web3.js",
+            "description": "frontend libraries to interact with Ethereum node",
+            "git": "",
+            "type": "development",
+            "version": "",
+            "relationships": {
+                "chains": ["Ethereum"],
+                "conflicts": ["Drizle"],
+                "works": ["Metamask", "Truffle"],
+                "languages": ["Javascript"]
+            }
+        },
+        {
+            "name": "Infura",
+            "description": "",
+            "git": "",
+            "type": "development",
+            "version": "",
+            "relationships": {
+                "chains": ["Ethereum"],
+                "conflicts": [],
+                "works": ["Metamask", "Web3.js"],
+                "languages": []
+            }
+        },
+        {
+            "name": "Jest",
+            "description": "",
+            "git": "",
+            "type": "testing",
+            "version": "",
+            "relationships": {
+                "chains": [],
+                "conflicts": [],
+                "works": ["Truffle", "Web3.js"],
+                "languages": ["Javascript"]
+            }
+        },
+        {
+            "name": "Selenium",
+            "description": "",
+            "git": "",
+            "type": "testing",
+            "version": "",
+            "relationships": {
+                "chains": [],
+                "conflicts": [],
+                "works": [],
+                "languages": ["Python", "Javascript", "Ruby", "Java"]
+            }
+        },
+        {
+            "name": "Jasmine",
+            "description": "",
+            "git": "",
+            "type": "testing",
+            "version": "",
+            "relationships": {
+                "chains": [],
+                "conflicts": [],
+                "works": [],
+                "languages": ["Javascript"]
+            }
+        },
+        {
+            "name": "Pytest",
+            "description": "",
+            "git": "",
+            "type": "testing",
+            "version": "",
+            "relationships": {
+                "chains": [],
+                "conflicts": [],
+                "works": [],
+                "languages": ["Python"]
+            }
+        },
+        {
+            "name": "Bash Script",
+            "description": "",
+            "git": "",
+            "type": "",
+            "version": "",
+            "relationships": {
+                "chains": [],
+                "conflicts": [],
+                "works": [],
+                "languages": ["Bash"]
+            }
+        },
+        {
+            "name": "GitlabCI",
+            "description": "",
+            "git": "",
+            "type": "deployment",
+            "version": "",
+            "relationships": {
+                "chains": [],
+                "conflicts": [],
+                "works": ["Bash Script"],
+                "languages": []
+            }
+        },
+        {
+            "name": "Ansible",
+            "description": "",
+            "git": "",
+            "type": "deployment",
+            "version": "",
+            "relationships": {
+                "chains": [],
+                "conflicts": [],
+                "works": ["Bash Script"],
+                "languages": ["Bash"]
+            }
+        },
+        {
+            "name": "CircleCI",
+            "description": "",
+            "git": "",
+            "type": "deployment",
+            "version": "",
+            "relationships": {
+                "chains": [],
+                "conflicts": [],
+                "works": ["Bash Script"],
+                "languages": []
+            }
+        },
+        {
+            "name": "Drone.io",
+            "description": "",
+            "git": "",
+            "type": "deployment",
+            "version": "",
+            "relationships": {
+                "chains": [],
+                "conflicts": [],
+                "works": [],
+                "languages": []
+            }
+        },
+        {
+            "name": "TravisCI",
+            "description": "",
+            "git": "",
+            "type": "deployment",
+            "version": "",
+            "relationships": {
+                "chains": [],
+                "conflicts": [],
+                "works": ["Bash Script"],
+                "languages": []
+            }
+        },
+        {
+            "name": "Sentry",
+            "description": "",
+            "git": "",
+            "type": "monitoring",
+            "version": "",
+            "relationships": {
+                "chains": [],
+                "conflicts": [],
+                "works": [],
+                "languages": ["Ruby", "Python", "Java", "Javascript"]
+            }
+        },
+        {
+            "name": "Etherscan",
+            "description": "",
+            "git": "",
+            "type": "monitoring",
+            "version": "",
+            "relationships": {
+                "chains": ["Ethereum"],
+                "conflicts": [],
+                "works": [],
+                "languages": []
+            }
+        },
+        {
+            "name": "Blockchain explorer",
+            "description": "",
+            "git": "",
+            "type": "monitoring",
+            "version": "",
+            "relationships": {
+                "chains": ["Ethereum", "Bitcoin"],
+                "conflicts": [],
+                "works": [],
+                "languages": []
+            }
+        },
+        {
+            "name": "Crashlytics",
+            "description": "",
+            "git": "",
+            "type": "monitoring",
+            "version": "",
+            "relationships": {
+                "chains": [],
+                "conflicts": [],
+                "works": [],
+                "languages": ["Java", "Swift"]
+            }
+        },
+        {
+            "name": "Etherscan",
+            "description": "",
+            "git": "",
+            "type": "monitoring",
+            "version": "",
+            "relationships": {
+                "chains": ["Ethereum"],
+                "conflicts": [],
+                "works": [],
+                "languages": []
+            }
+        },
+        {
+            "name": "Datadog",
+            "description": "",
+            "git": "",
+            "type": "monitoring",
+            "version": "",
+            "relationships": {
+                "chains": [],
+                "conflicts": [],
+                "works": [],
+                "languages": ["Python", "Ruby", "Java", "Javascript", "Swift"]
+            }
+        }
+    ],
+    "releasing_channels": [
+        { "name": "android" },
+        { "name": "Chrome" },
+        { "name": "iOS" },
+        { "name": "Mozilla Firefox" },
+        { "name": "Internet Explorer / Edge" },
+        { "name": "Safari" }
+    ]
+}
