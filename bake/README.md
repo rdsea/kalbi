@@ -156,6 +156,14 @@ Make sure:
 
 Exec `fab dd-stag`
 
+### Running the load tests
+
+In order to run the load tests, we need  Apache JMeter. After downloading, we can load the test plan at `bake.jmx`.
+
+Notes: 
+- The API endpoint should be confirmed before testing
+- The Bolt connection (Neo4J connection) should be confirmed before testing
+
 ## FAQs
 
 1. Server configuration
@@ -202,6 +210,7 @@ curl -H "Content-Type: application/json" -H "Authorization: Basic `echo -n 'neo4
 * [Swagger](https://swagger.io/) - API documentation
 * [Neo4J](https://neo4j.com/)
 * [Docker](https://www.docker.com/)
+* [Apache JMeter](https://jmeter.apache.org/)
 
 ## License
 Copyright 2019-, by Service Engineering Analytics team (http://rdsea.github.io/).
