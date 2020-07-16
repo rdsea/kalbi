@@ -31,7 +31,7 @@ def deploy_stag():
                     "source /home/deploy/.envs/venv/bin/activate"
             ):
                 # pull latest source
-                run("git pull")
+                run("git pull ductm master")
                 # install new dependencies
                 run("pip install -r requirements.txt")
                 # run south migrate
