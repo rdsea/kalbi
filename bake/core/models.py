@@ -232,6 +232,7 @@ class Tool(StructuredNode, NodeUtils):
             "git": self.git,
             "version": self.version,
             "type": self.type,
+            "connections": self.serialize_connections,
         }
 
     @property
@@ -239,6 +240,7 @@ class Tool(StructuredNode, NodeUtils):
         return {
             "conflicts": self.serialize_relationships(self.conflicts.all()),
             "works": self.serialize_relationships(self.works.all()),
+            "relates": self.serialize_relationships(self.chains.all()),
         }
 
     def update_attributes(self, data):
