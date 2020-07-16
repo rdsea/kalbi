@@ -140,4 +140,6 @@ Link: https://datastudio.google.com/datasources/dfb029e6-2cda-406f-8852-e715fecb
 
 ### Analytics
 
-TO ADD
+Analytic reports:
+- https://datastudio.google.com/reporting/89c96d55-20b3-4fdc-883c-fb2003112aab shows the overview of the report
+- https://datastudio.google.com/reporting/ce796317-f918-4c69-8c9f-be59ef542c7b shows the detailed of the above report per different categories 
