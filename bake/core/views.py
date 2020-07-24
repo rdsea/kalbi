@@ -163,8 +163,14 @@ class ToolWorkWithView(
 
     def post(self, request, pk):
         obj = self.get_object(pk)
-        obj.update_attributes(request.data)
-        obj.save()
+
+        tool = self.model.nodes.get(name=request.data.get('name'))
+        if not tool: # create if the tool is new
+            tool = self.model()
+            tool.update_attributes(request.data)
+            tool.save()
+
+        obj.works.connect(tool)
         obj.refresh()
         return Response(obj.serialize, status=status.HTTP_200_OK)
     
@@ -182,8 +188,14 @@ class ToolConflictWithView(
 
     def post(self, request, pk):
         obj = self.get_object(pk)
-        obj.update_attributes(request.data)
-        obj.save()
+
+        tool = self.model.nodes.get(name=request.data.get('name'))
+        if not tool: # create if the tool is new
+            tool = self.model()
+            tool.update_attributes(request.data)
+            tool.save()
+
+        obj.conflicts.connect(tool)
         obj.refresh()
         return Response(obj.serialize, status=status.HTTP_200_OK)
 
